@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'heyderapp',
     
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,10 @@ CKEDITOR_CONFIGS = {
         'toolbar': None,
     },
 }
+STATICFILES_FINDERS = (
+    # ...
+    'sass_processor.finders.CssFinder',
+)
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
