@@ -1,6 +1,6 @@
 {% load static %}
 <html lang="en">
-    {% load sass_tags %}
+   
 <!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:01:07 GMT -->
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'a.scss' %}">
+
 </head>
 
 <body class="theme-dark">
@@ -956,7 +956,58 @@ a {
 <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
 <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
 <script src="{% static 'assets/js/main.js' %}"></script>
-
+<style>.containerr {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  .triggerrs {
+    display: flex;
+  }
+  .contentt {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    top: 100%;
+    border-radius: 3px;
+  }
+  .inner-section span:hover {
+    font-size: large;
+  }
+  .inner-section span a {
+    color: black;
+    font-weight: 600;
+  }
+  .label {
+    border: 1px solid #7d7d7d;
+    padding: 0.5em 1.7em;
+    cursor: pointer;
+    position: relative;
+  }
+  .label:hover {
+    background: #bcbcbc;
+  }
+  .triggerrs > input:checked + label {
+    background: #bcbcbc;
+    border: 1px solid transparent;
+  }
+  .triggerrs > input:checked + label > div.contentt {
+    display: flex;
+    top: 100%;
+    padding: 0.5em;
+    background: #d3d3d3;
+    right: -1px;
+  }
+  .triggerrs > input:checked + label > div.contentt div {
+    padding: 0em 0.5em;
+  }
+  .triggerrs > input:checked + label > div.contentt div + div {
+    border-left: 1px solid #7d7d7d;
+  }</style>
     
 </body>
 
