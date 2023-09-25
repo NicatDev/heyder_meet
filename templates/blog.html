@@ -1,0 +1,553 @@
+{% load static %}
+<html class="no-js" lang="zxx">
+
+
+<!-- Mirrored from html.bdevs.net/faime-prev/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:00:53 GMT -->
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Faime – Movie and Film Production HTML5 Template</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <!-- CSS here -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+
+<body>
+
+   <!-- cursor animation-->
+   <div class="mouseCursor cursor-outer "></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+
+   <!-- Go Top Button -->
+   <button id="scroll_top" class="scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+   </button>
+
+   <!-- Preloader -->
+   <div class="loader">
+      <div class="loader__container">
+         <div class="loader__film">
+            <img class=loader__film-img src="{% static 'assets/img/loader/film.png' %}" alt="img not found">
+            <img class=loader__film-img src="{% static 'assets/img/loader/film-2.png' %}" alt="img not found">
+         </div>
+         <img class=loader__camera src="{% static 'assets/img/loader/camera.png' %}" alt="img not found">
+      </div>
+   </div>
+
+   <!-- header area start -->
+   <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
+      <div class="container">
+         <div class="row align-items-center justify-content-lg-between">
+            <div class="header-wrapper">
+               <div class="fm-header-logo-wrapper">
+                  <a href="index-2.html" class="fm-header-logo">
+                     <img src="{% static 'assets/img/logo/logo.png' %}" alt="img not found">
+                  </a>
+
+                  <span class="separator d-none d-xl-block"></span>
+                  <a href="#0" class="fm-header-bar-1">
+                     <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                     <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                  </a>
+               </div>
+               <div class="header-menu-spc d-none d-xl-block">
+                  <div class="fm-header-nav">
+
+                     <nav id="mobile-menu" style="display: block;">
+                        <ul>
+                           <li class="active has-dropdown">
+                              <a href="{% url 'home' %}">Əsas səhifə</a>
+                            
+                           </li>
+
+
+                           <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                              <ul class="submenu">
+                                  {% for cat in vidcategories %}
+                                  <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                  {% endfor %}
+                                
+                              </ul>
+                           </li>
+
+                           <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                              <ul class="submenu">
+                                  {% for cat in fotcategories %}
+                                 <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                 {% endfor %}
+                        
+                              </ul>
+                           </li>
+
+                           <li class="has-dropdown has-mega-menu">
+                              <a href="{% url 'blog' %}">Xəbərlər</a>
+                            
+                           </li>
+
+                           <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
+                              <ul class="submenu">
+                                  {% for cat in artcategories %}
+                                  <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                  {% endfor %}
+                              </ul>
+                           </li>
+
+
+                           <li class="has-dropdown"><a href="contact.html">Lahiyə haqqında</a>
+                           </li>
+                        </ul>
+                     </nav>
+
+                  </div>
+               </div>
+               <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
+                  <a href="contact.html" class="fill-btn" style="font-size:14px;line-height:20px">REABİLİTASİYA <br> HƏYATDIR
+                     <span>
+                        <i class="fa-regular fa-arrow-right"></i>
+                     </span>
+                  </a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </header>
+
+<!-- Headerin sonu hekayenin baslangici gradientd-->
+
+   <!-- sidebar area start -->
+   <div class="fm-header-sidebar-area fm-header-sidebar-left">
+      <div class="fm-header-sidebar-wrapper">
+         <div class="fm-header-sidebar-action mb-65">
+            <div class="fm-header-sidebar-logo">
+               <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+            </div>
+            <div class="offcanvas-close">
+               <a class="offcanvas-btn" href="#0">
+                  <i class="fa-thin fa-times"></i>
+               </a>
+            </div>
+         </div>
+         <div class="d-none d-sm-block">
+            <div class="fm-header-sidebar-search">
+               <form action="https://html.bdevs.net/faime-prev/index.html">
+                  <input type="text" placeholder="Search here">
+                  <button type="submit"><i class="flaticon flaticon-search"></i></button>
+               </form>
+            </div>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="d-none d-sm-block">
+            <div class="fm-offcanvas-about mt-30 mb-30">
+               <h4>About Faime</h4>
+               <p>We Believe Film And Moving Image Has The Power
+                  To
+                  Create
+                  Significant Change.</p>
+            </div>
+         </div>
+         <div class="offcanvas-contact mt-30 mb-30">
+            <h4 class="offcanvas-contact-title">Contact Information</h4>
+            <ul>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                        <i class="fal fa-map-marker-alt"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a target="_blank"
+                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                        Broadway, NY 10013 Bournemouth</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="tel:915550303420">+91 555 0303 420</a>
+                  </div>
+               </li>
+               <li class="d-flex align-items-center gap-2">
+                  <div class="offcanvas-contact-icon">
+                     <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#53202623233c212713343e323a3f7d303c3e"><i class="fal fa-envelope"></i></a>
+                  </div>
+                  <div class="offcanvas-contact-text">
+                     <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#224a474e4e4d6244434b4f474f47464b430c414d4f"><span class="__cf_email__" data-cfemail="d0b8b5bcbcbf90b6b1b9bdb5bdb5b4b9b1feb3bfbd">[email&#160;protected]</span></a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="d-none d-sm-block d-sm-none d-md-block">
+            <div class="fm-offcanvas-social">
+               <span class="social-text">Follow :</span>
+               <div class="fm-offcanvas-social-icon">
+                  <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="overlay"></div>
+   <!-- sidebar area end -->
+
+
+   <main>
+      <div class="adjust-header-space bg-common-black"></div>
+
+      <!-- page title area start -->
+      <section class="page-title-area section-spacing-top">
+         <div class="container">
+            <div class="row section-title-spacing">
+               <div class="col-xl-6">
+                  <div class="section-title">
+                     <span class="section-subtitle title-anim">Bizimlə gündəmdə qal</span>
+                     <h2 class="section-main-title title-anim">Son xəbərlər </h2>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <!-- page titler area end -->
+   
+      <!-- postbox area start -->
+      <section class="postbox__area section-spacing-bottom">
+         <div class="container">
+            <div class="row g-40">
+               <div class="col-xxl-8 col-xl-7 col-lg-7">
+                  <div class="postbox__wrapper">
+                     <!-- bloglar baslayir-->
+                     {% for blog in blog_list %}
+                     <article class="postbox__item mb-60 bdFadeUp">
+                        <div class="postbox__thumb mb-30">
+                           <a href="{% url 'blogsingle' blog.slug %}">
+                              <img src="{{blog.image.url}}" alt="img not found">
+                           </a>
+                        </div>
+                        <div class="postbox__content">
+                           <div class="postbox__meta mb-20">
+                              <span>
+                                {% for tag in blog.tag.all %} <a href="#"></a>{% endfor %}
+                              </span>
+                              <span>
+                                 {{blog.created_at}}
+                              </span>
+                           </div>
+                           <h3 class="postbox__title">
+                              <a href="blog-details.html">{{blog.name}}</a>
+                           </h3>
+                           <div class="postbox__text ">
+                              <p>{{blog.content_without_ck|slice:200}}...</p>
+                           </div>
+                           <div class="col-xl-12 ">
+
+                              <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                           </div>
+                        </div>
+                     </article>
+                     {% endfor %}
+
+                     
+
+                     <!-- bloglar bitir -->
+                     {% if blog_list %}
+                     <div class="bd-basic__pagination d-flex align-items-center bdFadeUp">
+                        <nav>
+                           <ul>
+                              <li>
+                                 <a {% if not blog_list.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  blog_list.has_previous %}  href="?page={{ blog_list.previous_page_number }} "{% endif%}>
+                                    <i class="fa-light fa-arrow-left-long"></i>
+                                 </a>
+                              </li>
+                              {% if not pagcheck %}
+                              <li>
+                                 <a href="?page=1">1</a>
+                              </li>
+                              {% endif %}
+                              {% for page_num in iterator %}
+                                 
+                              <li>
+                                 <a href="?page={{ page_num }}">{{page_num}}</a>
+                              </li>
+
+                              {% endfor %}
+                              
+                         
+
+                             
+
+                              <li>
+                                 <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if blog_list.has_next %}  href="?page={{ blog_list.next_page_number }}" {% endif%}>
+                                    <i class="fa-light fa-arrow-right-long"></i>
+                                 </a>
+                              </li>
+                              
+                           </ul>
+                        </nav>
+                     </div>
+                     {% else %}
+                     
+                        <div class="container">
+                           <div class="row section-title-spacing">
+                              <div class="col-xl-6">
+                                 <div class="section-title">
+                                    <span class="section-subtitle title-anim">Nəticə mövcud deyil</span>
+
+                                 </div>
+                              </div>
+               
+                           </div>
+                        </div>
+
+                     {% endif %}
+                  </div>
+               </div>
+               <div class="col-xxl-4 col-xl-5 col-lg-5">
+                  <div class="sidebar__wrapper">
+                     <div class="sidebar__widget ">
+                        <div class="sidebar__widget-content">
+                           <div class="sidebar__search">
+                              <form action="#" method="GET">
+                                 {% csrf_token %}
+                                 <div class="sidebar__search-input">
+                                    <input name="blog" type="text" placeholder="Xəbərlərdə axtar...">
+                                    <button type="submit">
+                                       <i class="flaticon-search"></i>
+                                    </button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="sidebar__widget ">
+                        <h3 class="sidebar__widget-title mb-30">Ən çox oxunanlar</h3>
+                        <div class="sidebar__widget-content">
+                           <div class="sidebar__post">
+                              {% for blg in most_blogs %}
+                              <div class="rc__post">
+                                 <div class="rc__post-thumb">
+                                    <a href="blog-details.html"><img src="{{blg.image.url}}"
+                                          alt="img not found"></a>
+                                 </div>
+                                 <div class="rc__post-content">
+                                    <h5 class="rc__post-title">
+                                       <a href="blog-details.html">{{blg.name}}</a>
+                                    </h5>
+                                    <div class="postbox__meta">
+                                       
+                                       <span>
+                                          <a href="#">{{tags.first.name}}</a>
+                                       </span>
+                                   
+                                       <span>
+                                          {{blg.created_at}}
+                                       </span>
+                                    </div>
+                                 </div>
+                              </div>
+                              {% endfor %}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="sidebar__widget ">
+                        <h3 class="sidebar__widget-title mb-30">Ən çox axtarılanlar</h3>
+                        <div class="sidebar__widget-content">
+                           <ul>
+                              {% for x in tags %}
+                     
+                              {% if current_tag == x.name %}
+                              <li><a style="background-color: var(--clr-theme-1);font-weight:500;color:white" href="?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
+                              {% else %}
+                              <li><a  href="?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
+                       
+                              {% endif %}
+
+                              {% endfor %}
+                           </ul>
+                        </div>
+                     </div>
+            
+                    
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- contact-area-start -->
+      <section class="contact-top-area bg-common-black">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="fm-contact-wrapper fm-contact-pad">
+                     <div class="section-title title-anim">
+                        <span class="section-subtitle featured-sub-title">GET IN TOUCH</span>
+                        <h2 class="section-main-title text-white fw-400 mb-15">Ready To Get Focused?</h2>
+                        <h2 class="section-main-title text-white">Get In Touch</h2>
+                     </div>
+
+                     <div class="fm-contact-btn btn_wrapper">
+                        <a href="contact.html" class="blog-rotate-btn is-white large btn__item-move">
+                           <span>
+                              <i class="flaticon-right-arrow-1"></i>
+                           </span>
+                        </a>
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- contact-area-end -->
+
+   </main>
+
+   <!-- footer-area-start -->
+   <footer>
+      <div class="footer-area-5 section-spacing-top pos-rel">
+         <div class="footer-bg-3" data-background="{% static 'assets/img/bg/footer/img-1.jpg' %}" style=" background-repeat: no-repeat;background-size: cover;">
+
+         </div>
+         <div class="container">
+            <div class="footer-middle-area">
+
+               <div class="footer-wrapper footer-widget-about">
+                  <div class="footer-logo-2">
+                     <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+                  </div>
+                  <div class="footer-text">
+                     <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod</p>
+                  </div>
+               </div>
+               <div class="footer-wrapper footer-widget-gallery">
+                  <div class="footer-title">
+                     <h4>Our Gallery</h4>
+                  </div>
+                  <ul class="footer-img">
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/01.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/01.jpg' %}"></a></li>
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/02.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/02.jpg' %}"></a></li>
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/03.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/03.jpg' %}"></a></li>
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/04.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/04.jpg' %}"></a></li>
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/05.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/05.jpg' %}"></a></li>
+                     <li><a class="popup-image" href="{% static 'assets/img/gallery/06.jpg' %}"><img alt=""
+                              src="{% static 'assets/img/gallery/06.jpg' %}"></a></li>
+                  </ul>
+               </div>
+               <div class="footer-wrapper footer-widget-social">
+                  <div class="footer-title">
+                     <h4>Follow Me</h4>
+                  </div>
+                  <div class="footer-info">
+                     <p>Connect me with social media</p>
+                  </div>
+                  <div class="fm-social-2 footer-social-3">
+                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                  </div>
+               </div>
+               <div class="footer-wrapper footer-widget-contact">
+                  <div class="footer-title">
+                     <h4>Contact Us</h4>
+                  </div>
+                  <ul class="footer-2-link">
+                     <li>
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                        <p><a target="_blank"
+                              href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                              Broadway, NY 10013 Bournemouth</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-phone"></i>
+                        <p><a href="tel:+821236545690">+821 (2365) 456
+                              90</a></p>
+                     </li>
+                     <li>
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        <p><a href="https://html.bdevs.net/cdn-cgi/l/email-protection#650d0009090a2503040c08000800010c044b060a08"><span class="__cf_email__" data-cfemail="96fef3fafaf9d6f0f7fffbf3fbf3f2fff7b8f5f9fb">[email&#160;protected]</span></a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom-4">
+               <div class="footer-bottom-wrapper-2 ">
+                  <div class="footer-bottom-inner">
+                     <div class="footer-copyright">
+                        <p>© 2023<a href="home-main.html"> Faime </a> All Rights Reserved.</p>
+                     </div>
+
+
+                     <div class="footer-rules ">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Condition</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- footer-area-end -->
+  
+
+   <!-- JS here -->
+   <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+   <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+   <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+   <script src="{% static 'assets/js/slick.min.js' %}"></script>
+   <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+   <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+   <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+   <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+   <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+
+   <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+   <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+   <script src="{% static 'assets/js/knob.min.js' %}"></script>
+   <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+   <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+   <script src="{% static 'assets/js/wow.min.js' %}"></script>
+   <script src="{% static 'assets/js/sidebar.js' %}"></script>
+   <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+   <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+   <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+   <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.bdevs.net/faime-prev/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:00:58 GMT -->
+</html>

@@ -1,0 +1,964 @@
+{% load static %}
+<html lang="en">
+
+<!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:01:07 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vstream - Media Landing Page</title>
+
+    <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
+ 
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'templatestyles/css/video-player.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'a.scss' %}">
+</head>
+
+<body class="theme-dark">
+
+    <div class="preloader"></div>
+
+    <div class="backdrop"></div>
+    <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
+    <div class="switchcolor-wrap">
+        <a class="link sheet-close"><i class="ti-close"></i></a>
+        <h2>Settings</h2>
+        <h4>Choose Color Theme</h4>
+        <ul>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
+                    <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-blue" style="background-color: #132977;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
+                    <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
+                    <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
+                    <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
+                    <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
+                </label>
+            </li>
+
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
+                    <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
+                    <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
+                    <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
+                </label>
+            </li>
+            
+            
+        </ul>
+        <div class="toggle-div mt-4">
+            <h4 class="d-inline">Dark Mode</h4>
+            <div class="d-inline float-right">
+                <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+               <!-- header wrapper -->
+               <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
+                <div class="container">
+                   <div class="row align-items-center justify-content-lg-between">
+                      <div class="header-wrapper">
+                         <div class="fm-header-logo-wrapper">
+                            <a href="index-2.html" class="fm-header-logo">
+                               <img src="{% static 'assets/img/logo/logo.png' %}" alt="img not found">
+                            </a>
+          
+                            <span class="separator d-none d-xl-block"></span>
+                            <a href="#0" class="fm-header-bar-1">
+                               <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                               <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                               <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                            </a>
+                         </div>
+                         <div class="header-menu-spc d-none d-xl-block">
+                            <div class="fm-header-nav">
+          
+                               <nav id="mobile-menu" style="display: block;">
+                                  <ul>
+                                     <li class="active has-dropdown">
+                                        <a href="{% url 'home' %}">Əsas səhifə</a>
+                                      
+                                     </li>
+          
+          
+                                     <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                                        <ul class="submenu">
+                                            {% for cat in vidcategories %}
+                                            <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                            {% endfor %}
+                                          
+                                        </ul>
+                                     </li>
+          
+                                     <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                                        <ul class="submenu">
+                                            {% for cat in fotcategories %}
+                                           <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                           {% endfor %}
+                                  
+                                        </ul>
+                                     </li>
+          
+                                     <li class="has-dropdown has-mega-menu">
+                                        <a href="{% url 'blog' %}">Xəbərlər</a>
+                                      
+                                     </li>
+          
+                                     <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
+                                        <ul class="submenu">
+                                            {% for cat in artcategories %}
+                                            <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                     </li>
+          
+          
+                                     <li class="has-dropdown"><a href="contact.html">Lahiyə haqqında</a>
+                                     </li>
+                                  </ul>
+                               </nav>
+          
+                            </div>
+                         </div>
+                         <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
+                            <a href="contact.html" class="fill-btn" style="font-size:14px;line-height:20px">REABİLİTASİYA <br> HƏYATDIR
+                               <span>
+                                  <i class="fa-regular fa-arrow-right"></i>
+                               </span>
+                            </a>
+                         </div>
+                      </div>
+          
+                   </div>
+                </div>
+             </header>
+            <!-- header wrapper -->
+    
+       <!-- sidebar area start -->
+       <div class="fm-header-sidebar-area fm-header-sidebar-left">
+        <div class="fm-header-sidebar-wrapper">
+           <div class="fm-header-sidebar-action mb-65">
+              <div class="fm-header-sidebar-logo">
+                 <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+              </div>
+              <div class="offcanvas-close">
+                 <a class="offcanvas-btn" href="#0">
+                    <i class="fa-thin fa-times"></i>
+                 </a>
+              </div>
+           </div>
+           <div class="d-none d-sm-block">
+              <div class="fm-header-sidebar-search">
+                 <form action="https://html.bdevs.net/faime-prev/index.html">
+                    <input type="text" placeholder="Search here">
+                    <button type="submit"><i class="flaticon flaticon-search"></i></button>
+                 </form>
+              </div>
+           </div>
+           <div class="mobile-menu"></div>
+           <div class="d-none d-sm-block">
+              <div class="fm-offcanvas-about mt-30 mb-30">
+                 <h4>About Faime</h4>
+                 <p>We Believe Film And Moving Image Has The Power
+                    To
+                    Create
+                    Significant Change.</p>
+              </div>
+           </div>
+           <div class="offcanvas-contact mt-30 mb-30">
+              <h4 class="offcanvas-contact-title">Contact Information</h4>
+              <ul>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                          <i class="fal fa-map-marker-alt"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                          Broadway, NY 10013 Bournemouth</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="tel:915550303420">+91 555 0303 420</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#53202623233c212713343e323a3f7d303c3e"><i class="fal fa-envelope"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#224a474e4e4d6244434b4f474f47464b430c414d4f"><span class="__cf_email__" data-cfemail="d0b8b5bcbcbf90b6b1b9bdb5bdb5b4b9b1feb3bfbd">[email&#160;protected]</span></a>
+                    </div>
+                 </li>
+              </ul>
+           </div>
+           <div class="d-none d-sm-block d-sm-none d-md-block">
+              <div class="fm-offcanvas-social">
+                 <span class="social-text">Follow :</span>
+                 <div class="fm-offcanvas-social-icon">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="overlay"></div>
+     <!-- sidebar area end -->
+        
+        <!-- banenr wrapper -->
+        <div class="banner-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="banner-slider owl-carousel owl-theme">
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Mother of  <br>Brooklyn</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-4.jpg' %}');"></div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Made <br> in heaven</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-3.jpg' %}');"></div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Zero<br> dark night</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-2.jpg' %}');"></div>
+                                </div>
+
+                            </div>
+                            <div class="owl-items">
+
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>The <br> night ever</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap">
+                                        <video autoplay muted loop id="myVideo">
+                                          <source src="images/video3.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banenr wrapper -->
+    
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+       
+      
+        
+
+            </div>
+            <section class="myphoto"> 
+                <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;width:90%;margin-top:3%;margin-bottom:1%;">
+                    <h3>Fotolar</h3>
+                    <div class="isotope-filter isotope-filter--isotope" style="align-items: center;margin:0">
+                        <div style="margin-left:auto" class='containerr'>
+                            <div class='triggerrs'>
+                              <input id='first' type='checkbox'>
+                              <label class='label' for='first' style="background-color: white;margin-bottom:0px !important;">
+                                Kateqorilər <i class="fa-solid fa-caret-down"></i>
+                                <div class='contentt'>
+                                  <div class='inner-section'>
+                                    <span class='section-name'><a data-count="{{fcount}}" href="?movzu=">Hamısı</a></span>    
+                           {% for cat in categories %}
+                                            <span class='section-name'><a data-count="{{cat.fotolar.count}}" href="?movzu={{cat.id}}">{{cat.name}}</a></span>       
+                                    
+                                     {% endfor %}
+                           
+                                  </div>
+                                  
+                           
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+             
+                    </div>
+                   </div>
+                   
+            <div class="grid-containerr">
+               
+                {% for image in photos %}
+                   <div class="fm-single-featured">
+                    <div class="fm-featured-thumb">
+                       <a href="movie.html"> <img src="{{ image.image.url }}" alt="img not found"></a>
+                    </div>
+                    <div class="fm-featured-content">
+                     
+                        <div style="border:none" class="fm-video-play">
+                            <a href="movie-details.html">
+                                <h4 class="fm-featured-title">{{image.name}}</h4>
+                             </a>
+                             <span class="fm-featured-meta">Tarix: {{image.created_at}}</span>
+                        </div>
+                     </div>
+                 </div>
+                {% endfor %}
+                 
+      
+            </div></section>
+        
+
+        <!-- slider wrapper -->
+        <!-- footer wrapper -->
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
+                    </div>
+                    <div class="col-sm-6 text-left">
+                        <img src="{% static 'templatestyles/images/icon-21.png' %}" alt="icon" class="icon-img"> 
+                    </div>
+                    <div class="col-sm-5 offset-sm-1 text-right">
+                        <form action="#" class="mt-0">
+                            <input type="text" placeholder="Email">
+                            <button>Submit</button>
+                        </form>                    
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="middle-footer">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>Social Link</h5>
+                                    <ul>
+                                        <li><a href="#">Facebook</a></li>
+                                        <li><a href="#">Twitter</a></li>
+                                        <li><a href="#">Instagram</a></li>
+                                        <li><a href="#">Youtube</a></li>
+                                        <li><a href="#">Dribble</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>ONLINE</h5>
+                                    <ul>
+                                        <li><a href="#">Web</a></li>
+                                        <li><a href="#">Series</a></li>
+                                        <li><a href="#">Natak</a></li>
+                                        <li><a href="#">Comedy</a></li>
+                                        <li><a href="#">Action</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>Language</h5>
+                                    <ul>
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">Spanish</a></li>
+                                        <li><a href="#">Arab</a></li>
+                                        <li><a href="#">Urdu</a></li>
+                                        <li><a href="#">Brazil</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5>Channel</h5>
+                                    <ul>
+                                        <li><a href="#">Makeup</a></li>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Girls</a></li>
+                                        <li><a href="#">Sandals</a></li>
+                                        <li><a href="#">Headphones</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5>About</h5>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Term of use</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Feedback</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5 class="mb-3">Office</h5>
+                                    <p style="width: 100%;">41 madison ave, floor 24 new work, NY 10010 <br>1-877-932-7111</p>
+                                    <p style="width: 100%;">41 madison ave, floor 24 new work, NY 10010 <br>1-877-932-7111</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 lower-footer"></div>
+                    <div class="col-sm-6">
+                        <p class="copyright-text">© 2020 copyright. All rights reserved.</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <p class="float-right copyright-text">In case of any concern, <a href="#">contact us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer wrapper -->
+
+    </div>
+
+    <div class="player-container lightbox" style="display: none">
+        <a href="#" class="close-video-player btn-lightbox-close"><i class="ti-close"></i></a>
+        <div class='player'>
+            <video id='video' src="{% static 'templatestyles/images/video1.mp4' %}" playsinline></video>
+                <div class='play-btn-big'></div>
+                <div class='controls'>
+                    <div class="time"><span class="time-current"></span><span class="time-total"></span></div>
+                    <div class='progress'>
+                        <div class='progress-filled'></div>
+                    </div>
+                    <div class='controls-main'>
+                        <div class='controls-left'>
+                            <div class='volume'>
+                                <div class='volume-btn loud'>
+                                    <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.75497 17.6928H2C0.89543 17.6928 0 16.7973 0 15.6928V8.30611C0 7.20152 0.895431 6.30611 2 6.30611H6.75504L13.9555 0.237289C14.6058 -0.310807 15.6 0.151473 15.6 1.00191V22.997C15.6 23.8475 14.6058 24.3098 13.9555 23.7617L6.75497 17.6928Z" transform="translate(0 0.000518799)" fill="white"/>
+                                        <path id="volume-low" d="M0 9.87787C2.87188 9.87787 5.2 7.66663 5.2 4.93893C5.2 2.21124 2.87188 0 0 0V2C1.86563 2 3.2 3.41162 3.2 4.93893C3.2 6.46625 1.86563 7.87787 0 7.87787V9.87787Z" transform="translate(17.3333 7.44955)" fill="white"/>
+
+                                        <path id="volume-high" d="M0 16.4631C4.78647 16.4631 8.66667 12.7777 8.66667 8.23157C8.66667 3.68539 4.78647 0 0 0V2C3.78022 2 6.66667 4.88577 6.66667 8.23157C6.66667 11.5773 3.78022 14.4631 0 14.4631V16.4631Z" transform="translate(17.3333 4.15689)" fill="white"/> 
+                                <path id="volume-off" d="M1.22565 0L0 1.16412L3.06413 4.0744L0 6.98471L1.22565 8.14883L4.28978 5.23853L7.35391 8.14883L8.57956 6.98471L5.51544 4.0744L8.57956 1.16412L7.35391 0L4.28978 2.91031L1.22565 0Z" transform="translate(17.3769 8.31403)" fill="white"/>
+                                    </svg>
+
+                                </div>
+                                <div class='volume-slider'>
+                                    <div class='volume-filled'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='play-btn paused'></div>
+                        <div class="controls-right">
+                            <div class='speed'>
+                                <ul class='speed-list'>
+                                    <li class='speed-item' data-speed='0.5'>0.5x</li>
+                                    <li class='speed-item' data-speed='0.75'>0.75x</li>
+                                    <li class='speed-item active' data-speed='1'>1x</li>
+                                    <li class='speed-item' data-speed='1.5'>1.5x</li>
+                                    <li class='speed-item' data-speed='2'>2x</li>
+                                </ul>
+                            </div>
+                            <div class='fullscreen'>
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0V-1.5H-1.5V0H0ZM0 18H-1.5V19.5H0V18ZM26 18V19.5H27.5V18H26ZM26 0H27.5V-1.5H26V0ZM1.5 6.54545V0H-1.5V6.54545H1.5ZM0 1.5H10.1111V-1.5H0V1.5ZM-1.5 11.4545V18H1.5V11.4545H-1.5ZM0 19.5H10.1111V16.5H0V19.5ZM24.5 11.4545V18H27.5V11.4545H24.5ZM26 16.5H15.8889V19.5H26V16.5ZM27.5 6.54545V0H24.5V6.54545H27.5ZM26 -1.5H15.8889V1.5H26V-1.5Z" transform="translate(2 2)" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>   
+        .p-0{
+            display: block !important;
+        } 
+        .theme-dark {
+            background-color: #171717
+        }
+        
+a {
+    text-decoration: none;
+  }
+  
+  .pagination-wrapper {
+    text-align: center;
+    margin: 40px 0;
+    margin-left:auto;
+    margin-right:auto
+  }
+  
+  .pagination {
+    display: inline-block;
+    height: 70px;
+    margin-top: 40px;
+    padding: 0 25px;
+    border-radius: 35px;
+    background-color: #eee;
+  }
+  @media only screen and (max-width: 1199px) {
+    .pagination {
+      height: 50px;
+      margin-top: 50px;
+      padding: 0 10px;
+      border-radius: 25px;
+    }
+  }
+  
+  .page-numbers {
+    display: block;
+    padding: 0 25px;
+    float: left;
+    transition: 400ms ease;
+    color: #595959;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    line-height: 70px;
+  }
+  .page-numbers:hover, .page-numbers.current {
+    background-color: #555555;
+    color: #fff;
+  }
+  .page-numbers.prev:hover, .page-numbers.next:hover {
+    background-color: transparent;
+    color: #86c023;
+  }
+  @media only screen and (max-width: 1199px) {
+    .page-numbers {
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 50px;
+    }
+  }
+  @media only screen and (min-width: 120px) and (max-width: 1024px) {
+    .page-numbers {
+      padding: 0 14px;
+      display: none;
+    }
+    .page-numbers:nth-of-type(2) {
+      position: relative;
+      padding-right: 50px;
+    }
+    .page-numbers:nth-of-type(2)::after {
+      content: "...";
+      position: absolute;
+      font-size: 25px;
+      top: 0;
+      left: 45px;
+    }
+    .page-numbers:nth-child(-n+3), .page-numbers:nth-last-child(-n+3) {
+      display: block;
+    }
+    .page-numbers:nth-last-child(-n+4) {
+      padding-right: 14px;
+    }
+    .page-numbers:nth-last-child(-n+4)::after {
+      content: none;
+    }
+  }
+</style>
+
+<style>
+    .aboutimage-div{
+        margin-top:1%;
+        display: flex;
+        text-decoration: none;
+       
+        background-color: rgba(23, 54, 79, 1);
+        padding-left:3%;
+    }
+
+    .aboutimagetext-div{
+        padding-left:3%;
+        padding-right:3%;
+        padding-top: 5%;
+    }
+
+    .aboutimagetext-div h2{
+        color:white;
+        font-size: 96px;
+        padding-bottom: 2%;
+    }
+
+    .aboutimagetext-div{
+        font-size: 32px;
+    }
+    .myphoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        margin-top:10px !important;
+        overflow-y: auto;
+      }
+      
+      .grid-containerr {
+        columns: 4 200px !important;
+        column-gap: 1.5rem;
+        width: 90%;
+        margin: 0 auto;
+      }
+      
+      .grid-containerr div {
+        width: 150px;
+        margin: 0 1.5rem 1rem 0;
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.25s ease-in-out;
+      }
+      @media(min-width:992px){
+        .nav-item:hover{
+            background-color: #D2691E;
+        }
+    }
+      .grid-containerr div:hover img {
+        filter: grayscale(100%);
+      }
+
+      
+      .grid-containerr div:hover {
+        border-color: coral;
+      }
+      
+      .grid-containerr div img {
+        width: 100%;
+        filter: grayscale(0);
+        border-radius: 5px;
+        transition: all 0.25s ease-in-out;
+      }
+      
+      .grid-containerr div p {
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        font-style: italic;
+      }
+      .blog-rotate-btn span {
+
+        font-size: 44px;
+    }
+    @media (max-width: 992px){
+    .navbar-collapse {
+        flex-basis: 100% !important;
+    }
+    #reab{
+        display: block !important;
+    }
+    
+}
+
+  
+</style>
+
+<style>
+ .isotope-filter--isotope{
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+    --drawer-width: 480px;
+    --neg-drawer-width: calc(var(--drawer-width)*-1);
+    --woocommerce: #7F54B3;
+    --wc-green: #7ad03a;
+    --wc-red: #a00;
+    --wc-orange: #ffba00;
+    --wc-blue: #2ea2cc;
+    --wc-primary: #7F54B3;
+    --wc-primary-text: white;
+    --wc-secondary: #e9e6ed;
+    --wc-secondary-text: #515151;
+    --wc-highlight: #b3af54;
+    --wc-highligh-text: white;
+    --wc-content-bg: #fff;
+    --wc-subtext: #767676;
+    --page-title-display: block;
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+    --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+    --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+    --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+    --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+    --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+    --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+    --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+    --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+    --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+    --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+    --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+    --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+    --wp--preset--font-size--small: 13px;
+    --wp--preset--font-size--medium: 20px;
+    --wp--preset--font-size--large: 36px;
+    --wp--preset--font-size--x-large: 42px;
+    --wp--preset--spacing--20: 0.44rem;
+    --wp--preset--spacing--30: 0.67rem;
+    --wp--preset--spacing--40: 1rem;
+    --wp--preset--spacing--50: 1.5rem;
+    --wp--preset--spacing--60: 2.25rem;
+    --wp--preset--spacing--70: 3.38rem;
+    --wp--preset--spacing--80: 5.06rem;
+    --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+    --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #9da1a5;
+    --e-global-color-primary: #6EC1E4;
+    --e-global-color-secondary: #54595F;
+    --e-global-color-text: #7A7A7A;
+    --e-global-color-accent: #61CE70;
+    --e-global-color-1c81762: #4054B2;
+    --e-global-color-3a972d51: #23A455;
+    --e-global-color-6c80e7e5: #000;
+    --e-global-color-528eeb43: #FFF;
+    --e-global-typography-primary-font-family: "Roboto";
+    --e-global-typography-primary-font-weight: 600;
+    --e-global-typography-secondary-font-family: "Roboto Slab";
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Roboto";
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-accent-font-family: "Roboto";
+    --e-global-typography-accent-font-weight: 500;
+    --e-column-margin-right: 0px;
+    --e-column-margin-left: 0px;
+    --flex-direction: initial;
+    --flex-wrap: initial;
+    --justify-content: initial;
+    --align-items: initial;
+    --align-content: initial;
+    --gap: initial;
+    --flex-basis: initial;
+    --flex-grow: initial;
+    --flex-shrink: initial;
+    --order: initial;
+    --align-self: initial;
+    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    --swiper-pagination-bullet-size: 6px;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    --widgets-spacing: 20px 20px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 22px;
+    text-align: right;}
+    .isotope-filter a.active:before {
+        width: 100%;
+    }
+    .isotope-filter a:before {
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        width: 0;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        content: '';
+        border-top: 1px solid;
+        transition: all 300ms;
+    }
+   .isotope-filter a:after{
+        margin-left: 4px;
+        content: '('attr(data-count)')';
+        font-size: 0.8em;
+        line-height: 1;
+        vertical-align: super;
+        letter-spacing: 0;
+    }
+    .elementor-widget-gt3-core-portfolio .isotope-filter a:after, .elementor-widget-gt3-core-team .isotope-filter a:after, .isotope-filter a span.count {
+        margin-left: 4px;
+        content: '('attr(data-count)')';
+        font-size: 0.8em;
+        line-height: 1;
+        vertical-align: super;
+        letter-spacing: 0;
+    }
+    .isotope-filter--isotope a{
+    text-align: right;
+    outline: none !important;
+    box-sizing: border-box;
+    box-shadow: none;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 12px;
+    letter-spacing: .08em;
+    line-height: 24px;
+    transition: all .4s;
+    margin-right: 30px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #FFFFFF;}
+
+
+    .transparent-header{
+        position: relative;
+    }
+    .banner-wrapper{
+        margin-top:10px;
+    }
+</style>
+
+
+<style>
+    
+
+</style>
+
+<script src="{% static 'templatestyles/js/plugin.js' %}"></script>
+<script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'templatestyles/js/scripts.js' %}"></script>
+<script src="{% static 'templatestyles/js/video-player.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/meanmenu.js' %}"></script>
+<script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/parallax.min.js' %}"></script>
+<script src="{% static 'assets/js/gsap.min.js' %}"></script>
+<script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+<script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+<script src="{% static 'assets/js/appair.min.js' %}"></script>
+<script src="{% static 'assets/js/knob.min.js' %}"></script>
+<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/ajax-form.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+<script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'a.scss' %}"></script>
+    
+</body>
+
+
+<!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:02:21 GMT -->
+</html>

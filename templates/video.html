@@ -1,0 +1,786 @@
+{% load static %}
+<html lang="en">
+
+<!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:01:07 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vstream - Media Landing Page</title>
+
+    <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'templatestyles/css/video-player.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+
+<body class="theme-dark">
+
+    <div class="preloader"></div>
+
+    <div class="backdrop"></div>
+    <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
+    <div class="switchcolor-wrap">
+        <a class="link sheet-close"><i class="ti-close"></i></a>
+        <h2>Settings</h2>
+        <h4>Choose Color Theme</h4>
+        <ul>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
+                    <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-blue" style="background-color: #132977;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
+                    <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
+                    <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
+                    <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
+                    <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
+                </label>
+            </li>
+
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
+                    <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
+                    <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
+                    <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
+                </label>
+            </li>
+            
+            
+        </ul>
+        <div class="toggle-div mt-4">
+            <h4 class="d-inline">Dark Mode</h4>
+            <div class="d-inline float-right">
+                <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+              <!-- header wrapper -->
+              <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
+                <div class="container">
+                   <div class="row align-items-center justify-content-lg-between">
+                      <div class="header-wrapper">
+                         <div class="fm-header-logo-wrapper">
+                            <a href="index-2.html" class="fm-header-logo">
+                               <img src="{% static 'assets/img/logo/logo.png' %}" alt="img not found">
+                            </a>
+          
+                            <span class="separator d-none d-xl-block"></span>
+                            <a href="#0" class="fm-header-bar-1">
+                               <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                               <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                               <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                            </a>
+                         </div>
+                         <div class="header-menu-spc d-none d-xl-block">
+                            <div class="fm-header-nav">
+          
+                               <nav id="mobile-menu" style="display: block;">
+                                  <ul>
+                                     <li class="active has-dropdown">
+                                        <a href="{% url 'home' %}">Əsas səhifə</a>
+                                      
+                                     </li>
+          
+          
+                                     <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                                        <ul class="submenu">
+                                            {% for cat in vidcategories %}
+                                            <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                            {% endfor %}
+                                          
+                                        </ul>
+                                     </li>
+          
+                                     <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                                        <ul class="submenu">
+                                            {% for cat in fotcategories %}
+                                           <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                           {% endfor %}
+                                  
+                                        </ul>
+                                     </li>
+          
+                                     <li class="has-dropdown has-mega-menu">
+                                        <a href="{% url 'blog' %}">Xəbərlər</a>
+                                      
+                                     </li>
+          
+                                     <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
+                                        <ul class="submenu">
+                                            {% for cat in artcategories %}
+                                            <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                     </li>
+          
+          
+                                     <li class="has-dropdown"><a href="contact.html">Lahiyə haqqında</a>
+                                     </li>
+                                  </ul>
+                               </nav>
+          
+                            </div>
+                         </div>
+                         <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
+                            <a href="contact.html" class="fill-btn" style="font-size:14px;line-height:20px">REABİLİTASİYA <br> HƏYATDIR
+                               <span>
+                                  <i class="fa-regular fa-arrow-right"></i>
+                               </span>
+                            </a>
+                         </div>
+                      </div>
+          
+                   </div>
+                </div>
+             </header>
+          
+            <!-- header wrapper -->
+    
+       <!-- sidebar area start -->
+       <div class="fm-header-sidebar-area fm-header-sidebar-left">
+        <div class="fm-header-sidebar-wrapper">
+           <div class="fm-header-sidebar-action mb-65">
+              <div class="fm-header-sidebar-logo">
+                 <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+              </div>
+              <div class="offcanvas-close">
+                 <a class="offcanvas-btn" href="#0">
+                    <i class="fa-thin fa-times"></i>
+                 </a>
+              </div>
+           </div>
+           <div class="d-none d-sm-block">
+              <div class="fm-header-sidebar-search">
+                 <form action="https://html.bdevs.net/faime-prev/index.html">
+                    <input type="text" placeholder="Search here">
+                    <button type="submit"><i class="flaticon flaticon-search"></i></button>
+                 </form>
+              </div>
+           </div>
+           <div class="mobile-menu"></div>
+           <div class="d-none d-sm-block">
+              <div class="fm-offcanvas-about mt-30 mb-30">
+                 <h4>About Faime</h4>
+                 <p>We Believe Film And Moving Image Has The Power
+                    To
+                    Create
+                    Significant Change.</p>
+              </div>
+           </div>
+           <div class="offcanvas-contact mt-30 mb-30">
+              <h4 class="offcanvas-contact-title">Contact Information</h4>
+              <ul>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                          <i class="fal fa-map-marker-alt"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                          Broadway, NY 10013 Bournemouth</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="tel:915550303420">+91 555 0303 420</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#53202623233c212713343e323a3f7d303c3e"><i class="fal fa-envelope"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#224a474e4e4d6244434b4f474f47464b430c414d4f"><span class="__cf_email__" data-cfemail="d0b8b5bcbcbf90b6b1b9bdb5bdb5b4b9b1feb3bfbd">[email&#160;protected]</span></a>
+                    </div>
+                 </li>
+              </ul>
+           </div>
+           <div class="d-none d-sm-block d-sm-none d-md-block">
+              <div class="fm-offcanvas-social">
+                 <span class="social-text">Follow :</span>
+                 <div class="fm-offcanvas-social-icon">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="overlay"></div>
+     <!-- sidebar area end -->
+        
+        <!-- banenr wrapper -->
+        <div class="banner-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="banner-slider owl-carousel owl-theme">
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Mother of  <br>Brooklyn</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-4.jpg' %}');"></div>
+                                </div>
+                            </div>
+
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Made <br> in heaven</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-3.jpg' %}');"></div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="owl-items">
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>Zero<br> dark night</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap" style="background-image: url('{% static 'templatestyles/images/banner-2.jpg' %}');"></div>
+                                </div>
+
+                            </div>
+                            <div class="owl-items">
+
+                                <div class="banner-wrap justify-content-between align-items-center">
+                                    <div class="left-wrap">
+                                        <span class="rnd">IMDb 6.7</span>
+                                        <h2>The <br> night ever</h2>
+                                        <span class="tag"><b>SEASON 1</b></span>
+                                        <span class="tag">2020</span>
+                                        <span class="tag"><b>HD</b></span>
+                                        <span class="tag"><b>16+</b></span>
+                                        <span class="tag">2 h 20 min</span>
+                                        <p>Radhe is a singing prodigy determined to follow in the classical footsteps of his grandfather. Tamanna is a YouTube pop sensation desperate to become .</p>
+                                        <a href="#" class="btn btn-lg btn-video"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">Watch now</a>
+                                    </div>
+                                    <div class="right-wrap">
+                                        <video autoplay muted loop id="myVideo">
+                                          <source src="images/video3.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banenr wrapper -->
+        <div class="category-wrapper slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Kateqoriyalar</h2>
+                    </div>
+                     
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="category-slider owl-carousel owl-theme">
+                        
+                        {% for cat in categories %}
+                            <div class="owl-items">
+                                <a href="{% url 'video' %}?movzu={{cat.id}}" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!-- slider wrapper -->
+        <div class="slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-4">
+                        <h2>Videolar</h2>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            {% for video in video_list %}
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 md-mb25">
+                                <a class="slide-one" href="season.html">
+                                    <div class="slide-image"><img src="{{video.coverimage.url}}" alt="image"></div>
+                                    <div class="slide-content">
+                                        <h2>{{video.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <p>{{video.content|slice:70}}</p>
+                                 
+                                        <span class="tag">{{video.created_at}}</span>
+                                        <span class="tag"><b>HD</b></span>
+                               
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                 
+
+                    <div class="pagination-wrapper">
+                        <div class="pagination">
+                          <a class="prev page-numbers" {% if video_list.has_previous %} href="?page={{ video_list.next_previous_number }}" style="cursor: pointer;"{% else %} style="cursor:not-allowed" {% endif %}>prev</a>
+                          {% for page_num in video_list.paginator.page_range %}
+                          <a aria-current="page" class="page-numbers {% if page_num == video_list.number %}current{% endif %}" href="?page={{page_num}}">{{page_num}}</a>
+                            {% endfor %}
+                          <a class="next page-numbers" {% if video_list.has_next %} href="?page={{ video_list.next_page_number }}" style="cursor: pointer;"{% else %} style="cursor:not-allowed" {% endif %}>next</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+        <div class="slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Tövsiyyə olunan videolar</h2>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider owl-carousel owl-theme">
+                            {% for video in related_videos %}
+                            <div class="owl-items">
+                                <a class="slide-one" href="season.html">
+                                    <div class="slide-image"><img src="{{ video.coverimage.url }}" alt="image"></div>
+                                    <div class="slide-content">
+                                        <h2>{{video.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <p>{{video.content}}</p>
+                                   
+                                        <span class="tag">{{video.created_at}}</span>
+                                        <span class="tag"><b>HD</b></span>
+                        
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+
+        <!-- slider wrapper -->
+        <div class="slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Filmlər</h2>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider owl-carousel owl-theme">
+                            {% for movie in movies %}
+                            <div class="owl-items">
+                                <a class="slide-one slide-two" href="#">
+                                    <div class="slide-image" style="background-image: url('{% static 'templatestyles/images/s17.png' %}');"></div>
+                                    <div class="slide-content">
+                                        <h2>{{movie.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <span class="tag">{{ movie.created_at }}</span>
+                                    
+                                        <span class="tag"><b>HD</b></span>
+                            
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+  
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+    
+        <!-- slider wrapper -->
+        <!-- footer wrapper -->
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-left">
+                        <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
+                    </div>
+                    <div class="col-sm-6 text-left">
+                        <img src="{% static 'templatestyles/images/icon-21.png' %}" alt="icon" class="icon-img"> 
+                    </div>
+                    <div class="col-sm-5 offset-sm-1 text-right">
+                        <form action="#" class="mt-0">
+                            <input type="text" placeholder="Email">
+                            <button>Submit</button>
+                        </form>                    
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="middle-footer">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>Social Link</h5>
+                                    <ul>
+                                        <li><a href="#">Facebook</a></li>
+                                        <li><a href="#">Twitter</a></li>
+                                        <li><a href="#">Instagram</a></li>
+                                        <li><a href="#">Youtube</a></li>
+                                        <li><a href="#">Dribble</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>ONLINE</h5>
+                                    <ul>
+                                        <li><a href="#">Web</a></li>
+                                        <li><a href="#">Series</a></li>
+                                        <li><a href="#">Natak</a></li>
+                                        <li><a href="#">Comedy</a></li>
+                                        <li><a href="#">Action</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6 md-mb25">
+                                    <h5>Language</h5>
+                                    <ul>
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">Spanish</a></li>
+                                        <li><a href="#">Arab</a></li>
+                                        <li><a href="#">Urdu</a></li>
+                                        <li><a href="#">Brazil</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5>Channel</h5>
+                                    <ul>
+                                        <li><a href="#">Makeup</a></li>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Girls</a></li>
+                                        <li><a href="#">Sandals</a></li>
+                                        <li><a href="#">Headphones</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5>About</h5>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Term of use</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Feedback</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-lg-2 col-sm-6 col-xs-6">
+                                    <h5 class="mb-3">Office</h5>
+                                    <p style="width: 100%;">41 madison ave, floor 24 new work, NY 10010 <br>1-877-932-7111</p>
+                                    <p style="width: 100%;">41 madison ave, floor 24 new work, NY 10010 <br>1-877-932-7111</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 lower-footer"></div>
+                    <div class="col-sm-6">
+                        <p class="copyright-text">© 2020 copyright. All rights reserved.</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <p class="float-right copyright-text">In case of any concern, <a href="#">contact us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer wrapper -->
+
+    </div>
+
+    <div class="player-container lightbox" style="display: none">
+        <a href="#" class="close-video-player btn-lightbox-close"><i class="ti-close"></i></a>
+        <div class='player'>
+            <video id='video' src="{% static 'templatestyles/images/video1.mp4' %}" playsinline></video>
+                <div class='play-btn-big'></div>
+                <div class='controls'>
+                    <div class="time"><span class="time-current"></span><span class="time-total"></span></div>
+                    <div class='progress'>
+                        <div class='progress-filled'></div>
+                    </div>
+                    <div class='controls-main'>
+                        <div class='controls-left'>
+                            <div class='volume'>
+                                <div class='volume-btn loud'>
+                                    <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.75497 17.6928H2C0.89543 17.6928 0 16.7973 0 15.6928V8.30611C0 7.20152 0.895431 6.30611 2 6.30611H6.75504L13.9555 0.237289C14.6058 -0.310807 15.6 0.151473 15.6 1.00191V22.997C15.6 23.8475 14.6058 24.3098 13.9555 23.7617L6.75497 17.6928Z" transform="translate(0 0.000518799)" fill="white"/>
+                                        <path id="volume-low" d="M0 9.87787C2.87188 9.87787 5.2 7.66663 5.2 4.93893C5.2 2.21124 2.87188 0 0 0V2C1.86563 2 3.2 3.41162 3.2 4.93893C3.2 6.46625 1.86563 7.87787 0 7.87787V9.87787Z" transform="translate(17.3333 7.44955)" fill="white"/>
+
+                                        <path id="volume-high" d="M0 16.4631C4.78647 16.4631 8.66667 12.7777 8.66667 8.23157C8.66667 3.68539 4.78647 0 0 0V2C3.78022 2 6.66667 4.88577 6.66667 8.23157C6.66667 11.5773 3.78022 14.4631 0 14.4631V16.4631Z" transform="translate(17.3333 4.15689)" fill="white"/> 
+                                <path id="volume-off" d="M1.22565 0L0 1.16412L3.06413 4.0744L0 6.98471L1.22565 8.14883L4.28978 5.23853L7.35391 8.14883L8.57956 6.98471L5.51544 4.0744L8.57956 1.16412L7.35391 0L4.28978 2.91031L1.22565 0Z" transform="translate(17.3769 8.31403)" fill="white"/>
+                                    </svg>
+
+                                </div>
+                                <div class='volume-slider'>
+                                    <div class='volume-filled'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='play-btn paused'></div>
+                        <div class="controls-right">
+                            <div class='speed'>
+                                <ul class='speed-list'>
+                                    <li class='speed-item' data-speed='0.5'>0.5x</li>
+                                    <li class='speed-item' data-speed='0.75'>0.75x</li>
+                                    <li class='speed-item active' data-speed='1'>1x</li>
+                                    <li class='speed-item' data-speed='1.5'>1.5x</li>
+                                    <li class='speed-item' data-speed='2'>2x</li>
+                                </ul>
+                            </div>
+                            <div class='fullscreen'>
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0V-1.5H-1.5V0H0ZM0 18H-1.5V19.5H0V18ZM26 18V19.5H27.5V18H26ZM26 0H27.5V-1.5H26V0ZM1.5 6.54545V0H-1.5V6.54545H1.5ZM0 1.5H10.1111V-1.5H0V1.5ZM-1.5 11.4545V18H1.5V11.4545H-1.5ZM0 19.5H10.1111V16.5H0V19.5ZM24.5 11.4545V18H27.5V11.4545H24.5ZM26 16.5H15.8889V19.5H26V16.5ZM27.5 6.54545V0H24.5V6.54545H27.5ZM26 -1.5H15.8889V1.5H26V-1.5Z" transform="translate(2 2)" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>    
+        .theme-dark {
+            background-color: #171717
+        }
+        
+a {
+    text-decoration: none;
+  }
+  
+  .pagination-wrapper {
+    text-align: center;
+    margin: 40px 0;
+    margin-left:auto;
+    margin-right:auto
+  }
+  
+  .pagination {
+    display: inline-block;
+    height: 70px;
+    margin-top: 40px;
+    padding: 0 25px;
+    border-radius: 35px;
+    background-color: #eee;
+  }
+  @media only screen and (max-width: 1199px) {
+    .pagination {
+      height: 50px;
+      margin-top: 50px;
+      padding: 0 10px;
+      border-radius: 25px;
+    }
+  }
+  
+  .page-numbers {
+    display: block;
+    padding: 0 25px;
+    float: left;
+    transition: 400ms ease;
+    color: #595959;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    line-height: 70px;
+  }
+  .page-numbers:hover, .page-numbers.current {
+    background-color: #555555;
+    color: #fff;
+  }
+  .page-numbers.prev:hover, .page-numbers.next:hover {
+    background-color: transparent;
+    color: #86c023;
+  }
+  @media only screen and (max-width: 1199px) {
+    .page-numbers {
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 50px;
+    }
+  }
+  @media only screen and (min-width: 120px) and (max-width: 1024px) {
+    .page-numbers {
+      padding: 0 14px;
+      display: none;
+    }
+    .page-numbers:nth-of-type(2) {
+      position: relative;
+      padding-right: 50px;
+    }
+    .page-numbers:nth-of-type(2)::after {
+      content: "...";
+      position: absolute;
+      font-size: 25px;
+      top: 0;
+      left: 45px;
+    }
+    .page-numbers:nth-child(-n+3), .page-numbers:nth-last-child(-n+3) {
+      display: block;
+    }
+    .page-numbers:nth-last-child(-n+4) {
+      padding-right: 14px;
+    }
+    .page-numbers:nth-last-child(-n+4)::after {
+      content: none;
+    }
+  }
+  .owl-items p{
+    color:black;
+    line-height: 50px;
+    font-weight: 500;
+  }
+  .transparent-header{
+    position: relative;
+}
+.banner-wrapper{
+    margin-top:10px;
+}
+</style>
+
+
+    <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
+    <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
+    <script src="{% static 'templatestyles/js/video-player.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+    <script src="{% static 'assets/js/appair.min.js' %}"></script>
+    <script src="{% static 'assets/js/knob.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:02:21 GMT -->
+</html>
