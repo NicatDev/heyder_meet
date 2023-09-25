@@ -30,7 +30,7 @@ def blog(request):
         start = 1
         end = end+3
    
-    print(start,)
+
     blog_list = paginator.get_page(page)
     if end > blog_list.number:
         end = blog_list.number
