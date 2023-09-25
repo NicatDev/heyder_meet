@@ -64,7 +64,16 @@ def article(request):
     article_list = paginator.get_page(page)
     tags = Tag.objects.all()
     categories = Category.objects.all()
-    context = {'articles':article_list}
+    fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
+    artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+
+    context = {
+        'articles':article_list,
+        'fotcategories':fotcategories,
+        'artcategories':artcategories,
+        'vidcategories':vidcategories
+        }
     return render(request,'article.html',context)
 
 def blogsingle(request,slug=None):
@@ -138,12 +147,18 @@ def video(request):
     page = request.GET.get("page", 1)
     video_list = paginator.get_page(page)
     videos = videos.order_by('ordering')
-    vidcategories = Category.objects.annotate(video_count=Count('videolar')).filter(video_count__gt=0)
+    fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
+    artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+
     context = {
         'video_list':video_list,
         'movies':movies,
         'related_videos':videos,
-        'categories':vidcategories
+        'categories':vidcategories,
+        'fotcategories':fotcategories,
+        'artcategories':artcategories,
+        'vidcategories':vidcategories
     }
     return render(request,'video.html',context)
 
@@ -152,13 +167,18 @@ def foto(request):
     photos = Photo.objects.all()
     if request.GET.get('movzu'):
         photos = photos.filter(category=request.GET.get('movzu'))
-
+    fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
+    artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
 # Get a queryset of categories with at least one product
     categories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     context = {
         'photos':photos,
         'categories':categories,
-        'fcount':fcount
+        'fcount':fcount,
+        'fotcategories':fotcategories,
+        'artcategories':artcategories,
+        'vidcategories':vidcategories
     }
     return render(request,'foto.html',context)
 
