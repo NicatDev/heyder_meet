@@ -59,6 +59,9 @@ def blog(request):
 
 def article(request):
     articles = Article.objects.all()
+    tag_name = request.GET.get('tag','')
+    if tag_name:
+        articles = articles.filter(tag__name = tag_name)
     paginator = Paginator(articles, 12)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
@@ -67,7 +70,7 @@ def article(request):
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
-
+    
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -104,6 +107,7 @@ def blogsingle(request,slug=None):
     return render(request,'blog-details.html',context)
 
 def home(request):
+
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
@@ -184,3 +188,62 @@ def foto(request):
 
 
 
+def about(request):
+
+
+ 
+    fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
+    artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+# Get a queryset of categories with at least one product
+    categories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    context = {
+
+        'categories':categories,
+ 
+        'fotcategories':fotcategories,
+        'artcategories':artcategories,
+        'vidcategories':vidcategories
+    }
+    return render(request,'about.html',context)
+
+
+
+
+def articlesingle(request,slug=None):
+
+    blog = get_object_or_404(Article,slug=slug)
+    if blog.date==None:
+        blog.date = datetime.now()
+        blog.save()
+    next_post = Article.objects.filter(date__gt=blog.date).order_by('date').first()
+    pre_post = Article.objects.filter(date__lt=blog.date).order_by('-date').first()
+    if not next_post:
+        next_post = Article.objects.exclude(slug=blog.slug)
+        if next_post:
+            next_post = next_post.first()
+        else:
+            next_post = blog
+    if not pre_post:
+        pre_post = Article.objects.exclude(slug=blog.slug).exclude(slug=next_post.slug)
+        if pre_post:
+            pre_post = pre_post.first()
+        else:
+            pre_post = blog
+    
+    tags = blog.tag.all()
+    related_blogs = Article.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
+    if len(related_blogs)<2:
+        related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
+    most_blogs = Article.objects.all().order_by('views')[0:3]
+    context = {
+        'blog':blog,
+        'tags':tags,
+        'alltags':Tag.objects.all(),
+        'next':next_post,
+        'pre':pre_post,
+        'related_blogs':related_blogs,
+        'most_blogs':most_blogs
+        
+    }
+    return render(request,'articlesingle.html',context)

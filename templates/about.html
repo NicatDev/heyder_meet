@@ -12,11 +12,6 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="custom.js"></script>
     <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -155,25 +150,7 @@
                            <span class="fm-header-bar-line fm-header-bar-line-2"></span>
                            <span class="fm-header-bar-line fm-header-bar-line-3"></span>
                         </a>
-
-                        <!-- <img src=" {}" alt="">   
-                        {} -->
-                        <div class="dropdown">
-                            <button class="dropbtn"><img src="% static 'azerbaijan.png' %" alt=""></button>
-                            <div class="dropdown-content">
-                              <a href="#"><img src="% static 'russia.png' %" alt="">
-                              </a>
-                             
-                            </div>
-                          </div>
-
-                        <ul class="">
-                            <li>az</li>
-                            <li>eng</li>
-                         </ul>
-
                      </div>
-                     
                      <div class="header-menu-spc d-none d-xl-block">
                         <div class="fm-header-nav">
       
@@ -238,7 +215,7 @@
          </header>
       
         <!-- header wrapper -->
-         <!-- Heyderle ireli  -->
+
    <!-- sidebar area start -->
    <div class="fm-header-sidebar-area fm-header-sidebar-left">
     <div class="fm-header-sidebar-wrapper">
@@ -259,7 +236,6 @@
                 <button type="submit"><i class="flaticon flaticon-search"></i></button>
              </form>
           </div>
-          
           
        </div>
        <div class="mobile-menu"></div>
@@ -322,58 +298,14 @@
  <div class="overlay"></div>
  <!-- sidebar area end -->
         <!-- banenr wrapper -->
-        <div class="banner-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="banner-wrap justify-content-between align-items-center">
-                            <div class="left-wrap">
-                                <span style="opacity: 0;" class="rnd">IMDb 6.7</span>
-                                <h2>{{ HomeHeader.title|safe }}</h2>
-                                <span style="opacity: 0;" class="tag"><b>Heyder Eliyev</b></span>
-                                <span style="opacity: 0;" class="tag">2020</span>
-                                <span style="opacity: 0;" class="tag"><b>HD</b></span>
-                                <span style="opacity: 0;" class="tag"><b>16+</b></span>
-                                <span style="opacity: 0;" class="tag">2 h 20 min</span>
-                                <p>{{HomeHeader.content|safe}}</p>
-                                <a href="{{HomeHeader.href.url}}" class="btn btn-lg" style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img src="{% static 'templatestyles/images/play.png' %}" alt="icn">İndi izlə !</a>
-                            </div>
-                            <div class="right-wrap">
-                                <video autoplay muted loop id="myVideo">
-                                  <source src="{{HomeHeader.video.url}}"  type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="slide-wrapper">
-                        <div class="slide-slider-full owl-carousel owl-theme">
-                            {% for video in HomeHeaderVideo %}
-                            <div class="owl-items">
-                                <a class="slide-one slide-two slide-three popup-video" href="{{video.video.url}}">
-                                    <div class="slide-image" style="background-image:url('{{video.coverimage.url}}')"></div>
-                                    <div class="slide-content">
-                                        <h2>{{video.name}}
-                                            
-                                        </h2>
-                                  
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
-                        
-                        </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <!-- banenr wrapper -->
 
         <!-- lahiye haqqinda -->
         <div class="aboutimagetitle-div">
             <h3>Lahiyə haqqında</h3>
         </div>
+
             <!-- fm-about-area-start -->
     <div style="margin-top:1%;" class="fm-about-area bg-common-black section-spacing fix">
         <div class="container">
@@ -401,46 +333,66 @@
                        of my
                        most iconic work was created with Canon DSLRs. Sloping each project alongside the
                        communities at
+                       the heart of her stories in order to ensure authenticity.
+                       most iconic work was created with Canon DSLRs. Sloping each project alongside the
+                       communities at
+                       the heart of her stories in order to ensure authenticity.
+                       the heart of her stories in order to ensure authenticity.
+                       the heart of her stories in order to ensure authenticity.
                        the heart of her stories in order to ensure authenticity.</p>
 
                     <p>I can film your project whether it is a commercial advertise, a short film or a document
                        film. I
                        have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
                     </p>
-                    <div class="fm-director-about-name mt-55">
+                    <!-- <div class="fm-director-about-name mt-55">
                        <a href="team-details.html" class="director-about-nam">David Anderson</a>
-                    </div>
+                    </div> -->
+                    
                  </div>
+              
               </div>
            </div>
+           <p style="margin-top:3%;    color: var(--clr-body-text4);text-align:justify">I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+            I can film your project whether it is a commercial advertise, a short film or a document
+            film. I
+            have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+         </p>
         </div>
      </div>
      <!-- fm-about-area-end -->
-     <!-- fm-about-area-end -->
-   
-
-
-
-
-
-
-
-
-
 
 
     <style>
-        .myhovdiv22 p{
-            text-align: center !important;
-        }
         @media screen and  (max-width: 1830px) and (min-width:1600px) {
             .myhovdiv22 p{font-size:16px !important}
         }
-
+        @media screen and  (max-width:1500px) {
+            .myhovdiv22 p{font-size:16px !important}
+        }
         @media screen and  (max-width: 1300px) and (min-width:1000px) {
           .myhovdiv22 p{font-size:16px}
           .myhovdiv22 a{font-size:22px}
-          .myhovdiv22 i{font-size: 22px;}
           .myhovdiv22{padding-left:4% !important;padding-right:4% !important}
           .myhovdiv22 img{padding-left:5px !important;padding-right:5px !important;}
           #hvprnt2:hover .myhovdiv22 i {
@@ -461,7 +413,7 @@
             #hvprnt3{border-radius:15px !important;}
         }
         @media screen and  (max-width: 800px) {
-            .myhovdiv22 p{font-size:20px !important}
+            .myhovdiv22 p{font-size:15px}
           
             .myhovdiv22{padding-left:4% !important;padding-right:4% !important}
             .myhovdiv22 img{padding-left:5px !important;padding-right:5px !important;}
@@ -487,19 +439,19 @@
                 padding-left: 5px !important; 
                 padding-right: 5px !important;
                 margin-top: 10%;
-               
+                font-size: 20px !important;
             }
             #hvprnt2:hover .myhovdiv22 a {
                 padding-left: 5px !important; 
                 padding-right: 5px !important;
                 margin-top: 10%;
-             
+                font-size: 20px !important;
             }
             #hvprnt3:hover .myhovdiv22 a {
                 padding-left: 5px !important; 
                 padding-right: 5px !important;
                 margin-top: 10%;
-             
+                font-size: 20px !important;
             }
             #hvprnt1:hover .myhovdiv22 i {
                 font-size:20px !important
@@ -510,138 +462,6 @@
             #hvprnt3:hover .myhovdiv22 i {
                 font-size:20px !important
             }
-        }
-        @media screen and  (max-width: 570px) {
-            .myhovdiv22{
-                align-items: center;
-                justify-content: center;
-            }
-           
-            .myhovdiv22 p {
-                font-size: 17px !important;
-            }
-            #hvprnt1{
-                height: 310px !important;
-            }
-            #hvprnt1 .myhovdiv22 a{
-                font-size: 20px !important;
-            }
-            #hvprnt1 .myhovdiv22 i{
-                font-size: 20px !important;
-            }
-            #hvprnt1:hover .myhovdiv22 a {
-                font-size:20px !important
-            }
-            #hvprnt1:hover .myhovdiv22 i {
-                font-size:20px !important
-            }
-            
-
-            #hvprnt2{
-                height: 310px !important;
-            }
-            #hvprnt2 .myhovdiv22 a{
-                font-size: 20px !important;
-            }
-            #hvprnt2 .myhovdiv22 i{
-                font-size: 20px !important;
-            }
-            #hvprnt2:hover .myhovdiv22 a {
-                font-size:20px !important
-            }
-            #hvprnt2:hover .myhovdiv22 i {
-                font-size:20px !important
-            }
-
-
-            #hvprnt3{
-                height: 310px !important;
-            }
-            #hvprnt3 .myhovdiv22 a{
-                font-size: 20px !important;
-            }
-            #hvprnt3 .myhovdiv22 i{
-                font-size: 20px !important;
-            }
-            #hvprnt3:hover .myhovdiv22 a {
-                font-size:20px !important
-            }
-            #hvprnt3:hover .myhovdiv22 i {
-                font-size:20px !important
-            }
-        }
-        @media screen and  (max-width: 500px) {
-            .myhovdiv22{   
-                align-items: center;
-                justify-content: center;
-            }
-            .myother{
-                margin-top: 30px !important;
-            }
-           
-            .myhovdiv22 p {
-                font-size: 15px !important;
-            }
-        
-            #hvprnt1 .myhovdiv22 a{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt1 .myhovdiv22 i{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt1:hover .myhovdiv22 a {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-            #hvprnt1:hover .myhovdiv22 i {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-            
-
-            #hvprnt2 .myhovdiv22 a{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt2 .myhovdiv22 i{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt2:hover .myhovdiv22 a {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-            #hvprnt2:hover .myhovdiv22 i {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-            
-            #hvprnt3 .myhovdiv22 a{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt3 .myhovdiv22 i{
-                margin-top: 35px !important;
-                font-size: 17px !important;
-            }
-            #hvprnt3:hover .myhovdiv22 a {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-            #hvprnt3:hover .myhovdiv22 i {
-                margin-top: 35px !important;
-                font-size:17px !important
-            }
-
-           
-            @media screen and (max-width: 450px){
-                .myother{
-                    margin-top: 0px !important;
-                }
-            }
-
         }
         @media screen and (max-width: 1000px){
             #kjjj {
@@ -649,315 +469,8 @@
                 padding: 10px 10%;
 }}
 
-@media screen and (min-width: 820px) and (max-width: 1000px){
-    #kjjj {
-        gap: 10px;
-        padding: 10px 20%;
-}}
-@media screen and (min-width: 2300px){
-    .myhovdiv22 {
-        margin-top:2%;
-}}
-
-
     </style>
 <!-- meqale area -->
-{% if article1.image.url %}
-<div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;margin-bottom:2%;">
-    <h3>Məqalələr</h3>
-    <div style="display: flex;align-items:center;">
-    <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
-    <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
-</div>
-</div>
-     <div class="banner-wrapper">
-        <div class="container-fluid" style="    padding-left: 5% !important;
-        padding-right: 5% !important;">
-            <div id="kjjj" style="border-radius:10px !important;position:relative;" class="row">
-                
-                <div id="hvprnt1"  style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px" class="col-lg-4">
-                <div class="mybordering">
-                    <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
-                    <p style="color:black">{{article1.content|slice:160}}...</p>
-                   <div class="myother" style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
-                    <a href="{% url 'articlesingle' article1.slug %}">Daha ətraflı</a>
-                    <i class="flaticon-right-arrow-1"></i>
-                   </div>
-                   <img class="myimage2" style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;" src="{{article1.image.url}}" alt="">
-                    </div>
-                </div>
-                </div>
-
-                <div id="hvprnt2"  style=" height:350px;" class="col-lg-4">
-                    <div class="mybordering">
-                    <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
-                    <p style="color:black">{{article2.content|slice:160}}... </p>
-                   <div class="myother" style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
-                    <a href="{% url 'articlesingle' article2.slug %}">Daha ətraflı</a>
-                    <i class="flaticon-right-arrow-1"></i>
-                   </div>
-                   <img class="myimage2" style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;" src="{{article2.image.url}}" alt="">
-                    </div>
-                </div>
-                </div>
-
-                <div id="hvprnt3"  style="border-left:2px solid transparent;border-top-right-radius:15px;border-bottom-right-radius:15px; height:350px" class="col-lg-4">
-                    <div class="mybordering">
-                    <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
-                    <p style="color:black">{{article3.content|slice:160}}... </p>
-                   <div class="myother" style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
-                    <a href="{% url 'articlesingle' article3.slug %}">Daha ətraflı</a>
-                    <i class="flaticon-right-arrow-1"></i>
-                   </div>
-                   <img class="myimage2" style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;" src="{{article3.image.url}}" alt="">
-                    </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-        </div>
-{% endif %}
-
-    
-     <!-- blog-area-end -->
-    
-            
-        </div>
-
-
-
-
-
-        {% if videos %}
-        <!-- lahiye haqqinda -->
-        <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-           <h3>Videolar</h3>
-           <div style="display: flex;align-items:center;">
-           <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
-           <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
-       </div>
-       </div>
-        
-        <!-- slider wrapper -->
-        <div style="margin-top:1%;" class="slide-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    
-                    
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="slide-slider-full owl-carousel owl-theme">
-                            {% for video in videos %}
-                            <div class="owl-items">
-                                <a class="slide-one popup-video" href="{{video.video.url}}">
-                                    <div class="slide-image"><img src="https://menazerbaycanliyam.files.wordpress.com/2013/04/ulu-c3b6ndc999r-haydar-aliyev.jpg?w=640" alt="image"></div>
-                                    <div class="slide-content">
-                                        <h2>{{video.name}}<img src="{% static 'templatestyles/images/plus.png' %}" alt="icon"></h2>
-                                        <p>{{video.content|slice:90}}</p>
-                                      
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        <!-- slider wrapper -->
-        {% if photos %}
-        <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-            <h3>Fotolar</h3>
-            <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
-        </div>
-        </div>
-  
-        
-        <!--photo galery-->
-        
-        <section class="myphoto" style="margin-left:auto;margin-right:auto;width:90%;" > 
-            <div class="grid-container">
-               
-                {% for photo in photos %}
-                <figure>
-                   <div class="fm-single-featured"  >
-                    <div class="fm-featured-thumb">
-                       <a> <img src="{{photo.image.url}}" alt="img not found"></a>
-                    </div>
-                    <div class="fm-featured-content">
-                     
-                        <div style="border:none" class="fm-video-play">
-                            <a href="#">
-                                <h4 class="fm-featured-title">{{photo.name}}</h4>
-                             </a>
-                             <span class="fm-featured-meta">{{photo.date}}</span>
-                        </div>
-                     </div>
-                 </div>
-                </figure>
-                 {% endfor %}
-
-
-            </div>
-        </section>
-       {% endif %}
-  
-
-
-
-{% if blogs %}
-              <!-- blog-area-start -->
-              <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-                <h3>Xəbərlər</h3>
-                <div style="display: flex;align-items:center;">
-                <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
-                <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
-            </div>
-            </div>
-            <!-- blog-area-start -->
-            <section class="blog-area bg-common-black section-spacing" style="padding-bottom:10px;padding-top:0px;">
-
-                <div class="container" style="    max-width: 2507px;
-                width: 80%;">
-                   <div class="row">
-                      <div class="fm-blog-wrapper is-white">
-       
-                        {% for blog in blogs %}
-                         <div class="fm-blog-inner blog__animation-wrapper  is-white">
-       
-                            <div class="fm-blog-thumb">
-                               <a href="{% url 'blogsingle' blog.slug %}"> <img src="{{blog.image.url}}" alt="img not found"></a>
-                            </div>
-       
-                            <div class="fm-blog-content blog__content ">
-                               <div class="fm-blog-content-text">
-                                  <div class="fm-blog-meta">
-                                     <span>{{blog.date}}</span>
-                                  </div>
-                                  <h4 class="fm-blog-title text-white">
-                                     <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
-                                  </h4>
-                                  <div class="fm-blog-text">
-                                     <p class="">{{blog.content_without_ck|slice:170}}...</p>
-                                  </div>
-                               </div>
-                            </div>
-       
-                            <div class="fm-featured-btn btn_wrapper ">
-                               <a href="{% url 'blogsingle' blog.slug %}" class="blog-rotate-btn btn__item-move">
-                                  <span>
-                                     <i class="flaticon-right-arrow-1"></i>
-                                  </span>
-                               </a>
-                            </div>
-       
-                         </div>
-                         {% endfor %}
-       
-                      </div>
-                   </div>
-                </div>
-             </section>
-             <!-- blog-area-end -->
-{% endif %}
-  <!--photo galery-->
-
-
-
-  <div class="brand-carousel section-padding owl-carousel" style="margin-top:3%;background:linear-gradient(to right, rgb(50, 50, 50), rgb(137, 137, 137), rgb(51, 51, 51));">
-    <div class="single-logo">
-      <img src="https://mitri.az/assets/img/mitri-logo.png" alt="">
-    </div>
-  <div class="single-logo">
-      <img src="https://mitri.az/assets/img/mitri-logo.png" alt="">
-    </div>
-  <div class="single-logo">
-      <img src="https://mitri.az/assets/img/mitri-logo.png" alt="">
-    </div>
-  <div class="single-logo">
-      <img src="https://mitri.az/assets/img/mitri-logo.png" alt="">
-    </div>
-  <div class="single-logo">
-      <img src="https://mitri.az/assets/img/mitri-logo.png" alt="">
-    </div>
-  <div class="single-logo">
-      <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-    </div>
-  </div>
-  
-<style>
-    
-</style>
-<style>
-
-.section-padding{
-padding:60px 0;
-gap:10px;
-}
-.brand-carousel {
-background: aliceblue;
-margin-top: 15%;
-}
-.owl-dots {
-    display: none;
-text-align: center;
-margin-top: 4%;
-}
-.owl-dot {
-display: inline-block;
-height: 15px !important;
-width: 15px !important;
-background-color: #878787 !important;
-opacity: 0.8;
-border-radius: 50%;
-margin: 0 5px;
-}
-.owl-dot.active {
-background-color: #000 !important;
-}
-
-.single-logo img{
-    width: 10%;
-    object-fit: contain;
-    aspect-ratio: 5/1;
-    mix-blend-mode: color-burn;
-}
-
-</style>
-<style>
-.mybordering{padding-left:40px;padding-right:40px;padding-top:50px;padding-bottom:50px; background: linear-gradient(to right, rgb(147, 147, 147), rgb(174, 174, 174), rgb(147, 147, 147));}
-</style>
-<script>
-
-$('.brand-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    autoplay:true,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:5
-      }
-    }
-  }) 
-  
-</script>
-
-
-
 
 
         <div class="footer-wrapper">
@@ -1047,7 +560,6 @@ $('.brand-carousel').owlCarousel({
         flex-basis: 0;}
 
     .myphoto {
-        margin-bottom:3%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1313,9 +825,9 @@ $('.brand-carousel').owlCarousel({
     }
 
 
-    #hvprnt1{overflow: hidden;padding-right:0;padding-left:0; background: linear-gradient(to bottom,rgb(147, 147, 147), rgb(191, 191, 191), rgb(147, 147, 147)) !important;}
-    #hvprnt2{overflow: hidden;padding-right:0;padding-left:0}
-    #hvprnt3{overflow: hidden;padding-right:0;padding-left:0; background: linear-gradient(to bottom,rgb(147, 147, 147), rgb(191, 191, 191), rgb(147, 147, 147)) !important;}
+    #hvprnt1{overflow: hidden;}
+    #hvprnt2{overflow: hidden;}
+    #hvprnt3{overflow: hidden;}
 
     .navbar-toggler-icon:after{
         background-color: transparent !important;
@@ -1379,9 +891,6 @@ position: initial !important;
 
 
 <style>
-    .popup{
-        padding: 10% 30% 0 30%;
-    }
     .mean-expand{
         display: flex !important;
         align-items: center !important;
