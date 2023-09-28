@@ -74,8 +74,11 @@ class Photo(BaseMixin):
         super(Photo, self).save(*args, **kwargs)
         new_slug = seo(self.name)
         
-        self.slug = new_slug
-        super(Photo, self).save(*args, **kwargs)
+        if not Photo.objects.filter(slug=new_slug).exists():
+            self.slug = new_slug
+            super(Photo, self).save(*args, **kwargs)
+        else:
+            self.slug = new_slug + '-photo'
     
 class HomeHeader(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)

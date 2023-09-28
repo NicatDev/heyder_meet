@@ -154,7 +154,7 @@ def video(request):
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
-
+    fcount = Video.objects.all().count()
     context = {
         'video_list':video_list,
         'movies':movies,
@@ -162,13 +162,14 @@ def video(request):
         'categories':vidcategories,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
-        'vidcategories':vidcategories
+        'vidcategories':vidcategories,
+        'fcount':fcount
     }
     return render(request,'video.html',context)
 
 def foto(request):
     fcount = Photo.objects.all().count()
-    photos = Photo.objects.all()
+    photos = Photo.objects.all().order_by('ordering')
     if request.GET.get('movzu'):
         photos = photos.filter(category=request.GET.get('movzu'))
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)

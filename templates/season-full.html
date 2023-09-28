@@ -150,27 +150,165 @@
                         </a>
       
                         <span class="separator d-none d-xl-block"></span>
-                        <a href="#0" class="fm-header-bar-1">
+
+                       
+
+                        <div class="dinozavr" style="display:flex;align-items:center;justify-content:center;gap:2rem;">
+                            <div id="lang_selector" class="language-dropdown">
+                                <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
+                                  <span class="flag"></span>
+                                </label>
+                                <ul class="lang-list">
+                                  <li class="lang lang-en selected" title="AZ">
+                                    <span class="flag"></span>
+                                  </li>
+                                  <li class="lang lang-pt" title="RU">
+                                    <span class="flag"></span>
+                                  </li>
+                            
+                                </ul>
+                              </div>
+                       
+                        <a href="#0" class="fm-header-bar-1" id="ancaqmobile">
                            <span class="fm-header-bar-line fm-header-bar-line-1"></span>
                            <span class="fm-header-bar-line fm-header-bar-line-2"></span>
                            <span class="fm-header-bar-line fm-header-bar-line-3"></span>
                         </a>
+                        <!-- <img src=" {% static 'russia.png' %}" alt="">
+                       
+                        {% static 'azerbaijan.png' %} -->
+                        
 
-                        <!-- <img src=" {}" alt="">   
-                        {} -->
-                        <div class="dropdown">
-                            <button class="dropbtn"><img src="% static 'azerbaijan.png' %" alt=""></button>
-                            <div class="dropdown-content">
-                              <a href="#"><img src="% static 'russia.png' %" alt="">
-                              </a>
-                             
-                            </div>
-                          </div>
+</div>
+  <style>
+    
+    .shadow-1, .language-dropdown ul.lang-list, .language-dropdown label {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .shadow-2, .language-dropdown.open label {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+      .shadow-3 {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      }
+      .shadow-4 {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      .shadow-5 {
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      }
 
-                        <ul class="">
-                            <li>az</li>
-                            <li>eng</li>
-                         </ul>
+      .language-dropdown {
+        display: inline-block;
+        overflow: hidden;
+    height: 40px;
+
+      }
+      .language-dropdown .lang-en {
+        border-left: 4px solid rgb(24, 24, 24);
+      }
+      .language-dropdown .lang-en .flag {
+        background-image: url("{% static 'azerbaijan.png' %}");
+      }
+      .language-dropdown .lang-pt {
+        border-left: 4px solid rgb(24, 24, 24);
+      }
+      .language-dropdown .lang-pt .flag {
+        background-image: url("{% static 'russia.png' %}");
+      }
+      .language-dropdown .lang-es {
+        border-left: 4px solid rgb(24, 24, 24);
+      }
+      .language-dropdown .lang-es .flag {
+        background-image: url("http://www.imaginarium.pt/responsive/2015/images/iconsFicha/banderaES.png");
+      }
+      .language-dropdown label, .language-dropdown ul li {
+        display: block;
+        width: 50px;
+        height: 38px;
+        background: rgb(25, 25, 25);
+        padding: 0px 6px;
+        cursor: pointer;
+      }
+      .language-dropdown ul.lang-list {
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1;
+      }
+      .language-dropdown ul.lang-list li {
+        border-bottom: 1px solid rgb(24, 24, 24);
+      }
+      .language-dropdown ul.lang-list li:last-child {
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+      .language-dropdown ul.lang-list li.selected {
+        display: none;
+      }
+      .language-dropdown label {
+        position: relative;
+        border-bottom: 1px solid rgb(24, 24, 24);
+        border-radius: 3px;
+        z-index: 2;
+      }
+      .language-dropdown .lang-flag .flag, .language-dropdown .lang-list .lang .flag {
+        float: left;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background-size: 35px 35px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .language-dropdown.open ul.lang-list {
+        visibility: visible;
+        opacity: 1;
+      }
+      .language-dropdown.open label {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .animate, .lang-flag, .lang-list {
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        transition: all 0.5s;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+      }
+      
+  </style>
+<script>
+    $(document).ready(function(){
+        $(".lang-flag").click(function(){
+          $(".language-dropdown").toggleClass("open");
+          $(".language-dropdown").css(
+            {'overflow':'visible'}
+          )
+        });
+        $("ul.lang-list li").click(function(){
+          $("ul.lang-list li").removeClass("selected");
+          $(this).addClass("selected");
+          if($(this).hasClass('lang-en')){
+            $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-es").removeClass("lang-pt");
+            $("#lang_selected").html("<p>AZ</p>")
+          }else if($(this).hasClass('lang-pt')){
+            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-es").removeClass("lang-en");
+          $("#lang_selected").html("<p>RU</p>")
+          }else{
+            $(".language-dropdown").find(".lang-flag").addClass("lang-es").removeClass("lang-en").removeClass("lang-pt");
+            $("#lang_selected").html("<p>AZ</p>")
+          }
+          $(".language-dropdown").removeClass("open");
+        });
+      })
+</script>
+
 
                      </div>
                      
@@ -217,7 +355,7 @@
                                  </li>
       
       
-                                 <li class="has-dropdown"><a href="contact.html">Lahiyə haqqında</a>
+                                 <li class="has-dropdown"><a href="contact.html">Haqqında</a>
                                  </li>
                               </ul>
                            </nav>
@@ -435,6 +573,11 @@
         }
         @media screen and  (max-width: 1830px) and (min-width:1600px) {
             .myhovdiv22 p{font-size:16px !important}
+        }
+        @media screen and  (max-width: 1225px) and (min-width:1200px) {
+            #ancaqmobile{
+                display: none !important;
+            }
         }
 
         @media screen and  (max-width: 1300px) and (min-width:1000px) {
@@ -1141,6 +1284,7 @@ $('.brand-carousel').owlCarousel({
       .slide-wrapper .slide-slider-full, .category-slider .slide-wrapper .slide-slider {
           width: 100% !important; 
       }
+    
 </style>
 <!-- border-bottom title -->
 <!-- border-bottom:1px solid rgb(255, 255, 255); -->
@@ -1378,6 +1522,8 @@ position: initial !important;
 </style>
 
 
+
+
 <style>
     .popup{
         padding: 10% 30% 0 30%;
@@ -1390,7 +1536,9 @@ position: initial !important;
 </style>
 
 
-
+<style>
+    
+</style>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

@@ -7,3 +7,9 @@
 update-version.js
 export.sh
 /export
+myenv
+.myenv
+/myenv
+myenv2
+.myenv2
+/myenv2
