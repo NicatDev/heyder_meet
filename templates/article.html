@@ -12,6 +12,7 @@
    <!-- Place favicon.ico in the root directory -->
    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
    <!-- CSS here -->
+   <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
@@ -246,7 +247,7 @@
                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <div class="fm-blog-grid-single bdFadeUp last-one">
                      <div class="fm-blog-grid-single-img w_100">
-                        <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"  src="{{article.image.url}}" alt="img"></a>
+                        <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"  src="{{article.image.url}}" alt="img"><z/a>
                      </div>
                      <div class="fm-blog-grid-single-content">
                         <div class="fm-blog-grid-meta">
@@ -341,99 +342,81 @@
    </main>
 
    <!-- footer-area-start -->
-   <footer>
-      <div class="footer-area-5 section-spacing-top pos-rel">
-         <div class="footer-bg-3" data-background="{% static 'assets/img/bg/footer/img-1.jpg' %}">
+   <div class="footer-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12 text-left">
+                  <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
+              </div>
+              <div class="col-sm-6 text-left">
+                  <img src="{% static 'templatestyles/images/icon-21.png' %}" alt="icon" class="icon-img"> 
+              </div>
+              <div class="col-sm-5 offset-sm-1 text-right">
+                  <form action="#" class="mt-0">
+                      <input type="text" placeholder="Email">
+                      <button>Submit</button>
+                  </form>                    
+              </div>
+              <div style="margin-bottom:3%" class="col-sm-12">
+                  <div class="middle-footer">
+                      <div class="row">
+                
+                      <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="display: flex;justify-content:center;">
+                          <div style="text-align: start;">
+                              <h5 style="font-size: large;">Sosial şəbəkələr</h5>
+                              <ul>
+                                  <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                  <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                  <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+                             
+                              </ul>
+                          </div>
 
-         </div>
-         <div class="container">
-            <div class="footer-middle-area">
+                      </div>
+              
+                        
+                      
+                          <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
+                              <div style="text-align:start">
+                              <h5 class="mb-3" style="font-size:large;">Linklər</h5>
+                             <a href="#"><p style="width: 100% ;font-size:medium">Əsas Səhifə</p></a> 
+                             <a href="#"><p style="width: 100% ;font-size:medium">Video</p></a>
+                              <a href="#"><p style="width: 100%;font-size:medium">Foto</p></a>
+                              <a href="#"><p style="width: 100%;font-size:medium">Xəbərlər</p></a>
+                              <a href="#"><p style="width: 100%;font-size:medium">Məqalələr</p></a>
+                              <a href="#"><p style="width: 100%;font-size:medium">Layihə haqqında</p></a>
+                          </div>
+                          </div>
+                        
+                              <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
+                             <div style="text-align:start;" >
+                               <h5 style="font-size: large;text-align:center " >Bizimlə əlaqə</h5>
+                                  <ul>
+                                      <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
+                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
+                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
+                              
+                                    
+                                  </ul>
+                             </div>
+                                 
+                              </div>
+                         
+                         
+                      </div>
+                  </div>
+              </div>
 
-               <div class="footer-wrapper footer-widget-about">
-                  <div class="footer-logo-2">
-                     <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
-                  </div>
-                  <div class="footer-text">
-                     <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod</p>
-                  </div>
-               </div>
-               <div class="footer-wrapper footer-widget-gallery">
-                  <div class="footer-title">
-                     <h4>Our Gallery</h4>
-                  </div>
-                  <ul class="footer-img">
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/01.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/01.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/02.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/02.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/03.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/03.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/04.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/04.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/05.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/05.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/06.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/06.jpg' %}"></a></li>
-                  </ul>
-               </div>
-               <div class="footer-wrapper footer-widget-social">
-                  <div class="footer-title">
-                     <h4>Follow Me</h4>
-                  </div>
-                  <div class="footer-info">
-                     <p>Connect me with social media</p>
-                  </div>
-                  <div class="fm-social-2 footer-social-3">
-                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
-                  </div>
-               </div>
-               <div class="footer-wrapper footer-widget-contact">
-                  
-                  <div class="footer-title">
-                     <h4>Contact Us</h4>
-                  </div>
-
-                  <ul class="footer-2-link">
-                     <li>
-                        <i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <p><a target="_blank"
-                              href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
-                              Broadway, NY 10013 Bournemouth</a></p>
-                     </li>
-                     <li>
-                        <i class="fa-sharp fa-solid fa-phone"></i>
-                        <p><a href="tel:+821236545690">+821 (2365) 456
-                              90</a></p>
-                     </li>
-                     <li>
-                        <i class="fa-sharp fa-solid fa-envelope"></i>
-                        <p><a href="https://html.bdevs.net/cdn-cgi/l/email-protection#afc7cac3c3c0efc9cec6c2cac2cacbc6ce81ccc0c2"><span class="__cf_email__" data-cfemail="d7bfb2bbbbb897b1b6bebab2bab2b3beb6f9b4b8ba">[email&#160;protected]</span></a></p>
-                     </li>
-                  </ul>
-            
-               </div>
-            </div>
-            <div class="footer-bottom-4">
-               <div class="footer-bottom-wrapper-2 ">
-                  <div class="footer-bottom-inner">
-                     <div class="footer-copyright">
-                        <p>© 2023<a href="home-main.html"> Faime </a> All Rights Reserved.</p>
-                     </div>
-                     
-
-                     <div class="footer-rules ">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms & Condition</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+              <div class="col-sm-12 lower-footer"></div>
+              <div class="col-sm-6">
+                  <p class="copyright-text">© 2020 copyright. All rights reserved.</p>
+              </div>
+              <div class="col-sm-6 text-right">
+                  <p class="float-right copyright-text">In case of any concern, <a href="#">contact us</a></p>
+              </div>
+          </div>
       </div>
-   </footer>
+  </div>
    <!-- footer-area-end -->
 <style>
 
