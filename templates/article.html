@@ -246,7 +246,7 @@
                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                   <div class="fm-blog-grid-single bdFadeUp last-one">
                      <div class="fm-blog-grid-single-img w_100">
-                        <a href="{% url 'articlesingle' article.slug %}"><img style="height:320px !important" src="{{article.image.url}}" alt="img"></a>
+                        <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"  src="{{article.image.url}}" alt="img"></a>
                      </div>
                      <div class="fm-blog-grid-single-content">
                         <div class="fm-blog-grid-meta">
@@ -255,7 +255,13 @@
                            <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
                         </div>
                         <h4 class="fm-blog-grid-single-title title-color"><a href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
-                              <p>{{article.content|slice:200}}...</p>
+                        {% if article.name|length > 85 %} 
+                        <p>{{article.content|slice:90}}...</p>
+                        {% elif article.name|length > 65 %}  
+                        <p>{{article.content|slice:140}}...</p>
+                        {% else %}
+                        <p>{{article.content|slice:200}}...</p>
+                        {% endif %}
                      </div>
                   </div>
                </div>
@@ -265,16 +271,40 @@
      
 
             <div class="row">
-                 <div class="pagination-wrapper">
-                        <div class="pagination">
-                          <a  class="prev page-numbers" {% if articles.has_previous %} href="?page={{ articles.previous_page_number }}" style="cursor: pointer;"{% else %} style="cursor:not-allowed" {% endif %}>prev</a>
-                    
-                          {% for page_num in articles.paginator.page_range %}
-                          <a class="page-numbers {% if page_num == articles.number %}current{% endif %}" href="javascript:;">{{page_num}}</a>
-                           {% endfor %}
-                          <a  class="next page-numbers" {% if articles.has_next %} href="?page={{ articles.next_page_number }}" style="cursor: pointer;"{% else %} style="cursor:not-allowed" {% endif %}>next</a>
-                        </div>
-                      </div>
+               <div class="bd-basic__pagination d-flex align-items-center bdFadeUp" style="justify-content: center; margin-top:80px">
+                  <nav>
+                     <ul>
+                        <li>
+                           <a {% if not blog_list.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  blog_list.has_previous %}  href="?page={{ blog_list.previous_page_number }} "{% endif%}>
+                              <i class="fa-light fa-arrow-left-long"></i>
+                           </a>
+                        </li>
+                        {% if not pagcheck %}
+                        <li>
+                           <a href="?page=1">1</a>
+                        </li>
+                        {% endif %}
+                        {% for page_num in iterator %}
+                           
+                        <li>
+                           <a href="?page={{ page_num }}">{{page_num}}</a>
+                        </li>
+
+                        {% endfor %}
+                        
+                   
+
+                       
+
+                        <li>
+                           <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if blog_list.has_next %}  href="?page={{ blog_list.next_page_number }}" {% endif%}>
+                              <i class="fa-light fa-arrow-right-long"></i>
+                           </a>
+                        </li>
+                        
+                     </ul>
+                  </nav>
+               </div>
             </div>
          </div>
       </div>
@@ -405,7 +435,13 @@
       </div>
    </footer>
    <!-- footer-area-end -->
+<style>
 
+   .section-spacing {
+      padding-top: 80px;
+      padding-bottom: 80px;
+  }
+</style>
 <style> .pagination-wrapper {
    text-align: center;
    margin: 40px 0;
@@ -458,6 +494,23 @@
  .page-numbers.prev:hover, .page-numbers.next:hover {
    background-color: transparent;
    color: #86c023;
+ }
+.myresponse{
+   height:20rem;
+}
+ @media only screen and (max-width: 580px) {
+ .myresponse{
+   height:300px;
+ }
+ @media only screen and (max-width: 540px) {
+   .myresponse{
+     height:260px;
+   }
+ }
+ @media only screen and (min-width:1400px) {
+   .myresponse{
+     height:300px !important;
+   }
  }
  @media only screen and (max-width: 1199px) {
    .page-numbers {
@@ -517,6 +570,17 @@
    <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
    <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
    <script src="{% static 'assets/js/main.js' %}"></script>
+   <script>
+      if (window.innerWidth > 1500) {
+ 
+         var myResponseElements = document.querySelectorAll('.myresponse');
+
+  myResponseElements.forEach(function(element) {
+
+    element.style.height = '270px';
+  });
+       }
+   </script>
 </body>
 
 

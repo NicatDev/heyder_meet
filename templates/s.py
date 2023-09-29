@@ -1,0 +1,1 @@
+print(len('Heydər Əliyev, Azərbaycanın böyük siyasi liderlərindən biri olmuş və Azərbaycan Respublikasının 3-cü Prezidenti olmuşdur. 10 noyabr 1923-cü ildə Azərbaycanın Naxçıvan şəhərində doğulub və Əliyev soyad...'))

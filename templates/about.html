@@ -481,37 +481,52 @@
                     </div>
             
                   
-                    <div class="col-sm-12">
+                    <div style="margin-bottom:3%" class="col-sm-12">
                         <div class="middle-footer">
                             <div class="row">
-                          
-                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="text-align: center;">
-                                    <h5>Sosial şəbəkələr</h5>
+                      
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="display: flex;justify-content:center;">
+                                <div style="text-align: start;">
+                                    <h5 style="font-size: large;">Sosial şəbəkələr</h5>
                                     <ul>
-                                        <li><a href="#">İnstagram</a></li>
-                                        <li><a href="#">Facebook</a></li>
-                                        <li><a href="#">Youtube</a></li>
+                                        <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                        <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                        <li><a style="font-size:medium ;" href="#">Youtube</a></li>
                                    
                                     </ul>
                                 </div>
+
+                            </div>
+                    
+                              
                             
-                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="text-align: center;">
-                                    <h5 class="mb-3">Linklər</h5>
-                                   <a href="#"><p style="width: 100%;">Əsas Səhifə</p></a> 
-                                   <a href="#"><p style="width: 100%;">Video</p></a>
-                                    <a href="#"><p style="width: 100%;">Foto</p></a>
-                                    <a href="#"><p style="width: 100%;">Xəbərlər</p></a>
-                                    <a href="#"><p style="width: 100%;">Məqalələr</p></a>
-                                    <a href="#"><p style="width: 100%;">Lahiyə haqqında</p></a>
+                                <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
+                                    <div style="text-align:start">
+                                    <h5 class="mb-3" style="font-size:large;">Linklər</h5>
+                                   <a href="#"><p style="width: 100% ;font-size:medium">Əsas Səhifə</p></a> 
+                                   <a href="#"><p style="width: 100% ;font-size:medium">Video</p></a>
+                                    <a href="#"><p style="width: 100%;font-size:medium">Foto</p></a>
+                                    <a href="#"><p style="width: 100%;font-size:medium">Xəbərlər</p></a>
+                                    <a href="#"><p style="width: 100%;font-size:medium">Məqalələr</p></a>
+                                    <a href="#"><p style="width: 100%;font-size:medium">Layihə haqqında</p></a>
                                 </div>
-                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="text-align: center;">
-                                   
-                                    <h5>Bizimlə əlaqə</h5>
-                                    <ul>
-                                        <li><a href="#">e-mail:example@gmail.com</a></li>
-                                      
-                                    </ul>
                                 </div>
+                              
+                                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
+                                   <div style="text-align:start;" >
+                                     <h5 style="font-size: large;text-align:center " >Bizimlə əlaqə</h5>
+                                        <ul>
+                                            <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
+                                            <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
+                                            <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
+                                    
+                                          
+                                        </ul>
+                                   </div>
+                                       
+                                    </div>
+                               
+                               
                             </div>
                         </div>
                     </div>
@@ -693,7 +708,11 @@
     .videotitle-div a{
         color:black;
     }
-    
+    @media (max-width:770px) {
+        #elaqe{
+            margin-top:1em;
+        }
+    }
     .aboutimage-div{
         margin-top:1%;
         display: flex;
