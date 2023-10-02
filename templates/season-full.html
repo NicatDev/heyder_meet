@@ -347,11 +347,7 @@
                                  </li>
       
                                  <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
-                                    <ul class="submenu">
-                                        {% for cat in artcategories %}
-                                        <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                        {% endfor %}
-                                    </ul>
+                             
                                  </li>
       
       
@@ -713,6 +709,12 @@
                 font-size:20px !important
             }
         }
+        @media screen and  (min-width: 1300px) and (max-width: 1473px){
+            .myhovdiv22 p{
+                font-size:16px !important;
+            }
+        }
+        
         @media screen and  (max-width: 500px) {
             .myhovdiv22{   
                 align-items: center;
@@ -760,7 +762,6 @@
                 margin-top: 35px !important;
                 font-size:17px !important
             }
-            
             #hvprnt3 .myhovdiv22 a{
                 margin-top: 35px !important;
                 font-size: 17px !important;
@@ -777,14 +778,11 @@
                 margin-top: 35px !important;
                 font-size:17px !important
             }
-
-           
             @media screen and (max-width: 450px){
                 .myother{
                     margin-top: 0px !important;
                 }
             }
-
         }
         @media screen and (max-width: 1000px){
             #kjjj {
@@ -933,7 +931,7 @@
                 <figure>
                    <div class="fm-single-featured"  >
                     <div class="fm-featured-thumb">
-                       <a> <img src="{{photo.image.url}}" alt="img not found"></a>
+                       <a > <img src="{{photo.image.url}}" alt="img not found">  </a>
                     </div>
                     <div class="fm-featured-content">
                      
@@ -950,7 +948,7 @@
 
 
             </div>
-        </section>
+
        {% endif %}
   
 
@@ -1460,6 +1458,7 @@ $('.brand-carousel').owlCarousel({
         opacity: 0 !important;
         transition: opacity 1s ease;
     }
+    
     #hvprnt3:hover .myimage2{
         opacity: 1 !important;
         transition: opacity 2s ease;
