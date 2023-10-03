@@ -2,447 +2,451 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from html.bdevs.net/faime-prev/blog-wide.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:01:02 GMT -->
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Faime – Movie and Film Production HTML5 Template</title>
-   <meta name="description" content="">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
-   <!-- CSS here -->
-   <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
-   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
-</head>
+   <!-- Mirrored from html.bdevs.net/faime-prev/blog-wide.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:01:02 GMT -->
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Faime – Movie and Film Production HTML5 Template</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="{% static
+         'assets/img/favicon.png' %}">
+      <!-- CSS here -->
+      <link rel="stylesheet" href="{% static
+         'templatestyles/css/video-player.css' %}">
+      <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css'
+         %}">
+      <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css'
+         %}">
+      <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css'
+         %}">
+      <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+   </head>
 
-<body>
-
-
-   <!-- cursor animation-->
-   <div class="mouseCursor cursor-outer "></div>
-   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
-
-
-   <!-- Go Top Button -->
-   <button id="scroll_top" class="scroll-top">
-      <i class="fa-solid fa-arrow-up"></i>
-   </button>
-
-   <!-- Preloader -->
-   <div class="loader">
-      <div class="loader__container">
-         <div class="loader__film">
-            <img class=loader__film-img src="{% static 'assets/img/loader/film.png' %}" alt="img not found">
-            <img class=loader__film-img src="{% static 'assets/img/loader/film-2.png' %}" alt="img not found">
-         </div>
-         <img class=loader__camera src="{% static 'assets/img/loader/camera.png' %}" alt="img not found">
-      </div>
-   </div>
+   <body>
 
 
-   <!-- header area start -->
-   <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
-      <div class="container">
-         <div class="row align-items-center justify-content-lg-between">
-            <div class="header-wrapper">
-               <div class="fm-header-logo-wrapper">
-                  <a href="index-2.html" class="fm-header-logo">
-                     <img src="{% static 'assets/img/logo/logo.png' %}" alt="img not found">
-                  </a>
-
-                  <span class="separator d-none d-xl-block"></span>
-                  <a href="#0" class="fm-header-bar-1">
-                     <span class="fm-header-bar-line fm-header-bar-line-1"></span>
-                     <span class="fm-header-bar-line fm-header-bar-line-2"></span>
-                     <span class="fm-header-bar-line fm-header-bar-line-3"></span>
-                  </a>
-               </div>
-               <div class="header-menu-spc d-none d-xl-block">
-                  <div class="fm-header-nav">
-
-                     <nav id="mobile-menu" style="display: block;">
-                        <ul>
-                           <li class="active has-dropdown">
-                              <a href="{% url 'home' %}">Əsas səhifə</a>
-                            
-                           </li>
+      <!-- cursor animation-->
+      <div class="mouseCursor cursor-outer "></div>
+      <div class="mouseCursor cursor-inner"><span>Drag</span></div>
 
 
-                           <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
-                              <ul class="submenu">
-                                  {% for cat in vidcategories %}
-                                  <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                  {% endfor %}
-                                
-                              </ul>
-                           </li>
+      <!-- Go Top Button -->
+      <button id="scroll_top" class="scroll-top">
+         <i class="fa-solid fa-arrow-up"></i>
+      </button>
 
-                           <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
-                              <ul class="submenu">
-                                  {% for cat in fotcategories %}
-                                 <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                 {% endfor %}
-                        
-                              </ul>
-                           </li>
-
-                           <li class="has-dropdown has-mega-menu">
-                              <a href="{% url 'blog' %}">Xəbərlər</a>
-                            
-                           </li>
-
-                           <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
-                              <ul class="submenu">
-                                  {% for cat in artcategories %}
-                                  <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                  {% endfor %}
-                              </ul>
-                           </li>
-
-
-                           <li class="has-dropdown"><a href="contact.html">Lahiyə haqqında</a>
-                           </li>
-                        </ul>
-                     </nav>
-
-                  </div>
-               </div>
-               <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
-                  <a href="contact.html" class="fill-btn" style="font-size:14px;line-height:20px">REABİLİTASİYA <br> HƏYATDIR
-                     <span>
-                        <i class="fa-regular fa-arrow-right"></i>
-                     </span>
-                  </a>
-               </div>
+      <!-- Preloader -->
+      <div class="loader">
+         <div class="loader__container">
+            <div class="loader__film">
+               <img class=loader__film-img src="{% static
+                  'assets/img/loader/film.png' %}" alt="img not found">
+               <img class=loader__film-img src="{% static
+                  'assets/img/loader/film-2.png' %}" alt="img not found">
             </div>
-
+            <img class=loader__camera src="{% static
+               'assets/img/loader/camera.png' %}" alt="img not found">
          </div>
       </div>
-   </header>
-   <!-- header area end -->
-
-   <!-- sidebar area start -->
-   <div class="fm-header-sidebar-area fm-header-sidebar-left">
-      <div class="fm-header-sidebar-wrapper">
-         <div class="fm-header-sidebar-action mb-65">
-            <div class="fm-header-sidebar-logo">
-               <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
-            </div>
-            <div class="offcanvas-close">
-               <a class="offcanvas-btn" href="#0">
-                  <i class="fa-thin fa-times"></i>
-               </a>
-            </div>
-         </div>
-         <div class="d-none d-sm-block">
-            <div class="fm-header-sidebar-search">
-               <form action="https://html.bdevs.net/faime-prev/index.html">
-                  <input type="text" placeholder="Search here">
-                  <button type="submit"><i class="flaticon flaticon-search"></i></button>
-               </form>
-            </div>
-         </div>
-         <div class="mobile-menu"></div>
-         <div class="d-none d-sm-block">
-            <div class="fm-offcanvas-about mt-30 mb-30">
-               <h4>About Faime</h4>
-               <p>We Believe Film And Moving Image Has The Power
-                  To
-                  Create
-                  Significant Change.</p>
-            </div>
-         </div>
-         <div class="offcanvas-contact mt-30 mb-30">
-            <h4 class="offcanvas-contact-title">Contact Information</h4>
-            <ul>
-               <li class="d-flex align-items-center gap-2">
-                  <div class="offcanvas-contact-icon">
-                     <a target="_blank"
-                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
-                        <i class="fal fa-map-marker-alt"></i></a>
-                  </div>
-                  <div class="offcanvas-contact-text">
-                     <a target="_blank"
-                        href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
-                        Broadway, NY 10013 Bournemouth</a>
-                  </div>
-               </li>
-               <li class="d-flex align-items-center gap-2">
-                  <div class="offcanvas-contact-icon">
-                     <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
-                  </div>
-                  <div class="offcanvas-contact-text">
-                     <a href="tel:915550303420">+91 555 0303 420</a>
-                  </div>
-               </li>
-               <li class="d-flex align-items-center gap-2">
-                  <div class="offcanvas-contact-icon">
-                     <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#43303633332c313703242e222a2f6d202c2e"><i class="fal fa-envelope"></i></a>
-                  </div>
-                  <div class="offcanvas-contact-text">
-                     <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#6a020f0606052a0c0b03070f070f0e030b44090507"><span class="__cf_email__" data-cfemail="c4aca1a8a8ab84a2a5ada9a1a9a1a0ada5eaa7aba9">[email&#160;protected]</span></a>
-                  </div>
-               </li>
-            </ul>
-         </div>
-         <div class="d-none d-sm-block d-sm-none d-md-block">
-            <div class="fm-offcanvas-social">
-               <span class="social-text">Follow :</span>
-               <div class="fm-offcanvas-social-icon">
-                  <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                  <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="overlay"></div>
-   <!-- sidebar area end -->
 
 
-   <main>
-      <div class="adjust-header-space bg-common-black"></div>
-
-      <!-- breadcrumb-area-start -->
-      <div class="fm-breadcrumb-area" data-background="{% static 'assets/img/bg/breadcrumb-bg.png' %}">
+      <!-- header area start -->
+      <header id="header-sticky" class="fm-header-area header-border
+         transparent-header bg-common-black">
          <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-12">
-                  <div class="page-title-wrapper">
-                     <h1 class="page-title p-text">Məqalələr</h1>
+            <div class="row align-items-center justify-content-lg-between">
+               <div class="header-wrapper">
+                  <div class="fm-header-logo-wrapper">
+                     <a href="index-2.html" class="fm-header-logo">
+                        <img src="{% static 'assets/img/logo/logo.png' %}"
+                           alt="img not found">
+                     </a>
+
+                     <span class="separator d-none d-xl-block"></span>
+                     <a href="#0" class="fm-header-bar-1">
+                        <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                        <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                        <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                     </a>
                   </div>
-                  <div class="breadcrumb-menu">
-                     <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-                        <ul class="trail-items">
-                         
-                        </ul>
-                     </nav>
+                  <div class="header-menu-spc d-none d-xl-block">
+                     <div class="fm-header-nav">
+
+                        <nav id="mobile-menu" style="display: block;">
+                           <ul>
+                              <li class="active has-dropdown">
+                                 <a href="{% url 'home' %}">Əsas səhifə</a>
+                              </li>
+
+
+                              <li class="has-dropdown"><a href="{% url 'video'
+                                    %}">Video</a>
+                                 <ul class="submenu">
+                                    {% for cat in vidcategories %}
+                                    <li><a href="{% url 'foto'
+                                          %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                    {% endfor %}
+
+                                 </ul>
+                              </li>
+
+                              <li class="has-dropdown"><a href="{% url 'foto'
+                                    %}">Foto</a>
+                                 <ul class="submenu">
+                                    {% for cat in fotcategories %}
+                                    <li><a href="{% url 'foto'
+                                          %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                    {% endfor %}
+
+                                 </ul>
+                              </li>
+
+                              <li class="has-dropdown has-mega-menu">
+                                 <a href="{% url 'blog' %}">Xəbərlər</a>
+
+                              </li>
+
+                              <li class="has-dropdown"><a href="{% url 'article'
+                                    %}"> Məqalələr</a>
+                                 <ul class="submenu">
+                                    {% for cat in artcategories %}
+                                    <li><a href="{% url 'foto'
+                                          %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                    {% endfor %}
+                                 </ul>
+                              </li>
+
+
+                              <li class="has-dropdown"><a href="contact.html">Lahiyə
+                                    haqqında</a>
+                              </li>
+                           </ul>
+                        </nav>
+
+                     </div>
+                  </div>
+                  <div class="fm-header-right d-none d-xl-block"
+                     style="text-align: center;">
+                     <a href="contact.html" class="fill-btn"
+                        style="font-size:14px;line-height:20px">REABİLİTASİYA
+                        <br> HƏYATDIR
+                        <span>
+                           <i class="fa-regular fa-arrow-right"></i>
+                        </span>
+                     </a>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </header>
+      <!-- header area end -->
+
+      <!-- sidebar area start -->
+      <div class="fm-header-sidebar-area fm-header-sidebar-left">
+         <div class="fm-header-sidebar-wrapper">
+            <div class="fm-header-sidebar-action mb-65">
+               <div class="fm-header-sidebar-logo">
+                  <a href="index-2.html"><img src="{% static
+                        'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+               </div>
+               <div class="offcanvas-close">
+                  <a class="offcanvas-btn" href="#0">
+                     <i class="fa-thin fa-times"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="d-none d-sm-block">
+               <div class="fm-header-sidebar-search">
+                  <form action="https://html.bdevs.net/faime-prev/index.html">
+                     <input type="text" placeholder="Search here">
+                     <button type="submit"><i class="flaticon flaticon-search"></i></button>
+                  </form>
+               </div>
+            </div>
+            <div class="mobile-menu"></div>
+            <div class="d-none d-sm-block">
+               <div class="fm-offcanvas-about mt-30 mb-30">
+                  <h4>About Faime</h4>
+                  <p>We Believe Film And Moving Image Has The Power
+                     To
+                     Create
+                     Significant Change.</p>
+               </div>
+            </div>
+            <div class="offcanvas-contact mt-30 mb-30">
+               <h4 class="offcanvas-contact-title">Contact Information</h4>
+               <ul>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas-contact-icon">
+                        <a target="_blank"
+                           href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                           <i class="fal fa-map-marker-alt"></i></a>
+                     </div>
+                     <div class="offcanvas-contact-text">
+                        <a target="_blank"
+                           href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                           Broadway, NY 10013 Bournemouth</a>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas-contact-icon">
+                        <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                     </div>
+                     <div class="offcanvas-contact-text">
+                        <a href="tel:915550303420">+91 555 0303 420</a>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas-contact-icon">
+                        <a
+                           href="https://html.bdevs.net/cdn-cgi/l/email-protection#43303633332c313703242e222a2f6d202c2e"><i
+                              class="fal fa-envelope"></i></a>
+                     </div>
+                     <div class="offcanvas-contact-text">
+                        <a
+                           href="https://html.bdevs.net/cdn-cgi/l/email-protection#6a020f0606052a0c0b03070f070f0e030b44090507"><span
+                              class="__cf_email__"
+                              data-cfemail="c4aca1a8a8ab84a2a5ada9a1a9a1a0ada5eaa7aba9">[email&#160;protected]</span></a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="d-none d-sm-block d-sm-none d-md-block">
+               <div class="fm-offcanvas-social">
+                  <span class="social-text">Follow :</span>
+                  <div class="fm-offcanvas-social-icon">
+                     <a href="https://www.facebook.com/" target="_blank"><i
+                           class="fa-brands fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/" target="_blank"><i
+                           class="fa-brands fa-twitter"></i></a>
+                     <a href="https://www.instagram.com/" target="_blank"><i
+                           class="fa-brands fa-instagram"></i></a>
+                     <a href="https://www.pinterest.com/" target="_blank"><i
+                           class="fa-brands fa-pinterest-p"></i></a>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- breadcrumb-area-end -->
+      <div class="overlay"></div>
+      <!-- sidebar area end -->
 
-      <!-- fm-blog-grid-area-start -->
-      <div class="fm-blog-grid-area section-spacing">
-         <div class="container-fluid">
-            <div class="row g-5">
-               {% for article in articles %}
-               <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                  <div class="fm-blog-grid-single bdFadeUp last-one">
-                     <div class="fm-blog-grid-single-img w_100">
-                        <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"  src="{{article.image.url}}" alt="img"></a>
+
+      <main>
+         <div class="adjust-header-space bg-common-black"></div>
+
+         <!-- breadcrumb-area-start -->
+         <div class="fm-breadcrumb-area" data-background="{% static
+            'assets/img/bg/breadcrumb-bg.png' %}">
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-12">
+                     <div class="page-title-wrapper">
+                        <h1 class="page-title p-text">Məqalələr</h1>
                      </div>
-                     <div class="fm-blog-grid-single-content">
-                        <div class="fm-blog-grid-meta">
-                           <span class="fm-blog-grid-meta-date">{{article.created_at }}</span> <span class="seperator">/</span>
-                           <span class="fm-blog-grid-meta-poster">{{article.category}}</span> <span class="seperator">/</span>
-                           <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
+                     <div class="breadcrumb-menu">
+                        <nav aria-label="Breadcrumbs" class="breadcrumb-trail
+                           breadcrumbs">
+                           <ul class="trail-items">
+
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- breadcrumb-area-end -->
+
+         <!-- fm-blog-grid-area-start -->
+         <div class="fm-blog-grid-area section-spacing">
+            <div class="container-fluid">
+               <div class="row g-5">
+                  {% for article in articles %}
+                  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                     <div class="fm-blog-grid-single bdFadeUp last-one">
+                        <div class="fm-blog-grid-single-img w_100">
+                           <a href="{% url 'articlesingle' article.slug %}"><img
+                                 class="myresponse" src="{{article.image.url}}"
+                                 alt="img"></a>
                         </div>
-                        <h4 class="fm-blog-grid-single-title title-color"><a href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
-                        {% if article.name|length > 85 %} 
-                        <p>{{article.content|slice:90}}...</p>
-                        {% elif article.name|length > 65 %}  
-                        <p>{{article.content|slice:140}}...</p>
-                        {% else %}
-                        <p>{{article.content|slice:200}}...</p>
-                        {% endif %}
+                        <div class="fm-blog-grid-single-content">
+                           <div class="fm-blog-grid-meta">
+                              <span class="fm-blog-grid-meta-date">{{article.created_at
+                                 }}</span> <span class="seperator">/</span>
+                              <span class="fm-blog-grid-meta-poster">{{article.category}}</span>
+                              <span class="seperator">/</span>
+                              <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
+                           </div>
+                           <h4 class="fm-blog-grid-single-title title-color"><a
+                                 href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
+                           {% if article.name|length > 85 %}
+                           <p>{{article.content|slice:90}}...</p>
+                           {% elif article.name|length > 65 %}
+                           <p>{{article.content|slice:140}}...</p>
+                           {% else %}
+                           <p>{{article.content|slice:200}}...</p>
+                           {% endif %}
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+
+
+
+               <div class="row">
+                  <div class="bd-basic__pagination d-flex align-items-center
+                     bdFadeUp" style="justify-content: center; margin-top:80px">
+                     <nav>
+                        <ul>
+                           <li>
+                              <a {% if not blog_list.has_previous %}
+                                 disabled="true" style="cursor:not-allowed" {%
+                                 endif%} {% if blog_list.has_previous %}
+                                 href="?page={{ blog_list.previous_page_number
+                                 }} "{% endif%}>
+                                 <i class="fa-light fa-arrow-left-long"></i>
+                              </a>
+                           </li>
+                           {% if not pagcheck %}
+                           <li>
+                              <a href="?page=1">1</a>
+                           </li>
+                           {% endif %}
+                           {% for page_num in iterator %}
+
+                           <li>
+                              <a href="?page={{ page_num }}">{{page_num}}</a>
+                           </li>
+
+                           {% endfor %}
+
+                           <li>
+                              <a {% if not blog_list.has_next %} disabled="true"
+                                 style="cursor:not-allowed" {% endif%} {% if
+                                 blog_list.has_next %} href="?page={{
+                                 blog_list.next_page_number }}" {% endif%}>
+                                 <i class="fa-light fa-arrow-right-long"></i>
+                              </a>
+                           </li>
+
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- fm-blog-grid-area-end -->
+      </main>
+
+      <!-- footer-area-start -->
+      <div class="footer-wrapper" style="margin-top: 0px !important;">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 text-left">
+                  <h4 class="mb-4">We are digital agency, a small design agency
+                     based in paris as i was groping to remove the chain from
+                     about my victim’s neck only through language.</h4>
+               </div>
+
+
+               <div style="margin-bottom:3%" class="col-sm-12">
+                  <div class="middle-footer">
+                     <div class="row">
+
+                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6"
+                           style="display: flex;justify-content:center;">
+                           <div style="text-align: start;">
+                              <h5 style="font-size: large;">Sosial şəbəkələr</h5>
+                              <ul>
+                                 <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                 <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                 <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+                              </ul>
+                           </div>
+
+                        </div>
+
+
+
+                        <div style="display: flex;justify-content:center;"
+                           class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+                           <div style="text-align:start">
+                              <h5 class="mb-3" style="font-size:large;">Linklər</h5>
+                              <a href="#"><p style="width: 100%
+                                    ;font-size:medium">Əsas Səhifə</p></a>
+                              <a href="#"><p style="width: 100%
+                                    ;font-size:medium">Video</p></a>
+                              <a href="#"><p style="width:
+                                    100%;font-size:medium">Foto</p></a>
+                              <a href="#"><p style="width:
+                                    100%;font-size:medium">Xəbərlər</p></a>
+                              <a href="#"><p style="width:
+                                    100%;font-size:medium">Məqalələr</p></a>
+                              <a href="#"><p style="width:
+                                    100%;font-size:medium">Layihə haqqında</p></a>
+                           </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
+                           id="elaqe" style="display:
+                           flex;justify-content:center;">
+                           <div style="text-align:start;">
+                              <h5 style="font-size: large;text-align:center ">Bizimlə
+                                 əlaqə</h5>
+                              <ul>
+                                 <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
+                                 <li><a style="font-size: medium;" href="#">Əlaqə
+                                       nömrəsi: +994 51 312 65 99</a></li>
+                                 <li><a style="font-size: medium;" href="#">Əlaqə
+                                       nömrəsi: +994 51 312 65 99</a></li>
+
+
+                              </ul>
+                           </div>
+
+                        </div>
+
+
                      </div>
                   </div>
                </div>
-               {% endfor %}
-            </div>
 
-     
-
-            <div class="row">
-               <div class="bd-basic__pagination d-flex align-items-center bdFadeUp" style="justify-content: center; margin-top:80px">
-                  <nav>
-                     <ul>
-                        <li>
-                           <a {% if not blog_list.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  blog_list.has_previous %}  href="?page={{ blog_list.previous_page_number }} "{% endif%}>
-                              <i class="fa-light fa-arrow-left-long"></i>
-                           </a>
-                        </li>
-                        {% if not pagcheck %}
-                        <li>
-                           <a href="?page=1">1</a>
-                        </li>
-                        {% endif %}
-                        {% for page_num in iterator %}
-                           
-                        <li>
-                           <a href="?page={{ page_num }}">{{page_num}}</a>
-                        </li>
-
-                        {% endfor %}
-                        
-                   
-
-                       
-
-                        <li>
-                           <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if blog_list.has_next %}  href="?page={{ blog_list.next_page_number }}" {% endif%}>
-                              <i class="fa-light fa-arrow-right-long"></i>
-                           </a>
-                        </li>
-                        
-                     </ul>
-                  </nav>
+               <div class="col-sm-12 lower-footer"></div>
+               <div class="col-sm-6">
+                  <p class="copyright-text">© 2020 copyright. All rights
+                     reserved.</p>
+               </div>
+               <div class="col-sm-6 text-right">
+                  <p class="float-right copyright-text">In case of any concern,
+                     <a href="#">contact us</a></p>
                </div>
             </div>
          </div>
       </div>
-      <!-- fm-blog-grid-area-end -->
-
-      <!-- contact-area-start -->
-      <section class="contact-top-area bg-common-black">
-         <div class="container">
-            <div class="row">
-               <div class="col-12">
-                  <div class="fm-contact-wrapper fm-contact-pad">
-                     <div class="section-title title-anim">
-                        <span class="section-subtitle featured-sub-title">GET IN TOUCH</span>
-                        <h2 class="section-main-title text-white fw-400 mb-15">Ready To Get Focused?</h2>
-                        <h2 class="section-main-title text-white">Get In Touch</h2>
-                     </div>
-
-                     <div class="fm-contact-btn btn_wrapper">
-                        <a href="contact.html" class="blog-rotate-btn is-white large btn__item-move">
-                           <span>
-                              <i class="flaticon-right-arrow-1"></i>
-                           </span>
-                        </a>
-                     </div>
-
-
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- contact-area-end -->
-
-   </main>
-
-   <!-- footer-area-start -->
-   <footer>
-      <div class="footer-area-5 section-spacing-top pos-rel">
-         <div class="footer-bg-3" data-background="{% static 'assets/img/bg/footer/img-1.jpg' %}">
-
-         </div>
-         <div class="container">
-            <div class="footer-middle-area">
-
-               <div class="footer-wrapper footer-widget-about">
-                  <div class="footer-logo-2">
-                     <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
-                  </div>
-                  <div class="footer-text">
-                     <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod</p>
-                  </div>
-               </div>
-               <div class="footer-wrapper footer-widget-gallery">
-                  <div class="footer-title">
-                     <h4>Our Gallery</h4>
-                  </div>
-                  <ul class="footer-img">
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/01.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/01.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/02.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/02.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/03.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/03.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/04.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/04.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/05.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/05.jpg' %}"></a></li>
-                     <li><a class="popup-image" href="{% static 'assets/img/gallery/06.jpg' %}"><img alt=""
-                              src="{% static 'assets/img/gallery/06.jpg' %}"></a></li>
-                  </ul>
-               </div>
-               <div class="footer-wrapper footer-widget-social">
-                  <div class="footer-title">
-                     <h4>Follow Me</h4>
-                  </div>
-                  <div class="footer-info">
-                     <p>Connect me with social media</p>
-                  </div>
-                  <div class="fm-social-2 footer-social-3">
-                     <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                     <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                     <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                     <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
-                  </div>
-               </div>
-               <div class="footer-wrapper footer-widget-contact">
-                  
-                  <div class="footer-title">
-                     <h4>Contact Us</h4>
-                  </div>
-
-                  <ul class="footer-2-link">
-                     <li>
-                        <i class="fa-sharp fa-solid fa-location-dot"></i>
-                        <p><a target="_blank"
-                              href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
-                              Broadway, NY 10013 Bournemouth</a></p>
-                     </li>
-                     <li>
-                        <i class="fa-sharp fa-solid fa-phone"></i>
-                        <p><a href="tel:+821236545690">+821 (2365) 456
-                              90</a></p>
-                     </li>
-                     <li>
-                        <i class="fa-sharp fa-solid fa-envelope"></i>
-                        <p><a href="https://html.bdevs.net/cdn-cgi/l/email-protection#afc7cac3c3c0efc9cec6c2cac2cacbc6ce81ccc0c2"><span class="__cf_email__" data-cfemail="d7bfb2bbbbb897b1b6bebab2bab2b3beb6f9b4b8ba">[email&#160;protected]</span></a></p>
-                     </li>
-                  </ul>
-            
-               </div>
-            </div>
-            <div class="footer-bottom-4">
-               <div class="footer-bottom-wrapper-2 ">
-                  <div class="footer-bottom-inner">
-                     <div class="footer-copyright">
-                        <p>© 2023<a href="home-main.html"> Faime </a> All Rights Reserved.</p>
-                     </div>
-                     
-
-                     <div class="footer-rules ">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms & Condition</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <!-- footer-area-end -->
-<style>
+      <!-- footer-area-end -->
+      <style>
 
    .section-spacing {
       padding-top: 80px;
       padding-bottom: 80px;
   }
 </style>
-<style> .pagination-wrapper {
+      <style> .pagination-wrapper {
    text-align: center;
    margin: 40px 0;
    margin-left:auto;
@@ -545,32 +549,32 @@
      content: none;
    }
  }</style>
-
-   <!-- JS here -->
-   <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
-   <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-   <script src="{% static 'assets/js/meanmenu.js' %}"></script>
-   <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
-   <script src="{% static 'assets/js/slick.min.js' %}"></script>
-   <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
-   <script src="{% static 'assets/js/parallax.min.js' %}"></script>
-   <script src="{% static 'assets/js/gsap.min.js' %}"></script>
-   <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-   <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
-
-   <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
-   <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
-   <script src="{% static 'assets/js/knob.min.js' %}"></script>
-   <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
-   <script src="{% static 'assets/js/ajax-form.js' %}"></script>
-   <script src="{% static 'assets/js/wow.min.js' %}"></script>
-   <script src="{% static 'assets/js/sidebar.js' %}"></script>
-   <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
-   <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
-   <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
-   <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
-   <script src="{% static 'assets/js/main.js' %}"></script>
-   <script>
+      <!-- JS here -->
+      <script data-cfasync="false"
+         src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script
+         src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+      <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+      <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+      <script src="{% static 'assets/js/slick.min.js' %}"></script>
+      <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+      <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+      <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+      <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+      <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+      <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+      <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+      <script src="{% static 'assets/js/knob.min.js' %}"></script>
+      <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+      <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+      <script src="{% static 'assets/js/wow.min.js' %}"></script>
+      <script src="{% static 'assets/js/sidebar.js' %}"></script>
+      <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+      <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+      <script src="{% static 'assets/js/main.js' %}"></script>
+      <script>
       if (window.innerWidth > 1500) {
  
          var myResponseElements = document.querySelectorAll('.myresponse');
@@ -581,8 +585,8 @@
   });
        }
    </script>
-</body>
+   </body>
 
 
-<!-- Mirrored from html.bdevs.net/faime-prev/blog-wide.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:01:08 GMT -->
+   <!-- Mirrored from html.bdevs.net/faime-prev/blog-wide.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:01:08 GMT -->
 </html>
