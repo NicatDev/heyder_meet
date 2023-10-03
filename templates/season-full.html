@@ -1040,7 +1040,7 @@
                         <div class="owl-items">
                             <a class="slide-one popup-video" href="{{video.video.url}}">
                                 <div class="slide-image"><img
-                                        src="https://menazerbaycanliyam.files.wordpress.com/2013/04/ulu-c3b6ndc999r-haydar-aliyev.jpg?w=640"
+                                        src="{{video.coverimage.url}}"
                                         alt="image"></div>
                                 <div class="slide-content">
                                     <h2>{{video.name}}<img src="{% static 'templatestyles/images/plus.png' %}"
@@ -1057,6 +1057,10 @@
         </div>
     </div>
     {% endif %}
+
+
+
+    
     <!-- slider wrapper -->
     {% if photos %}
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
