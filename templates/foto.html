@@ -37,7 +37,7 @@
     <div class="preloader"></div>
 
     <div class="backdrop"></div>
-    <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
+    <!-- <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
     <div class="switchcolor-wrap">
         <a class="link sheet-close"><i class="ti-close"></i></a>
         <h2>Settings</h2>
@@ -125,7 +125,7 @@
                 <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="main-wrapper">
                <!-- header wrapper -->
@@ -134,8 +134,8 @@
                    <div class="row align-items-center justify-content-lg-between">
                       <div class="header-wrapper">
                          <div class="fm-header-logo-wrapper">
-                            <a href="index-2.html" class="fm-header-logo">
-                               <img src="{% static 'assets/img/logo/logo.png' %}" alt="img not found">
+                            <a href="{% url 'home' %}" class="fm-header-logo">
+                               <img src="{% static 'assets/img/logo/logo.svg'  %}" alt="img not found">
                             </a>
           
                             <span class="separator d-none d-xl-block"></span>
@@ -512,13 +512,7 @@
                       </div>
                   </div>
 
-                  <div class="col-sm-12 lower-footer"></div>
-                  <div class="col-sm-6">
-                      <p class="copyright-text">© 2020 copyright. All rights reserved.</p>
-                  </div>
-                  <div class="col-sm-6 text-right">
-                      <p class="float-right copyright-text">In case of any concern, <a href="#">contact us</a></p>
-                  </div>
+                 
               </div>
           </div>
       </div>

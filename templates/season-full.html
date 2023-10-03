@@ -49,7 +49,7 @@
     <div class="preloader"></div>
 
     <div class="backdrop"></div>
-    <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
+    <!-- <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
     <div class="switchcolor-wrap">
         <a class="link sheet-close"><i class="ti-close"></i></a>
         <h2>Settings</h2>
@@ -137,7 +137,7 @@
                 <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="main-wrapper">
@@ -147,13 +147,10 @@
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="header-wrapper">
                         <div class="fm-header-logo-wrapper">
-                            <a href="index-2.html" class="fm-header-logo">
-                                <img src="{% static 'm.png' %}" alt="img not found">
+                            <a href="{% url 'home' %}" class="fm-header-logo">
+                                <img src="{% static 'assets/img/logo/logo.svg'  %}" alt="img not found">
                             </a>
-
                             <span class="separator d-none d-xl-block"></span>
-
-
 
                             <div class="dinozavr"
                                 style="display:flex;align-items:center;justify-content:center;gap:2rem;">
@@ -506,13 +503,13 @@
                         <div class="banner-wrap justify-content-between align-items-center">
                             <div class="left-wrap">
                                 <span style="opacity:0;" class="rnd">IMDb 6.7</span>
-                                <h2>{{ HomeHeader.title|safe }}</h2>
+                                <h2 style="user-select:none ;">{{ HomeHeader.title|safe }}</h2>
                                 <span style="opacity:0;cursor:none" class="tag"><b>Heyder Eliyev</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2020</span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
-                                <p>{{HomeHeader.content|safe}}</p>
+                                <p style="user-select:none;">{{HomeHeader.content|safe}}</p>
                                 <a href="{{HomeHeader.href.url}}" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İndi izlə !</a>
@@ -529,7 +526,7 @@
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
                                 <div class="owl-items">
-                                    <a class="slide-one slide-two slide-three popup-video" href="{{video.video.url}}">
+                                    <a class="slide-one slide-two slide-three " href="{{video.video.url}}">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
                                         <div class="slide-content">
@@ -552,7 +549,7 @@
 
         <!-- lahiye haqqinda -->
         <div class="aboutimagetitle-div">
-            <h3 style="cursor:none;">Lahiyə haqqında</h3>
+            <h3 style="cursor:none;user-select:none;">Lahiyə haqqında</h3>
         </div>
         <!-- fm-about-area-start -->
         <div style="margin-top:1%;" class="fm-about-area bg-common-black section-spacing fix">
@@ -562,21 +559,21 @@
                         <div class="fm-director-about-img">
                             <img src="{% static 'assets/img/about/director-about.png' %}" alt="img not found">
                             <div class="fm-director-years">
-                                <span class="fm-director-years-number">100</span>
+                                <span style="user-select:none ;" class="fm-director-years-number">100</span>
                                 <span class="fm-director-years-content">
                                     <span class="fm-director-plus"></span>
-                                    <span style="font-size:34px" class="fm-director-years-text">il bizimlə</span>
+                                    <span style="user-select:none;" style="font-size:34px" class="fm-director-years-text">il bizimlə</span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="fm-about-content-section">
-                            <span class="section-subtitle title-anim">ABOUT ME</span>
-                            <h2 class="section-main-title text-white mb-25 title-anim">Creative & Expert <br> Film
+                            <span style="user-select:none ;" class="section-subtitle title-anim">ABOUT ME</span>
+                            <h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">Creative & Expert <br> Film
                                 Director
                             </h2>
-                            <p class="mb-20">I’m a world-renowned filmmaker who, for the past 9 years of my 26-years
+                            <p  class="mb-20">I’m a world-renowned filmmaker who, for the past 9 years of my 26-years
                                 career
                                 have specialized in creating incredible cinematic images no matter what the camera. Some
                                 of my
@@ -589,7 +586,7 @@
                                 have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
                             </p>
                             <div class="fm-director-about-name mt-55">
-                                <a href="team-details.html" class="director-about-nam">David Anderson</a>
+                                <a style="user-select:none ;" href="team-details.html" class="director-about-nam">David Anderson</a>
                             </div>
                         </div>
                     </div>
@@ -936,7 +933,7 @@
         {% if article1.image.url %}
         <div class="aboutimagetitle-div"
             style="display: flex;align-items:center;justify-content:space-between;margin-bottom:2%;">
-            <h3>Məqalələr</h3>
+            <h3 style="user-select:none ;">Məqalələr</h3>
             <div style="display: flex;align-items:center;">
                 <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
                 <span><img style="filter:  brightness(5000%) ;"
@@ -1020,7 +1017,7 @@
     {% if videos %}
     <!-- lahiye haqqinda -->
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3>Videolar</h3>
+        <h3 style="user-select:none ;">Videolar</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
@@ -1041,7 +1038,7 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items" >
-                            <a  class="slide-one popup-video" href="{{video.video.url}}">
+                            <a  class="slide-one">
                                 <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;"
                                         src="{{video.coverimage.url}}"
                                         alt="image"></div>
@@ -1066,7 +1063,7 @@
     <!-- slider wrapper -->
     {% if photos %}
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3>Fotolar</h3>
+        <h3 style="user-select:none ;">Fotolar</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
@@ -1085,11 +1082,8 @@
           
               
                 <div class="fm-single-featured">
-
                     <div class="fm-featured-thumb">
-
-                        <a>
-                             
+                        <a>   
                             <img src="{{photo.image.url}}" alt="img not found">
                         </a>
                     </div>
@@ -1116,7 +1110,7 @@
     {% if blogs %}
     <!-- blog-area-start -->
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3>Xəbərlər</h3>
+        <h3 style="user-select:none ;">Xəbərlər</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
@@ -1145,10 +1139,10 @@
                                     <span>{{blog.date}}</span>
                                 </div>
                                 <h4 class="fm-blog-title text-white">
-                                    <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
+                                    <a style="user-select:none ;" href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                                 </h4>
                                 <div class="fm-blog-text">
-                                    <p class="">{{blog.content_without_ck|slice:170}}...</p>
+                                    <p style="user-select:none ;">{{blog.content_without_ck|slice:170}}...</p>
                                 </div>
                             </div>
                         </div>
@@ -1329,13 +1323,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 lower-footer"></div>
-            <div class="col-sm-6">
-                <p class="copyright-text">© 2020 copyright. All rights reserved.</p>
-            </div>
-            <div class="col-sm-6 text-right">
-                <p class="float-right copyright-text">In case of any concern, <a href="#">contact us</a></p>
-            </div>
+            
         </div>
     </div>
 </div>

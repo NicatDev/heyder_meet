@@ -48,18 +48,7 @@
       </button>
 
       <!-- Preloader -->
-      <div class="loader">
-         <div class="loader__container">
-            <div class="loader__film">
-               <img class=loader__film-img src="{% static
-                  'assets/img/loader/film.png' %}" alt="img not found">
-               <img class=loader__film-img src="{% static
-                  'assets/img/loader/film-2.png' %}" alt="img not found">
-            </div>
-            <img class=loader__camera src="{% static
-               'assets/img/loader/camera.png' %}" alt="img not found">
-         </div>
-      </div>
+
 
 
       <!-- header area start -->
@@ -69,8 +58,8 @@
             <div class="row align-items-center justify-content-lg-between">
                <div class="header-wrapper">
                   <div class="fm-header-logo-wrapper">
-                     <a href="index-2.html" class="fm-header-logo">
-                        <img src="{% static 'assets/img/logo/logo.png' %}"
+                     <a href="{% url 'home' %}" class="fm-header-logo">
+                        <img src="{% static 'assets/img/logo/logo.svg'  %}"
                            alt="img not found">
                      </a>
 
@@ -228,13 +217,13 @@
                <div class="fm-offcanvas-social">
                   <span class="social-text">Follow :</span>
                   <div class="fm-offcanvas-social-icon">
-                     <a href="https://www.facebook.com/" target="_blank"><i
+                     <a href="https://www.facebook.com/" target="_blank"><i style="line-height: 2;"
                            class="fa-brands fa-facebook-f"></i></a>
-                     <a href="https://twitter.com/" target="_blank"><i
+                     <a href="https://twitter.com/" target="_blank"><i style="line-height: 2;"
                            class="fa-brands fa-twitter"></i></a>
-                     <a href="https://www.instagram.com/" target="_blank"><i
+                     <a href="https://www.instagram.com/" target="_blank"><i style="line-height: 2;"
                            class="fa-brands fa-instagram"></i></a>
-                     <a href="https://www.pinterest.com/" target="_blank"><i
+                     <a href="https://www.pinterest.com/" target="_blank"><i style="line-height: 2;"
                            class="fa-brands fa-pinterest-p"></i></a>
                   </div>
                </div>
@@ -249,8 +238,7 @@
          <div class="adjust-header-space bg-common-black"></div>
 
          <!-- breadcrumb-area-start -->
-         <div class="fm-breadcrumb-area" data-background="{% static
-            'assets/img/bg/breadcrumb-bg.png' %}">
+         <div class="fm-breadcrumb-area" data-background="{% static 'assets/img/bg/breadcrumb-bg.png' %}">
             <div class="container">
                <div class="row justify-content-center">
                   <div class="col-12">
@@ -426,15 +414,7 @@
                   </div>
                </div>
 
-               <div class="col-sm-12 lower-footer"></div>
-               <div class="col-sm-6">
-                  <p class="copyright-text">© 2020 copyright. All rights
-                     reserved.</p>
-               </div>
-               <div class="col-sm-6 text-right">
-                  <p class="float-right copyright-text">In case of any concern,
-                     <a href="#">contact us</a></p>
-               </div>
+               
             </div>
          </div>
       </div>
