@@ -433,7 +433,7 @@
                 <div class="mobile-menu"></div>
                 <div class="d-none d-sm-block">
                     <div class="fm-offcanvas-about mt-30 mb-30">
-                        <h4>Reabilitasiya heyatdir</h4>
+                        <h4 >Reabilitasiya heyatdir</h4>
                         <p>We Believe Film And Moving Image Has The Power
                             To
                             Create
@@ -484,12 +484,12 @@
                     <div class="fm-offcanvas-social">
                         <span class="social-text">Follow :</span>
                         <div class="fm-offcanvas-social-icon">
-                            <a href="https://www.facebook.com/" target="_blank"><i
+                            <a href="https://www.facebook.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i
+                            <a href="https://twitter.com/" target="_blank"><i style="padding: 10px;" class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.pinterest.com/" target="_blank"><i
+                            <a href="https://www.pinterest.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-pinterest-p"></i></a>
                         </div>
                     </div>
@@ -505,13 +505,13 @@
                     <div class="col-sm-12">
                         <div class="banner-wrap justify-content-between align-items-center">
                             <div class="left-wrap">
-                                <span style="opacity: 0;" class="rnd">IMDb 6.7</span>
+                                <span style="opacity:0;" class="rnd">IMDb 6.7</span>
                                 <h2>{{ HomeHeader.title|safe }}</h2>
-                                <span style="opacity: 0;" class="tag"><b>Heyder Eliyev</b></span>
-                                <span style="opacity: 0;" class="tag">2020</span>
-                                <span style="opacity: 0;" class="tag"><b>HD</b></span>
-                                <span style="opacity: 0;" class="tag"><b>16+</b></span>
-                                <span style="opacity: 0;" class="tag">2 h 20 min</span>
+                                <span style="opacity:0;cursor:none" class="tag"><b>Heyder Eliyev</b></span>
+                                <span style="opacity:0;cursor:none" class="tag">2020</span>
+                                <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
+                                <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
+                                <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
                                 <p>{{HomeHeader.content|safe}}</p>
                                 <a href="{{HomeHeader.href.url}}" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
@@ -531,7 +531,7 @@
                                 <div class="owl-items">
                                     <a class="slide-one slide-two slide-three popup-video" href="{{video.video.url}}">
                                         <div class="slide-image"
-                                            style="background-image:url('{{video.coverimage.url}}')"></div>
+                                            style="background-image:url('{{video.coverimage.url}}');"></div>
                                         <div class="slide-content">
                                             <h2>{{video.name}}
 
@@ -552,7 +552,7 @@
 
         <!-- lahiye haqqinda -->
         <div class="aboutimagetitle-div">
-            <h3>Lahiyə haqqında</h3>
+            <h3 style="cursor:none;">Lahiyə haqqında</h3>
         </div>
         <!-- fm-about-area-start -->
         <div style="margin-top:1%;" class="fm-about-area bg-common-black section-spacing fix">
@@ -905,6 +905,9 @@
                     .myother {
                         margin-top: 0px !important;
                     }
+                    .slide-image{
+                        width: 200px;
+                    }
                 }
 
             }
@@ -1037,15 +1040,14 @@
                 <div class="col-sm-12">
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
-                        <div class="owl-items">
-                            <a class="slide-one popup-video" href="{{video.video.url}}">
-                                <div class="slide-image"><img
+                        <div class="owl-items" >
+                            <a  class="slide-one popup-video" href="{{video.video.url}}">
+                                <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;"
                                         src="{{video.coverimage.url}}"
                                         alt="image"></div>
                                 <div class="slide-content">
-                                    <h2>{{video.name}}<img src="{% static 'templatestyles/images/plus.png' %}"
-                                            alt="icon"></h2>
-                                    <p>{{video.content|slice:90}}</p>
+                                    <h2>{{video.name}}</h2>
+                                    <p style="height:4rem">{{video.content|slice:90}}</p>
 
                                 </div>
                             </a>
