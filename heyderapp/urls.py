@@ -12,3 +12,8 @@ urlpatterns = [
     path('xeber/<slug>',blogsingle,name='blogsingle'),
     path('meqale/<slug>',articlesingle,name='articlesingle'),
 ]
+urlpatterns += [
+
+    path('video/<str:lang_code>/', video, name='video_lang'),
+    # Add other language-specific URLs as needed
+]

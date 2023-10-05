@@ -30,16 +30,32 @@ class BaseMixin(models.Model):
     class Meta:
         abstract = True
     
+class About(models.Model):
+    minititle = models.CharField(max_length=100)
+    title = models.CharField(max_length=180) 
+    content = models.CharField(max_length=3200)
+    content2 =models.CharField(max_length=3200)
+    contentbig = models.TextField()
+    image = models.ImageField(verbose_name='690-732')   
+    imza = models.CharField(max_length=120)
+    
+    def __str__(self):
+        return self.title + 'Ana Sehife lahiye haqqinda'
+    
+    def save(self, *args, **kwargs):
+        self.pk = 1  
+        super(About, self).save(*args, **kwargs)
+        
 class Video(BaseMixin):
     category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True,related_name='videolar')
     name = models.CharField(max_length=800)
     content = models.TextField()
     coverimage = models.ImageField()
-    video = models.FileField()
+    video = models.CharField(max_length=3200)
     ordering = models.IntegerField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return self.name + ' -video'
     
     def save(self, *args, **kwargs):
         super(Video, self).save(*args, **kwargs)
@@ -52,12 +68,12 @@ class Movie(models.Model):
     name = models.CharField(max_length=800)
     content = models.TextField()
     coverimage = models.ImageField()
-    video = models.FileField()
+    video = models.CharField(max_length=3400)
     ordering = models.IntegerField(null=True,blank=True)
     
     
     def __str__(self):
-        return self.name
+        return self.name + ' film'
     
 
 class Photo(BaseMixin):
@@ -68,7 +84,7 @@ class Photo(BaseMixin):
     ordering = models.IntegerField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return self.name + ' foto'
     
     def save(self, *args, **kwargs):
         super(Photo, self).save(*args, **kwargs)
@@ -95,7 +111,7 @@ class HomeHeader(models.Model):
     
 class HomeHeaderVideo(models.Model):
     name = models.CharField(max_length=230)
-    video = models.FileField(null=True,blank=True)
+    video = models.CharField(max_length=3400)
     coverimage = models.ImageField(null=True,blank=True)
     
     def __str__(self):
@@ -118,7 +134,7 @@ class Blog(BaseMixin):
     bottomimage = models.ImageField(null=True,blank=True)
     views = models.CharField(max_length=1000,null=True,blank=True,default=0)
     def __str__(self):
-        return self.name
+        return self.name +  ' xeber'
     
     def save(self, *args, **kwargs):
         super(Blog, self).save(*args, **kwargs)
@@ -143,7 +159,7 @@ class Article(BaseMixin):
     image = models.ImageField()
     views = models.CharField(max_length=12000,null=True,blank=True)
     def __str__(self):
-        return self.name  
+        return self.name  + 'meqale'
 
     def save(self, *args, **kwargs):
         super(Article, self).save(*args, **kwargs)

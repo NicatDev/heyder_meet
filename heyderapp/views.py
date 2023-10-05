@@ -1,12 +1,22 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect, get_object_or_404
 from heyderapp.models import *
+from django.urls import translate_url
 from django.db.models import Q,F,FloatField,Count
 from django.db.models.functions import Coalesce
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.db.models import Count
+from django.conf import settings
 
-
+def set_language(request, lang_code):
+    url = request.META.get("HTTP_REFERER", None)
+    if lang_code == 'az':
+        return HttpResponseRedirect('/')
+    else:
+        response = redirect(translate_url(url, lang_code))
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+        return response
+    
 def meetjoin(request):
     context = {}
     return render(request,'index.html',context)
@@ -137,11 +147,15 @@ def home(request):
     photos = Photo.objects.all()
     if len(photos)>3:
         photos = photos[0:3]
-
-    context = {'artcategories':artcategories,'vidcategories':vidcategories,'fotcategories':fotcategories,'HomeHeader':homeHeader,'HomeHeaderVideo':homeHeaderVideo,'article1':article1,'article2':article2,'article3':article3,'blogs':blogs,'videos':videos,'photos':photos}
+    if About.objects.all().exists():
+        about = About.objects.first()
+    else:
+        about = {}
+    context = {'about':about,'artcategories':artcategories,'vidcategories':vidcategories,'fotcategories':fotcategories,'HomeHeader':homeHeader,'HomeHeaderVideo':homeHeaderVideo,'article1':article1,'article2':article2,'article3':article3,'blogs':blogs,'videos':videos,'photos':photos}
     return render(request,'season-full.html',context)
 
 def video(request):
+
     videos = Video.objects.all()
     cat = request.GET.get('movzu')
     if cat:
@@ -191,8 +205,11 @@ def foto(request):
 
 def about(request):
 
-
- 
+    if About.objects.all().exists():
+        about = About.objects.first()
+    else:
+        about = {}
+    
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
@@ -201,7 +218,7 @@ def about(request):
     context = {
 
         'categories':categories,
- 
+        'about':about,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories
@@ -214,6 +231,7 @@ def about(request):
 def articlesingle(request,slug=None):
 
     blog = get_object_or_404(Article,slug=slug)
+    
     if blog.date==None:
         blog.date = datetime.now()
         blog.save()
@@ -234,6 +252,7 @@ def articlesingle(request,slug=None):
     
     tags = blog.tag.all()
     related_blogs = Article.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
+    print(len(related_blogs))
     if len(related_blogs)<2:
         related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
     most_blogs = Article.objects.all().order_by('views')[0:3]

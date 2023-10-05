@@ -1,6 +1,9 @@
 {% load static %}
 <html lang="en">
-
+    {% load static %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
 <!-- Mirrored from uitheme.net/vstream/season-full.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 07:57:15 GMT -->
 
 <head>
@@ -37,6 +40,7 @@
 </head>
 
 <body class="full-wrap theme-dark">
+    <div class="preloader"></div>
     <!-- cursor animation-->
     <div class="mouseCursor cursor-outer "></div>
     <div class="mouseCursor cursor-inner"><span>Drag</span></div>
@@ -46,99 +50,7 @@
     <button id="scroll_top" class="scroll-top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-    <div class="preloader"></div>
-
-    <div class="backdrop"></div>
-    <!-- <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
-    <div class="switchcolor-wrap">
-        <a class="link sheet-close"><i class="ti-close"></i></a>
-        <h2>Settings</h2>
-        <h4>Choose Color Theme</h4>
-        <ul>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
-                    <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
-                    <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
-                    <span class="circle-color bg-blue" style="background-color: #132977;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
-                    <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
-                    <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
-                    <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
-                    <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
-                </label>
-            </li>
-
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
-                    <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
-                    <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
-                    <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
-                    <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
-                </label>
-            </li>
-            <li>
-                <label class="item-radio item-content">
-                    <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
-                    <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
-                </label>
-            </li>
-
-
-        </ul>
-        <div class="toggle-div mt-4">
-            <h4 class="d-inline">Dark Mode</h4>
-            <div class="d-inline float-right">
-                <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
-            </div>
-        </div>
-    </div> -->
-
+    
 
     <div class="main-wrapper">
         <!-- header wrapper -->
@@ -309,6 +221,7 @@
                                 }
                             </style>
                             <script>
+                               
                                 $(document).ready(function () {
                                     $(".lang-flag").click(function () {
                                         $(".language-dropdown").toggleClass("open");
@@ -320,20 +233,29 @@
                                         $("ul.lang-list li").removeClass("selected");
                                         $(this).addClass("selected");
                                         if ($(this).hasClass('lang-en')) {
-                                            $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-es").removeClass("lang-pt");
+                                            $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-pt");
                                             $("#lang_selected").html("<p>AZ</p>")
+                                            window.location.href='/'
                                         } else if ($(this).hasClass('lang-pt')) {
-                                            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-es").removeClass("lang-en");
+                                            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
                                             $("#lang_selected").html("<p>RU</p>")
-                                        } else {
-                                            $(".language-dropdown").find(".lang-flag").addClass("lang-es").removeClass("lang-en").removeClass("lang-pt");
-                                            $("#lang_selected").html("<p>AZ</p>")
-                                        }
+                                            window.location.href='/ru'
+                                        } 
                                         $(".language-dropdown").removeClass("open");
                                     });
                                 })
                             </script>
-
+                            <script>
+                                var currentURL = "{{ request.build_absolute_uri }}";
+                                if (currentURL.endsWith('ru/')) {
+                                    $("ul.lang-list li").removeClass("selected");
+                              
+                                    
+                                    $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
+                                    $("#lang_selected").html("<p>RU</p>")
+                                    $("ul.lang-list li.lang-pt").remove();
+                                }
+                            </script>
 
                         </div>
 
@@ -351,7 +273,7 @@
                                         <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
                                             <ul class="submenu">
                                                 {% for cat in vidcategories %}
-                                                <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                                <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                                 {% endfor %}
 
                                             </ul>
@@ -372,11 +294,7 @@
                                         </li>
 
                                         <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
-                                            <ul class="submenu">
-                                                {% for cat in artcategories %}
-                                                <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                                {% endfor %}
-                                            </ul>
+                                    
                                         </li>
 
 
@@ -408,7 +326,7 @@
             <div class="fm-header-sidebar-wrapper">
                 <div class="fm-header-sidebar-action mb-65">
                     <div class="fm-header-sidebar-logo">
-                        <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}"
+                        <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.svg' %}"
                                 alt="logo not found"></a>
                     </div>
                     <div class="offcanvas-close">
@@ -509,15 +427,16 @@
                                 <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
-                                <p style="user-select:none;">{{HomeHeader.content|safe}}</p>
+                                <p style="user-select:none;">{{HomeHeader.content|slice:350|safe}}...</p>
                                 <a href="{{HomeHeader.href.url}}" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İndi izlə !</a>
                             </div>
                             <div class="right-wrap">
-                                <video autoplay muted loop id="myVideo">
+                                <img style="width: 100%;filter: contrast(120%) brightness(120%);" src="https://aids.az/wp-content/uploads/2022/01/h-eliyev.gif" alt="">
+                                <!-- <video autoplay muted loop id="myVideo">
                                     <source src="{{HomeHeader.video.url}}" type="video/mp4">
-                                </video>
+                                </video> -->
                             </div>
                         </div>
                     </div>
@@ -569,24 +488,15 @@
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="fm-about-content-section">
-                            <span style="user-select:none ;" class="section-subtitle title-anim">ABOUT ME</span>
-                            <h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">Creative & Expert <br> Film
-                                Director
-                            </h2>
-                            <p  class="mb-20">I’m a world-renowned filmmaker who, for the past 9 years of my 26-years
-                                career
-                                have specialized in creating incredible cinematic images no matter what the camera. Some
-                                of my
-                                most iconic work was created with Canon DSLRs. Sloping each project alongside the
-                                communities at
-                                the heart of her stories in order to ensure authenticity.</p>
+                            <span style="user-select:none ;" class="section-subtitle title-anim">{{about.minititle}}</span>
+                            <a href="{% url 'about' %}"><h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">{{about.title|safe}}
+                            </h2></a>
+                            <p  class="mb-20">{{about.content}}</p>
 
-                            <p>I can film your project whether it is a commercial advertise, a short film or a document
-                                film. I
-                                have expertise in these fields. Founded in 2007 by Faime located at Kisterdast, London.
+                            <p>{{about.content2}}
                             </p>
                             <div class="fm-director-about-name mt-55">
-                                <a style="user-select:none ;" href="team-details.html" class="director-about-nam">David Anderson</a>
+                                <a style="user-select:none ;" href="{% url 'about' %}" class="director-about-nam">{{about.imza}}</a>
                             </div>
                         </div>
                     </div>
@@ -935,7 +845,7 @@
             style="display: flex;align-items:center;justify-content:space-between;margin-bottom:2%;">
             <h3 style="user-select:none ;">Məqalələr</h3>
             <div style="display: flex;align-items:center;">
-                <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
+                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}">daha ətraflı</a></span>
                 <span><img style="filter:  brightness(5000%) ;"
                         src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
             </div>
@@ -1019,7 +929,7 @@
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
         <h3 style="user-select:none ;">Videolar</h3>
         <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                     alt=""></span>
         </div>
@@ -1039,7 +949,7 @@
                         {% for video in videos %}
                         <div class="owl-items" >
                             <a  class="slide-one">
-                                <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;"
+                                <div class="slide-image"><img style="object-fit: cover; max-height:400px !important; height:400px ;"
                                         src="{{video.coverimage.url}}"
                                         alt="image"></div>
                                 <div class="slide-content">
@@ -1065,7 +975,7 @@
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
         <h3 style="user-select:none ;">Fotolar</h3>
         <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                     alt=""></span>
         </div>
@@ -1112,7 +1022,7 @@
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
         <h3 style="user-select:none ;">Xəbərlər</h3>
         <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="#">daha ətraflı</a></span>
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                     alt=""></span>
         </div>
@@ -1129,7 +1039,7 @@
                     <div class="fm-blog-inner blog__animation-wrapper  is-white">
 
                         <div class="fm-blog-thumb">
-                            <a href="{% url 'blogsingle' blog.slug %}"> <img src="{{blog.image.url}}"
+                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:300px" src="{{blog.image.url}}"
                                     alt="img not found"></a>
                         </div>
 
@@ -1385,22 +1295,20 @@
     }
 
     @media(max-width:992px) {
-        .popup{
-            padding: 5% 15% 0 15%;
-        }
+  
         .nav-item:hover {
             background-color: #D2691E;
         }
     }
-    @media(max-width:1000px) {
-        .popup{
-            padding: 5% 15% 0 15%;
+    @media(max-width:700px) {
+        .pop{
+            padding: 5% 0 0 0 !important;
         }
        
     }
-    @media(max-width:1200px) {
-        .popup{
-            padding: 5% 15% 0 15%;
+    @media(max-width:1000px) {
+        .pop{
+            padding: 5% 15% 0 15% !important;
         }
        
     }
@@ -1791,9 +1699,6 @@
 </style>
 
 
-<style>
-
-</style>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
