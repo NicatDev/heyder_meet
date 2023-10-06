@@ -11,17 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vstream - Media Landing Page</title>
-
+   
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="custom.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="custom.js"></script>
     <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -40,12 +36,36 @@
 </head>
 
 <body class="full-wrap theme-dark">
+
+<script>
+    $(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items: 3, // Change this value to control the number of items displayed
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:5
+        }
+    }
+  });
+});
+</script>
+
     <div class="preloader"></div>
     <!-- cursor animation-->
     <div class="mouseCursor cursor-outer "></div>
     <div class="mouseCursor cursor-inner"><span>Drag</span></div>
 
-
+    
     <!-- Go Top Button -->
     <button id="scroll_top" class="scroll-top">
         <i class="fa-solid fa-arrow-up"></i>
@@ -53,6 +73,11 @@
     
 
     <div class="main-wrapper">
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+          </div>
         <!-- header wrapper -->
         <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
             <div class="container">
@@ -935,14 +960,12 @@
         </div>
     </div>
 
+    
+
+
     <!-- slider wrapper -->
-    <div style="margin-top:1%;" class="slide-wrapper">
+    <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
         <div class="container-fluid">
-            <div class="row">
-
-
-            </div>
-
             <div class="row">
                 <div class="col-sm-12">
                     <div class="slide-slider-full owl-carousel owl-theme">
@@ -984,34 +1007,29 @@
 
     <!--photo galery-->
 
-    <section class="myphoto" style="margin-left:auto;margin-right:auto;width:90%;">
-        <div class="grid-container">
-
-            {% for photo in photos %}
-            <figure class="2">
-          
-              
-                <div class="fm-single-featured">
-                    <div class="fm-featured-thumb">
-                        <a>   
-                            <img src="{{photo.image.url}}" alt="img not found">
-                        </a>
-                    </div>
-                    <div class="fm-featured-content" style="padding-bottom:3%;">
-             
-
-                        <div style="height:100%;width:100%;display:none;align-items:center;justify-content:center;" class="fm-video-play" >
-                            
-                            <i class="fa-light fa-magnifying-glass-plus" style="color: #000000;font-size:40px !important;color:rgb(173, 173, 255)"></i>
-                        </div>
-                    </div>
+    <div class="grid-containerr" >
+               
+        {% for image in photos %}
+         <div class="fm-single-featured clickable-div" >
+           
+            <div class="fm-featured-thumb">
+               <a> 
+                <img class="myallimages" id="{{image.id}}" src="{{ image.image.url }}" alt="img not found"></a>
+            </div>
+            <div class="fm-featured-content" style="z-index: 4 !important;">  
+                <div style="border:none" class="fm-video-play" style="z-index:999">
+                    <a href="movie-details.html">
+                        <h4 style="color:white !important; " class="fm-featured-title">{{image.name}}</h4>
+                     </a>
+                     <span class="fm-featured-meta">Tarix: {{image.created_at}}</span>
                 </div>
-            </figure>
-            {% endfor %}
+            </div>
+         </div>
+       
+        {% endfor %}
+         
 
-
-        </div>
-    </section>
+    </div>
     {% endif %}
 
 
@@ -1030,7 +1048,7 @@
     <!-- blog-area-start -->
     <section class="blog-area bg-common-black section-spacing" style="padding-bottom:10px;padding-top:0px;">
 
-        <div class="container" style="    max-width: 2507px;
+        <div class="container" style="max-width: 2507px;
                 width: 80%;">
             <div class="row">
                 <div class="fm-blog-wrapper is-white">
@@ -1101,8 +1119,155 @@
     </div>
 
     <style>
-
+        .aboutimage-div{
+            margin-top:1%;
+            display: flex;
+            text-decoration: none;
+           
+            background-color: rgba(23, 54, 79, 1);
+            padding-left:3%;
+        }
+    
+        .aboutimagetext-div{
+            padding-left:3%;
+            padding-right:3%;
+            padding-top: 5%;
+        }
+    
+        .aboutimagetext-div h2{
+            color:white;
+            font-size: 96px;
+            padding-bottom: 2%;
+        }
+    
+        .aboutimagetext-div{
+            font-size: 32px;
+        }
+        .myphoto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: sans-serif;
+            margin-top:10px !important;
+            overflow-y: auto;
+          }
+          
+          .grid-containerr {
+            z-index: 1;
+            columns: 4 200px !important;
+            column-gap: 1.5rem;
+            width: 90%;
+            margin: 0 auto;
+          }
+          
+          .grid-containerr div {
+            z-index: 1;
+            width: 150px;
+            margin: 0 1.5rem 1rem 0;
+            display: inline-block;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.25s ease-in-out;
+          }
+          @media(min-width:992px){
+            .nav-item:hover{
+                background-color: #D2691E;
+            }
+        }
+          .grid-containerr div:hover img {
+            filter: grayscale(100%);
+          }
+    
+          
+          .grid-containerr div:hover {
+            border-color: coral;
+          }
+          
+          .grid-containerr div img {
+            width: 100%;
+            filter: grayscale(0);
+            border-radius: 5px;
+            transition: all 0.25s ease-in-out;
+          }
+          
+          .grid-containerr div p {
+            margin: 5px 0;
+            padding: 0;
+            text-align: center;
+            font-style: italic;
+            z-index: 1;
+          }
+          .blog-rotate-btn span {
+    
+            font-size: 44px;
+        }
+        @media (max-width: 992px){
+        .navbar-collapse {
+            flex-basis: 100% !important;
+        }
+        #reab{
+            display: block !important;
+        }
+        
+        
+    }
+    
+      
     </style>
+    <style>.containerr {
+        height: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+      input[type='checkbox'] {
+        display: none;
+      }
+      .triggerrs {
+        display: flex;
+      }
+      .contentt {
+        position: absolute;
+        display: none;
+        z-index: 2;
+        top: 100%;
+        border-radius: 3px;
+      }
+      .inner-section span:hover {
+        font-size: large;
+      }
+      .inner-section span a {
+        color: black;
+        font-weight: 600;
+      }
+      .label {
+        border: 1px solid #7d7d7d;
+        padding: 0.5em 1.7em;
+        cursor: pointer;
+        position: relative;
+      }
+      .label:hover {
+        background: #bcbcbc;
+      }
+      .triggerrs > input:checked + label {
+        background: #bcbcbc;
+        border: 1px solid transparent;
+      }
+      .triggerrs > input:checked + label > div.contentt {
+        display: flex;
+        top: 100%;
+        padding: 0.5em;
+        background: #d3d3d3;
+        right: -1px;
+      }
+      .triggerrs > input:checked + label > div.contentt div {
+        padding: 0em 0.5em;
+      }
+      .triggerrs > input:checked + label > div.contentt div + div {
+        border-left: 1px solid #7d7d7d;
+      }</style>
     <style>
         .section-padding {
             padding: 60px 0;
@@ -1171,10 +1336,6 @@
 
     </script>
 
-
-
-
-
 <div class="footer-wrapper">
     <div class="container">
         <div class="row">
@@ -1215,7 +1376,7 @@
                         </div>
                       
                             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
-                           <div style="text-align:start;" >
+                           <div style="text-align:start;padding:50px;" >
                              <h5 style="font-size: large;text-align:center " >Bizimlə əlaqə</h5>
                                 <ul>
                                     <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
@@ -1249,6 +1410,7 @@
     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
 
 </body>
+
 
 <style>
     .nav-item {
@@ -1329,11 +1491,11 @@
         transition: all 0.25s ease-in-out;
     }
 
-    .fm-featured-thumb img {
+    /* .fm-featured-thumb img {
         width: 100%;
         filter: grayscale(0) !important;
         position: relative !important;
-    }
+    } */
 
     .grid-container div p {
         margin: 5px 0;
@@ -1624,6 +1786,192 @@
     }
 </style>
 <style>
+
+    
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2001; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+<style>
+    .aboutimage-div{
+        margin-top:1%;
+        display: flex;
+        text-decoration: none;
+       
+        background-color: rgba(23, 54, 79, 1);
+        padding-left:3%;
+    }
+
+    .aboutimagetext-div{
+        padding-left:3%;
+        padding-right:3%;
+        padding-top: 5%;
+    }
+
+    .aboutimagetext-div h2{
+        color:white;
+        font-size: 96px;
+        padding-bottom: 2%;
+    }
+
+    .aboutimagetext-div{
+        font-size: 32px;
+    }
+    .myphoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        margin-top:10px !important;
+        overflow-y: auto;
+      }
+      
+      .grid-containerr {
+        columns: 4 200px !important;
+        column-gap: 1.5rem;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .grid-containerr div {
+        z-index: 0;
+        width: 150px;
+        margin: 0 1.5rem 1rem 0;
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.25s ease-in-out;
+      }
+      @media(min-width:992px){
+        .nav-item:hover{
+            background-color: #D2691E;
+        }
+    }
+      .grid-containerr div:hover img {
+        filter: grayscale(100%);
+      }
+
+      
+      .grid-containerr div:hover {
+        border-color: coral;
+      }
+      
+      .grid-containerr div img {
+        width: 100%;
+        filter: grayscale(0);
+        border-radius: 5px;
+        transition: all 0.25s ease-in-out;
+      }
+      
+      .grid-containerr div p {
+        margin: 5px 0;
+        padding: 0;
+        text-align: center;
+        font-style: italic;
+      }
+      .blog-rotate-btn span {
+
+        font-size: 44px;
+    }
+    @media (max-width: 992px){
+    .navbar-collapse {
+        flex-basis: 100% !important;
+    }
+    #reab{
+        display: block !important;
+    }
+    
+    
+}
+
+  
+</style>
+
+<style>
     .slide-wrapper .slide-two .slide-image:before {
         bottom: 40%;
         right: 45%;
@@ -1671,22 +2019,19 @@
     .pop .fm-single-featured:after {
         background-color: transparent !important;
         background: none !important;
+      
     }
     .pop .fm-single-featured i{
         display: none !important;
     } 
+   
 </style>
 
 
 
 <style>
-    .fm-single-featured:hover .fm-featured-content {
-        bottom: 26%;
-        padding-right:13%;
-    }
-    .fm-single-featured:hover .fm-video-play{
-        display: flex !important;
-    }
+    
+    
     .popup {
         padding: 5% 25% 0 25%;
     }
@@ -1698,7 +2043,40 @@
     }
 </style>
 
+<script>
 
+    const clickableDivs = document.querySelectorAll(".clickable-div");
+    var modal = document.getElementById("myModal");
+    const clickableImages = document.querySelectorAll(".myallimages");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    console.log(modalImg)
+    clickableDivs.forEach(function(div) {
+        div.addEventListener("click", function() {
+          // Inside this function, "this" refers to the clicked image element
+          const img = div.querySelector("img");
+          
+          handleImageClick(img);
+        });
+      });
+      function handleImageClick(clickedImage) {
+        console.log(clickedImage)
+        modal.style.display = "block";
+        modalImg.src = clickedImage.src;
+   
+      }
+    
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -1725,6 +2103,44 @@
 <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
 <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
 <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+<script>
+    // Get the modal
+    const clickableDivs = document.querySelectorAll(".clickable-div");
+    var modal = document.getElementById("myModal");
+    const clickableImages = document.querySelectorAll(".myallimages");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    console.log(modalImg)
+    clickableDivs.forEach(function(div) {
+        div.addEventListener("click", function() {
+          // Inside this function, "this" refers to the clicked image element
+          const img = div.querySelector("img");
+          
+          handleImageClick(img);
+        });
+      });
+      function handleImageClick(clickedImage) {
+        console.log(clickedImage)
+        modal.style.display = "block";
+        modalImg.src = clickedImage.src;
+   
+      }
+    
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
+
 <script>
 
 
@@ -1769,6 +2185,10 @@
 
     popup.init()
 
+    
+   
+
 </script>
+
 
 </html>
