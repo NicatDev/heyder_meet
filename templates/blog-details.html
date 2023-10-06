@@ -240,16 +240,27 @@
                           })
                       </script>
                       <script>
-                          var currentURL = "{{ request.build_absolute_uri }}";
-                          if (currentURL.endsWith('ru/')) {
-                              $("ul.lang-list li").removeClass("selected");
-                        
-                              
-                              $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
-                              $("#lang_selected").html("<p>RU</p>")
-                              $("ul.lang-list li.lang-pt").remove();
-                          }
-                      </script>
+                                
+                        var currentURL = "{{ request.build_absolute_uri }}";
+                        if (currentURL.endsWith('ru/' )) {
+                            console.log('1')
+                            $("ul.lang-list li").removeClass("selected");
+                      
+                            
+                            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
+                            $("#lang_selected").html("<p>RU</p>")
+                            $("ul.lang-list li.lang-pt").remove();
+                        }
+                        else if(currentURL.includes('ru')){
+                            console.log('2')
+                            $("ul.lang-list li").removeClass("selected");
+                      
+                            
+                            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
+                            $("#lang_selected").html("<p>RU</p>")
+                            $("ul.lang-list li.lang-pt").remove();
+                        }
+                    </script>
 
                   </div>
 
