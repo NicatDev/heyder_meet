@@ -36,7 +36,16 @@
 </head>
 
 <body class="full-wrap theme-dark">
-
+<style>
+    @media only screen and (max-width: 576px){
+.slide-wrapper .slide-one .slide-image {
+    height: 400px !important
+}}
+@media screen and (max-width: 450px){
+.slide-image {
+     width: 100% !important;
+}}
+</style>
 <script>
     $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
@@ -44,6 +53,7 @@
     loop: true,
     margin: 10,
     autoplay: true,
+    autoHeight: true,
     autoplayTimeout: 2000,
     responsive:{
         0:{
@@ -53,7 +63,7 @@
             items:2
         },
         1000:{
-            items:5
+            items:4
         }
     }
   });
@@ -558,7 +568,17 @@
                     display: none !important;
                 }
             }
-
+            @media screen and (max-width: 1017px) and (min-width:988px) {
+                #hvprnt1{
+                    width: 500px !important;
+                }
+                #hvprnt2{
+                    width: 500px !important;
+                }
+                #hvprnt3{
+                    width: 500px !important;
+                }
+            }
             @media screen and (max-width: 1300px) and (min-width:1000px) {
                 .myhovdiv22 p {
                     font-size: 16px
@@ -595,7 +615,7 @@
                 }
             }
 
-            @media screen and (max-width: 1000px) {
+            @media screen and (max-width: 1017px) {
                 #kjjj {
                     gap: 10px;
                     padding: 10px 20%;
@@ -2076,6 +2096,7 @@
     span.onclick = function() { 
       modal.style.display = "none";
     }
+   
     </script>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
