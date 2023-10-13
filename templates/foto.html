@@ -533,7 +533,7 @@
                                 
                                 {% for cat in categories %}
                                     <div class="owl-items">
-                                        <a href="{% url 'video' %}?movzu={{cat.id}}" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
+                                        <a href="{% url 'foto' %}?movzu={{cat.id}}" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
                                     </div>
                                     {% endfor %}
                                 </div>

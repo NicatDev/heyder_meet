@@ -145,8 +145,8 @@ def home(request):
     if len(videos)>3:
         videos = videos[0:3]
     photos = Photo.objects.all()
-    if len(photos)>3:
-        photos = photos[0:3]
+    if len(photos)>8:
+        photos = photos[0:8]
     if About.objects.all().exists():
         about = About.objects.first()
     else:
