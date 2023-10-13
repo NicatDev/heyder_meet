@@ -529,7 +529,7 @@
                             <p>{{about.content2}}
                             </p>
                             <div class="fm-director-about-name mt-55">
-                                <a style="user-select:none ;" href="{% url 'about' %}" class="director-about-nam">{{about.imza}}</a>
+                                <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}" class="director-about-nam">{{about.imza}}</a>
                             </div>
                         </div>
                     </div>
@@ -1067,7 +1067,7 @@
     <section class="blog-area bg-common-black section-spacing" style="padding-bottom:10px;padding-top:0px;">
 
         <div class="container" style="max-width: 2507px;
-                width: 80%;">
+                width: 90%;">
             <div class="row">
                 <div class="fm-blog-wrapper is-white">
 
@@ -1075,7 +1075,7 @@
                     <div class="fm-blog-inner blog__animation-wrapper  is-white">
 
                         <div class="fm-blog-thumb">
-                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:300px" src="{{blog.image.url}}"
+                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:370px;" src="{{blog.image.url}}"
                                     alt="img not found"></a>
                         </div>
 
@@ -1088,7 +1088,7 @@
                                     <a style="user-select:none ;" href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                                 </h4>
                                 <div class="fm-blog-text">
-                                    <p style="user-select:none ;">{{blog.content_without_ck|slice:170}}...</p>
+                                    <p style="user-select:none ;">{{blog.content_without_ck|slice:230}}...</p>
                                 </div>
                             </div>
                         </div>
@@ -1357,7 +1357,8 @@
 <div class="footer-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-left">
+            <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img src="{% static 'assets/img/logo/logo.svg'  %}" alt=""></div>
+            <div class="col-sm-8 text-left">
                 <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
             </div>
     
@@ -1384,6 +1385,7 @@
                         <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
                             <div style="text-align:start">
                             <h5 class="mb-3" style="font-size:large;">Linklər</h5>
+                            <br>
                            <a href="#"><p style="width: 100% ;font-size:medium">Əsas Səhifə</p></a> 
                            <a href="#"><p style="width: 100% ;font-size:medium">Video</p></a>
                             <a href="#"><p style="width: 100%;font-size:medium">Foto</p></a>
@@ -1394,8 +1396,8 @@
                         </div>
                       
                             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
-                           <div style="text-align:start;padding:50px;" >
-                             <h5 style="font-size: large;text-align:center " >Bizimlə əlaqə</h5>
+                           <div style="text-align:start;" >
+                             <h5 style="font-size: large; " >Bizimlə əlaqə</h5>
                                 <ul>
                                     <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
                                     <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
@@ -1891,6 +1893,23 @@
     width: 100%;
   }
 }
+@media only screen and (min-width: 1350px){
+    .fm-featured-title{
+        font-size:120% !important
+    }
+    .fm-featured-meta{
+        font-size:100% !important
+    }
+}
+@media only screen and (min-width: 700px) and (max-width:900px){
+    .fm-featured-title{
+        font-size:70% !important
+    }
+    .fm-featured-meta{
+        font-size:50% !important
+    }
+}
+
 </style>
 <style>
     .aboutimage-div{
@@ -2042,7 +2061,11 @@
     .pop .fm-single-featured i{
         display: none !important;
     } 
-   
+    @media (max-width: 2300px){
+    .full-wrap .container-fluid, .full-wrap .container-sm, .full-wrap .container-md, .full-wrap .container-lg, .full-wrap .container-xl {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }}
 </style>
 
 
