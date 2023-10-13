@@ -909,7 +909,7 @@
                         class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
-                                <p style="color:black">{{article1.content|slice:160}}...</p>
+                                <p style="color:black;">{{article1.content|slice:160}}...</p>
                                 <div class="myother"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
                                     <a href="{% url 'articlesingle' article1.slug %}">Daha ətraflı</a>
@@ -2078,7 +2078,22 @@
 
 <style>
     
-    
+    @media screen and (max-width: 500px){
+    .myhovdiv22 p {
+        font-size:13px !important
+    }
+    }
+    @media (min-width: 600px){
+        .myhovdiv22 p{
+            height:17rem
+        }
+        }
+        @media (min-width: 600px) and (max-width:800px){
+            .myhovdiv22 img{
+                padding-left:8% !important;
+                padding-right:8% !important;
+            }
+            }
     .popup {
         padding: 5% 25% 0 25%;
     }
