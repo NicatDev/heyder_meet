@@ -487,7 +487,7 @@
                                     <a class="slide-one slide-two slide-three " href="{{video.video.url}}">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
-                                        <div class="slide-content">
+                                        <div style="padding-bottom:28px;" class="slide-content">
                                             <h2>{{video.name}}
 
                                             </h2>
@@ -997,13 +997,13 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items" >
-                            <a  class="slide-one">
+                            <a style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
                                 <div class="slide-image"><img style="object-fit: cover; max-height:400px !important; height:400px ;"
                                         src="{{video.coverimage.url}}"
                                         alt="image"></div>
                                 <div class="slide-content">
-                                    <h2>{{video.name}}</h2>
-                                    <p style="height:4rem">{{video.content|slice:90}}</p>
+                                    <h2 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);">{{video.name}}</h2>
+                                    <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">{{video.content|slice:90}}</p>
 
                                 </div>
                             </a>
