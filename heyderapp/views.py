@@ -50,14 +50,15 @@ def blog(request):
     tags = Tag.objects.annotate(blog_count = Count('blog'))
     if len(most_blogs)>4:
         most_blogs=most_blogs[0:4]
-    
+    allheader = AllHeader.objects.all()
     context = {
         'blog_list':blog_list,
         'tags':tags,
         'most_blogs':most_blogs,
         'start':start,
         'end':end,
-        'iterator':range(start,end+1)
+        'iterator':range(start,end+1),
+        'allheader':allheader
     }
   
         
@@ -80,12 +81,14 @@ def article(request):
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
-    
+    allheader = AllHeader.objects.all()
+
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
-        'vidcategories':vidcategories
+        'vidcategories':vidcategories,
+        'allheader':allheader
         }
     return render(request,'article.html',context)
 
@@ -104,6 +107,8 @@ def blogsingle(request,slug=None):
     if len(related_blogs)<2:
         related_blogs = (related_blogs | Blog.objects.all()).distinct()[:3]
     most_blogs = Blog.objects.all().order_by('views')[0:3]
+    allheader = AllHeader.objects.all()
+
     context = {
         'blog':blog,
         'tags':tags,
@@ -111,7 +116,8 @@ def blogsingle(request,slug=None):
         'next':next_post,
         'pre':pre_post,
         'related_blogs':related_blogs,
-        'most_blogs':most_blogs
+        'most_blogs':most_blogs,
+        'allheader':allheader
         
     }
     return render(request,'blog-details.html',context)
@@ -155,6 +161,7 @@ def home(request):
     return render(request,'season-full.html',context)
 
 def video(request):
+    allheader = AllHeader.objects.all()
 
     videos = Video.objects.all()
     cat = request.GET.get('movzu')
@@ -177,11 +184,14 @@ def video(request):
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories,
-        'fcount':fcount
+        'fcount':fcount,
+        'allheader':allheader
     }
     return render(request,'video.html',context)
 
 def foto(request):
+    allheader = AllHeader.objects.all()
+
     fcount = Photo.objects.all().count()
     photos = Photo.objects.all().order_by('ordering')
     if request.GET.get('movzu'):
@@ -197,13 +207,15 @@ def foto(request):
         'fcount':fcount,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
-        'vidcategories':vidcategories
+        'vidcategories':vidcategories,
+        'allheader':allheader
     }
     return render(request,'foto.html',context)
 
 
 
 def about(request):
+    allheader = AllHeader.objects.all()
 
     if About.objects.all().exists():
         about = About.objects.first()
@@ -221,7 +233,8 @@ def about(request):
         'about':about,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
-        'vidcategories':vidcategories
+        'vidcategories':vidcategories,
+        'allheader':allheader
     }
     return render(request,'about.html',context)
 
@@ -229,6 +242,7 @@ def about(request):
 
 
 def articlesingle(request,slug=None):
+    allheader = AllHeader.objects.all()
 
     blog = get_object_or_404(Article,slug=slug)
     
@@ -263,7 +277,8 @@ def articlesingle(request,slug=None):
         'next':next_post,
         'pre':pre_post,
         'related_blogs':related_blogs,
-        'most_blogs':most_blogs
+        'most_blogs':most_blogs,
+        'allheader':allheader
         
     }
     return render(request,'articlesingle.html',context)
