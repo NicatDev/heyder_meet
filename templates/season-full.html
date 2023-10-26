@@ -467,7 +467,7 @@
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
                                 <p style="user-select:none;">{{HomeHeader.content|slice:350|safe}}...</p>
-                                <a href="{{HomeHeader.href.url}}" class="btn btn-lg"
+                                <a href="{{HomeHeader.href}}" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İNDİ İZLƏ</a>
                             </div>
@@ -1389,7 +1389,7 @@
                     
                         <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
                             <div style="text-align:start">
-                            <h5 class="mb-3" style="font-size:large;">Linklər</h5>
+                            <h5 class="mb-3" style="font-size:large;width:150px;">Linklər</h5>
                             <br>
                            <a href="{% url 'home' %}"><p class="footerLinks" >Əsas Səhifə</p></a> 
                            <a href="{% url 'video' %}"><p class="footerLinks" >Video</p></a>
@@ -2082,7 +2082,7 @@
 <style>
 
 
-    .footerLinks{width: 100%;font-size:medium}
+    .footerLinks{width: 100% !important;font-size:medium !important}
     @media screen and (max-width: 500px){
     .myhovdiv22 p {
         font-size:13px !important
