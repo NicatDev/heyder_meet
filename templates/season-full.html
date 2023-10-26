@@ -63,7 +63,7 @@
             items:2
         },
         1000:{
-            items:4
+            items:3
         }
     }
   });
@@ -902,13 +902,10 @@
             </div>
         </div>
         <div class="banner-wrapper">
-            <div class="container-fluid" style="    padding-left: 5% !important;
-        padding-right: 5% !important;">
+            <div class="container-fluid" style="padding-left: 5% !important;padding-right: 5% !important;">
                 <div id="kjjj" style="border-radius:10px !important;position:relative;" class="row">
 
-                    <div id="hvprnt1"
-                        style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px"
-                        class="col-lg-4">
+                    <div id="hvprnt1" style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px" class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;">{{article1.content|slice:150}}...</p>
@@ -953,7 +950,7 @@
                                 </div>
                                 <img class="myimage2"
                                     style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
-                                    src="{{article3.image.url}}" alt="">
+                                    src="{{article3.image.url}}" loading="lazy" alt="">
                             </div>
                         </div>
                     </div>
@@ -1000,7 +997,7 @@
                             <a style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
                                 <div class="slide-image"><img style="object-fit: cover; max-height:400px !important; height:400px ;"
                                         src="{{video.coverimage.url}}"
-                                        alt="image"></div>
+                                        alt="image" loading="lazy"></div>
                                 <div class="slide-content">
                                     <h2 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);">{{video.name}}</h2>
                                     <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">{{video.content|slice:90}}</p>
@@ -1045,7 +1042,7 @@
             <div class="fm-featured-content" style="z-index: 4 !important;">  
                 <div style="border:none" class="fm-video-play" style="z-index:999">
                     <a href="movie-details.html">
-                        <h4 style="color:white !important; font-size:80%;" class="fm-featured-title">{{image.name}}</h4>
+                        <h4  class="fm-featured-title imageName">{{image.name}}</h4>
                      </a>
                      <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
                 </div>
@@ -1375,7 +1372,7 @@
                 <div class="middle-footer">
                     <div class="row">
               
-                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="display: flex;justify-content:center;">
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks" >
                         <div style="text-align: start;">
                             <h5 style="font-size: large;">Sosial şəbəkələr</h5>
                             <ul>
@@ -1394,12 +1391,12 @@
                             <div style="text-align:start">
                             <h5 class="mb-3" style="font-size:large;">Linklər</h5>
                             <br>
-                           <a href="#"><p style="width: 100% ;font-size:medium">Əsas Səhifə</p></a> 
-                           <a href="#"><p style="width: 100% ;font-size:medium">Video</p></a>
-                            <a href="#"><p style="width: 100%;font-size:medium">Foto</p></a>
-                            <a href="#"><p style="width: 100%;font-size:medium">Xəbərlər</p></a>
-                            <a href="#"><p style="width: 100%;font-size:medium">Məqalələr</p></a>
-                            <a href="#"><p style="width: 100%;font-size:medium">Layihə haqqında</p></a>
+                           <a href="{% url 'home' %}"><p class="footerLinks" >Əsas Səhifə</p></a> 
+                           <a href="{% url 'video' %}"><p class="footerLinks" >Video</p></a>
+                            <a href="{% url 'foto' %}"><p class="footerLinks">Foto</p></a>
+                            <a href="{% url 'blog' %}"><p class="footerLinks">Xəbərlər</p></a>
+                            <a href="{% url 'article' %}"><p class="footerLinks">Məqalələr</p></a>
+                            <a href="{% url 'about' %}"><p class="footerLinks">Layihə haqqında</p></a>
                         </div>
                         </div>
                       
@@ -1581,6 +1578,7 @@
 <!-- border-bottom title -->
 <!-- border-bottom:1px solid rgb(255, 255, 255); -->
 <style>
+    .imageName{color:white !important; font-size:80%;}
     .owl-nav {
         display: none;
     }
@@ -2019,6 +2017,7 @@
 </style>
 
 <style>
+    .divSosialLinks{display: flex;justify-content:center;}
     .slide-wrapper .slide-two .slide-image:before {
         bottom: 40%;
         right: 45%;
@@ -2081,7 +2080,9 @@
 
 
 <style>
-    
+
+
+    .footerLinks{width: 100%;font-size:medium}
     @media screen and (max-width: 500px){
     .myhovdiv22 p {
         font-size:13px !important
