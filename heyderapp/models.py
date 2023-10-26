@@ -174,3 +174,11 @@ class Article(BaseMixin):
         new_slug = seo(self.name)
         self.slug = new_slug
         super(Article, self).save(*args, **kwargs)
+        
+        
+class Partners(BaseMixin):
+    name = models.CharField(max_length=1200)
+    image = models.ImageField()
+    
+    def __str__(self):
+        return self.name  + ' emekdas'

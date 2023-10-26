@@ -157,7 +157,8 @@ def home(request):
         about = About.objects.first()
     else:
         about = {}
-    context = {'about':about,'artcategories':artcategories,'vidcategories':vidcategories,'fotcategories':fotcategories,'HomeHeader':homeHeader,'HomeHeaderVideo':homeHeaderVideo,'article1':article1,'article2':article2,'article3':article3,'blogs':blogs,'videos':videos,'photos':photos}
+    partners = Partners.objects.all()    
+    context = {'partners':partners,'about':about,'artcategories':artcategories,'vidcategories':vidcategories,'fotcategories':fotcategories,'HomeHeader':homeHeader,'HomeHeaderVideo':homeHeaderVideo,'article1':article1,'article2':article2,'article3':article3,'blogs':blogs,'videos':videos,'photos':photos}
     return render(request,'season-full.html',context)
 
 def video(request):

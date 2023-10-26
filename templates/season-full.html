@@ -1121,24 +1121,11 @@
 
     <div class="brand-carousel section-padding owl-carousel"
         style="margin-top:3%;background:linear-gradient(to right, rgb(50, 50, 50), rgb(137, 137, 137), rgb(51, 51, 51));">
+        {% for logo in partners %}
         <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
+            <img src="{{logo.image.url}}" alt="{{logo.name}}">
         </div>
-        <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-        </div>
-        <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-        </div>
-        <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-        </div>
-        <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-        </div>
-        <div class="single-logo">
-            <img src="https://i.postimg.cc/B6qxYvgX/brand-3.png" alt="">
-        </div>
+        {% endfor %}
     </div>
 
     <style>
