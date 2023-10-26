@@ -12,7 +12,7 @@ class AboutTranslationOptions(TranslationOptions):
 translator.register(About, AboutTranslationOptions)
 
 class VideoTranslationOptions(TranslationOptions):
-    fields = ('name', 'content')
+    fields = ('name', 'content','coverimage')
 
 
 translator.register(Video, VideoTranslationOptions)
@@ -44,7 +44,7 @@ class AllHeaderTranslationOptions(TranslationOptions):
 translator.register(AllHeader, AllHeaderTranslationOptions)
 
 class HomeHeaderVideoTranslationOptions(TranslationOptions):
-    fields = ('name', )
+    fields = ('name', 'coverimage')
 
 
 translator.register(HomeHeaderVideo, HomeHeaderVideoTranslationOptions)
