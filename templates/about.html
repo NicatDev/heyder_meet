@@ -234,6 +234,11 @@
                                         $(".language-dropdown").removeClass("open");
                                     });
                                 })
+                                $(document).click(function (e) {
+                                    if (!$(e.target).closest(".language-dropdown").length) {
+                                        $(".language-dropdown").removeClass("open");
+                                    }
+                                });
                             </script>
                             <script>
                                 

@@ -318,6 +318,11 @@
                                             $(".language-dropdown").removeClass("open");
                                         });
                                     })
+                                    $(document).click(function (e) {
+                                        if (!$(e.target).closest(".language-dropdown").length) {
+                                            $(".language-dropdown").removeClass("open");
+                                        }
+                                    });
                                 </script>
                                 <script>
                                 
@@ -340,6 +345,7 @@
                                         $("#lang_selected").html("<p>RU</p>")
                                         $("ul.lang-list li.lang-pt").remove();
                                     }
+                                   
                                 </script>
     
                             </div>
