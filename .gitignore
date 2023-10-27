@@ -18,4 +18,3 @@ __pycache__/
 **/migrations/*.py
 **/migrations/*.pyc
 **/migrations/__pycache__/
-media/
