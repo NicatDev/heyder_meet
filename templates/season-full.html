@@ -1,9 +1,9 @@
 {% load static %}
 <html lang="en">
-    {% load static %}
-    {% load i18n %}
-    {% get_current_language as LANGUAGE_CODE %}
-    {% get_available_languages as LANGUAGES %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 <!-- Mirrored from uitheme.net/vstream/season-full.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 07:57:15 GMT -->
 
 <head>
@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vstream - Media Landing Page</title>
-   
+
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
     <!-- Custom Stylesheet -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="custom.js"></script>
     <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -36,62 +36,65 @@
 </head>
 
 <body class="full-wrap theme-dark">
-<style>
-    @media only screen and (max-width: 576px){
-.slide-wrapper .slide-one .slide-image {
-    height: 400px !important
-}}
-@media screen and (max-width: 450px){
-.slide-image {
-     width: 100% !important;
-}}
-</style>
-<script>
-    $(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    items: 3, // Change this value to control the number of items displayed
-    loop: true,
-    margin: 10,
-    autoplay: true,
-    autoHeight: true,
-    autoplayTimeout: 2000,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
+    <style>
+        @media only screen and (max-width: 576px) {
+            .slide-wrapper .slide-one .slide-image {
+                height: 400px !important
+            }
         }
-    }
-  });
-});
-</script>
+
+        @media screen and (max-width: 450px) {
+            .slide-image {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 3, // Change this value to control the number of items displayed
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoHeight: true,
+                autoplayTimeout: 2000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
 
     <div class="preloader"></div>
     <!-- cursor animation-->
     <div class="mouseCursor cursor-outer "></div>
     <div class="mouseCursor cursor-inner"><span>Drag</span></div>
 
-    
+
     <!-- Go Top Button -->
     <button id="scroll_top" class="scroll-top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-    
+
 
     <div class="main-wrapper">
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="img01">
             <div id="caption"></div>
-          </div>
+        </div>
         <!-- header wrapper -->
         <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
             <div class="container">
-                <div class="row align-items-center justify-content-lg-between">
+                <div class="row align-items-center justify-content-lg-between pr-4 pl-4">
                     <div class="header-wrapper">
                         <div class="fm-header-logo-wrapper">
                             <a href="{% url 'home' %}" class="fm-header-logo">
@@ -143,7 +146,7 @@
                                     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
                                 }
 
-                                .shadow-4 {  
+                                .shadow-4 {
                                     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
                                 }
 
@@ -256,7 +259,7 @@
                                 }
                             </style>
                             <script>
-                               
+
                                 $(document).ready(function () {
                                     $(".lang-flag").click(function () {
                                         $(".language-dropdown").toggleClass("open");
@@ -271,12 +274,12 @@
                                         if ($(this).hasClass('lang-en')) {
                                             $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-pt");
                                             $("#lang_selected").html("<p>AZ</p>")
-                                            window.location.href='/'
+                                            window.location.href = '/'
                                         } else if ($(this).hasClass('lang-pt')) {
                                             $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
                                             $("#lang_selected").html("<p>RU</p>")
-                                            window.location.href='/ru'
-                                        } 
+                                            window.location.href = '/ru'
+                                        }
                                         $(".language-dropdown").removeClass("open");
                                     });
                                 })
@@ -290,8 +293,8 @@
                                 var currentURL = "{{ request.build_absolute_uri }}";
                                 if (currentURL.endsWith('ru/')) {
                                     $("ul.lang-list li").removeClass("selected");
-                              
-                                    
+
+
                                     $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
                                     $("#lang_selected").html("<p>RU</p>")
                                     $("ul.lang-list li.lang-pt").remove();
@@ -335,7 +338,7 @@
                                         </li>
 
                                         <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
-                                    
+
                                         </li>
 
 
@@ -390,7 +393,7 @@
                 <div class="mobile-menu"></div>
                 <div class="d-none d-sm-block">
                     <div class="fm-offcanvas-about mt-30 mb-30">
-                        <h4 >Reabilitasiya heyatdir</h4>
+                        <h4>Reabilitasiya heyatdir</h4>
                         <p>Reabilitasiya heyatdir</p>
                         <button style="background-color:var(--clr-theme-1);color:black;height:35px;width:40%;">Kecid
                             et</button>
@@ -440,7 +443,8 @@
                         <div class="fm-offcanvas-social-icon">
                             <a href="https://www.facebook.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i style="padding: 10px;" class="fa-brands fa-twitter"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i style="padding: 10px;"
+                                    class="fa-brands fa-twitter"></i></a>
                             <a href="https://www.instagram.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-instagram"></i></a>
                             <a href="https://www.pinterest.com/" target="_blank"><i style="padding: 10px;"
@@ -460,22 +464,21 @@
                         <div class="banner-wrap justify-content-between align-items-center">
                             <div class="left-wrap">
                                 <span style="opacity:0;" class="rnd">IMDb 6.7</span>
-                                <h2 style="user-select:none ;">{{ HomeHeader.title|safe }}</h2>
+                                <h2 style="user-select:none ;">{{HomeHeader.content|slice:350|safe}}</h2>
                                 <span style="opacity:0;cursor:none" class="tag"><b>Heyder Eliyev</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2020</span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
-                                <p style="user-select:none;">{{HomeHeader.content|slice:350|safe}}...</p>
+                                <p style="user-select:none;">{{ HomeHeader.title|safe }}</p>
                                 <a href="{{HomeHeader.href}}" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İNDİ İZLƏ</a>
                             </div>
                             <div class="right-wrap">
-                                <img style="width: 100%;height:100%;filter: contrast(120%) brightness(120%);" src="{% static 'heyder_gif.gif' %}" alt="">
-                                <!-- <video autoplay muted loop id="myVideo">
-                                    <source src="{{HomeHeader.video.url}}" type="video/mp4">
-                                </video> -->
+                                <img style="width: 100%;height:100%;filter: contrast(120%) brightness(120%);"
+                                    src="{{HomeHeader.image.url}}" alt="">
+                           
                             </div>
                         </div>
                     </div>
@@ -484,7 +487,8 @@
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
                                 <div class="owl-items">
-                                    <a class="slide-one slide-two slide-three " href="{{video.video.url}}">
+                                    <a class="slide-one slide-two slide-three " href="{{video.video.url}}"
+                                        target="_blank">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
                                         <div style="padding-bottom:28px;" class="slide-content">
@@ -516,26 +520,29 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="fm-director-about-img">
                             <img src="{{about.image.url}}" alt="img not found">
-                            <div class="fm-director-years">
+                            <div class="fm-director-years" style="align-items: end;">
                                 <span style="user-select:none ;" class="fm-director-years-number">100</span>
-                                <span class="fm-director-years-content">
-                                    <span class="fm-director-plus"></span>
-                                    <span style="user-select:none;" style="font-size:34px" class="fm-director-years-text">il bizimlə</span>
-                                </span>
+                              
+                                <h3 style="font-size: 100px;line-height: 0.65;">İL</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="fm-about-content-section">
-                            <span style="user-select:none ;" class="section-subtitle title-anim">{{about.minititle}}</span>
-                            <a href="{% url 'about' %}"><h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">{{about.title|safe}}
-                            </h2></a>
-                            <p  class="mb-20">{{about.content}}</p>
+                            <span style="user-select:none ;"
+                                class="section-subtitle title-anim">{{about.minititle}}</span>
+                            <a href="{% url 'about' %}">
+                                <h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">
+                                    {{about.title|safe}}
+                                </h2>
+                            </a>
+                            <p class="mb-20">{{about.content}}</p>
 
                             <p>{{about.content2}}
                             </p>
                             <div class="fm-director-about-name mt-55">
-                                <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}" class="director-about-nam">{{about.imza}}</a>
+                                <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
+                                    class="director-about-nam">{{about.imza}}</a>
                             </div>
                         </div>
                     </div>
@@ -572,17 +579,21 @@
                     display: none !important;
                 }
             }
+
             @media screen and (max-width: 1017px) and (min-width:988px) {
-                #hvprnt1{
+                #hvprnt1 {
                     width: 500px !important;
                 }
-                #hvprnt2{
+
+                #hvprnt2 {
                     width: 500px !important;
                 }
-                #hvprnt3{
+
+                #hvprnt3 {
                     width: 500px !important;
                 }
             }
+
             @media screen and (max-width: 1300px) and (min-width:1000px) {
                 .myhovdiv22 p {
                     font-size: 16px
@@ -617,6 +628,8 @@
                 #hvprnt3:hover .myhovdiv22 i {
                     margin-top: 8% !important;
                 }
+
+
             }
 
             @media screen and (max-width: 1017px) {
@@ -672,9 +685,11 @@
                 }
 
             }
+
             .fill-btn span:after {
                 height: 17px !important;
             }
+
             @media screen and (max-width: 600px) {
                 #hvprnt1:hover .myhovdiv22 a {
                     padding-left: 5px !important;
@@ -863,8 +878,13 @@
                     .myother {
                         margin-top: 0px !important;
                     }
-                    .slide-image{
+
+                    .slide-image {
                         width: 200px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
                     }
                 }
 
@@ -905,7 +925,9 @@
             <div class="container-fluid" style="padding-left: 5% !important;padding-right: 5% !important;">
                 <div id="kjjj" style="border-radius:10px !important;position:relative;" class="row">
 
-                    <div id="hvprnt1" style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px" class="col-lg-4">
+                    <div id="hvprnt1"
+                        style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px"
+                        class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;">{{article1.content|slice:150}}...</p>
@@ -977,13 +999,14 @@
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
         <h3 style="user-select:none ;">Videolar</h3>
         <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}">daha ətraflı</a></span>
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}" target="_blank">daha
+                    ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                     alt=""></span>
         </div>
     </div>
 
-    
+
 
 
     <!-- slider wrapper -->
@@ -993,14 +1016,18 @@
                 <div class="col-sm-12">
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
-                        <div class="owl-items" >
+                        <div class="owl-items">
                             <a style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
-                                <div class="slide-image"><img style="object-fit: cover; min-height:500px !important; "
-                                        src="{{video.coverimage.url}}"
-                                        alt="image" loading="lazy"></div>
+                                <div class="slide-image">
+                                    {% if video.coverimage %}
+                                    <img style="object-fit: cover; min-height:500px !important; "
+                                        src="{{video.coverimage.url}}" alt="image" loading="lazy">
+                                        {% endif %}
+                                    </div>
                                 <div class="slide-content">
                                     <h2 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);">{{video.name}}</h2>
-                                    <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">{{video.content|slice:90}}</p>
+                                    <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
+                                        {{video.content|slice:90}}</p>
 
                                 </div>
                             </a>
@@ -1015,7 +1042,7 @@
 
 
 
-    
+
     <!-- slider wrapper -->
     {% if photos %}
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
@@ -1030,27 +1057,28 @@
 
     <!--photo galery-->
 
-    <div class="grid-containerr" >
-               
+    <div class="grid-containerr">
+
         {% for image in photos %}
-         <div class="fm-single-featured clickable-div" >
-           
+        <div class="fm-single-featured clickable-div">
+
             <div class="fm-featured-thumb">
-               <a> 
-                <img class="myallimages" id="{{image.id}}" loading="lazy" src="{{ image.image.url }}" alt="img not found"></a>
+                <a>
+                    <img class="myallimages" id="{{image.id}}" loading="lazy" src="{{ image.image.url }}"
+                        alt="img not found"></a>
             </div>
-            <div class="fm-featured-content" style="z-index: 4 !important;">  
+            <div class="fm-featured-content" style="z-index: 4 !important;">
                 <div style="border:none" class="fm-video-play" style="z-index:999">
                     <a>
-                        <h4  class="fm-featured-title imageName">{{image.name}}</h4>
-                     </a>
-                     <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
+                        <h4 class="fm-featured-title imageName">{{image.name}}</h4>
+                    </a>
+                    <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
                 </div>
             </div>
-         </div>
-       
+        </div>
+
         {% endfor %}
-         
+
 
     </div>
     {% endif %}
@@ -1080,8 +1108,8 @@
                     <div class="fm-blog-inner blog__animation-wrapper  is-white">
 
                         <div class="fm-blog-thumb">
-                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:370px;" src="{{blog.image.url}}"
-                                    alt="img not found"></a>
+                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:370px;"
+                                    src="{{blog.image.url}}" alt="img not found"></a>
                         </div>
 
                         <div class="fm-blog-content blog__content ">
@@ -1090,7 +1118,8 @@
                                     <span>{{blog.date}}</span>
                                 </div>
                                 <h4 class="fm-blog-title text-white">
-                                    <a style="user-select:none ;" href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
+                                    <a style="user-select:none ;"
+                                        href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                                 </h4>
                                 <div class="fm-blog-text">
                                     <p style="user-select:none ;">{{blog.content_without_ck|slice:230}}...</p>
@@ -1129,49 +1158,50 @@
     </div>
 
     <style>
-        .aboutimage-div{
-            margin-top:1%;
+        .aboutimage-div {
+            margin-top: 1%;
             display: flex;
             text-decoration: none;
-           
+
             background-color: rgba(23, 54, 79, 1);
-            padding-left:3%;
+            padding-left: 3%;
         }
-    
-        .aboutimagetext-div{
-            padding-left:3%;
-            padding-right:3%;
+
+        .aboutimagetext-div {
+            padding-left: 3%;
+            padding-right: 3%;
             padding-top: 5%;
         }
-    
-        .aboutimagetext-div h2{
-            color:white;
+
+        .aboutimagetext-div h2 {
+            color: white;
             font-size: 96px;
             padding-bottom: 2%;
         }
-    
-        .aboutimagetext-div{
+
+        .aboutimagetext-div {
             font-size: 32px;
         }
+
         .myphoto {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             font-family: sans-serif;
-            margin-top:10px !important;
+            margin-top: 10px !important;
             overflow-y: auto;
-          }
-          
-          .grid-containerr {
+        }
+
+        .grid-containerr {
             z-index: 1;
             columns: 4 200px !important;
             column-gap: 1.5rem;
             width: 90%;
             margin: 0 auto;
-          }
-          
-          .grid-containerr div {
+        }
+
+        .grid-containerr div {
             z-index: 1;
             width: 150px;
             margin: 0 1.5rem 1rem 0;
@@ -1180,104 +1210,120 @@
             padding: 5px;
             border-radius: 5px;
             transition: all 0.25s ease-in-out;
-          }
-          @media(min-width:992px){
-            .nav-item:hover{
+        }
+
+        @media(min-width:992px) {
+            .nav-item:hover {
                 background-color: #D2691E;
             }
         }
-          .grid-containerr div:hover img {
+
+        .grid-containerr div:hover img {
             filter: grayscale(100%);
-          }
-    
-          
-          .grid-containerr div:hover {
+        }
+
+
+        .grid-containerr div:hover {
             border-color: coral;
-          }
-          
-          .grid-containerr div img {
+        }
+
+        .grid-containerr div img {
             width: 100%;
             filter: grayscale(0);
             border-radius: 5px;
             transition: all 0.25s ease-in-out;
-          }
-          
-          .grid-containerr div p {
+        }
+
+        .grid-containerr div p {
             margin: 5px 0;
             padding: 0;
             text-align: center;
             font-style: italic;
             z-index: 1;
-          }
-          .blog-rotate-btn span {
-    
+        }
+
+        .blog-rotate-btn span {
+
             font-size: 44px;
         }
-        @media (max-width: 992px){
-        .navbar-collapse {
-            flex-basis: 100% !important;
+
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                flex-basis: 100% !important;
+            }
+
+            #reab {
+                display: block !important;
+            }
+
+
         }
-        #reab{
-            display: block !important;
-        }
-        
-        
-    }
-    
-      
     </style>
-    <style>.containerr {
-        height: 100%;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-      }
-      input[type='checkbox'] {
-        display: none;
-      }
-      .triggerrs {
-        display: flex;
-      }
-      .contentt {
-        position: absolute;
-        display: none;
-        z-index: 2;
-        top: 100%;
-        border-radius: 3px;
-      }
-      .inner-section span:hover {
-        font-size: large;
-      }
-      .inner-section span a {
-        color: black;
-        font-weight: 600;
-      }
-      .label {
-        border: 1px solid #7d7d7d;
-        padding: 0.5em 1.7em;
-        cursor: pointer;
-        position: relative;
-      }
-      .label:hover {
-        background: #bcbcbc;
-      }
-      .triggerrs > input:checked + label {
-        background: #bcbcbc;
-        border: 1px solid transparent;
-      }
-      .triggerrs > input:checked + label > div.contentt {
-        display: flex;
-        top: 100%;
-        padding: 0.5em;
-        background: #d3d3d3;
-        right: -1px;
-      }
-      .triggerrs > input:checked + label > div.contentt div {
-        padding: 0em 0.5em;
-      }
-      .triggerrs > input:checked + label > div.contentt div + div {
-        border-left: 1px solid #7d7d7d;
-      }</style>
+    <style>
+        .containerr {
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+
+        input[type='checkbox'] {
+            display: none;
+        }
+
+        .triggerrs {
+            display: flex;
+        }
+
+        .contentt {
+            position: absolute;
+            display: none;
+            z-index: 2;
+            top: 100%;
+            border-radius: 3px;
+        }
+
+        .inner-section span:hover {
+            font-size: large;
+        }
+
+        .inner-section span a {
+            color: black;
+            font-weight: 600;
+        }
+
+        .label {
+            border: 1px solid #7d7d7d;
+            padding: 0.5em 1.7em;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .label:hover {
+            background: #bcbcbc;
+        }
+
+        .triggerrs>input:checked+label {
+            background: #bcbcbc;
+            border: 1px solid transparent;
+        }
+
+        .triggerrs>input:checked+label>div.contentt {
+            display: flex;
+            top: 100%;
+            padding: 0.5em;
+            background: #d3d3d3;
+            right: -1px;
+        }
+
+        .triggerrs>input:checked+label>div.contentt div {
+            padding: 0em 0.5em;
+        }
+
+        .triggerrs>input:checked+label>div.contentt div+div {
+            border-left: 1px solid #7d7d7d;
+        }
+    </style>
     <style>
         .section-padding {
             padding: 60px 0;
@@ -1346,70 +1392,88 @@
 
     </script> -->
 
-<div class="footer-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img src="{% static 'assets/img/logo/logo.svg'  %}" alt=""></div>
-            <div class="col-sm-8 text-left">
-                <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
-            </div>
-    
-          
-            <div style="margin-bottom:3%" class="col-sm-12">
-                <div class="middle-footer">
-                    <div class="row">
-              
-                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks" >
-                        <div style="text-align: start;">
-                            <h5 style="font-size: large;">Sosial şəbəkələr</h5>
-                            <ul>
-                                <li><a style="font-size: medium;" href="#">İnstagram</a></li>
-                                <li><a style="font-size:medium ;" href="#">Facebook</a></li>
-                                <li><a style="font-size:medium ;" href="#">Youtube</a></li>
-                           
-                            </ul>
-                        </div>
+    <div class="footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
+                        src="{% static 'assets/img/logo/logo.svg'  %}" alt=""></div>
+                <div class="col-sm-8 text-left">
+                    <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
+                        remove the chain from about my victim’s neck only through language.</h4>
+                </div>
 
-                    </div>
-            
-                      
-                    
-                        <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
-                            <div style="text-align:start">
-                            <h5 class="mb-3" style="font-size:large;width:150px;">Linklər</h5>
-                            <br>
-                           <a href="{% url 'home' %}"><p class="footerLinks" >Əsas Səhifə</p></a> 
-                           <a href="{% url 'video' %}"><p class="footerLinks" >Video</p></a>
-                            <a href="{% url 'foto' %}"><p class="footerLinks">Foto</p></a>
-                            <a href="{% url 'blog' %}"><p class="footerLinks">Xəbərlər</p></a>
-                            <a href="{% url 'article' %}"><p class="footerLinks">Məqalələr</p></a>
-                            <a href="{% url 'about' %}"><p class="footerLinks">Layihə haqqında</p></a>
-                        </div>
-                        </div>
-                      
-                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
-                           <div style="text-align:start;" >
-                             <h5 style="font-size: large; " >Bizimlə əlaqə</h5>
-                                <ul>
-                                    <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
-                                    <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
-                                    <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
-                            
-                                  
-                                </ul>
-                           </div>
-                               
+
+                <div style="margin-bottom:3%" class="col-sm-12">
+                    <div class="middle-footer">
+                        <div class="row">
+
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks">
+                                <div style="text-align: start;">
+                                    <h5 style="font-size: large;">Sosial şəbəkələr</h5>
+                                    <ul>
+                                        <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                        <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                        <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+
+                                    </ul>
+                                </div>
+
                             </div>
-                       
-                       
+
+
+
+                            <div style="display: flex;justify-content:center;"
+                                class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+                                <div style="text-align:start">
+                                    <h5 class="mb-3" style="font-size:large;width:150px;">Linklər</h5>
+                                    <br>
+                                    <a href="{% url 'home' %}">
+                                        <p class="footerLinks">Əsas Səhifə</p>
+                                    </a>
+                                    <a href="{% url 'video' %}">
+                                        <p class="footerLinks">Video</p>
+                                    </a>
+                                    <a href="{% url 'foto' %}">
+                                        <p class="footerLinks">Foto</p>
+                                    </a>
+                                    <a href="{% url 'blog' %}">
+                                        <p class="footerLinks">Xəbərlər</p>
+                                    </a>
+                                    <a href="{% url 'article' %}">
+                                        <p class="footerLinks">Məqalələr</p>
+                                    </a>
+                                    <a href="{% url 'about' %}">
+                                        <p class="footerLinks">Layihə haqqında</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
+                                style="display: flex;justify-content:center;">
+                                <div style="text-align:start;">
+                                    <h5 style="font-size: large; ">Bizimlə əlaqə</h5>
+                                    <ul>
+                                        <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
+                                        <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                        </li>
+                                        <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            
+
+            </div>
         </div>
     </div>
-</div>
 
     </div>
 
@@ -1469,22 +1533,24 @@
     }
 
     @media(max-width:992px) {
-  
+
         .nav-item:hover {
             background-color: #D2691E;
         }
     }
+
     @media(max-width:700px) {
-        .pop{
+        .pop {
             padding: 5% 0 0 0 !important;
         }
-       
+
     }
+
     @media(max-width:1000px) {
-        .pop{
+        .pop {
             padding: 5% 15% 0 15% !important;
         }
-       
+
     }
 
     .grid-container div:hover img {
@@ -1554,9 +1620,10 @@
     }
 
     @media (max-width: 576px) {
-        .popup{
+        .popup {
             padding: 3% 10% 0 10%;
         }
+
         .slide-wrapper .slide-slider-full,
         .category-slider .slide-wrapper .slide-slider {
             width: 100% !important;
@@ -1565,7 +1632,11 @@
 <!-- border-bottom title -->
 <!-- border-bottom:1px solid rgb(255, 255, 255); -->
 <style>
-    .imageName{color:white !important; font-size:80%;}
+    .imageName {
+        color: white !important;
+        font-size: 80%;
+    }
+
     .owl-nav {
         display: none;
     }
@@ -1799,156 +1870,180 @@
     }
 </style>
 <style>
-
-    
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2001; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 1350px){
-    .fm-featured-title{
-        font-size:120% !important
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
     }
-    .fm-featured-meta{
-        font-size:100% !important
-    }
-}
-@media only screen and (min-width: 700px) and (max-width:900px){
-    .fm-featured-title{
-        font-size:70% !important
-    }
-    .fm-featured-meta{
-        font-size:50% !important
-    }
-}
 
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 2001;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content,
+    #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 1350px) {
+        .fm-featured-title {
+            font-size: 120% !important
+        }
+
+        .fm-featured-meta {
+            font-size: 100% !important
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width:900px) {
+        .fm-featured-title {
+            font-size: 70% !important
+        }
+
+        .fm-featured-meta {
+            font-size: 50% !important
+        }
+    }
 </style>
 <style>
-    .aboutimage-div{
-        margin-top:1%;
+    .aboutimage-div {
+        margin-top: 1%;
         display: flex;
         text-decoration: none;
-       
+
         background-color: rgba(23, 54, 79, 1);
-        padding-left:3%;
+        padding-left: 3%;
     }
 
-    .aboutimagetext-div{
-        padding-left:3%;
-        padding-right:3%;
+    .aboutimagetext-div {
+        padding-left: 3%;
+        padding-right: 3%;
         padding-top: 5%;
     }
 
-    .aboutimagetext-div h2{
-        color:white;
+    .aboutimagetext-div h2 {
+        color: white;
         font-size: 96px;
         padding-bottom: 2%;
     }
 
-    .aboutimagetext-div{
+    .aboutimagetext-div {
         font-size: 32px;
     }
+
     .myphoto {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         font-family: sans-serif;
-        margin-top:10px !important;
+        margin-top: 10px !important;
         overflow-y: auto;
-      }
-      
-      .grid-containerr {
+    }
+
+    .grid-containerr {
         columns: 4 200px !important;
         column-gap: 1.5rem;
         width: 90%;
         margin: 0 auto;
         max-height: 902px;
         overflow: hidden;
-      }
-      
-      .grid-containerr div {
+    }
+
+    .grid-containerr div {
         z-index: 0;
         width: 150px;
         margin: 0 1.5rem 1rem 0;
@@ -1957,54 +2052,61 @@
         padding: 5px;
         border-radius: 5px;
         transition: all 0.25s ease-in-out;
-      }
-      @media(min-width:992px){
-        .nav-item:hover{
+    }
+
+    @media(min-width:992px) {
+        .nav-item:hover {
             background-color: #D2691E;
         }
     }
-      .grid-containerr div:hover img {
-        filter: grayscale(100%);
-      }
 
-      
-      .grid-containerr div:hover {
+    .grid-containerr div:hover img {
+        filter: grayscale(100%);
+    }
+
+
+    .grid-containerr div:hover {
         border-color: coral;
-      }
-      
-      .grid-containerr div img {
+    }
+
+    .grid-containerr div img {
         width: 100%;
         filter: grayscale(0);
         border-radius: 5px;
         transition: all 0.25s ease-in-out;
-      }
-      
-      .grid-containerr div p {
+    }
+
+    .grid-containerr div p {
         margin: 5px 0;
         padding: 0;
         text-align: center;
         font-style: italic;
-      }
-      .blog-rotate-btn span {
+    }
+
+    .blog-rotate-btn span {
 
         font-size: 44px;
     }
-    @media (max-width: 992px){
-    .navbar-collapse {
-        flex-basis: 100% !important;
-    }
-    #reab{
-        display: block !important;
-    }
-    
-    
-}
 
-  
+    @media (max-width: 992px) {
+        .navbar-collapse {
+            flex-basis: 100% !important;
+        }
+
+        #reab {
+            display: block !important;
+        }
+
+
+    }
 </style>
 
 <style>
-    .divSosialLinks{display: flex;justify-content:center;}
+    .divSosialLinks {
+        display: flex;
+        justify-content: center;
+    }
+
     .slide-wrapper .slide-two .slide-image:before {
         bottom: 40%;
         right: 45%;
@@ -2052,40 +2154,53 @@
     .pop .fm-single-featured:after {
         background-color: transparent !important;
         background: none !important;
-      
+
     }
-    .pop .fm-single-featured i{
+
+    .pop .fm-single-featured i {
         display: none !important;
-    } 
-    @media (max-width: 2300px){
-    .full-wrap .container-fluid, .full-wrap .container-sm, .full-wrap .container-md, .full-wrap .container-lg, .full-wrap .container-xl {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-    }}
+    }
+
+    @media (max-width: 2300px) {
+
+        .full-wrap .container-fluid,
+        .full-wrap .container-sm,
+        .full-wrap .container-md,
+        .full-wrap .container-lg,
+        .full-wrap .container-xl {
+            padding-left: 5% !important;
+            padding-right: 5% !important;
+        }
+    }
 </style>
 
 
 
 <style>
-
-
-    .footerLinks{width: 100% !important;font-size:medium !important}
-    @media screen and (max-width: 500px){
-    .myhovdiv22 p {
-        font-size:13px !important
+    .footerLinks {
+        width: 100% !important;
+        font-size: medium !important
     }
+
+    @media screen and (max-width: 500px) {
+        .myhovdiv22 p {
+            font-size: 13px !important
+        }
     }
-    @media (min-width: 600px){
-        .myhovdiv22 p{
-            height:17rem
+
+    @media (min-width: 600px) {
+        .myhovdiv22 p {
+            height: 17rem
         }
+    }
+
+    @media (min-width: 600px) and (max-width:800px) {
+        .myhovdiv22 img {
+            padding-left: 8% !important;
+            padding-right: 8% !important;
         }
-        @media (min-width: 600px) and (max-width:800px){
-            .myhovdiv22 img{
-                padding-left:8% !important;
-                padding-right:8% !important;
-            }
-            }
+    }
+
     .popup {
         padding: 5% 25% 0 25%;
     }
@@ -2107,31 +2222,31 @@
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
     console.log(modalImg)
-    clickableDivs.forEach(function(div) {
-        div.addEventListener("click", function() {
-          // Inside this function, "this" refers to the clicked image element
-          const img = div.querySelector("img");
-          
-          handleImageClick(img);
+    clickableDivs.forEach(function (div) {
+        div.addEventListener("click", function () {
+            // Inside this function, "this" refers to the clicked image element
+            const img = div.querySelector("img");
+
+            handleImageClick(img);
         });
-      });
-      function handleImageClick(clickedImage) {
+    });
+    function handleImageClick(clickedImage) {
         console.log(clickedImage)
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
-   
-      }
-    
-    
+
+    }
+
+
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    
+
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-      modal.style.display = "none";
+    span.onclick = function () {
+        modal.style.display = "none";
     }
-   
-    </script>
+
+</script>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -2171,30 +2286,30 @@
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
     console.log(modalImg)
-    clickableDivs.forEach(function(div) {
-        div.addEventListener("click", function() {
-          // Inside this function, "this" refers to the clicked image element
-          const img = div.querySelector("img");
-          
-          handleImageClick(img);
+    clickableDivs.forEach(function (div) {
+        div.addEventListener("click", function () {
+            // Inside this function, "this" refers to the clicked image element
+            const img = div.querySelector("img");
+
+            handleImageClick(img);
         });
-      });
-      function handleImageClick(clickedImage) {
+    });
+    function handleImageClick(clickedImage) {
         console.log(clickedImage)
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
-   
-      }
-    
-    
+
+    }
+
+
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    
+
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-      modal.style.display = "none";
+    span.onclick = function () {
+        modal.style.display = "none";
     }
-    </script>
+</script>
 
 <script>
 
@@ -2240,8 +2355,8 @@
 
     popup.init()
 
-    
-   
+
+
 
 </script>
 

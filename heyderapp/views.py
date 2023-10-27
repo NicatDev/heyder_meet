@@ -148,8 +148,8 @@ def home(request):
     if len(blogs)>3:
         blogs = blogs[0:3]
     videos = Video.objects.all()
-    if len(videos)>3:
-        videos = videos[0:3]
+    if len(videos)>6:
+        videos = videos[0:6]
     photos = Photo.objects.all()
     if len(photos)>8:
         photos = photos[0:8]
@@ -168,7 +168,7 @@ def video(request):
     cat = request.GET.get('movzu')
     if cat:
         videos = Video.objects.filter(category=cat)
-    movies = Movie.objects.all()
+    # movies = Movie.objects.all()
     paginator = Paginator(videos, 12)
     page = request.GET.get("page", 1)
     video_list = paginator.get_page(page)
@@ -179,8 +179,8 @@ def video(request):
     fcount = Video.objects.all().count()
     context = {
         'video_list':video_list,
-        'movies':movies,
-        'related_videos':videos,
+        # 'movies':movies,
+        # 'related_videos':videos,
         'categories':vidcategories,
         'fotcategories':fotcategories,
         'artcategories':artcategories,

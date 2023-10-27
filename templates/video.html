@@ -535,7 +535,7 @@
                         
                         {% for cat in categories %}
                             <div class="owl-items">
-                                <a href="{% url 'video' %}?movzu={{cat.id}}" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
+                                <a href="{% url 'video' %}?movzu={{cat.id}}" target="_blank" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
                             </div>
                             {% endfor %}
                         </div>
@@ -548,12 +548,12 @@
                             <div class='triggerrs'>
                               <input id='first' type='checkbox'>
                               <label class='label' for='first' style="background-color: white;margin-bottom:0px !important;">
-                                Kateqorilər <i class="fa-solid fa-caret-down"></i>
+                                Kateqoriyalar <i class="fa-solid fa-caret-down"></i>
                                 <div class='contentt'>
                                   <div class='inner-section'>
                                     <span class='section-name'><a data-count="{{fcount}}" href="?movzu=">Hamısı</a></span>    
                            {% for cat in vidcategories %}
-                                            <span class='section-name'><a data-count="{{cat.videolar.count}}" href="?movzu={{cat.id}}">{{cat.name}}</a></span>       
+                                            <span class='section-name'><a data-count="{{cat.videolar.count}}" href="?movzu={{cat.id}}" target="_blank">{{cat.name}}</a></span>       
                                     
                                      {% endfor %}
                            
@@ -579,15 +579,14 @@
                     <div class="col-sm-12">
                         <div class="row">
                             {% for video in video_list %}
-                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 md-mb25">
-                                <a class="slide-one" href={{video.video.url}}>
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 md-mb25" style="max-width: 360px; min-width:360px; max-height: 400;min-height: 400px;">
+                                <a class="slide-one" href={{video.video.url}} target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;" src="{{video.coverimage.url}}" alt="image" ></div>
                                     <div class="slide-content">
-                                        <h2>{{video.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <h2>{{video.name}} </h2>
                                         <p>{{video.content|slice:70}}</p>
                                  
                                         <span class="tag">{{video.created_at}}</span>
-                                        <span class="tag"><b>HD</b></span>
                                
                                     </div>
                                 </a>
@@ -637,7 +636,7 @@
         </div>
         <!-- slider wrapper -->
         <!-- slider wrapper -->
-        <div class="slide-wrapper">
+        <div style="display: none;" class="slide-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 text-left mb-4 mt-1">
@@ -650,10 +649,10 @@
                         <div class="slide-slider owl-carousel owl-theme">
                             {% for video in related_videos %}
                             <div class="owl-items">
-                                <a class="slide-one" href={{ video.video.url }}>
+                                <a class="slide-one" href={{video.video.url}} target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;" src="{{ video.coverimage.url }}" alt="image"></div>
                                     <div class="slide-content" style="height:9em">
-                                        <h2>{{video.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <h2>{{video.name}}  </h2>
                                         <p style="line-height: 25px;">{{video.content|slice:70}}</p>
                                    
                                         <span class="tag">{{video.created_at}}</span>
@@ -669,7 +668,7 @@
         <!-- slider wrapper -->
 
         <!-- slider wrapper -->
-        <div class="slide-wrapper">
+        <div style="display: none;" class="slide-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 text-left mb-4 mt-1">
@@ -682,7 +681,7 @@
                         <div class="slide-slider owl-carousel owl-theme">
                             {% for movie in movies %}
                             <div class="owl-items">
-                                <a class="slide-one slide-two" href="{{movie.video.url}}">
+                                <a class="slide-one slide-two" href="{{movie.video.url}}" target="_blank">
                                     <div class="slide-image" style="background-image: url('{% static 'templatestyles/images/s17.png' %}');"></div>
                                     <div class="slide-content">
                                         <h2>{{movie.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>

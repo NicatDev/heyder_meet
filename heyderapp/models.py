@@ -99,6 +99,7 @@ class HomeHeader(models.Model):
     content = models.TextField(null=True,blank=True)
     href = models.CharField(max_length=1200,null=True,blank=True)
     video = models.FileField(null=True,blank=True)
+    image = models.ImageField(null=True,blank=True)
     
     def __str__(self):
         return 'Ana Sehife Header '
