@@ -381,7 +381,7 @@
                     </div>
                 </div>
                 <div class="d-none d-sm-block">
-                    <div class="fm-header-sidebar-search">
+                    <div class="fm-header-sidebar-search" style="display: none;">
                         <form action="https://html.bdevs.net/faime-prev/index.html">
                             <input type="text" placeholder="Search here">
                             <button type="submit"><i class="flaticon flaticon-search"></i></button>
@@ -395,12 +395,12 @@
                     <div class="fm-offcanvas-about mt-30 mb-30">
                         <h4>Reabilitasiya heyatdir</h4>
                         <p>Reabilitasiya heyatdir</p>
-                        <button style="background-color:var(--clr-theme-1);color:black;height:35px;width:40%;">Kecid
+                        <button style="display: none; background-color:var(--clr-theme-1);color:black;height:35px;width:40%;">Kecid
                             et</button>
                     </div>
                 </div>
                 <div class="offcanvas-contact mt-30 mb-30">
-                    <h4 class="offcanvas-contact-title">Contact Information</h4>
+                    <h4 class="offcanvas-contact-title">Bizimlə Əlaqə</h4>
                     <ul>
                         <li class="d-flex align-items-center gap-2">
                             <div class="offcanvas-contact-icon">
@@ -441,14 +441,12 @@
                     <div class="fm-offcanvas-social">
                         <span class="social-text">Follow :</span>
                         <div class="fm-offcanvas-social-icon">
-                            <a href="https://www.facebook.com/" target="_blank"><i style="padding: 10px;"
-                                    class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i style="padding: 10px;"
-                                    class="fa-brands fa-twitter"></i></a>
                             <a href="https://www.instagram.com/" target="_blank"><i style="padding: 10px;"
                                     class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.pinterest.com/" target="_blank"><i style="padding: 10px;"
-                                    class="fa-brands fa-pinterest-p"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i style="padding: 10px;"
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://youtube.com/" target="_blank"><i style="padding: 9px;"
+                                    class="fa-brands fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -470,8 +468,8 @@
                                 <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
-                                <p style="user-select:none;">{{ HomeHeader.title|safe }}</p>
-                                <a href="{{HomeHeader.href}}" class="btn btn-lg"
+                                <p style="user-select:none;font-size: 16px !important;">{{ HomeHeader.title|safe }}</p>
+                                <a href="{{HomeHeader.href}}" target="_blank" class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İNDİ İZLƏ</a>
                             </div>
@@ -488,8 +486,7 @@
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
                                 <div class="owl-items">
-                                    <a class="slide-one slide-two slide-three " href="{{video.video}}"
-                                        target="_blank">
+                                    <a class="slide-one slide-two slide-three " href="{{video.video}}" target="_blank">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
                                         <div style="padding-bottom:28px;" class="slide-content">
@@ -511,47 +508,51 @@
         <!-- banenr wrapper -->
 
         <!-- lahiye haqqinda -->
-        <div class="aboutimagetitle-div">
-            <h3 style="cursor:none;user-select:none;">Lahiyə haqqında</h3>
-        </div>
-        <!-- fm-about-area-start -->
-        <div style="margin-top:1%;" class="fm-about-area bg-common-black section-spacing fix">
-            <div class="container">
-                <div class="row align-items-center g-5 gy-50">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="fm-director-about-img">
-                            <img src="{{about.image.url}}" alt="img not found">
-                            <div class="fm-director-years" style="align-items: end;">
-                                <span style="user-select:none ;" class="fm-director-years-number">100</span>
-                              
-                                <h3 style="font-size: 100px;line-height: 0.65;">İL</h3>
+        <section>
+            <div class="aboutimagetitle-div">
+                <h3 style="cursor:none;user-select:none;">Haqqında</h3>
+            </div>
+            <!-- fm-about-area-start -->
+            <div style="margin-top:1%;" class="fm-about-area bg-common-black section-spacing fix">
+                <div class="container">
+                    <div class="row align-items-center g-5 gy-50">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fm-director-about-img">
+                                <img src="{{about.image.url}}" alt="img not found">
+                                <div class="fm-director-years" style="align-items: end;">
+                                    <span style="user-select:none ;" class="fm-director-years-number">100</span>
+
+                                    <h3 style="font-size: 100px;line-height: 0.65;">İL</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="fm-about-content-section">
-                            <span style="user-select:none ;"
-                                class="section-subtitle title-anim">{{about.minititle}}</span>
-                            <a href="{% url 'about' %}">
-                                <h2 style="user-select:none ;" class="section-main-title text-white mb-25 title-anim">
-                                    {{about.title|safe}}
-                                </h2>
-                            </a>
-                            <p class="mb-20">{{about.content}}</p>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fm-about-content-section">
+                                <span style="user-select:none ;"
+                                    class="section-subtitle title-anim">{{about.minititle}}</span>
+                                <a href="{% url 'about' %}">
+                                    <h2 style="user-select:none ;"
+                                        class="section-main-title text-white mb-25 title-anim">
+                                        {{about.title|safe}}
+                                    </h2>
+                                </a>
+                                <p class="mb-20">{{about.content}}</p>
 
-                            <p>{{about.content2}}
-                            </p>
-                            <div class="fm-director-about-name mt-55">
-                                <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
-                                    class="director-about-nam">{{about.imza}}</a>
+                                <p>{{about.content2}}
+                                </p>
+                                <div class="fm-director-about-name mt-55">
+                                    <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
+                                        class="director-about-nam">{{about.imza}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- fm-about-area-end -->
-        <!-- fm-about-area-end -->
+            <!-- fm-about-area-end -->
+            <!-- fm-about-area-end -->
+        </section>
+
 
 
 
@@ -911,6 +912,109 @@
                 }
             }
         </style>
+    
+
+
+        <!-- blog-area-end -->
+
+
+    </div>
+
+
+
+
+
+    {% if videos %}
+    <!-- lahiye haqqinda -->
+    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
+        <h3 style="user-select:none ;">Videolar</h3>
+        <div style="display: flex;align-items:center;">
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}" target="_blank">daha
+                    ətraflı</a></span>
+            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                    alt=""></span>
+        </div>
+    </div>
+
+
+
+
+    <!-- slider wrapper -->
+    <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="slide-slider-full owl-carousel owl-theme" >
+                        {% for video in videos %}
+                        <div class="owl-items" >
+                            <a target="_blank" href="{{video.video}}"
+                                style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
+                                <div class="slide-image"  >
+                                    {% if video.coverimage %}
+                                    <img style="object-fit: cover;max-height: 350px;min-height: 350px;"  
+                                        src="{{video.coverimage.url}}" alt="image" loading="lazy">
+                                    {% endif %}
+                                </div>
+                                <div class="slide-content">
+                                    <h2 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);">{{video.name}}</h2>
+                                    <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
+                                        {{video.content|slice:90}}...</p>
+
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+
+
+    <!-- slider wrapper -->
+    {% if photos %}
+    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
+        <h3 style="user-select:none ;">Fotolar</h3>
+        <div style="display: flex;align-items:center;">
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
+            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                    alt=""></span>
+        </div>
+    </div>
+
+
+    <!--photo galery-->
+
+    <div class="grid-containerr">
+
+        {% for image in photos %}
+        <div class="fm-single-featured clickable-div">
+
+            <div class="fm-featured-thumb">
+                <a>
+                    <img class="myallimages" id="{{image.id}}" loading="lazy" src="{{ image.image.url }}"
+                        alt="img not found"></a>
+            </div>
+            <div class="fm-featured-content" style="z-index: 4 !important;">
+                <div style="border:none" class="fm-video-play" style="z-index:999">
+                    <a>
+                        <h4 class="fm-featured-title imageName">{{image.name}}</h4>
+                    </a>
+                    <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+    {% endif %}
+
+    <section>
         <!-- meqale area -->
         {% if article1.image.url %}
         <div class="aboutimagetitle-div"
@@ -985,112 +1089,13 @@
         </div>
         {% endif %}
 
-
-        <!-- blog-area-end -->
-
-
-    </div>
-
-
-
-
-
-    {% if videos %}
-    <!-- lahiye haqqinda -->
-    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3 style="user-select:none ;">Videolar</h3>
-        <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}" target="_blank">daha
-                    ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
-        </div>
-    </div>
-
-
-
-
-    <!-- slider wrapper -->
-    <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="slide-slider-full owl-carousel owl-theme">
-                        {% for video in videos %}
-                        <div class="owl-items">
-                            <a target="_blank" href="{{video.video}}" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
-                                <div class="slide-image">
-                                    {% if video.coverimage %}
-                                    <img style="object-fit: cover; min-height:500px !important; "
-                                        src="{{video.coverimage.url}}" alt="image" loading="lazy">
-                                        {% endif %}
-                                    </div>
-                                <div class="slide-content">
-                                    <h2 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);">{{video.name}}</h2>
-                                    <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
-                                        {{video.content|slice:90}}</p>
-
-                                </div>
-                            </a>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
-
-
-
-
-    <!-- slider wrapper -->
-    {% if photos %}
-    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3 style="user-select:none ;">Fotolar</h3>
-        <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
-        </div>
-    </div>
-
-
-    <!--photo galery-->
-
-    <div class="grid-containerr">
-
-        {% for image in photos %}
-        <div class="fm-single-featured clickable-div">
-
-            <div class="fm-featured-thumb">
-                <a>
-                    <img class="myallimages" id="{{image.id}}" loading="lazy" src="{{ image.image.url }}"
-                        alt="img not found"></a>
-            </div>
-            <div class="fm-featured-content" style="z-index: 4 !important;">
-                <div style="border:none" class="fm-video-play" style="z-index:999">
-                    <a>
-                        <h4 class="fm-featured-title imageName">{{image.name}}</h4>
-                    </a>
-                    <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
-                </div>
-            </div>
-        </div>
-
-        {% endfor %}
-
-
-    </div>
-    {% endif %}
-
-
+    </section>
 
 
     {% if blogs %}
     <!-- blog-area-start -->
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3 style="user-select:none ;">Xəbərlər</h3>
+        <h3 style="user-select:none;">Xəbərlər</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
@@ -1410,7 +1415,7 @@
 
                             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks">
                                 <div style="text-align: start;">
-                                    <h5 style="font-size: large;">Sosial şəbəkələr</h5>
+                                    <h5 style="font-size: large;">Sosİal şəbəkələr</h5>
                                     <ul>
                                         <li><a style="font-size: medium;" href="#">İnstagram</a></li>
                                         <li><a style="font-size:medium ;" href="#">Facebook</a></li>
@@ -1426,7 +1431,7 @@
                             <div style="display: flex;justify-content:center;"
                                 class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                                 <div style="text-align:start">
-                                    <h5 class="mb-3" style="font-size:large;width:150px;">Linklər</h5>
+                                    <h5 class="mb-3" style="font-size:large;width:150px;">Lİnklər</h5>
                                     <br>
                                     <a href="{% url 'home' %}">
                                         <p class="footerLinks">Əsas Səhifə</p>
@@ -1452,7 +1457,7 @@
                             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
                                 style="display: flex;justify-content:center;">
                                 <div style="text-align:start;">
-                                    <h5 style="font-size: large; ">Bizimlə əlaqə</h5>
+                                    <h5 style="font-size: large; ">Bİzİmlə əlaqə</h5>
                                     <ul>
                                         <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
                                         <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
