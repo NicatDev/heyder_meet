@@ -12586,6 +12586,7 @@ label.error {
   }
 }
 .slide-wrapper .slide-one .slide-content h2 {
+  height:4rem;
   font-size: 18px;
   font-weight: 600;
   color: #fff;

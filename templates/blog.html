@@ -323,7 +323,7 @@
                       </div>
                   </div>
                   <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
-                      <a href="contact.html" class="fill-btn"
+                      <a href="#" class="fill-btn"
                           style="font-size:14px;line-height:20px">REABİLİTASİYA <br> HƏYATDIR
                           <span>
                               <i class="fa-regular fa-arrow-right"></i>
@@ -484,7 +484,7 @@
                               </span>
                            </div>
                            <h3 class="postbox__title">
-                              <a href="blog-details.html">{{blog.name}}</a>
+                              <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                            </h3>
                            <div class="postbox__text ">
                               <p>{{blog.content_without_ck|slice:200}}...</p>
@@ -576,12 +576,12 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="blog-details.html"><img src="{{blg.image.url}}"
+                                    <a href="{% url 'blogsingle' blg.slug %}"><img src="{{blg.image.url}}"
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h5 class="rc__post-title">
-                                       <a href="blog-details.html">{{blg.name}}</a>
+                                       <a href="{% url 'blogsingle' blg.slug %}">{{blg.name}}</a>
                                     </h5>
                                     <div class="postbox__meta">
                                        
