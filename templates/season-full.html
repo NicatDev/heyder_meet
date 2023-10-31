@@ -1018,6 +1018,14 @@
     <section>
         <!-- meqale area -->
         {% if article1.image.url %}
+        <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
+            <h3 style="user-select:none;">Məqalələr, Müsahibələr, Kitablar</h3>
+            <div style="display: flex;align-items:center;">
+                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
+                <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                        alt=""></span>
+            </div>
+        </div>
         <div class="aboutimagetitle-div"
             style="display: flex;align-items:center;justify-content:space-between;margin-bottom:2%;">
             <div style="display: flex;align-items:center;">
