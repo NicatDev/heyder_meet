@@ -3,6 +3,7 @@ from heyderapp.utils import create_slug_shortcode
 from django.contrib.auth import get_user, get_user_model
 from heyderapp.utils import *
 from datetime import datetime
+from django.utils.text import slugify
 # Create your models here.
 
 class Category(models.Model):
@@ -56,9 +57,13 @@ class Video(BaseMixin):
         return self.name + ' -video'
     
     def save(self, *args, **kwargs):
-        super(Video, self).save(*args, **kwargs)
-        new_slug = seo(self.name)
+        new_slug = slugify(self.name)
         self.slug = new_slug
+        if Video.objects.filter(slug=new_slug).exists():
+            count = 0
+            while Video.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
         super(Video, self).save(*args, **kwargs)
 
 class Movie(models.Model):
@@ -85,14 +90,14 @@ class Photo(BaseMixin):
         return self.name + ' foto'
     
     def save(self, *args, **kwargs):
+        new_slug = slugify(self.name)
+        self.slug = new_slug
+        if Photo.objects.filter(slug=new_slug).exists():
+            count = 0
+            while Photo.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
         super(Photo, self).save(*args, **kwargs)
-        new_slug = seo(self.name)
-        
-        if not Photo.objects.filter(slug=new_slug).exists():
-            self.slug = new_slug
-            super(Photo, self).save(*args, **kwargs)
-        else:
-            self.slug = new_slug + '-photo'
     
 class HomeHeader(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)
@@ -146,13 +151,13 @@ class Blog(BaseMixin):
         return self.name +  ' xeber'
     
     def save(self, *args, **kwargs):
-        super(Blog, self).save(*args, **kwargs)
-        new_slug = seo(self.name)
-        current_date = datetime.now().date()
+        new_slug = slugify(self.name)
+        self.slug = new_slug
         if Blog.objects.filter(slug=new_slug).exists():
-            self.slug = new_slug+'-'+str(current_date.year)
-        else:
-            self.slug = new_slug
+            count = 0
+            while Blog.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
         super(Blog, self).save(*args, **kwargs)
   
     class Meta:
@@ -171,11 +176,14 @@ class Article(BaseMixin):
         return self.name  + 'meqale'
 
     def save(self, *args, **kwargs):
-        super(Article, self).save(*args, **kwargs)
-        new_slug = seo(self.name)
+        new_slug = slugify(self.name)
         self.slug = new_slug
+        if Article.objects.filter(slug=new_slug).exists():
+            count = 0
+            while Article.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
         super(Article, self).save(*args, **kwargs)
-        
         
 class Partners(BaseMixin):
     name = models.CharField(max_length=1200)
@@ -183,3 +191,14 @@ class Partners(BaseMixin):
     
     def __str__(self):
         return self.name  + ' emekdas'
+    
+class Head(models.Model):
+    title = models.CharField(verbose_name='head title',max_length=230)
+    image = models.ImageField()
+    
+    def __str__(self):
+        return 'favicon'
+    
+    def save(self, *args, **kwargs):
+        self.pk = 1
+        super(Head, self).save(*args, **kwargs)

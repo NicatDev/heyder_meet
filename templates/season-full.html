@@ -10,11 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vstream - Media Landing Page</title>
+
 
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'templatestyles/images/favicon.png' %}">
+    <title>{{head.title}}</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{head.image.url}}">
     <!-- Custom Stylesheet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="custom.js"></script>
@@ -1019,11 +1020,10 @@
         {% if article1.image.url %}
         <div class="aboutimagetitle-div"
             style="display: flex;align-items:center;justify-content:space-between;margin-bottom:2%;">
-            <h3 style="user-select:none ;">Məqalələr</h3>
             <div style="display: flex;align-items:center;">
-                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}">daha ətraflı</a></span>
-                <span><img style="filter:  brightness(5000%) ;"
-                        src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
+                <!-- <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}">daha ətraflı</a></span> -->
+                <!-- <span><img style="filter:  brightness(5000%) ;"
+                        src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span> -->
             </div>
         </div>
         <div class="banner-wrapper">
@@ -1034,6 +1034,7 @@
                         style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px"
                         class="col-lg-4">
                         <div class="mybordering">
+                            <h3 class="text-center">Məqalələr</h3>
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;">{{article1.content|slice:150}}...</p>
                                 <div class="myother"
@@ -1051,6 +1052,7 @@
                     <div id="hvprnt2" style=" height:350px;" class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
+                                <h3 class="text-center">Müsahibə</h3>
                                 <p style="color:black">{{article2.content|slice:150}}... </p>
                                 <div class="myother"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
@@ -1069,6 +1071,7 @@
                         class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
+                                <h3 class="text-center">Kitabxana</h3>
                                 <p style="color:black">{{article3.content|slice:150}}... </p>
                                 <div class="myother"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">

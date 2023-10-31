@@ -10993,7 +10993,7 @@ blockquote > p {
   color: var(--clr-theme-1);
   display: inline-block;
   position: relative;
-  padding-left: 15px;
+  padding-left: 9px;
 }
 .fm-blog-meta span::after {
   content: "";

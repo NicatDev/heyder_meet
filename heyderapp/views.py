@@ -60,7 +60,9 @@ def blog(request):
         'iterator':range(start,end+1),
         'allheader':allheader
     }
-  
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
         
     context['current_tag']=tag_name
 
@@ -90,6 +92,9 @@ def article(request):
         'vidcategories':vidcategories,
         'allheader':allheader
         }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'article.html',context)
 
 def blogsingle(request,slug=None):
@@ -120,6 +125,9 @@ def blogsingle(request,slug=None):
         'allheader':allheader
         
     }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'blog-details.html',context)
 
 def home(request):
@@ -159,6 +167,9 @@ def home(request):
         about = {}
     partners = Partners.objects.all()    
     context = {'partners':partners,'about':about,'artcategories':artcategories,'vidcategories':vidcategories,'fotcategories':fotcategories,'HomeHeader':homeHeader,'HomeHeaderVideo':homeHeaderVideo,'article1':article1,'article2':article2,'article3':article3,'blogs':blogs,'videos':videos,'photos':photos}
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'season-full.html',context)
 
 def video(request):
@@ -188,6 +199,9 @@ def video(request):
         'fcount':fcount,
         'allheader':allheader
     }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'video.html',context)
 
 def foto(request):
@@ -211,6 +225,9 @@ def foto(request):
         'vidcategories':vidcategories,
         'allheader':allheader
     }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'foto.html',context)
 
 
@@ -237,6 +254,9 @@ def about(request):
         'vidcategories':vidcategories,
         'allheader':allheader
     }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'about.html',context)
 
 
@@ -282,4 +302,7 @@ def articlesingle(request,slug=None):
         'allheader':allheader
         
     }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
     return render(request,'articlesingle.html',context)
