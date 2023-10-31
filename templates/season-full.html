@@ -99,7 +99,7 @@
                     <div class="header-wrapper">
                         <div class="fm-header-logo-wrapper">
                             <a href="{% url 'home' %}" class="fm-header-logo">
-                                <img src="{{head.logoheader}}" alt="img not found">
+                                <img src="{{head.logoheader.url}}" alt="img not found">
                             </a>
                             <span class="separator d-none d-xl-block"></span>
 
@@ -372,7 +372,7 @@
             <div class="fm-header-sidebar-wrapper">
                 <div class="fm-header-sidebar-action mb-65">
                     <div class="fm-header-sidebar-logo">
-                        <a href="index-2.html"><img style="width:200px" src="{{head.logoheader}}"
+                        <a href="index-2.html"><img style="width:200px" src="{{head.logoheader.url}}"
                                 alt="logo not found"></a>
                     </div>
                     <div class="offcanvas-close">
