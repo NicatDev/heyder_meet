@@ -208,7 +208,7 @@ def foto(request):
     allheader = AllHeader.objects.all()
 
     fcount = Photo.objects.all().count()
-    photos = Photo.objects.all().order_by('ordering')
+    photos = Photo.objects.all().order_by('created_at')
     if request.GET.get('movzu'):
         photos = photos.filter(category=request.GET.get('movzu'))
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)

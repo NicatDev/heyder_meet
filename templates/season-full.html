@@ -930,7 +930,7 @@
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
         <h3 style="user-select:none ;">Videolar</h3>
         <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}" target="_blank">daha
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}" >daha
                     ətraflı</a></span>
             <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                     alt=""></span>
@@ -1004,7 +1004,7 @@
                     <a>
                         <h4 class="fm-featured-title imageName">{{image.name}}</h4>
                     </a>
-                    <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span>
+                    <!-- <span style="font-size: 60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
                 </div>
             </div>
         </div>
@@ -1036,7 +1036,7 @@
                         <div class="mybordering">
                           
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
-                                <p style="color:black;"><span style="font-size: 26px; font-weight:600">Meqaleler</span><br>{{article1.content|slice:110}}...</p>
+                                <p style="color:black;"><span style="font-size: 26px; font-weight:600">Məqalələr</span><br>{{article1.content|slice:110}}...</p>
                                 <div class="myother"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
                                     <a href="{% url 'articlesingle' article1.slug %}">Daha ətraflı</a>
