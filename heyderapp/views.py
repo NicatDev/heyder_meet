@@ -158,7 +158,7 @@ def home(request):
     videos = Video.objects.all()
     if len(videos)>6:
         videos = videos[0:6]
-    photos = Photo.objects.all().order_by('created_at')
+    photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:11]
     if About.objects.all().exists():
