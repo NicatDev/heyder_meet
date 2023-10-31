@@ -160,7 +160,7 @@ def home(request):
         videos = videos[0:6]
     photos = Photo.objects.all().order_by('created_at')
     if len(photos)>8:
-        photos = photos[::8]
+        photos = photos[8:0]
     if About.objects.all().exists():
         about = About.objects.first()
     else:
