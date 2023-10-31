@@ -194,8 +194,8 @@ class Partners(BaseMixin):
     
 class Head(models.Model):
     title = models.CharField(verbose_name='head title',max_length=230)
-    image = models.ImageField(verbose_name='favicon')
-    logoheader = models.ImageField(null=True,blank=True,verbose_name='diger_butun_loqolar')
+    image = models.ImageField(verbose_name='favicon',null=True,blank=True)
+    logoheader = models.FileField(null=True,blank=True,verbose_name='diger_butun_loqolar')
     def __str__(self):
         return 'favicon'
     
