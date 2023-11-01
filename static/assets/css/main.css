@@ -10998,8 +10998,8 @@ blockquote > p {
 .fm-blog-meta span::after {
   content: "";
   position: absolute;
-  width: 2px;
-  height: 10px;
+  width: 1px;
+  height: 13px;
   background: var(--clr-theme-1);
   left: 0px;
   top: 50%;
