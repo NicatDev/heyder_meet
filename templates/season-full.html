@@ -1039,7 +1039,7 @@
         <section id="testimonial">
             <div class="cards scroll">
                 {% for test in testimonials %}
-                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{forloop.counter}}">
+                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
                     <img src="{{test.image.url}}" alt="">
                     <div>
                         <h3>{{test.full_name}}</h3>
@@ -1053,7 +1053,7 @@
             </div>
             <div class="content">
                 {% for test in testimonials %}
-                <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{forloop.counter}}">
+                <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
                         <span>
@@ -2466,16 +2466,21 @@ margin-right:3%;}
         console.log(cardElements, 'cardelemtns')
         const currentlyActiveCard = document.querySelector('#testimonial .active');
         console.log(currentlyActiveCard, 'active')
+        let contentBox = document.querySelectorAll(".contentBox");
         if (currentlyActiveCard) {
             currentlyActiveCard.classList.remove('active');
-
-
+            let data_id = currentlyActiveCard.getAttribute("data-id");
+            let currentlyContent = document.getElementById(data_id)
+            curentlyConternt.classList.remove('active') 
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
 
 
             cardElements[nextIndex].classList.add('active');
+            let next_id = cardElements[nextIndex].getAttribute("data-id");
+            let currentlyContent2 = document.getElementById(data_id)
+            curentlyConternt2.classList.remove('active') 
             console.log(cardElements[nextIndex], '00000000000')
         } else {
 
@@ -2484,10 +2489,9 @@ margin-right:3%;}
 
 
 
-
     }
 
-    setInterval(myFunction, 6000);
+    setInterval(myFunction, 8000);
 </script>
 
 </html>
