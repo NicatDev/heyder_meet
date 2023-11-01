@@ -52,6 +52,7 @@ class Video(BaseMixin):
     coverimage = models.ImageField()
     video = models.CharField(max_length=3200)
     ordering = models.IntegerField(null=True,blank=True)
+    embed = models.CharField(max_length=4000,null=True,blank=True)
     
     def __str__(self):
         return self.name + ' -video'
@@ -105,7 +106,7 @@ class HomeHeader(models.Model):
     href = models.CharField(max_length=1200,null=True,blank=True)
     video = models.FileField(null=True,blank=True)
     image = models.ImageField(null=True,blank=True)
-    
+    embed = models.CharField(max_length=4000,null=True,blank=True)
     def __str__(self):
         return 'Ana Sehife Header '
     
