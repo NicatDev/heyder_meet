@@ -37,11 +37,11 @@
 </head>
 
 <body class="full-wrap theme-dark">
-    <div class="page" id="pagepagepage">
-       
+    <div class="page">
+        <p><a href="#media-popup" data-media="https://www.youtube.com/embed/0okoH9dIDac">click me</a></p>
     
         <div class="popup" id="media-popup">
-            <iframe id="iframe" width="942" height="530" src="https://www.youtube.com/embed/0okoH9dIDac" title="Paster — Aydınlandım" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="942" height="530" src="" title="Paster — Aydınlandım" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
     <style>
@@ -79,15 +79,12 @@
     e.preventDefault();
     var $this = $(this);
     var videoUrl = $this.attr("data-media");
-    console.log($("[data-media]"),'------')
     var popup = $this.attr("href");
-  
-    var $popupIframe = $('#iframe');
-    
+    var $popupIframe = $(popup).find("iframe");
+
     $popupIframe.attr("src", videoUrl);
 
     $this.closest(".page").addClass("show-popup");
-    $("#pagepagepage").addClass("show-popup")
 });
 
 $(".popup").on("click", function(e) {
@@ -555,7 +552,7 @@ $(".popup > iframe").on("click", function(e) {
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
                                 <div class="owl-items">
-                                    <a  href="#media-popup" data-media="https://www.youtube.com/embed/0okoH9dIDac" class="slide-one slide-two slide-three id-media" >
+                                    <a class="slide-one slide-two slide-three" href="{{video.video}}" target="_blank">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
                                             
@@ -995,7 +992,7 @@ $(".popup > iframe").on("click", function(e) {
     </div>
 
 
-        <p><a href="#media-popup" data-media="//www.youtube.com/embed/YoXa2Pl7Hk0">click me</a></p>
+
 
 
     {% if videos %}
@@ -1021,8 +1018,8 @@ $(".popup > iframe").on("click", function(e) {
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                            <a href="#media-popup" data-media="https://www.youtube.com/embed/0okoH9dIDac"  "
-                                style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one id-media">
+                            <a target="_blank" href="{{video.video}}"
+                                style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
                                 
                                 <div class="slide-image" >
                                     {% if video.coverimage %}
@@ -1031,7 +1028,7 @@ $(".popup > iframe").on("click", function(e) {
                                     {% endif %}
                                     <div style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);"><h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
                                        ">{{video.name}}</h3></div>
-                      
+                                    
                                 </div>
                                 <div class="slide-content">
                                    
