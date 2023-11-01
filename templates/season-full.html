@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="{% static 'sas.scss' %}">
 </head>
 
-<body class="full-wrap theme-dark" style="display: none;">
-    <div class="page">
+<body class="full-wrap theme-dark" ">
+    <div class="page" style="display: none;">
 
     
         <div class="popup" id="media-popup">
@@ -96,6 +96,7 @@ $(".popup").on("click", function(e) {
     e.stopPropagation();
 
     $(".page").removeClass("show-popup");
+    $(".page").style.display = 'block'
 });
 
 $(".popup > iframe").on("click", function(e) {
