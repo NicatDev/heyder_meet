@@ -38,12 +38,13 @@
 
 <body class="full-wrap theme-dark">
     <div class="page">
-        <p><a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc">click me</a></p>
+        
     
         <div class="popup" id="media-popup">
             <iframe width="943" height="530" src="https://www.youtube.com/embed/acF0HQH-VGc" title="PASTER - YENİDƏN (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
+    <p><a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc">click me</a></p>
     <style>
 
   
@@ -78,6 +79,7 @@
     $("[data-media]").on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
+    console.log(this)
     var videoUrl = $this.attr("data-media");
     var popup = $this.attr("href");
     var $popupIframe = $(popup).find("iframe");
