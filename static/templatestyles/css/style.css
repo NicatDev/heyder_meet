@@ -14182,13 +14182,13 @@ position: relative;
 width: 100%;
 overflow: inherit;
 margin-top: 2rem;
-height: 100%;
+
 }
 @media screen and (min-width: 61.25rem) {
 #testimonial .content {
 grid-column: span 7;
 margin-top: 0;
-height: auto;
+height: 100%;
 }
 }
 #testimonial .content .contentBox {
