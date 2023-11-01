@@ -37,100 +37,71 @@
 </head>
 
 <body class="full-wrap theme-dark">
+    <div class="page">
+        <p><a href="#media-popup" data-media="//www.youtube.com/embed/YoXa2Pl7Hk0">click me</a></p>
     
-      
-      
-         <!-- Button trigger modal -->
-         <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="https://player.vimeo.com/video/58385453?badge=0&autoplay=1&loop=1" data-target="#myModal">
-            Play Vimeo Video
-          </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-    
-          
-          <div class="modal-body">
-    
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>        
-            <!-- 16:9 aspect ratio -->
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-    </div>
-            
-            
-          </div>
-    
+        <div class="popup" id="media-popup">
+            <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
         </div>
-      </div>
-    </div> 
-      
-      
-      
     </div>
     <style>
-        .modal-dialog {
-      max-width: 800px;
-      margin: 30px auto;
-  }
-
-
-
-.modal-body {
-  position:relative;
-  padding:0px;
+        .page {
+    position: relative;
+    height:100%;
 }
-.close {
-  position:absolute;
-  right:-30px;
-  top:0;
-  z-index:999;
-  font-size:2rem;
-  font-weight: normal;
-  color:#fff;
-  opacity:1;
+
+.popup {
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+}
+
+.show-popup .popup {
+    opacity:1;
+    visibility: visible;    
+}
+
+.popup > iframe {
+    position:absolute;
+    top:50px;
+    left:50%;
+    margin-left:-280px;
 }
     </style>
-    <script>
-        $(document).ready(function() {
 
-// Gets the video src from the data-src on each button
+<script>
+    $("[data-media]").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var videoUrl = $this.attr("data-media");
+    var popup = $this.attr("href");
+    var $popupIframe = $(popup).find("iframe");
 
-var $videoSrc;  
-$('.video-btn').click(function() {
-    $videoSrc = $(this).data( "src" );
+    $popupIframe.attr("src", videoUrl);
+
+    $this.closest(".page").addClass("show-popup");
 });
-console.log($videoSrc);
 
-  
-  
-// when the modal is opened autoplay it  
-$('#myModal').on('shown.bs.modal', function (e) {
-    
-// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+$(".popup").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-})
-  
-
-
-// stop playing the youtube video when I close the modal
-$('#myModal').on('hide.bs.modal', function (e) {
-    // a poor man's stop video
-    $("#video").attr('src',$videoSrc); 
-}) 
-    
-    
-
-
-  
-  
-// document ready  
+    $(".page").removeClass("show-popup");
 });
-    </script>
+
+$(".popup > iframe").on("click", function(e) {
+    e.stopPropagation();
+});
+</script>
+
+
     <style>
         @media only screen and (max-width: 576px) {
             .slide-wrapper .slide-one .slide-image {
