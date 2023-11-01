@@ -557,7 +557,7 @@ $(".popup > iframe").on("click", function(e) {
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
                                 <div class="owl-items">
-                                    <a class="slide-one slide-two slide-three" href="{{video.video}}" target="_blank">
+                                    <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc" class="slide-one slide-two slide-three" >
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
                                             
@@ -1023,7 +1023,7 @@ $(".popup > iframe").on("click", function(e) {
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                            <a target="_blank" href="{{video.video}}"
+                            <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc""
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
                                 
                                 <div class="slide-image" >
