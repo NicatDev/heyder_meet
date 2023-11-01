@@ -37,7 +37,7 @@
 </head>
 
 <body class="full-wrap theme-dark">
-    <div class="page">
+    <div class="page" id="pagepagepage">
        
     
         <div class="popup" id="media-popup">
@@ -85,6 +85,7 @@
     $popupIframe.attr("src", videoUrl);
 
     $this.closest(".page").addClass("show-popup");
+    $("#pagepagepage").addClass("show-popup")
 });
 
 $(".popup").on("click", function(e) {
