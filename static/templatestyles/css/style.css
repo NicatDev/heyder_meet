@@ -14201,27 +14201,22 @@ align-items: start;
 @media screen and (max-width: 430px){
   #testimonial .content {
     overflow: hidden !important;
-        height: 140vh;
+        height: 140vh !important;
     }
 }
 @media screen and (max-width: 560px){
   #testimonial .content {
     overflow: hidden !important;
-        height: 130vh;
+        height: 130vh !important;
     }
 }
 @media screen and (max-width: 870px){
   #testimonial .content {
     overflow: hidden !important;
-        height: 110vh;
+        height: 110vh !important;
     }
 }
-@media screen and (max-width: 970px){
-  #testimonial .content {
-    overflow: hidden !important;
-        height: 90vh;
-    }
-}
+
 
 #testimonial .content .contentBox .text {
 padding-bottom: 2rem;
