@@ -87,7 +87,7 @@
     var $popupIframe = $(popup).find("iframe");
 
     $popupIframe.attr("src", videoUrl);
-    $(".page").style.display = 'block'
+    $(".page").css("display", "block");
     $this.closest(".page").addClass("show-popup");
 });
 
