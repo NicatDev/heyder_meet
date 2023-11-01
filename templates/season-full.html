@@ -1053,7 +1053,7 @@
             </div>
             <div class="content">
                 {% for test in testimonials %}
-                <div class="contentBox {% forloop.first %} active {% endif %}" id="content{{forloop.counter}}">
+                <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{forloop.counter}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
                         <span>
