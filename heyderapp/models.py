@@ -202,3 +202,14 @@ class Head(models.Model):
     def save(self, *args, **kwargs):
         self.pk = 1
         super(Head, self).save(*args, **kwargs)
+
+
+class Testimonial(models.Model):
+    full_name = models.CharField(max_length=120)
+    field  = models.CharField(max_length=120)
+    image = models.ImageField()
+    title = models.CharField(max_length=230)
+    decsription = models.TextField()
+    
+    def __str__(self):
+        return self.full_name
