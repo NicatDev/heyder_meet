@@ -1039,7 +1039,7 @@
         <section id="testimonial">
             <div class="cards scroll">
                 {% for test in testimonials %}
-                <div class="cardd {% forloop.first %} active {% endif %}" data-id="content{{forloop.counter}}">
+                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{forloop.counter}}">
                     <img src="{{test.image.url}}" alt="">
                     <div>
                         <h3>{{test.full_name}}</h3>
