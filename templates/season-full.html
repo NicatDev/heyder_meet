@@ -75,34 +75,6 @@
 }
     </style>
 
-<script>
-    $("[data-media]").on("click", function(e) {
-    e.preventDefault();
-    var $this = $(this);
-
-    var videoUrl = $this.attr("data-media");
-    console.log(videoUrl,'videourl')
-    var popup = $this.attr("href");
-    console.log(popup,'videohref poup')
-    var $popupIframe = $(popup).find("iframe");
-        console.log($popupIframe,'iframe')
-    $popupIframe.attr("src", videoUrl);
-    
-    $("#pagepage").addClass("show-popup");
-    console.log( $("#pagepage"))
-});
-
-$(".popup").on("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    $(".page").removeClass("show-popup");
-});
-
-$(".popup > iframe").on("click", function(e) {
-    e.stopPropagation();
-});
-</script>
 
 
     <style>
@@ -2566,4 +2538,32 @@ margin-right:3%;}
     setInterval(myFunction, 8000);
 </script>
 
+<script>
+    $("[data-media]").on("click", function(e) {
+    e.preventDefault();
+    var $this = $(this);
+
+    var videoUrl = $this.attr("data-media");
+    console.log(videoUrl,'videourl')
+    var popup = $this.attr("href");
+    console.log(popup,'videohref poup')
+    var $popupIframe = $(popup).find("iframe");
+        console.log($popupIframe,'iframe')
+    $popupIframe.attr("src", videoUrl);
+    
+    $("#pagepage").addClass("show-popup");
+    console.log( $("#pagepage"))
+});
+
+$(".popup").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $(".page").removeClass("show-popup");
+});
+
+$(".popup > iframe").on("click", function(e) {
+    e.stopPropagation();
+});
+</script>
 </html>
