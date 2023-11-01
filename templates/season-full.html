@@ -2471,6 +2471,7 @@ margin-right:3%;}
             currentlyActiveCard.classList.remove('active');
             let data_id = currentlyActiveCard.getAttribute("data-id");
             let currentlyContent = document.getElementById(data_id)
+            console.log(currentlyContent,'currentcontent')
             curentlyConternt.classList.remove('active') 
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
@@ -2480,6 +2481,7 @@ margin-right:3%;}
             cardElements[nextIndex].classList.add('active');
             let next_id = cardElements[nextIndex].getAttribute("data-id");
             let currentlyContent2 = document.getElementById(data_id)
+            console.log(currentlyContent2,'nextcontent')
             curentlyConternt2.classList.remove('active') 
             console.log(cardElements[nextIndex], '00000000000')
         } else {
