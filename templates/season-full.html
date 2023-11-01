@@ -2473,7 +2473,7 @@ margin-right:3%;}
             console.log(data_id)
             let currentlyContent = document.getElementById(data_id)
             console.log(currentlyContent,'currentcontent')
-            currentlyConternt.classList.remove('active') 
+            currentlyContent.classList.remove('active') 
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
@@ -2483,7 +2483,7 @@ margin-right:3%;}
             let next_id = cardElements[nextIndex].getAttribute("data-id");
             let currentlyContent2 = document.getElementById(data_id)
             console.log(currentlyContent2,'nextcontent')
-            curentlyConternt2.classList.remove('active') 
+            currentlyContent2.classList.remove('active') 
             console.log(cardElements[nextIndex], '00000000000')
         } else {
 
