@@ -2474,6 +2474,7 @@ margin-right:3%;}
             let currentlyContent = document.getElementById(data_id)
             console.log(currentlyContent,'currentcontent')
             currentlyContent.classList.remove('active') 
+            console.log(currentlyContent,'niye silinmedi ?')
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
