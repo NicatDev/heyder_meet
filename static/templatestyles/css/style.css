@@ -14213,6 +14213,12 @@ align-items: start;
 @media screen and (max-width: 870px){
   #testimonial .content {
     overflow: hidden !important;
+        height: 100vh !important;
+    }
+}
+@media screen and (max-width: 970px){
+  #testimonial .content {
+    overflow: hidden !important;
         height: 110vh !important;
     }
 }
