@@ -718,64 +718,82 @@
    <div class="footer-wrapper">
       <div class="container">
           <div class="row">
-              <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img src="{% static 'assets/img/logo/logo.svg'  %}" alt=""></div>
+              <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
+                      src="{{head.logoheader}}" alt=""></div>
               <div class="col-sm-8 text-left">
-                  <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to remove the chain from about my victim’s neck only through language.</h4>
+                  <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
+                      remove the chain from about my victim’s neck only through language.</h4>
               </div>
-      
-            
+
+
               <div style="margin-bottom:3%" class="col-sm-12">
                   <div class="middle-footer">
                       <div class="row">
-                
-                      <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6" style="display: flex;justify-content:center;">
-                          <div style="text-align: start;">
-                              <h5 style="font-size: large;">SosIal şəbəkələr</h5>
-                              <ul>
-                                  <li><a style="font-size: medium;" href="#">İnstagram</a></li>
-                                  <li><a style="font-size:medium ;" href="#">Facebook</a></li>
-                                  <li><a style="font-size:medium ;" href="#">Youtube</a></li>
-                             
-                              </ul>
+
+                          <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks">
+                              <div style="text-align: start;">
+                                  <h5 style="font-size: large;">Sosİal şəbəkələr</h5>
+                                  <ul>
+                                      <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                      <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                      <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+
+                                  </ul>
+                              </div>
+
                           </div>
-  
-                      </div>
-              
-                        
-                      
-                          <div style="display: flex;justify-content:center;" class="col-md-4 col-lg-4 col-sm-6 col-xs-6" >
+
+
+
+                          <div style="display: flex;justify-content:center;"
+                              class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                               <div style="text-align:start">
-                              <h5 class="mb-3" style="font-size:large;">LInklər</h5>
-                              <br>
-                             <a href="#"><p style="width: 100% ;font-size:medium">Əsas Səhifə</p></a> 
-                             <a href="#"><p style="width: 100% ;font-size:medium">Video</p></a>
-                              <a href="#"><p style="width: 100%;font-size:medium">Foto</p></a>
-                              <a href="#"><p style="width: 100%;font-size:medium">Xəbərlər</p></a>
-                              <a href="#"><p style="width: 100%;font-size:medium">Məqalələr</p></a>
-                              <a href="#"><p style="width: 100%;font-size:medium">Layihə haqqında</p></a>
+                                  <h5 class="mb-3" style="font-size:large;width:150px;">Lİnklər</h5>
+                                  <br>
+                                  <a href="{% url 'home' %}">
+                                      <p class="footerLinks">Əsas Səhifə</p>
+                                  </a>
+                                  <a href="{% url 'video' %}">
+                                      <p class="footerLinks">Video</p>
+                                  </a>
+                                  <a href="{% url 'foto' %}">
+                                      <p class="footerLinks">Foto</p>
+                                  </a>
+                                  <a href="{% url 'blog' %}">
+                                      <p class="footerLinks">Xəbərlər</p>
+                                  </a>
+                                  <a href="{% url 'article' %}">
+                                      <p class="footerLinks">Məqalələr</p>
+                                  </a>
+                                  <a href="{% url 'about' %}">
+                                      <p class="footerLinks">Layihə haqqında</p>
+                                  </a>
+                              </div>
                           </div>
-                          </div>
-                        
-                              <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe" style="display: flex;justify-content:center;">
-                             <div style="text-align:start;" >
-                               <h5 style="font-size: large; " >BIzImlə əlaqə</h5>
+
+                          <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
+                              style="display: flex;justify-content:center;">
+                              <div style="text-align:start;">
+                                  <h5 style="font-size: large; ">Bİzİmlə əlaqə</h5>
                                   <ul>
                                       <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
-                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
-                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a></li>
-                              
-                                    
+                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                      </li>
+                                      <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                      </li>
+
+
                                   </ul>
-                             </div>
-                                 
                               </div>
-                         
-                         
+
+                          </div>
+
+
                       </div>
                   </div>
               </div>
-  
-              
+
+
           </div>
       </div>
   </div>
