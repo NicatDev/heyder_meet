@@ -37,7 +37,7 @@
 </head>
 
 <body class="full-wrap theme-dark" ">
-    <div class="page" style="display: none;">
+    <div class="page" style="">
 
     
         <div class="popup" id="media-popup">
@@ -87,7 +87,7 @@
     var $popupIframe = $(popup).find("iframe");
 
     $popupIframe.attr("src", videoUrl);
-    $(".page").css("display", "block");
+     
     $this.closest(".page").addClass("show-popup");
 });
 
