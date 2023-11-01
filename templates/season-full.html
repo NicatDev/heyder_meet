@@ -79,14 +79,17 @@
     $("[data-media]").on("click", function(e) {
     e.preventDefault();
     var $this = $(this);
-    console.log(this)
+
     var videoUrl = $this.attr("data-media");
+    console.log(videoUrl,'videourl')
     var popup = $this.attr("href");
+    console.log(popup,'videohref poup')
     var $popupIframe = $(popup).find("iframe");
-
+        console.log($popupIframe,'iframe')
     $popupIframe.attr("src", videoUrl);
-
+    
     $this.closest(".page").addClass("show-popup");
+    console.log(    $this.closest(".page"),'closest')
 });
 
 $(".popup").on("click", function(e) {
