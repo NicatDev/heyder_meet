@@ -14198,6 +14198,12 @@ display: flex;
 justify-content: center;
 align-items: start;
 }
+@media screen and (max-width: 430px){
+  #testimonial .content {
+    overflow: hidden !important;
+        height: 140vh;
+    }
+}
 @media screen and (max-width: 560px){
   #testimonial .content {
     overflow: hidden !important;
