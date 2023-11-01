@@ -14128,6 +14128,7 @@ grid-column: span 5;
 }
 }
 #testimonial .cards .cardd {
+margin-right:3%;
 cursor: pointer;
 padding: 2em;
 border-radius: 1rem;
