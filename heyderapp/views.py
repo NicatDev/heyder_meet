@@ -149,7 +149,7 @@ def home(request):
         homeHeader = HomeHeader.objects.all()[0]
     homeHeaderVideo = HomeHeaderVideo.objects.all().annotate(embed_full=Func(
     F('embed'),
-    Value('your_argument'),  # embed fonksiyonunun alacağı argüman
+
     function='embed',  # EMBED işlemini kullanın
     output_field=CharField()  # Sonucun tipi
 ))
@@ -174,7 +174,7 @@ def home(request):
     
     videos = Video.objects.all().annotate(embed_full=Func(
     F('embed'),
-    Value('your_argument'),  # embed fonksiyonunun alacağı argüman
+
     function='embed',  # EMBED işlemini kullanın
     output_field=CharField()  # Sonucun tipi
 ))
