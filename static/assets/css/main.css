@@ -13598,7 +13598,7 @@ thead th {
   overflow: hidden;
 }
 .fm-single-featured:hover .fm-featured-content {
-  bottom: 30px;
+  bottom: 0px;
   opacity: 1;
   visibility: visible;
 }
@@ -13609,7 +13609,7 @@ thead th {
 .fm-single-featured:after {
   position: absolute;
   content: "";
-  width: 94%;
+  width: 100%;
   height: 60%;
   background: linear-gradient(180deg, rgba(253, 101, 0, 0) 0%, #FD6500 100%) 0% 0%;
   opacity: 0;
@@ -13621,7 +13621,7 @@ thead th {
 .fm-featured-content {
   position: absolute;
   bottom: -100px;
-  inset-inline-start: 30px;
+  inset-inline-start: 10px;
   inset-inline-end: 30px;
   display: flex;
   align-items: center;

@@ -584,7 +584,7 @@
                                 </a>
                                 <p class="mb-20">{{about.content}}</p>
 
-                                <p>{{about.content2}}<a href="#" id="dahaFazlaGorLink" >Ətraflı</a>
+                                <p>{{about.content2}}...<a href="#" id="dahaFazlaGorLink" >Ətraflı</a>
 
                                 </p>
                                 <div class="fm-director-about-name mt-55">
@@ -1045,7 +1045,7 @@
     <div class="grid-containerr">
 
         {% for image in photos %}
-        <div class="fm-single-featured clickable-div">
+        <div class="fm-single-featured clickable-div" >
 
             <div class="fm-featured-thumb">
                 <a>
@@ -1156,23 +1156,20 @@
             <div class="container-fluid" style="padding-left: 5% !important;padding-right: 5% !important;">
                 <div id="kjjj" style="border-radius:10px !important;position:relative;" class="row">
 
-                    <div id="hvprnt1"
-                        style="border-right:2px solid transparent;border-top-left-radius:15px;border-bottom-left-radius:15px;height:350px"
-                        class="col-lg-4">
+                    <div id="hvprnt1" style=" height:350px;" class="col-lg-4">
                         <div class="mybordering">
-
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;"><span
-                                        style="font-size: 26px; font-weight:600">Məqalələr</span><br>{{article1.content|slice:110}}...
+                                        style="font-size: 26px; font-weight:600">Müsahibələr</span><br>{{article2.content|slice:110}}...
                                 </p>
                                 <div class="myother"
-                                    style="display: flex; margin-top:130px;gap:10px;font-size:28px;font-weight:400;color:black;margin-bottom: 130px;">
-                                    <a href="{% url 'articlesingle' article1.slug %}">Daha ətraflı</a>
+                                    style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
+                                    <a href="{% url 'articlesingle' article2.slug %}">Daha ətraflı</a>
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:160px;width:100%;margin-top:30px;opacity:0;border-radius: 16%;"
-                                    src="{{article1.image.url}}" alt="">
+                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
+                                    src="{{article2.image.url}}" alt="">
                             </div>
                         </div>
                     </div>
