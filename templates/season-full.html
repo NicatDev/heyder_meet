@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
     <title>{{head.title}}</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{head.image.url}}">
+    <link rel="icon" type="image/png" sizes="18x18" href="{{head.image.url}}">
     <!-- Custom Stylesheet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="custom.js"></script>
@@ -357,21 +357,19 @@
 
 
                                         <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
-                                            <ul class="submenu">
+                                            <!-- <ul class="submenu">
                                                 {% for cat in vidcategories %}
                                                 <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                                 {% endfor %}
-
-                                            </ul>
+                                            </ul> -->
                                         </li>
 
                                         <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
-                                            <ul class="submenu">
+                                            <!-- <ul class="submenu">
                                                 {% for cat in fotcategories %}
                                                 <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                                 {% endfor %}
-
-                                            </ul>
+                                            </ul> -->
                                         </li>
 
                                         <li class="has-dropdown has-mega-menu">
@@ -394,7 +392,7 @@
                         <!-- sd -->
                         <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
                             <a href="http://75.119.147.165:199/" class="fill-btn"
-                                style="font-size:14px;line-height:20px">Reabilitasiya <br> Həyatdır
+                                style="font-size:14px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
                                 <span>
                                     <i class="fa-regular fa-arrow-right"></i>
                                 </span>
@@ -1054,7 +1052,7 @@
              
                 <div style="border:none" class="fm-video-play">
                     <a>
-                        <h4 style="font-size:80% !important;" class="fm-featured-title">{{image.name}}</h4>
+                        <h4 style="font-size:75% !important;" class="fm-featured-title">{{image.name}}</h4>
                     </a>
                       <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
                 </div>
@@ -1088,7 +1086,7 @@
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;"><span
-                                        style="font-size: 26px; font-weight:600">Müsahibələr</span><br>{{article2.content|slice:110}}...
+                                        style="font-size: 26px; font-weight:600">Məqalələr</span><br>{{article1.content|slice:110}}...
                                 </p>
                                 <div class="myother"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
