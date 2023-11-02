@@ -150,7 +150,7 @@ def home(request):
     homeHeaderVideo = HomeHeaderVideo.objects.all().annotate(embed_full=Func(
     F('embed'),
 
-    function='embed',  # EMBED işlemini kullanın
+    function=embed,  # EMBED işlemini kullanın
     output_field=CharField()  # Sonucun tipi
 ))
     article = Article.objects.all()
@@ -175,7 +175,7 @@ def home(request):
     videos = Video.objects.all().annotate(embed_full=Func(
     F('embed'),
 
-    function='embed',  # EMBED işlemini kullanın
+    function=embed,  # EMBED işlemini kullanın
     output_field=CharField()  # Sonucun tipi
 ))
     if len(videos)>6:
