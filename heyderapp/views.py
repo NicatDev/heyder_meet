@@ -7,7 +7,17 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
-
+from django.db import models
+def embed(url):
+    try:
+        b = url.find('src="')
+        if b != -1:
+            e = url.find('"', b + 5)  
+            if e != -1:
+                src = url[b + 5:e]
+        return src
+    except:
+        return ''
 def set_language(request, lang_code):
     url = request.META.get("HTTP_REFERER", None)
     if lang_code == 'az':
@@ -137,7 +147,8 @@ def home(request):
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
-    homeHeaderVideo = HomeHeaderVideo.objects.all()
+    homeHeaderVideo = HomeHeaderVideo.objects.all().annotate(embed_full = embed(models.F('embed')))
+
     article = Article.objects.all()
     if article.exists():
         if len(article)==1:
@@ -158,6 +169,7 @@ def home(request):
     videos = Video.objects.all()
     if len(videos)>6:
         videos = videos[0:6]
+    videos = videos.annotate(embed_full = embed(models.F('embed')))
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:11]
