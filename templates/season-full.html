@@ -1053,10 +1053,10 @@
             <div class="fm-featured-content">
              
                 <div style="border:none" class="fm-video-play">
-                    <a >
-                        <h4 style="font-size:80%" class="fm-featured-title">{{image.name}}</h4>
-                     </a>
-                     <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
+                    <a>
+                        <h4 style="font-size:80% !important;z-index:1 !important;" class="fm-featured-title">{{image.name}}</h4>
+                    </a>
+                      <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
                 </div>
              </div>
          </div>
@@ -1065,77 +1065,7 @@
 
     </div>
     {% endif %}
-    <!-- testimonial start -->
-    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-        <h3 style="user-select:none ;">Məşhurların Fikirləri</h3>
-        <div style="display: flex;align-items:center;">
-            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
-        </div>
-    </div>
-    <div id="bodyy">
-        <section id="testimonial">
-            <div class="cards scroll">
-                {% for test in testimonials %}
-                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
-                    <img src="{{test.image.url}}" alt="">
-                    <div>
-                        <h3>{{test.full_name}}</h3>
-                        <p>{{test.field}}</p>
-                    </div>
-                    <div class="gradient"></div>
-                </div>
-                {% endfor %}
-      
 
-            </div>
-            <div class="content">
-                {% for test in testimonials %}
-                <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
-                    <div class="text">
-                        <h2>{{test.title}}</h2>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        <p>{{test.decsription|safe}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-    </div>
-
-    <!-- section end -->
     <section>
         <!-- meqale area -->
         {% if article1.image.url %}
@@ -1218,7 +1148,78 @@
         {% endif %}
 
     </section>
+    
+    <!-- testimonial start -->
+    <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
+        <h3 style="user-select:none ;">Məşhurların Fikirləri</h3>
+        <div style="display: flex;align-items:center;">
+            <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
+            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                    alt=""></span>
+        </div>
+    </div>
+    <div id="bodyy">
+        <section id="testimonial">
+            <div class="cards scroll">
+                {% for test in testimonials %}
+                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
+                    <img src="{{test.image.url}}" alt="">
+                    <div>
+                        <h3>{{test.full_name}}</h3>
+                        <p>{{test.field}}</p>
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+                {% endfor %}
+      
 
+            </div>
+            <div class="content">
+                {% for test in testimonials %}
+                <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
+                    <div class="text">
+                        <h2>{{test.title}}</h2>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <p>{{test.decsription|safe}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- section end -->
 
     {% if blogs %}
     <!-- blog-area-start -->
