@@ -2625,10 +2625,10 @@
 
     }
 
-    var intervalId = setInterval(myFunction, 8000);
+    var intervalId = setInterval(myFunction, 2000);
     $('#testimonial').bind({
         'mouseenter': function(){clearInterval(intervalId);}, 
-        'mouseleave': function(){var intervalId = setInterval(myFunction, 8000);}
+        'mouseleave': function(){var intervalId = setInterval(myFunction,2000);}
         });
 </script>
 
