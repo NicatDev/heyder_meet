@@ -38,41 +38,41 @@
 
 <body class="full-wrap theme-dark">
     <div class="page" id="pagepage">
-        
-    
+
+
         <div class="popup" id="media-popup">
-            <iframe width="943" height="530" src="https://www.youtube.com/embed/acF0HQH-VGc" title="PASTER - YENİDƏN (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="943" height="530" src="https://www.youtube.com/embed/acF0HQH-VGc"
+                title="PASTER - YENİDƏN (Official Music Video)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
     </div>
     <!-- <p><a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc">click me</a></p> -->
     <style>
+        .popup {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s ease;
+        }
 
-  
+        .show-popup .popup {
+            opacity: 1;
+            visibility: visible;
+        }
 
-.popup {
-    position:absolute;
-    z-index:2;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    opacity:0;
-    visibility:hidden;
-    transition:.3s ease;
-}
-
-.show-popup .popup {
-    opacity:1;
-    visibility: visible;    
-}
-
-.popup > iframe {
-    position:absolute;
-    top: 50%;
+        .popup>iframe {
+            position: absolute;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-}
+        }
     </style>
 
 
@@ -96,7 +96,7 @@
                 // Change this value to control the number of items displayed
                 loop: true,
                 margin: 10,
-                autoplay: false,
+                autoplay: true,
                 autoHeight: true,
                 autoplayTimeout: 2500,
                 smartSpeed: 1500,
@@ -139,7 +139,7 @@
                 <div class="row align-items-center justify-content-lg-between pr-4 pl-4">
                     <div class="header-wrapper">
                         <div class="fm-header-logo-wrapper">
-                            <a href="{% url 'home' %}" class="fm-header-logo" >
+                            <a href="{% url 'home' %}" class="fm-header-logo">
                                 <img src="{{head.logoheader.url}}" alt="img not found">
                             </a>
                             <span class="separator d-none d-xl-block"></span>
@@ -392,7 +392,7 @@
                         <!-- sd -->
                         <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
                             <a href="http://75.119.147.165:199/" class="fill-btn"
-                                style="font-size:14px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
+                                style="font-size:15px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
                                 <span>
                                     <i class="fa-regular fa-arrow-right"></i>
                                 </span>
@@ -435,8 +435,7 @@
                     <div class="fm-offcanvas-about mt-30 mb-30">
                         <h4>Reabilitasiya heyatdir</h4>
                         <p>Reabilitasiya heyatdir</p>
-                        <button
-                            style="background-color:var(--clr-theme-1);color:black;height:35px;width:40%;">Kecid
+                        <button style="background-color:var(--clr-theme-1);color:black;height:35px;width:40%;">Kecid
                             et</button>
                     </div>
                 </div>
@@ -526,19 +525,23 @@
                         <div class="slide-wrapper">
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
-                                
+
                                 <div class="owl-items">
-                                    <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc" class="slide-one slide-two slide-three" >
+                                    <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                                        class="slide-one slide-two slide-three">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
-                                            
-                                        <div style="position:absolute;width: 100%;height: 100%;padding:0;" class="slide-content">
-                                            <div style="display:flex;justify-content: space-evenly;padding-bottom:auto;height: 100%;">
-                                                <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;" src="{{head.logoheader.url}}" alt="">
+
+                                        <div style="position:absolute;width: 100%;height: 100%;padding:0;"
+                                            class="slide-content">
+                                            <div
+                                                style="display:flex;justify-content: space-evenly;padding-bottom:auto;height: 100%;">
+                                                <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;"
+                                                    src="{{head.logoheader.url}}" alt="">
                                                 <h2 style="font-size:20px;text-align: center;margin-left:auto;padding-right: 14px;padding-top:5%;color:rgba(229, 229, 229, 0.863) !important; text-shadow: 2px 2px 4px #333;
                                                ">{{video.name}}</h2>
                                             </div>
-                                            
+
                                         </div>
                                     </a>
                                 </div>
@@ -582,7 +585,7 @@
                                 </a>
                                 <p class="mb-20">{{about.content}}</p>
 
-                                <p>{{about.content2}}...<a href="#" id="dahaFazlaGorLink" > daha ətraflı</a>
+                                <p>{{about.content2}}...<a href="#" id="dahaFazlaGorLink"> daha ətraflı</a>
 
                                 </p>
                                 <div class="fm-director-about-name mt-55">
@@ -995,20 +998,23 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                          <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                            <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
-                                
-                                <div class="slide-image" >
+
+                                <div class="slide-image">
                                     {% if video.coverimage %}
                                     <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
                                         src="{{video.coverimage.url}}" alt="image" loading="lazy">
                                     {% endif %}
-                                    <div style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);"><h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
-                                       ">{{video.name}}</h3></div>
-                                    
+                                    <div
+                                        style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
+                                        <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
+                                       ">{{video.name}}</h3>
+                                    </div>
+
                                 </div>
                                 <div class="slide-content">
-                                   
+
                                     <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
                                         {{video.content|slice:90}}...</p>
 
@@ -1041,25 +1047,26 @@
     <!--photo galery-->
 
     <div class="grid-containerr">
-               
+
         {% for image in photos %}
-           <div class="fm-single-featured clickable-div" style="margin: 5px !important;">
+        <div class="fm-single-featured clickable-div" style="margin: 5px !important;">
             <div class="fm-featured-thumb">
-               <a> 
-                <img class="myallimages" id="{{image.id}}" src="{{ image.image.url }}" loading="lazy" alt="img not found"></a>
+                <a>
+                    <img class="myallimages" id="{{image.id}}" src="{{ image.image.url }}" loading="lazy"
+                        alt="img not found"></a>
             </div>
             <div class="fm-featured-content" style="z-index:1 !important;">
-             
+
                 <div style="border:none" class="fm-video-play">
                     <a>
                         <h4 style="font-size:75% !important;" class="fm-featured-title">{{image.name}}</h4>
                     </a>
-                      <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
+                    <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
                 </div>
-             </div>
-         </div>
+            </div>
+        </div>
         {% endfor %}
-         
+
 
     </div>
     {% endif %}
@@ -1070,10 +1077,10 @@
         <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
             <h3 style="user-select:none;">Məqalələr, Müsahibələr, Kitablar</h3>
             <div style="display: flex;align-items:center;">
-                <span ><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
+                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
                 <span><img style=" border-radius: 5px;
-                filter:  brightness(5000%) ;"
-                        src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
+                filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                        alt=""></span>
             </div>
         </div>
 
@@ -1088,7 +1095,7 @@
                                 <p style="color:black;"><span
                                         style="font-size: 26px; font-weight:600">Məqalələr</span><br>{{article1.content|slice:110}}...
                                 </p>
-                                <div class="myother dahaetrafli" 
+                                <div class="myother dahaetrafli"
                                     style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
                                     <a href="{% url 'articlesingle' article2.slug %}">Daha ətraflı</a>
                                     <i class="flaticon-right-arrow-1"></i>
@@ -1169,7 +1176,7 @@
                     <div class="gradient"></div>
                 </div>
                 {% endfor %}
-      
+
 
             </div>
             <div class="content">
@@ -1177,38 +1184,7 @@
                 <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                        <p>{{test.field}}</p>
                         <p>{{test.decsription|safe}}</p>
                     </div>
                 </div>
@@ -1219,23 +1195,24 @@
 
     <!-- section end -->
     <!-- Xatirelerde section start -->
-    <div >
-            <div class="row">
-                {% for video in video_list %}
-                <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25" style="max-height:400px;min-height: 400px;">
-                    <a class="slide-one" href={{video.video.url}} target="_blank">
-                        <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
-                        <div class="slide-content">
-                            <h2>Salam </h2>
-                            <p>SalamSalam alammsaqol...</p>
-                     
-                            <span class="tag">Salam Saqol Salm aqol</span>
-                   
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
+    <div>
+        <div class="row">
+            {% for video in video_list %}
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25" style="max-height:400px;min-height: 400px;">
+                <a class="slide-one" href={{video.video.url}} target="_blank">
+                    <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if
+                            video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image"></div>
+                    <div class="slide-content">
+                        <h2>Salam </h2>
+                        <p>SalamSalam alammsaqol...</p>
+
+                        <span class="tag">Salam Saqol Salm aqol</span>
+
+                    </div>
+                </a>
             </div>
+            {% endfor %}
+        </div>
     </div>
     <!-- xatirelerde section end -->
     {% if blogs %}
@@ -1310,12 +1287,20 @@
     </div>
 
     <style>
-        .dahaetrafli{
-          display: none ;
+        .single-logo:hover{
+            filter: grayscale(0);
         }
-        .myhovdiv22 :hover .dahaetrafli{
-            display: block ;
+        .single-logo {
+            filter: grayscale(100%);
         }
+        .dahaetrafli {
+            display: none;
+        }
+
+        .myhovdiv22 :hover .dahaetrafli {
+            display: block;
+        }
+
         .aboutimage-div {
             margin-top: 1%;
             display: flex;
@@ -1534,10 +1519,9 @@
     <div class="footer-wrapper">
         <div class="container">
             <div class="row" style="align-items: center;">
-                <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img style="width: 220px;
-                    height: 105px;"
-                        src="{{head.logoheader.url}}" alt=""></div>
-                <div class="col-sm-8 text-left">
+                <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
+                    height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
+                <div class="col-sm-9 text-left">
                     <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
                         remove the chain from about my victim’s neck only through language.</h4>
                 </div>
@@ -2312,8 +2296,10 @@
             padding-right: 5% !important;
         }
     }
+
     #testimonial .cards .cardd {
-margin-right:3%;}
+        margin-right: 3%;
+    }
 </style>
 
 
@@ -2533,9 +2519,9 @@ margin-right:3%;}
             let data_id = currentlyActiveCard.getAttribute("data-id");
             console.log(data_id)
             let currentlyContent = document.getElementById(data_id)
-            console.log(currentlyContent,'currentcontent')
-            currentlyContent.classList.remove('active') 
-            console.log(currentlyContent,'niye silinmedi ?')
+            console.log(currentlyContent, 'currentcontent')
+            currentlyContent.classList.remove('active')
+            console.log(currentlyContent, 'niye silinmedi ?')
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
@@ -2544,8 +2530,8 @@ margin-right:3%;}
             cardElements[nextIndex].classList.add('active');
             let next_id = cardElements[nextIndex].getAttribute("data-id");
             let currentlyContent2 = document.getElementById(next_id)
-            console.log(currentlyContent2,'nextcontent')
-            currentlyContent2.classList.add('active') 
+            console.log(currentlyContent2, 'nextcontent')
+            currentlyContent2.classList.add('active')
             console.log(cardElements[nextIndex], '00000000000')
         } else {
 
@@ -2560,31 +2546,32 @@ margin-right:3%;}
 </script>
 
 <script>
-    $("[data-media]").on("click", function(e) {
-    e.preventDefault();
-    var $this = $(this);
+    $("[data-media]").on("click", function (e) {
+        e.preventDefault();
+        var $this = $(this);
 
-    var videoUrl = $this.attr("data-media");
-    console.log(videoUrl,'videourl')
-    var popup = $this.attr("href");
-    console.log(popup,'videohref poup')
-    var $popupIframe = $(popup).find("iframe");
-        console.log($popupIframe,'iframe')
-    $popupIframe.attr("src", videoUrl);
-    
-    $("#pagepage").addClass("show-popup");
-    console.log( $("#pagepage"))
-});
+        var videoUrl = $this.attr("data-media");
+        console.log(videoUrl, 'videourl')
+        var popup = $this.attr("href");
+        console.log(popup, 'videohref poup')
+        var $popupIframe = $(popup).find("iframe");
+        console.log($popupIframe, 'iframe')
+        $popupIframe.attr("src", videoUrl);
 
-$(".popup").on("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
+        $("#pagepage").addClass("show-popup");
+        console.log($("#pagepage"))
+    });
 
-    $(".page").removeClass("show-popup");
-});
+    $(".popup").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-$(".popup > iframe").on("click", function(e) {
-    e.stopPropagation();
-});
+        $(".page").removeClass("show-popup");
+    });
+
+    $(".popup > iframe").on("click", function (e) {
+        e.stopPropagation();
+    });
 </script>
+
 </html>
