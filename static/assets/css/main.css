@@ -1824,11 +1824,9 @@ i[class^=flaticon-] {
 }
 
 .fm-header-logo {
-  width: 174px;
+  width: 100px;
 }
-.fm-header-logo img {
-  width: 59%;
-}
+
 
 .fm-header-nav ul li {
   list-style: none;

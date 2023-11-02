@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
     <title>{{head.title}}</title>
-    <link rel="icon" type="image/png" sizes="18x18" href="{{head.image.url}}">
+    <link rel="icon" type="image/png" sizes="22x22" href="{{head.image.url}}">
     <!-- Custom Stylesheet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="custom.js"></script>
@@ -139,7 +139,7 @@
                 <div class="row align-items-center justify-content-lg-between pr-4 pl-4">
                     <div class="header-wrapper">
                         <div class="fm-header-logo-wrapper">
-                            <a href="{% url 'home' %}" class="fm-header-logo">
+                            <a href="{% url 'home' %}" class="fm-header-logo" >
                                 <img src="{{head.logoheader.url}}" alt="img not found">
                             </a>
                             <span class="separator d-none d-xl-block"></span>
@@ -1070,7 +1070,7 @@
         <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
             <h3 style="user-select:none;">Məqalələr, Müsahibələr, Kitablar</h3>
             <div style="display: flex;align-items:center;">
-                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
+                <span class="dahaetrafli"><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
                 <span><img style=" border-radius: 5px;
                 filter:  brightness(5000%) ;"
                         src="{% static 'templatestyles/images/arrowupright.png' %}" alt=""></span>
@@ -1218,7 +1218,29 @@
     </div>
 
     <!-- section end -->
-
+    <!-- Xatirelerde section start -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                {% for video in video_list %}
+                <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25" style="max-height:400px;min-height: 400px;">
+                    <a class="slide-one" href={{video.video.url}} target="_blank">
+                        <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
+                        <div class="slide-content">
+                            <h2>{{video.name}} </h2>
+                            <p>{{video.content|slice:70}}...</p>
+                     
+                            <span class="tag">{{video.created_at}}</span>
+                   
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+   
+    <!-- xatirelerde section end -->
     {% if blogs %}
     <!-- blog-area-start -->
     <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
