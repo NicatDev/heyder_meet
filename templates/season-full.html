@@ -2642,6 +2642,7 @@
 </script>
 
 <script>
+    $(document).ready(function() {
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
         var $this = $(this);
@@ -2657,7 +2658,7 @@
         $("#pagepage").addClass("show-popup");
 
     });
-
+});
     $(".popup").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
