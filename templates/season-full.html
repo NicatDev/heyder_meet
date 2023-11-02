@@ -2625,11 +2625,19 @@
 
     }
 
-    var intervalId = setInterval(myFunction, 2000);
-    $('#testimonial').bind({
-        'mouseenter': function(){clearInterval(intervalId);}, 
-        'mouseleave': function(){var intervalId = setInterval(myFunction,2000);}
-        });
+    var testimonialDiv = document.getElementById('testimonial');
+    var intervalId;
+    
+    testimonialDiv.addEventListener('mouseover', function() {
+        console.log('clear')
+        clearInterval(intervalId);
+    });
+    
+    testimonialDiv.addEventListener('mouseout', function() {
+      console.log('setint')
+        intervalId = setInterval(myFunction, 2000);
+    });
+
 </script>
 
 <script>
@@ -2646,7 +2654,7 @@
         $popupIframe.attr("src", videoUrl);
 
         $("#pagepage").addClass("show-popup");
-        console.log($("#pagepage"))
+
     });
 
     $(".popup").on("click", function (e) {
