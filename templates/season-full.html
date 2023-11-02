@@ -2432,7 +2432,7 @@
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
-    console.log(modalImg)
+
     clickableDivs.forEach(function (div) {
         div.addEventListener("click", function () {
             // Inside this function, "this" refers to the clicked image element
@@ -2442,7 +2442,7 @@
         });
     });
     function handleImageClick(clickedImage) {
-        console.log(clickedImage)
+ 
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
 
@@ -2496,7 +2496,7 @@
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
-    console.log(modalImg)
+
     clickableDivs.forEach(function (div) {
         div.addEventListener("click", function () {
             // Inside this function, "this" refers to the clicked image element
@@ -2506,7 +2506,7 @@
         });
     });
     function handleImageClick(clickedImage) {
-        console.log(clickedImage)
+  
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
 
@@ -2593,18 +2593,18 @@
 <script>
     function myFunction() {
         const cardElements = document.querySelectorAll('.cardd');
-        console.log(cardElements, 'cardelemtns')
+
         const currentlyActiveCard = document.querySelector('#testimonial .active');
-        console.log(currentlyActiveCard, 'active')
+    
         let contentBox = document.querySelectorAll(".contentBox");
         if (currentlyActiveCard) {
             currentlyActiveCard.classList.remove('active');
             let data_id = currentlyActiveCard.getAttribute("data-id");
-            console.log(data_id)
+       
             let currentlyContent = document.getElementById(data_id)
-            console.log(currentlyContent, 'currentcontent')
+  
             currentlyContent.classList.remove('active')
-            console.log(currentlyContent, 'niye silinmedi ?')
+         
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
@@ -2613,9 +2613,9 @@
             cardElements[nextIndex].classList.add('active');
             let next_id = cardElements[nextIndex].getAttribute("data-id");
             let currentlyContent2 = document.getElementById(next_id)
-            console.log(currentlyContent2, 'nextcontent')
+        
             currentlyContent2.classList.add('active')
-            console.log(cardElements[nextIndex], '00000000000')
+        
         } else {
 
             cardElements[0].classList.add('active');
@@ -2638,11 +2638,11 @@
         var $this = $(this);
 
         var videoUrl = $this.attr("data-media");
-        console.log(videoUrl, 'videourl')
+ 
         var popup = $this.attr("href");
-        console.log(popup, 'videohref poup')
+ 
         var $popupIframe = $(popup).find("iframe");
-        console.log($popupIframe, 'iframe')
+
         $popupIframe.attr("src", videoUrl);
 
         $("#pagepage").addClass("show-popup");
