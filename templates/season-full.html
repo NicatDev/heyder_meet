@@ -2592,7 +2592,7 @@
 
 <script>
     function myFunction() {
-        if  ($('#testimonial').data('hover')){console.log('')}else{
+        
         const cardElements = document.querySelectorAll('.cardd');
         console.log(cardElements, 'cardelemtns')
         const currentlyActiveCard = document.querySelector('#testimonial .active');
@@ -2622,11 +2622,37 @@
             cardElements[0].classList.add('active');
         }
 
-    }
+
 
     }
 
-    setInterval(myFunction, 3000);
+    let intervalId;
+
+    function myFunction() {
+      console.log('Interval function is running');
+    }
+
+    function startInterval() {
+      intervalId = setInterval(myFunction, 8000);
+    }
+
+    function stopInterval() {
+      clearInterval(intervalId);
+    }
+
+    window.onload = function() {
+      startInterval();
+
+      const testimonial = document.getElementById("testimonial");
+
+      testimonial.addEventListener("mouseover", function() {
+        stopInterval();
+      });
+
+      testimonial.addEventListener("mouseout", function() {
+        startInterval();
+      });
+    }
 </script>
 
 <script>
