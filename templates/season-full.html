@@ -1043,9 +1043,9 @@
     <!--photo galery-->
 
     <div class="grid-containerr">
-
+               
         {% for image in photos %}
-        <div class="fm-single-featured clickable-div">
+           <div class="fm-single-featured clickable-div">
             <div class="fm-featured-thumb">
                <a> 
                 <img class="myallimages" id="{{image.id}}" src="{{ image.image.url }}" loading="lazy" alt="img not found"></a>
@@ -1060,9 +1060,8 @@
                 </div>
              </div>
          </div>
-
         {% endfor %}
-
+         
 
     </div>
     {% endif %}
