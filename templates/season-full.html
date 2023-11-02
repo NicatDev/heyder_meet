@@ -2592,6 +2592,7 @@
 
 <script>
     function myFunction() {
+        if  ($('#testimonial').data('hover')){console.log('')}else{
         const cardElements = document.querySelectorAll('.cardd');
         console.log(cardElements, 'cardelemtns')
         const currentlyActiveCard = document.querySelector('#testimonial .active');
@@ -2621,7 +2622,7 @@
             cardElements[0].classList.add('active');
         }
 
-
+    }
 
     }
 
