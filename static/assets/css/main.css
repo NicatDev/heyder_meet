@@ -13611,7 +13611,7 @@ thead th {
 .fm-single-featured:after {
   position: absolute;
   content: "";
-  width: 100%;
+  width: 94%;
   height: 90%;
   background: linear-gradient(180deg, rgba(253, 101, 0, 0) 0%, #FD6500 100%) 0% 0%;
   opacity: 0;
