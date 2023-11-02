@@ -2592,7 +2592,6 @@
 
 <script>
     function myFunction() {
-        
         const cardElements = document.querySelectorAll('.cardd');
         console.log(cardElements, 'cardelemtns')
         const currentlyActiveCard = document.querySelector('#testimonial .active');
@@ -2626,35 +2625,11 @@
 
     }
 
-    let intervalId;
-
-    function myFunction() {
-      console.log('Interval function is running');
-    }
-
-    function startInterval() {
-        setInterval(myFunction, 3000);
-    }
-
-    function stopInterval() {
-      clearInterval(intervalId);
-    }
-
-    window.onload = function() {
-      startInterval();
-
-      const testimonial = document.getElementById("testimonial");
-
-      testimonial.addEventListener("mouseover", function() {
-        console.log('stop')
-        stopInterval();
-      });
-
-      testimonial.addEventListener("mouseout", function() {
-        console.log('start')
-        startInterval();
-      });
-    }
+    var intervalId = setInterval(myFunction, 8000);
+    $('#testimonial').bind({
+        'mouseenter': function(){clearInterval(intervalId);}, 
+        'mouseleave': function(){var intervalId = setInterval(myFunction, 8000);}
+        });
 </script>
 
 <script>
