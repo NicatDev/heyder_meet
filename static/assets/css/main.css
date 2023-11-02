@@ -2145,8 +2145,8 @@ i[class^=flaticon-] {
 }
 .header-border .container {
   max-width: 1610px;
-  padding-inline-start: 15px;
-  padding-inline-end: 15px;
+  padding-inline-start: 72px;
+  padding-inline-end: 72px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .header-border {

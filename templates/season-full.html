@@ -1050,11 +1050,11 @@
                <a> 
                 <img class="myallimages" id="{{image.id}}" src="{{ image.image.url }}" loading="lazy" alt="img not found"></a>
             </div>
-            <div class="fm-featured-content">
+            <div class="fm-featured-content" style="z-index:1 !important;">
              
                 <div style="border:none" class="fm-video-play">
                     <a>
-                        <h4 style="font-size:80% !important;z-index:1 !important;" class="fm-featured-title">{{image.name}}</h4>
+                        <h4 style="font-size:80% !important;" class="fm-featured-title">{{image.name}}</h4>
                     </a>
                       <!-- <span style="font-size:60%;" class="fm-featured-meta">Tarix: {{image.created_at}}</span> -->
                 </div>
@@ -1510,7 +1510,7 @@
 
     <div class="footer-wrapper">
         <div class="container">
-            <div class="row">
+            <div class="row" style="align-items: center;">
                 <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img style="width: 220px;
                     height: 105px;"
                         src="{{head.logoheader.url}}" alt=""></div>
