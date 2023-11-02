@@ -14284,3 +14284,11 @@ background-color: #3f3f3f;
   max-height: 500px;
   overflow-y: auto;
 }
+#dahaFazlaGorLink {
+  color: #fff;
+  text-decoration: none;
+}
+#dahaFazlaGorLink:hover {
+  text-decoration: underline; 
+  color: #D2691E;
+}

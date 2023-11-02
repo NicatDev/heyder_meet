@@ -584,7 +584,8 @@
                                 </a>
                                 <p class="mb-20">{{about.content}}</p>
 
-                                <p>{{about.content2}}
+                                <p>{{about.content2}}<a href="#" id="dahaFazlaGorLink" >Ətraflı</a>
+
                                 </p>
                                 <div class="fm-director-about-name mt-55">
                                     <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
@@ -1051,7 +1052,7 @@
                     <img class="myallimages" id="{{image.id}}" loading="lazy" src="{{ image.image.url }}"
                         alt="img not found"></a>
             </div>
-            <div class="fm-featured-content" style="z-index: 4 !important;">
+            <div class="fm-featured-content" style="z-index: 4 !important;display: flex !important;">
                 <div style="border:none" class="fm-video-play" style="z-index:999">
                     <a>
                         <h4 class="fm-featured-title imageName">{{image.name}}</h4>
@@ -1165,12 +1166,12 @@
                                         style="font-size: 26px; font-weight:600">Məqalələr</span><br>{{article1.content|slice:110}}...
                                 </p>
                                 <div class="myother"
-                                    style="display: flex; margin-top:40px;gap:10px;font-size:28px;font-weight:400;color:black;">
+                                    style="display: flex; margin-top:130px;gap:10px;font-size:28px;font-weight:400;color:black;margin-bottom: 130px;">
                                     <a href="{% url 'articlesingle' article1.slug %}">Daha ətraflı</a>
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
+                                    style="padding-left:25px;padding-right:25px;height:160px;width:100%;margin-top:30px;opacity:0;border-radius: 16%;"
                                     src="{{article1.image.url}}" alt="">
                             </div>
                         </div>
