@@ -2646,6 +2646,7 @@
         
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
+        
         $('body, html').animate({
             scrollTop: 0
         }, 'fast');
@@ -2660,6 +2661,7 @@
         $popupIframe.attr("src", videoUrl);
 
         $("#pagepage").addClass("show-popup");
+        $('body').css('overflow', 'hidden');
 
     });
 });
@@ -2668,10 +2670,12 @@
         e.stopPropagation();
 
         $(".page").removeClass("show-popup");
+        $('body').css('overflow', 'auto');
     });
 
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
+        $('body').css('overflow', 'auto');
     });
 </script>
 
