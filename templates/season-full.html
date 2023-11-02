@@ -1219,7 +1219,7 @@
 
     <!-- section end -->
     <!-- Xatirelerde section start -->
-    <div class="row">
+    <div >
         <div class="col-sm-12">
             <div class="row">
                 {% for video in video_list %}
@@ -1239,7 +1239,6 @@
             </div>
         </div>
     </div>
-   
     <!-- xatirelerde section end -->
     {% if blogs %}
     <!-- blog-area-start -->
@@ -1313,6 +1312,12 @@
     </div>
 
     <style>
+        .dahaetrafli{
+          display: none;
+        }
+        .dahaetrafli :hover{
+            display: block !important;
+        }
         .aboutimage-div {
             margin-top: 1%;
             display: flex;
