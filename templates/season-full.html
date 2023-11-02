@@ -527,7 +527,7 @@
                                 {% for video in HomeHeaderVideo %}
 
                                 <div class="owl-items">
-                                    <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                                    <a href="#media-popup" data-media="{{video.embed_full}}"
                                         class="slide-one slide-two slide-three">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
@@ -539,7 +539,7 @@
                                                 <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;"
                                                     src="{{head.logoheader.url}}" alt="">
                                                 <h2 style="font-size:20px;text-align: center;margin-left:auto;padding-right: 14px;padding-top:5%;color:rgba(229, 229, 229, 0.863) !important; text-shadow: 2px 2px 4px #333;
-                                               ">{{video.name}}{{video.embed_full}}-</h2>
+                                               ">{{video.name}}-</h2>
                                             </div>
 
                                         </div>
@@ -998,7 +998,7 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                            <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                            <a href="#media-popup" data-media="{{video.embed_full}}"
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
 
                                 <div class="slide-image">
