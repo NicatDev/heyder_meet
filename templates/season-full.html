@@ -2646,10 +2646,12 @@
       const testimonial = document.getElementById("testimonial");
 
       testimonial.addEventListener("mouseover", function() {
+        console.log('stop')
         stopInterval();
       });
 
       testimonial.addEventListener("mouseout", function() {
+        console.log('start')
         startInterval();
       });
     }
