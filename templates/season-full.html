@@ -2643,8 +2643,12 @@
 
 <script>
     $(document).ready(function() {
+        
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
+        $('body, html').animate({
+            scrollTop: 0
+        }, 'fast');
         var $this = $(this);
 
         var videoUrl = $this.attr("data-media");
