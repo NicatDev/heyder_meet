@@ -170,15 +170,16 @@ def home(request):
     blogs = Blog.objects.all().order_by('ordering')
     if len(blogs)>3:
         blogs = blogs[0:3]
-    videos = Video.objects.all()
-    if len(videos)>6:
-        videos = videos[0:6]
-    videos = videos.annotate(embed_full=Func(
+
+    
+    videos = Video.objects.all().annotate(embed_full=Func(
     F('embed'),
     Value('your_argument'),  # embed fonksiyonunun alacağı argüman
     function='embed',  # EMBED işlemini kullanın
     output_field=CharField()  # Sonucun tipi
 ))
+    if len(videos)>6:
+        videos = videos[0:6]
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:11]
