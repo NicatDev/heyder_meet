@@ -13601,17 +13601,18 @@ thead th {
   bottom: 0px;
   opacity: 1;
   visibility: visible;
-  border-radius: 3px;
+  
 }
 .fm-single-featured:hover:after {
   bottom: 20px;
   opacity: 0.95;
+  border-radius: 3px;
 }
 .fm-single-featured:after {
   position: absolute;
   content: "";
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  height: 90%;
   background: linear-gradient(180deg, rgba(253, 101, 0, 0) 0%, #FD6500 100%) 0% 0%;
   opacity: 0;
   bottom: -50%;
