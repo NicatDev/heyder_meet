@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
-from django.db.models import Value, CharField, Func
+
 def embed(url):
     try:
         b = url.find('src="')
@@ -147,12 +147,8 @@ def home(request):
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
-    homeHeaderVideo = HomeHeaderVideo.objects.all().annotate(embed_full=Func(
-    F('embed'),
-
-    function=embed,  # EMBED işlemini kullanın
-    output_field=CharField()  # Sonucun tipi
-))
+    homeHeaderVideo = HomeHeaderVideo.objects.all()
+    
     article = Article.objects.all()
     if article.exists():
         if len(article)==1:
@@ -170,16 +166,14 @@ def home(request):
     blogs = Blog.objects.all().order_by('ordering')
     if len(blogs)>3:
         blogs = blogs[0:3]
-
-    
-    videos = Video.objects.all().annotate(embed_full=Func(
-    F('embed'),
-
-    function=embed,  # EMBED işlemini kullanın
-    output_field=CharField()  # Sonucun tipi
-))
+    videos = Video.objects.all()
     if len(videos)>6:
         videos = videos[0:6]
+    for video in videos:
+        video.embed_full = embed(video.embed)
+        
+    for video in homeHeaderVideo:
+        video.embed_full = embed(video.embed)
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:11]
