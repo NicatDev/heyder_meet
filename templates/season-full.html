@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static 'templatestyles/css/themify-icons.css' %}">
     <!-- Favicon icon -->
     <title>{{head.title}}</title>
-    <link rel="icon" type="image/png" sizes="22x22" href="{{head.image.url}}">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="{{head.image.url}}">
     <!-- Custom Stylesheet -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="custom.js"></script>
@@ -41,7 +41,7 @@
 
 
         <div class="popup" id="media-popup">
-            <iframe width="943" height="530" src="https://www.youtube.com/embed/acF0HQH-VGc"
+            <iframe id="myiframe" style="width: 50%;height:50%;" src="https://www.youtube.com/embed/acF0HQH-VGc"
                 title="PASTER - YENİDƏN (Official Music Video)" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -527,7 +527,7 @@
                                 {% for video in HomeHeaderVideo %}
 
                                 <div class="owl-items">
-                                    <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                                    <a href="#media-popup" data-media="{{video.embed_full}}"
                                         class="slide-one slide-two slide-three">
                                         <div class="slide-image"
                                             style="background-image:url('{{video.coverimage.url}}');"></div>
@@ -539,7 +539,7 @@
                                                 <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;"
                                                     src="{{head.logoheader.url}}" alt="">
                                                 <h2 style="font-size:20px;text-align: center;margin-left:auto;padding-right: 14px;padding-top:5%;color:rgba(229, 229, 229, 0.863) !important; text-shadow: 2px 2px 4px #333;
-                                               ">{{video.name}}</h2>
+                                               ">{{video.name}}-</h2>
                                             </div>
 
                                         </div>
@@ -794,6 +794,7 @@
 
                 #hvprnt1 .myhovdiv22 a {
                     font-size: 20px !important;
+                    
                 }
 
                 #hvprnt1 .myhovdiv22 i {
@@ -801,7 +802,9 @@
                 }
 
                 #hvprnt1:hover .myhovdiv22 a {
-                    font-size: 20px !important
+                    font-size: 20px !important;
+                
+                    
                 }
 
                 #hvprnt1:hover .myhovdiv22 i {
@@ -998,7 +1001,7 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                            <a href="#media-popup" data-media="https://www.youtube.com/embed/acF0HQH-VGc"
+                            <a href="#media-popup" data-media="{{video.embed_full}}"
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
 
                                 <div class="slide-image">
@@ -1198,22 +1201,49 @@
     <!-- section end -->
     <!-- Xatirelerde section start -->
     <div>
-        <div class="row">
-            {% for video in video_list %}
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25" style="max-height:400px;min-height: 400px;">
-                <a class="slide-one" href={{video.video.url}} target="_blank">
-                    <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if
-                            video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image"></div>
-                    <div class="slide-content">
-                        <h2>Salam </h2>
-                        <p>SalamSalam alammsaqol...</p>
-
-                        <span class="tag">Salam Saqol Salm aqol</span>
-
-                    </div>
-                </a>
+        <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
+            <h3 style="user-select:none ;">Xatirələrdə Heydər Əliyev</h3>
+            <div style="display: flex;align-items:center;">
+                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
+                <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
+                        alt=""></span>
             </div>
-            {% endfor %}
+        </div>
+        <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider-full owl-carousel owl-theme">
+                            {% for video in videos %}
+                            <div class="owl-items">
+                                <a href="#media-popup" data-media="{{video.embed_full}}"
+                                    style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
+    
+                                    <div class="slide-image">
+                                        {% if video.coverimage %}
+                                        <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
+                                            src="{{video.coverimage.url}}" alt="image" loading="lazy">
+                                        {% endif %}
+                                        <div
+                                            style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
+                                            <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
+                                           ">{{video.name}}</h3>
+                                        </div>
+    
+                                    </div>
+                                    <div class="slide-content">
+    
+                                        <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
+                                            {{video.content|slice:90}}...</p>
+    
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- xatirelerde section end -->
@@ -2340,6 +2370,9 @@
         align-items: center !important;
         justify-content: center !important;
     }
+    .fm-blog-grid-area .section-spacing{
+        background-color: #171717;
+    }
 </style>
 
 <script>
@@ -2351,7 +2384,7 @@
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
-    console.log(modalImg)
+
     clickableDivs.forEach(function (div) {
         div.addEventListener("click", function () {
             // Inside this function, "this" refers to the clicked image element
@@ -2361,7 +2394,7 @@
         });
     });
     function handleImageClick(clickedImage) {
-        console.log(clickedImage)
+ 
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
 
@@ -2415,7 +2448,7 @@
     var img = document.getElementById("myImg");
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
-    console.log(modalImg)
+
     clickableDivs.forEach(function (div) {
         div.addEventListener("click", function () {
             // Inside this function, "this" refers to the clicked image element
@@ -2425,7 +2458,7 @@
         });
     });
     function handleImageClick(clickedImage) {
-        console.log(clickedImage)
+  
         modal.style.display = "block";
         modalImg.src = clickedImage.src;
 
@@ -2512,18 +2545,18 @@
 <script>
     function myFunction() {
         const cardElements = document.querySelectorAll('.cardd');
-        console.log(cardElements, 'cardelemtns')
+
         const currentlyActiveCard = document.querySelector('#testimonial .active');
-        console.log(currentlyActiveCard, 'active')
+    
         let contentBox = document.querySelectorAll(".contentBox");
         if (currentlyActiveCard) {
             currentlyActiveCard.classList.remove('active');
             let data_id = currentlyActiveCard.getAttribute("data-id");
-            console.log(data_id)
+       
             let currentlyContent = document.getElementById(data_id)
-            console.log(currentlyContent, 'currentcontent')
+  
             currentlyContent.classList.remove('active')
-            console.log(currentlyContent, 'niye silinmedi ?')
+         
             const currentIndex = Array.from(cardElements).indexOf(currentlyActiveCard);
 
             const nextIndex = (currentIndex + 1) % cardElements.length;
@@ -2532,9 +2565,9 @@
             cardElements[nextIndex].classList.add('active');
             let next_id = cardElements[nextIndex].getAttribute("data-id");
             let currentlyContent2 = document.getElementById(next_id)
-            console.log(currentlyContent2, 'nextcontent')
+        
             currentlyContent2.classList.add('active')
-            console.log(cardElements[nextIndex], '00000000000')
+        
         } else {
 
             cardElements[0].classList.add('active');
@@ -2544,35 +2577,56 @@
 
     }
 
-    setInterval(myFunction, 8000);
+    var testimonialDiv = document.getElementById('testimonial');
+    var intervalId;
+    
+    testimonialDiv.addEventListener('mouseover', function() {
+        console.log('clear')
+        clearInterval(intervalId);
+    });
+    
+    testimonialDiv.addEventListener('mouseout', function() {
+      console.log('setint')
+        intervalId = setInterval(myFunction, 2000);
+    });
+    intervalId = setInterval(myFunction, 2000);
 </script>
 
 <script>
+    $(document).ready(function() {
+        
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
+        
+        $('body, html').animate({
+            scrollTop: 0
+        }, 'fast');
         var $this = $(this);
 
         var videoUrl = $this.attr("data-media");
-        console.log(videoUrl, 'videourl')
+ 
         var popup = $this.attr("href");
-        console.log(popup, 'videohref poup')
+ 
         var $popupIframe = $(popup).find("iframe");
-        console.log($popupIframe, 'iframe')
+
         $popupIframe.attr("src", videoUrl);
 
         $("#pagepage").addClass("show-popup");
-        console.log($("#pagepage"))
-    });
+        $('body').css('overflow', 'hidden');
 
+    });
+});
     $(".popup").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
 
         $(".page").removeClass("show-popup");
+        $('body').css('overflow', 'auto');
     });
 
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
+        $('body').css('overflow', 'auto');
     });
 </script>
 
