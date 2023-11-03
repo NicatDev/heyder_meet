@@ -451,7 +451,28 @@
             </div>
          </div>
          <!-- breadcrumb-area-end -->
-
+<!-- tabs area start -->
+<div>
+    <div data-ui-tablist="navigation" class="tabs">
+      <div class="tabs-marker"></div>
+      <button data-ui-tablist-tab="account" class="tabs-tab">Account</button>
+      <button data-ui-tablist-tab="inventory" class="tabs-tab">Inventory</button>
+      <button data-ui-tablist-tab="bonuses" class="tabs-tab">Bonuses</button>
+      <button data-ui-tablist-tab="history" class="tabs-tab">Withdrawal History</button>
+      <button data-ui-tablist-tab="support" class="tabs-tab">Support</button>
+  
+    </div>
+    <div class="tabpanels">
+      <div id="account" class="tabpanel">
+        Account content
+      </div>
+      <div id="inventory" class="tabpanel" hidden>Inventory content</div>
+      <div id="bonuses" class="tabpanel" hidden>Bonuses content</div>
+      <div id="history" class="tabpanel" hidden>History content</div>
+      <div id="support" class="tabpanel" hidden>Support content</div>
+    </div>
+  </div>
+<!-- tabs area end -->
          <!-- fm-blog-grid-area-start -->
          <div class="fm-blog-grid-area section-spacing">
             <div class="container-fluid">
@@ -773,6 +794,32 @@
   });
        }
    </script>
+   
+
+   <script>
+    import { Tablist } from "https://cdn.jsdelivr.net/npm/jolty/dist/jolty.esm.min.js";
+
+Tablist.data("navigation", (tablist) => {
+  const marker = tablist.firstElementChild;
+
+  const setMarker = (tab) => {
+    marker.style.width = tab.offsetWidth + "px";
+    marker.style.translate = tab.offsetLeft + "px";
+  };
+
+  return {
+    data: "ui-tabs",
+    on: {
+      show(instance, { tab }) {
+        setMarker(tab);
+      }
+    }
+  };
+});
+
+Tablist.initAll();
+
+    </script>
    </body>
 
 
