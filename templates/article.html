@@ -638,6 +638,31 @@
         </div>
     </div>
       <!-- footer-area-end -->
+
+      <script>
+        import { Tablist } from "https://cdn.jsdelivr.net/npm/jolty/dist/jolty.esm.min.js";
+    
+    Tablist.data("navigation", (tablist) => {
+      const marker = tablist.firstElementChild;
+    
+      const setMarker = (tab) => {
+        marker.style.width = tab.offsetWidth + "px";
+        marker.style.translate = tab.offsetLeft + "px";
+      };
+    
+      return {
+        data: "ui-tabs",
+        on: {
+          show(instance, { tab }) {
+            setMarker(tab);
+          }
+        }
+      };
+    });
+    
+    Tablist.initAll();
+    
+        </script>
       <style>
 
    .section-spacing {
@@ -757,6 +782,7 @@
     padding-top: 30px !important;
 
 }
+
 </style>
       <!-- JS here -->
 
@@ -798,30 +824,7 @@
    </script>
    
 
-   <script>
-    import { Tablist } from "https://cdn.jsdelivr.net/npm/jolty/dist/jolty.esm.min.js";
-
-Tablist.data("navigation", (tablist) => {
-  const marker = tablist.firstElementChild;
-
-  const setMarker = (tab) => {
-    marker.style.width = tab.offsetWidth + "px";
-    marker.style.translate = tab.offsetLeft + "px";
-  };
-
-  return {
-    data: "ui-tabs",
-    on: {
-      show(instance, { tab }) {
-        setMarker(tab);
-      }
-    }
-  };
-});
-
-Tablist.initAll();
-
-    </script>
+ 
    </body>
 
 
