@@ -1201,7 +1201,7 @@
                 <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
-                        <h3>{{test.field}}</h3>
+    
                         <p>{{test.decsription|safe}}</p>
                     </div>
                 </div>
@@ -1321,7 +1321,7 @@
 
 
 
-    <div class="brand-carousel section-padding owl-carousell"
+    <div class="brand-carousel section-padding owl-carousel"
         style="margin-top:3%;background:linear-gradient(to right, rgb(50, 50, 50), rgb(137, 137, 137), rgb(51, 51, 51));">
         {% for logo in partners %}
         <div class="single-logo">
