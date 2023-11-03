@@ -8,6 +8,16 @@ from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
 
+def embed(url):
+    try:
+        b = url.find('src="')
+        if b != -1:
+            e = url.find('"', b + 5)  
+            if e != -1:
+                src = url[b + 5:e]
+        return src
+    except:
+        return ''
 def set_language(request, lang_code):
     url = request.META.get("HTTP_REFERER", None)
     if lang_code == 'az':
@@ -138,6 +148,7 @@ def home(request):
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
     homeHeaderVideo = HomeHeaderVideo.objects.all()
+    
     article = Article.objects.all()
     if article.exists():
         if len(article)==1:
@@ -158,6 +169,11 @@ def home(request):
     videos = Video.objects.all()
     if len(videos)>6:
         videos = videos[0:6]
+    for video in videos:
+        video.embed_full = embed(video.embed)
+        
+    for video in homeHeaderVideo:
+        video.embed_full = embed(video.embed)
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:11]
