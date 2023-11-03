@@ -1123,7 +1123,7 @@
                         </div>
                     </div>
 
-                    <div id="hvprnt2" style=" height:350px;" class="col-lg-4">
+                    <div id="hvprnt2" style=" height:350px;border-left: 2px solid transparent;" class="col-lg-4">
                         <div class="mybordering">
                             <div class="myhovdiv22" style="padding-left:10%;padding-right:10%;">
                                 <p style="color:black;"><span
@@ -1201,7 +1201,7 @@
                 <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
-    
+                        <h3>{{test.field}} </h3>
                         <p>{{test.decsription|safe}}</p>
                     </div>
                 </div>
@@ -2004,7 +2004,8 @@
     #hvprnt2 {
         overflow: hidden;
         padding-right: 0;
-        padding-left: 0
+        padding-left: ;
+        background: linear-gradient(to bottom, rgb(147, 147, 147), rgb(191, 191, 191), rgb(147, 147, 147)) !important;
     }
 
     #hvprnt3 {
