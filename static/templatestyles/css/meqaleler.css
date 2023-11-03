@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 html,
-
+/* body {
+  height: 100%;
+} */
 * {
   box-sizing: border-box;
 }
@@ -10,7 +12,16 @@ html,
   display: none !important;
 }
 
-
+/* body {
+  background-image: linear-gradient(120deg, #8a9ddc, #e25f5f);
+  font-family: Inter, sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+} */
 .tabs {
   display: flex;
   align-items: center;
