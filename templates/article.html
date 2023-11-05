@@ -17,22 +17,28 @@
          'templatestyles/css/video-player.css' %}">
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <link rel="stylesheet" href="{% static 'templatestyles/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'templatestyles/css/meqaleler.css' %}">
+
       <link rel="stylesheet" href="{% static 'assets/css/preloader.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
-      <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css'
-         %}">
+      <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/ui-range-slider.css' %}">
       
-      <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css'
-         %}">
+      <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
       <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+      <script src="https://cdn.jsdelivr.net/npm/jolty/dist/jolty.esm.min.js"></script>
+      <script>// Documentation
+        // https://jolty.dev/docs/tablist
+        
+       
+        </script>
    </head>
 
    <body>
@@ -455,7 +461,18 @@
          <!-- fm-blog-grid-area-start -->
          <div class="fm-blog-grid-area section-spacing">
             <div class="container-fluid">
-               <div class="row g-5">
+                <div >
+                    <div data-ui-tablist="navigation" class="tabs">
+                      <button data-ui-tablist-tab="account" class="tabs-tab activee">Account</button>
+                      <button data-ui-tablist-tab="inventory" class="tabs-tab">Inventory</button>
+                      <button data-ui-tablist-tab="bonuses" class="tabs-tab">Bonuses</button>                  
+                    </div>
+                    <div class="tabpanels" >
+
+                    </div>
+                  </div>
+                 
+               <div class="row g-5 tabpanel" id="account" >
                   {% for article in articles %}
                   <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                      <div class="fm-blog-grid-single bdFadeUp last-one">
@@ -485,12 +502,64 @@
                   </div>
                   {% endfor %}
                </div>
+               <div class="row g-5 tabpanel" id="inventory" hidden>
+                  <main style="display: flex;">
+                    <div style="display: flex;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+">
+            
+                        <div style="box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;" class="book-card">
+                            <div class="book-card__cover">
+                              <div class="book-card__book">
+                                <div class="book-card__book-front">
+                                  <img class="book-card__img" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg" />
+                                </div>
+                                <div class="book-card__book-back"></div>
+                                <div class="book-card__book-side"></div>
+                              </div>
+                            </div>
+                        
+                          </div>
+                          <div class="book-card" style="box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;">
+                            <div style="text-align: left;margin-left:16px;">
+                                <h4>Harry Potter</h4>
+                                <p>Müəllif: J.K.Rowling</p>
+                                <p>Nəşr ili: 2021</p>
+                         
+                            
+                        </div>  
+                        <div style="    gap: 3px;
+                        display: flex;
+                        align-items: center !important;
+                        text-align: center;
+                        margin-top: 70%;
+                        margin-left: 50%;
+                        border: 1px solid rgb(154, 154, 154);
+                        padding: 5px 0px;
+                        border-radius: 10px;
+                        background-color: rgb(229, 158, 5);
+                        padding-left:2%;">
+                            <p style="color:white">Yükləmək</p><i style="font-size:large;color:white;" class="fa-solid fa-download"></i>
+                           
+                        </div>
+                          </div>
+                         
+                          
+                          </div>   
+             
+                   
+                 
+                  </main>
+             </div>
+             <div class="row g-5 tabpanel" id="bonuses"hidden>
+                <h1>bonuses</h1>
+                
+             </div>
 
 
 
-               <div class="row">
-                  <div class="bd-basic__pagination d-flex align-items-center
-                     bdFadeUp" style="justify-content: center; margin-top:80px">
+               <div class="row" >
+                  <div  class="bd-basic__pagination d-flex align-items-center
+                     bdFadeUp" style="justify-content: center; margin-top:80px;margin-bottom:80px;">
                      <nav>
                         <ul>
                            <li>
@@ -532,7 +601,7 @@
       </main>
 
       <!-- footer-area-start -->
-      <div class="footer-wrapper">
+      <div class="footer-wrapper" style="margin-top:0px !important;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
@@ -554,14 +623,9 @@
                                         <li><a style="font-size: medium;" href="#">İnstagram</a></li>
                                         <li><a style="font-size:medium ;" href="#">Facebook</a></li>
                                         <li><a style="font-size:medium ;" href="#">Youtube</a></li>
-
                                     </ul>
                                 </div>
-
                             </div>
-
-
-
                             <div style="display: flex;justify-content:center;"
                                 class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                                 <div style="text-align:start">
@@ -620,9 +684,6 @@
    .section-spacing {
       padding-top: 80px;
       padding-bottom: 80px;
-  }
-  .container-fluid{
-    margin-top:2%;
   }
 </style>
       <style> .pagination-wrapper {
@@ -759,7 +820,22 @@
       <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
       <script src="{% static 'assets/js/main.js' %}"></script>
 
-
+      <script>
+                    var tabElements = document.querySelectorAll('.tabs-tab');
+                    tabElements.forEach(function(tabElement) {
+                    tabElement.addEventListener('click', function() {
+                        var tabData = tabElement.getAttribute('data-ui-tablist-tab');
+                        var mytab = document.getElementById(tabData)
+                        var tabPanels = document.querySelectorAll('.tabpanel');
+                        
+                        tabPanels.forEach(function(tabElement) {
+                            tabElement.hidden = true
+                        });
+                        mytab.removeAttribute("hidden");
+                        console.log('Tıklanan tab verisi:', tabData);
+                    });
+                    });
+                  </script>
 
 <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
       <script>
@@ -773,6 +849,24 @@
   });
        }
    </script>
+   /* active js */
+   <script>
+    const navLinks = document.querySelectorAll(' .tabs-tab ');
+
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+
+    navLinks.forEach(link => {
+      link.classList.remove('activee');
+    });
+
+  
+    this.classList.add('activee');
+  });
+});
+    </script>
+
    </body>
 
 
