@@ -237,6 +237,15 @@ class Partners(BaseMixin):
     def __str__(self):
         return self.name  + ' emekdas'
     
+
+class Book(BaseMixin):
+    name = models.CharField(max_length=1200)
+    writer = models.CharField(max_length=1200,null=True,blank=True)
+    image = models.ImageField()
+    
+    def __str__(self):
+        return self.name  + ' --kitab'
+    
 class Head(models.Model):
     title = models.CharField(verbose_name='head title',max_length=230)
     image = models.FileField(verbose_name='favicon',null=True,blank=True)
