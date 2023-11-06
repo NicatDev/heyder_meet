@@ -2466,13 +2466,13 @@ function scrollElement() {
     console.log('up')
   }
   if (window.scrollY > 0) {
-    scrollingDown = false;
+    scrollingDown = true;
     console.log('false')
   }
 
   // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
   if (window.scrollY === 0) {
-    scrollingDown = true;
+    scrollingDown = false;
     console.log('true')
   }
 
