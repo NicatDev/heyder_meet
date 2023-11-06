@@ -2459,10 +2459,10 @@ function scrollElement() {
   const element = document.getElementById('scroll');
   console.log('scroll',element)
   if (scrollingDown) {
-    window.scrollBy(0, 53.5);
+    element.scrollBy(0, 53.5);
     console.log('down')
   } else {
-    window.scrollBy(0, 0); 
+    element.scrollBy(0, 0); 
     console.log('up')
   }
   if (window.scrollY > 0) {
