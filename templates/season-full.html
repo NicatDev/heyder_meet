@@ -2453,21 +2453,30 @@
 <script>
 
     const targetElementId = "scroll"; // Elementin id'sini değiştirin
-    
+    let scrollingDown = true;
+
 function scrollElement() {
-  const element = document.getElementById(targetElementId);
-
-  if (!element || (element.scrollHeight - '53.5px' <= element.scrollTop)) {
-    window.scrollTo(0, 0); 
+  const element = document.getElementById('scroll');
+  if (scrollingDown) {
+    window.scrollBy(0, 53.5);
   } else {
-
-    element.scrollTop += 1;
+    window.scrollBy(0, 0); 
   }
+  if (window.scrollY > 0) {
+    scrollingDown = false;
+  }
+
+  // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
+  if (window.scrollY === 0) {
+    scrollingDown = true;
+  }
+
 }
 
+// Her 5 saniyede bir scrollElement işlemini çağır
 setInterval(scrollElement, 5000);
 
-
+}
 
 // Set up the scrolling animation
 const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
