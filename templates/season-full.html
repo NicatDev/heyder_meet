@@ -2457,18 +2457,23 @@
 
 function scrollElement() {
   const element = document.getElementById('scroll');
+  console.log('scroll',element)
   if (scrollingDown) {
     window.scrollBy(0, 53.5);
+    console.log('down')
   } else {
     window.scrollBy(0, 0); 
+    console.log('up')
   }
   if (window.scrollY > 0) {
     scrollingDown = false;
+    console.log('false')
   }
 
   // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
   if (window.scrollY === 0) {
     scrollingDown = true;
+    console.log('true')
   }
 
 }
@@ -2476,7 +2481,7 @@ function scrollElement() {
 // Her 5 saniyede bir scrollElement işlemini çağır
 setInterval(scrollElement, 5000);
 
-}
+
 
 // Set up the scrolling animation
 const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
