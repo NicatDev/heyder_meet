@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions,register, translator
-from heyderapp.models import Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Interview
+from heyderapp.models import InMemory,Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Interview
 
 
 
@@ -16,6 +16,7 @@ class VideoTranslationOptions(TranslationOptions):
 
 
 translator.register(Video, VideoTranslationOptions)
+translator.register(InMemory, VideoTranslationOptions)
 
 class MovieTranslationOptions(TranslationOptions):
     fields = ('name', 'content')
