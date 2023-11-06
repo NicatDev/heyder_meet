@@ -176,7 +176,7 @@ def home(request):
         video.embed_full = embed(video.embed)
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
-        photos = photos[0:11]
+        photos = photos[0:14]
     if About.objects.all().exists():
         about = About.objects.first()
     else:
