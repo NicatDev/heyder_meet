@@ -1083,18 +1083,19 @@
         </div>
         {% endfor %}
 
-        <div id="loadmorebutton" onclick="loadmore()" class="fm-header-right d-none d-xl-block" style="text-align: center;">
-            <a id="fillload" class="fill-btn"
-                style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
-                <span>
-                    <i class="fa-regular fa-arrow-right"></i>
-                </span>
-            </a>
-        </div>
+      
 
     </div>
 </div>
     {% endif %}
+    <div id="loadmorebutton" onclick="loadmore()" class="fm-header-right d-none d-xl-block" style="text-align: center;">
+        <a id="fillload" class="fill-btn"
+            style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
+            <span>
+                <i class="fa-regular fa-arrow-right"></i>
+            </span>
+        </a>
+    </div>
 <script>
     function loadmore() {
             let div = document.getElementById('loadmorediv')
