@@ -2458,13 +2458,6 @@
 function scrollElement() {
   const element = document.getElementById('scroll');
   console.log('scroll',element)
-  if (scrollingDown) {
-    element.scrollBy(0, 103.5);
-    console.log('down')
-  } else {
-    element.scrollBy(0, 0); 
-    console.log('up')
-  }
   if (element.scrollHeight - element.scrollTop === element.clientHeight) {
     scrollingDown = true;
     console.log('false')
@@ -2475,7 +2468,15 @@ function scrollElement() {
     scrollingDown = false;
     console.log('true')
   }
-console.log(element.scrollY)
+  if (scrollingDown) {
+    element.scrollBy(0, 103.5);
+    console.log('down')
+  } else {
+    element.scrollBy(0, 0); 
+    console.log('up')
+  }
+
+
 }
 
 // Her 5 saniyede bir scrollElement işlemini çağır
