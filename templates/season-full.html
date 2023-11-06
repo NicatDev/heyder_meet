@@ -1088,6 +1088,19 @@
     </div>
 </div>
     {% endif %}
+    <script>
+        function loadmore() {
+                let div = document.getElementById('loadmorediv')
+                let button = document.getElementById('fillload')
+                if (div.style.height=='900px'){
+                    div.style.height='600px';
+                    button.innerText = 'Daha çoxu'
+                }
+                else{div.style.height = '900px'ı
+            button.innerText = 'Daha azı'}
+                
+            }
+    </script>
     <div id="loadmorebutton" onclick="loadmore()" class="fm-header-right d-none d-xl-block" style="text-align: center;">
         <a id="fillload" class="fill-btn"
             style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
@@ -1096,19 +1109,7 @@
             </span>
         </a>
     </div>
-<script>
-    function loadmore() {
-            let div = document.getElementById('loadmorediv')
-            let button = document.getElementById('fillload')
-            if (div.style.height=='900px'){
-                div.style.height='600px';
-                button.innerText = 'Daha çoxu'
-            }
-            else{div.style.height = '900px'ı
-        button.innerText = 'Daha azı'}
-            
-        }
-</script>
+
     <section>
         <!-- meqale area -->
         {% if article1.image.url %}
