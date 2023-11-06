@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'sas.scss' %}">
-
+  
 </head>
 
 <body class="full-wrap theme-dark">
@@ -1091,7 +1091,7 @@
 </div>
     {% endif %}
    
-    <div id="loadmorebutton" onclick="loadmore()" class="fm-header-right d-none d-xl-block" style="text-align: center;">
+    <div id="loadmorebutton"  class="fm-header-right d-none d-xl-block" style="text-align: center;">
         <a id="fillload" class="fill-btn"
             style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
             <span>
@@ -1099,7 +1099,6 @@
             </span>
         </a>
     </div>
-    
 
     <section>
         <!-- meqale area -->
@@ -2537,7 +2536,20 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
         modal.style.display = "none";
     }
 </script>
-
+<script>
+    const div = document.getElementById('loadmorebutton')
+    div.addEventListener("click", function () {
+        const buttontext = document.getElementById('fillload')
+        buttontext.innerText = 'Load more'
+        const loadmorediv = document.getElementById('loadmorediv')
+        if (loadmorediv.style.height == '600px'){
+        loadmorediv.style.height = '900px';
+        buttontext.innerText = 'Load less'}else{
+            loadmorediv.style.height = '600';
+            buttontext.innerText = 'Load more'
+        }
+        });
+    </script>
 <script>
 
 
@@ -2604,19 +2616,7 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
         });
     }
 </script>
-<script>
-           function loadmore() {
-                let div = document.getElementById('loadmorediv')
-                let button = document.getElementById('fillload')
-                if (div.style.height=='900px'){
-                    div.style.height='600px';
-                    button.innerText = 'Daha çoxu'
-                }
-                else{div.style.height = '900px'ı
-            button.innerText = 'Daha azı'}
-                
-            }
-    </script>
+
 
 <script>
     function myFunction() {
@@ -2705,19 +2705,5 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
         $('body').css('overflow', 'auto');
     });
 </script>
-<script>
-    function loadmore() {
-        let div = document.getElementById('loadmorediv');
-        let button = document.getElementById('fillload');
-        if (div.style.height == '900px') {
-            div.style.height = '600px';
-            button.innerText = 'Daha çoxu';
-        } else {
-            div.style.height = '900px';
-            button.innerText = 'Daha azı';
-        }
-    }
 
-    document.getElementById('loadmorebutton').addEventListener('click', loadmore);
-</script>
 </html>
