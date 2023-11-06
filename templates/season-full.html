@@ -1099,6 +1099,7 @@
             </span>
         </a>
     </div>
+    
 
     <section>
         <!-- meqale area -->
@@ -2704,5 +2705,19 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
         $('body').css('overflow', 'auto');
     });
 </script>
+<script>
+    function loadmore() {
+        let div = document.getElementById('loadmorediv');
+        let button = document.getElementById('fillload');
+        if (div.style.height == '900px') {
+            div.style.height = '600px';
+            button.innerText = 'Daha çoxu';
+        } else {
+            div.style.height = '900px';
+            button.innerText = 'Daha azı';
+        }
+    }
 
+    document.getElementById('loadmorebutton').addEventListener('click', loadmore);
+</script>
 </html>
