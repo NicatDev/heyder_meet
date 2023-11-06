@@ -220,5 +220,5 @@ html,
     opacity: 1;
   }
   .container-fluid{
-    width: 75%;
+    width: 75% !important;
   }
