@@ -14121,7 +14121,10 @@ margin-bottom: 4rem;
 grid-column: span 12;
 display: grid;
 gap: 2rem;
-    animation: scroll 10s linear infinite;
+
+}
+.scroll {
+  animation: scroll 10s linear infinite;
 }
 @media screen and (min-width: 61.25rem) {
   #testimonial .cards {
@@ -14183,7 +14186,7 @@ position: relative;
 width: 100%;
 overflow: inherit;
 margin-top: 2rem;
-animation: scroll 10s linear infinite;
+
 }
 @media screen and (min-width: 61.25rem) {
 #testimonial .content {
