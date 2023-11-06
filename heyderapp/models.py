@@ -208,7 +208,7 @@ class Article(BaseMixin):
         super(Article, self).save(*args, **kwargs)
         
 class Interview(BaseMixin):
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True,related_name='meqaleler')
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True,related_name='musahibeler')
     tag = models.ManyToManyField(Tag,null=True,blank=True)
     name = models.CharField(max_length=1200)
     date = models.DateField(null=True,blank=True)
