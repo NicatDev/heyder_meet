@@ -588,10 +588,10 @@
                                 <p>{{about.content2}}...<a href="#" id="dahaFazlaGorLink"> daha ətraflı</a>
 
                                 </p>
-                                <div class="fm-director-about-name mt-55">
+                                <!-- <div class="fm-director-about-name mt-55">
                                     <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
                                         class="director-about-nam">{{about.imza}}</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1117,7 +1117,7 @@
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
+                                    style="width:100%;margin-top:30px;opacity:0;border-radius: 13px;"
                                     src="{{article2.image.url}}" alt="">
                             </div>
                         </div>
@@ -1200,7 +1200,7 @@
                 <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
-                        <p>{{test.field}} </p>
+                        <p style="color: whitesmoke;line-height: 1.3;">{{test.field}} </p>
                         <p>{{test.decsription|safe}}</p>
                     </div>
                 </div>
