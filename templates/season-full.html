@@ -2452,7 +2452,7 @@
 
 <script>
     const firstCardElement = document.querySelector(".cardd");
-    const height = firstCardElement.getBoundingClientRect().height;
+    const height = firstCardElement.getBoundingClientRect().height+8;
     const targetElementId = "scroll"; // Elementin id'sini değiştirin
     let scrollingDown = true;
 
@@ -2469,6 +2469,7 @@ function scrollElement() {
     scrollingDown = true;
     console.log('true')
   }
+  
   if (scrollingDown) {
     element.scrollBy(0, height);
     console.log('down')
