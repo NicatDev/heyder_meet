@@ -145,11 +145,14 @@ def home(request):
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
+
     homeHeaderVideo = HomeHeaderVideo.objects.all()
     
     article = Article.objects.all()
+    
     if article.exists():
         if len(article)==1:
             article1,article2,article3 =article[0],article[0],article[0]
