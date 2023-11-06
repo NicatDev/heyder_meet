@@ -14123,6 +14123,14 @@ display: grid;
 gap: 2rem;
 
 }
+@keyframes scroll {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(-100%);
+  }
+}
 .scroll {
   animation: scroll 10s linear infinite;
 }
