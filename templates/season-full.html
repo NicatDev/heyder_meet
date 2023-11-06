@@ -2459,20 +2459,20 @@ function scrollElement() {
   const element = document.getElementById('scroll');
   console.log('scroll',element)
   if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-    scrollingDown = true;
+    scrollingDown = false;
     console.log('false')
   }
 
   // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
   if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
-    scrollingDown = false;
+    scrollingDown = true;
     console.log('true')
   }
   if (scrollingDown) {
     element.scrollBy(0, 103.5);
     console.log('down')
   } else {
-    element.scrollBy(0, 0); 
+    element.scrollBy(0, -1000); 
     console.log('up')
   }
 
