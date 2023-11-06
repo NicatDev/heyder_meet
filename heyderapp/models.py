@@ -207,6 +207,29 @@ class Article(BaseMixin):
                 count += 1
         super(Article, self).save(*args, **kwargs)
         
+class Interview(BaseMixin):
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True,related_name='meqaleler')
+    tag = models.ManyToManyField(Tag,null=True,blank=True)
+    name = models.CharField(max_length=1200)
+    date = models.DateField(null=True,blank=True)
+    content = models.TextField()
+    image = models.ImageField()
+    views = models.CharField(max_length=12000,null=True,blank=True)
+    
+    def __str__(self):
+        return self.name  + '--interview'
+
+    def save(self, *args, **kwargs):
+        new_slug = slugify(self.name)
+        self.slug = new_slug
+        if Interview.objects.filter(slug=new_slug).exists():
+            count = 0
+            while Interview.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
+        super(Interview, self).save(*args, **kwargs)
+        
+
 class Partners(BaseMixin):
     name = models.CharField(max_length=1200)
     image = models.ImageField()

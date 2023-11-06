@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions,register, translator
-from heyderapp.models import Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader
+from heyderapp.models import Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Interview
 
 
 
@@ -62,4 +62,5 @@ class ArticleTranslationOptions(TranslationOptions):
 
 
 translator.register(Article,ArticleTranslationOptions)
+translator.register(Interview,ArticleTranslationOptions)
     

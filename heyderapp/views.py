@@ -94,13 +94,14 @@ def article(request):
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     allheader = AllHeader.objects.all()
-
+    interviews = Interview.objects.all()
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories,
-        'allheader':allheader
+        'allheader':allheader,
+        'interviews':interviews
         }
     if Head.objects.all().exists():
         head = Head.objects.first()
