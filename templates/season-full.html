@@ -34,6 +34,19 @@
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'sas.scss' %}">
+    <script>
+        function loadmore() {
+                let div = document.getElementById('loadmorediv')
+                let button = document.getElementById('fillload')
+                if (div.style.height=='900px'){
+                    div.style.height='600px';
+                    button.innerText = 'Daha çoxu'
+                }
+                else{div.style.height = '900px'ı
+            button.innerText = 'Daha azı'}
+                
+            }
+    </script>
 </head>
 
 <body class="full-wrap theme-dark">
@@ -90,19 +103,7 @@
             }
         }
     </style>
-     <script>
-        function loadmore() {
-                let div = document.getElementById('loadmorediv')
-                let button = document.getElementById('fillload')
-                if (div.style.height=='900px'){
-                    div.style.height='600px';
-                    button.innerText = 'Daha çoxu'
-                }
-                else{div.style.height = '900px'ı
-            button.innerText = 'Daha azı'}
-                
-            }
-    </script>
+ 
     <script>
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
