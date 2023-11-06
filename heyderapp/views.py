@@ -191,7 +191,7 @@ def home(request):
 
 def video(request):
     allheader = AllHeader.objects.all()
-
+    inmemories = InMemory.objects.all()
     videos = Video.objects.all()
     cat = request.GET.get('movzu')
     if cat:
@@ -207,6 +207,7 @@ def video(request):
     fcount = Video.objects.all().count()
     context = {
         'video_list':video_list,
+        'inmemories':inmemories,
         # 'movies':movies,
         # 'related_videos':videos,
         'categories':vidcategories,
@@ -216,9 +217,11 @@ def video(request):
         'fcount':fcount,
         'allheader':allheader
     }
+
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
+
     return render(request,'video.html',context)
 
 def foto(request):

@@ -67,6 +67,27 @@ class Video(BaseMixin):
                 count += 1
         super(Video, self).save(*args, **kwargs)
 
+class InMemory(BaseMixin):
+    name = models.CharField(max_length=800)
+    content = models.TextField()
+    coverimage = models.ImageField()
+    video = models.CharField(max_length=3200)
+    ordering = models.IntegerField(null=True,blank=True)
+    embed = models.CharField(max_length=4000,null=True,blank=True)
+    
+    def __str__(self):
+        return self.name + ' -InMemory'
+    
+    def save(self, *args, **kwargs):
+        new_slug = slugify(self.name)
+        self.slug = new_slug
+        if InMemory.objects.filter(slug=new_slug).exists():
+            count = 0
+            while InMemory.objects.filter(slug=new_slug).exists():
+                new_slug = f"{slugify(self.name)}-{count}"
+                count += 1
+        super(InMemory, self).save(*args, **kwargs)
+
 class Movie(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True,related_name='filmler')
     name = models.CharField(max_length=800)
