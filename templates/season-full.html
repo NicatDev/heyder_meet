@@ -1253,6 +1253,13 @@
                                             <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
                                            ">{{video.name}}</h3>
                                         </div>
+                                        {% if not video.embed %}
+                                        <style>
+                                        .slide-wrapper .slide-one .slide-image:before {
+                                            width: 0px !important;
+                                        }
+                                    </style>
+                                        {% endif %}
     
                                     </div>
                                     <div class="slide-content">
