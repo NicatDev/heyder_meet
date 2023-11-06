@@ -1181,7 +1181,7 @@
     </div>
     <div id="bodyy">
         <section id="testimonial">
-            <div class="cards scroll">
+            <div id="scroll" class="cards scroll">
                 {% for test in testimonials %}
                 <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
                     <img src="{{test.image.url}}" alt="">
@@ -2450,7 +2450,28 @@
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 
+<script>
 
+    const targetElementId = "scroll"; // Elementin id'sini değiştirin
+    
+function scrollElement() {
+  const element = document.getElementById(targetElementId);
+
+  if (!element || (element.scrollHeight - '53.5px' <= element.scrollTop)) {
+    window.scrollTo(0, 0); 
+  } else {
+
+    element.scrollTop += 1;
+  }
+}
+
+setInterval(scrollElement, 5000);
+
+
+
+// Set up the scrolling animation
+const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
+    </script>
 <script>
     // Get the modal
     const clickableDivs = document.querySelectorAll(".clickable-div");
@@ -2485,19 +2506,7 @@
         modal.style.display = "none";
     }
 </script>
-<style>
-    
-@keyframes scroll {
-  0% {
-      transform: translateY(100%);
-  }
-  100% {
-      transform: translateY(-100%);
-  }
-}
-.scroll {
-  animation: scroll 10s linear infinite;
-}</style>
+
 <script>
 
 
