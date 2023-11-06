@@ -12,7 +12,7 @@ class MyTitleAdmin(admin.ModelAdmin):
     exclude = ('title','content')
 class MyNameAdmin(admin.ModelAdmin):
     exclude = ('name','content')
-admin.site.register(MyNameAdmin,Interview)
+admin.site.register(Interview,MyNameAdmin)
 class MyNameAdminVideo(admin.ModelAdmin):
     exclude = ('name','content','coverimage')
 class MyOnlyNameAdmin(admin.ModelAdmin):
