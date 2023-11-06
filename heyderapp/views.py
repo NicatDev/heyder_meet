@@ -177,6 +177,7 @@ def home(request):
         
     for video in homeHeaderVideo:
         video.embed_full = embed(video.embed)
+    
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
         photos = photos[0:14]
@@ -190,6 +191,8 @@ def home(request):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
+    for video in inmemories:
+        video.embed_full = embed(video.embed)
     context['inmemories']=inmemories
     return render(request,'season-full.html',context)
 
