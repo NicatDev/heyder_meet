@@ -590,29 +590,25 @@
                            <div class="sidebar__post">
                               {% for blg in sourcearticles|slice:2 %}
                               <div {{forloop.counter}} class="rc__post">
-                                 <div class="rc__post-thumb">
-                                    <a href="{{blg.href}}">{{forloop.counter}}</a>
-                                 </div>
-                                 <div class="rc__post-content">
-                                    <h5 class="rc__post-title">
-                                       <a href="{{blg.href}}">{{blg.title}}</a>
-                                    </h5>
-                                    <div class="postbox__meta">
-                                       
-                                    
-                                    </div>
-                                 </div>
+                                <div class="rc__post-thumb">
+                                <a href="{{blg.href}}">{{forloop.counter}}</a>
+                                </div>
+                                <div class="rc__post-content">
+                                <h5 class="rc__post-title">
+                                <a href="{{blg.href}}">{{blg.title}}</a>
+                                </h5>
+                                <div class="postbox__meta">
+                                </div>
+                                </div>
                               </div>
-
                               {% endfor %}
-                              <div style="margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;gap:8px;">
-                                {% for count in pagecount %}<span style="font-size:22px;" class="page{{count}}">{{count}}</span>{% endfor %}
+                              <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;">
+                              {% for count in pagecount %}<span style="font-size:22px;"  id="{{count}}">{{count}}</span>{% endfor %}
                               </div>
-                           
                            </div>
                         </div>
                      </div>
-             
+             <script></script>
                      
                     
                   </div>
