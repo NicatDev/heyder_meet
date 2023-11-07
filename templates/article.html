@@ -1019,8 +1019,11 @@
 };
         var current_page = 1;
 var records_per_page = 4;
-
-
+jsonData = [];
+        {% for item in sourcearticles %}
+        jsonData.push("{{ item.name }}"); 
+        {% endfor %}
+console.log(jsonData)
 
 function prevPage()
 {
