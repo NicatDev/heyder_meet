@@ -94,13 +94,14 @@ def article(request):
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     allheader = AllHeader.objects.all()
-
+    interviews = Interview.objects.all()
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories,
-        'allheader':allheader
+        'allheader':allheader,
+        'interviews':interviews
         }
     if Head.objects.all().exists():
         head = Head.objects.first()
@@ -141,15 +142,18 @@ def blogsingle(request,slug=None):
     return render(request,'blog-details.html',context)
 
 def home(request):
-
+    inmemories = InMemory.objects.all()
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
+
     homeHeaderVideo = HomeHeaderVideo.objects.all()
     
     article = Article.objects.all()
+    
     if article.exists():
         if len(article)==1:
             article1,article2,article3 =article[0],article[0],article[0]
@@ -174,9 +178,10 @@ def home(request):
         
     for video in homeHeaderVideo:
         video.embed_full = embed(video.embed)
+    
     photos = Photo.objects.all().order_by('-created_at')
     if len(photos)>8:
-        photos = photos[0:11]
+        photos = photos[0:14]
     if About.objects.all().exists():
         about = About.objects.first()
     else:
@@ -187,6 +192,9 @@ def home(request):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
+    for video in inmemories:
+        video.embed_full = embed(video.embed)
+    context['inmemories']=inmemories
     return render(request,'season-full.html',context)
 
 def video(request):

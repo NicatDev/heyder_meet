@@ -219,3 +219,9 @@ html,
   .book-card:hover .book-card__book-side {
     opacity: 1;
   }
+  .container-fluid{
+    width: 75% !important;
+  }
+  .xeberler_web{
+    
+  }

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'sas.scss' %}">
+  
 </head>
 
 <body class="full-wrap theme-dark">
@@ -90,6 +91,7 @@
             }
         }
     </style>
+ 
     <script>
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
@@ -588,10 +590,10 @@
                                 <p>{{about.content2}}...<a href="#" id="dahaFazlaGorLink"> daha ətraflı</a>
 
                                 </p>
-                                <div class="fm-director-about-name mt-55">
+                                <!-- <div class="fm-director-about-name mt-55">
                                     <a style="user-select:none; font-family:flaticon_faime" href="{% url 'about' %}"
                                         class="director-about-nam">{{about.imza}}</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1061,7 +1063,7 @@
 
 
     <!--photo galery-->
-
+    <div id="loadmorediv" style="height: 600px;overflow: hidden;margin-bottom:3%;">
     <div class="grid-containerr">
 
         {% for image in photos %}
@@ -1083,9 +1085,20 @@
         </div>
         {% endfor %}
 
+      
 
     </div>
+</div>
     {% endif %}
+   
+    <div id="loadmorebutton"  class="fm-header-right d-none d-xl-block" style="text-align: center;">
+        <a id="fillload" class="fill-btn"
+            style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
+            <span>
+                <i class="fa-regular fa-arrow-right"></i>
+            </span>
+        </a>
+    </div>
 
     <section>
         <!-- meqale area -->
@@ -1117,7 +1130,7 @@
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
+                                    style="width:100%;margin-top:30px;opacity:0;border-radius: 13px;"
                                     src="{{article2.image.url}}" alt="">
                             </div>
                         </div>
@@ -1135,8 +1148,8 @@
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
-                                    src="{{article2.image.url}}" alt="">
+                                style="width:100%;margin-top:30px;opacity:0;border-radius: 13px;"
+                                src="{{article2.image.url}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -1155,8 +1168,8 @@
                                     <i class="flaticon-right-arrow-1"></i>
                                 </div>
                                 <img class="myimage2"
-                                    style="padding-left:25px;padding-right:25px;height:180px;width:100%;margin-top:30px;opacity:0;"
-                                    src="{{article3.image.url}}" loading="lazy" alt="">
+                                style="width:100%;margin-top:30px;opacity:0;border-radius: 13px;"
+                                src="{{article3.image.url}}" loading="lazy" alt="">
                             </div>
                         </div>
                     </div>
@@ -1181,7 +1194,7 @@
     </div>
     <div id="bodyy">
         <section id="testimonial">
-            <div class="cards scroll">
+            <div id="scroll" class="cards scroll">
                 {% for test in testimonials %}
                 <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
                     <img src="{{test.image.url}}" alt="">
@@ -1200,7 +1213,7 @@
                 <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
                     <div class="text">
                         <h2>{{test.title}}</h2>
-                        <p>{{test.field}} </p>
+                        <p style="color: whitesmoke;line-height: 1.3;">{{test.field}} </p>
                         <p>{{test.decsription|safe}}</p>
                     </div>
                 </div>
@@ -1225,7 +1238,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="slide-slider-full owl-carousel owl-theme">
-                            {% for video in videos %}
+                            {% for video in inmemories %}
                             <div class="owl-items">
                                 <a href="#media-popup" data-media="{{video.embed_full}}"
                                     style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
@@ -1240,6 +1253,13 @@
                                             <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
                                            ">{{video.name}}</h3>
                                         </div>
+                                        {% if not video.embed %}
+                                        <style>
+                                        .slide-wrapper .slide-one .slide-image:before {
+                                            width: 0px !important;
+                                        }
+                                    </style>
+                                        {% endif %}
     
                                     </div>
                                     <div class="slide-content">
@@ -2450,7 +2470,45 @@
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 
+<script>
+    const firstCardElement = document.querySelector(".cardd");
+    const height = firstCardElement.getBoundingClientRect().height+8;
+    const targetElementId = "scroll"; // Elementin id'sini değiştirin
+    let scrollingDown = true;
 
+function scrollElement() {
+  const element = document.getElementById('scroll');
+  console.log('scroll',element)
+  if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+    scrollingDown = false;
+    console.log('false')
+  }
+
+  // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
+  if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
+    scrollingDown = true;
+    console.log('true')
+  }
+  
+  if (scrollingDown) {
+    element.scrollBy(0, height);
+    console.log('down')
+  } else {
+    element.scrollBy(0, -1000); 
+    console.log('up')
+  }
+
+
+}
+
+// Her 5 saniyede bir scrollElement işlemini çağır
+setInterval(scrollElement, 6000);
+
+
+
+// Set up the scrolling animation
+const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
+    </script>
 <script>
     // Get the modal
     const clickableDivs = document.querySelectorAll(".clickable-div");
@@ -2485,7 +2543,20 @@
         modal.style.display = "none";
     }
 </script>
-
+<script>
+    const div = document.getElementById('loadmorebutton')
+    div.addEventListener("click", function () {
+        const buttontext = document.getElementById('fillload')
+        buttontext.innerText = 'Load more'
+        const loadmorediv = document.getElementById('loadmorediv')
+        if (loadmorediv.style.height == '600px'){
+        loadmorediv.style.height = '900px';
+        buttontext.innerText = 'Load less'}else{
+            loadmorediv.style.height = '600';
+            buttontext.innerText = 'Load more'
+        }
+        });
+    </script>
 <script>
 
 
@@ -2599,9 +2670,9 @@
     
     testimonialDiv.addEventListener('mouseout', function() {
       console.log('setint')
-        intervalId = setInterval(myFunction, 2000);
+        intervalId = setInterval(myFunction, 6000);
     });
-    intervalId = setInterval(myFunction, 2000);
+    intervalId = setInterval(myFunction, 6000);
 </script>
 
 <script>

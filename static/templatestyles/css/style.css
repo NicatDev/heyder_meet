@@ -14121,7 +14121,9 @@ margin-bottom: 4rem;
 grid-column: span 12;
 display: grid;
 gap: 2rem;
+
 }
+
 @media screen and (min-width: 61.25rem) {
   #testimonial .cards {
 grid-column: span 5;
@@ -14182,6 +14184,7 @@ position: relative;
 width: 100%;
 overflow: inherit;
 margin-top: 2rem;
+
 }
 @media screen and (min-width: 61.25rem) {
 #testimonial .content {
@@ -14283,7 +14286,17 @@ background-color: #3f3f3f;
 .scroll {
   max-height: 500px;
   overflow-y: auto;
+  
 }
+@keyframes scroll {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(-100%);
+  }
+}
+
 #dahaFazlaGorLink {
   color: #fff;
   text-decoration: none;
