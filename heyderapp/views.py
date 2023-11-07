@@ -233,7 +233,7 @@ def video(request):
 
 def foto(request):
     allheader = AllHeader.objects.all()
-
+    
     fcount = Photo.objects.all().count()
     photos = Photo.objects.all().order_by('created_at')
     if request.GET.get('movzu'):
