@@ -9,7 +9,8 @@
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+   <script src="https://cdn.jsdelivr.net/npm/jolty/dist/jolty.esm.min.js"></script>
+   
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Place favicon.ico in the root directory -->
@@ -781,7 +782,319 @@
       </div>
   </div>
    <!-- footer-area-end -->
+    <!-- footer-area-end -->
+    <style>
+        .section-spacing {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    </style>
+    <style>
+        .pagination-wrapper {
+            text-align: center;
+            margin: 40px 0;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .pagination {
+            display: inline-block;
+            height: 70px;
+            margin-top: 40px;
+            padding: 0 25px;
+            border-radius: 35px;
+            background-color: #eee;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            .pagination {
+                height: 50px;
+                margin-top: 50px;
+                padding: 0 10px;
+                border-radius: 25px;
+            }
+        }
+
+        .fm-blog-grid-single-content p {
+            margin-top: 1%;
+            background-color: rgba(252, 252, 252, 0.021);
+            text-align: justify;
+        }
+
+        .mybiggest {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            border: 1px solid black;
+            background: linear-gradient(red, blue, green);
+        }
+
+        .page-numbers {
+            display: block;
+            padding: 0 25px;
+            float: left;
+            transition: 400ms ease;
+            color: #595959;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 70px;
+        }
+
+        .page-numbers:hover,
+        .page-numbers.current {
+            background-color: #555555;
+            color: #fff;
+        }
+
+        .page-numbers.prev:hover,
+        .page-numbers.next:hover {
+            background-color: transparent;
+            color: #86c023;
+        }
+
+        .myresponse {
+            height: 20rem;
+        }
+
+        @media only screen and (max-width: 580px) {
+            .myresponse {
+                height: 300px;
+            }
+
+            @media only screen and (max-width: 540px) {
+                .myresponse {
+                    height: 260px;
+                }
+            }
+
+            @media only screen and (min-width:1400px) {
+                .myresponse {
+                    height: 300px !important;
+                }
+            }
+
+            @media only screen and (max-width: 1199px) {
+                .page-numbers {
+                    padding: 0 15px;
+                    font-size: 16px;
+                    line-height: 50px;
+                }
+            }
+
+            @media only screen and (min-width: 120px) and (max-width: 1024px) {
+                .page-numbers {
+                    padding: 0 14px;
+                    display: none;
+                }
+
+                .page-numbers:nth-of-type(2) {
+                    position: relative;
+                    padding-right: 50px;
+                }
+
+                .page-numbers:nth-of-type(2)::after {
+                    content: "...";
+                    position: absolute;
+                    font-size: 25px;
+                    top: 0;
+                    left: 45px;
+                }
+
+                .page-numbers:nth-child(-n+3),
+                .page-numbers:nth-last-child(-n+3) {
+                    display: block;
+                }
+
+                .page-numbers:nth-last-child(-n+4) {
+                    padding-right: 14px;
+                }
+
+                .page-numbers:nth-last-child(-n+4)::after {
+                    content: none;
+                }
+            }
+
+
+            .section-spacing {
+                padding-top: 30px !important;
+
+            }
+    </style>
+    <style>
+        .tabs-tab {
+            font-size: 18px;
+            width: 100%;
+        }
+    </style>
+    <!-- JS here -->
+
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+    <script src="{% static 'assets/js/knob.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/sidebar.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+        var tabElements = document.querySelectorAll('.tabs-tab');
+        tabElements.forEach(function (tabElement) {
+            tabElement.addEventListener('click', function () {
+                var tabData = tabElement.getAttribute('data-ui-tablist-tab');
+                var mytab = document.getElementById(tabData)
+                var tabPanels = document.querySelectorAll('.tabpanel');
+
+                tabPanels.forEach(function (tabElement) {
+                    tabElement.hidden = true
+                });
+                mytab.removeAttribute("hidden");
+                console.log('Tıklanan tab verisi:', tabData);
+            });
+        });
+    </script>
+
+    <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
+    <script>
+        if (window.innerWidth > 1500) {
+
+            var myResponseElements = document.querySelectorAll('.myresponse');
+
+            myResponseElements.forEach(function (element) {
+
+                element.style.height = '270px';
+            });
+        }
+    </script>
+    /* active js */
+    <script>
   
+</script>
+
+    <script>
+        const navLinks = document.querySelectorAll(' .tabs-tab ');
+
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+
+                navLinks.forEach(link => {
+                    link.classList.remove('activee');
+                });
+
+
+                this.classList.add('activee');
+            });
+        });
+    </script>
+
+    <script>
+        var jsonData
+        var url = '{% url "AnotherSourceView" %}'
+    function fetchDataFromDjangoView() {
+        fetch(url)  // Replace with the URL of your Django view
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();  // Parse the response as JSON
+            })
+            .then(data => {
+                // Process the data received from the server
+                // You can work with the data as needed
+                 jsonData = data;
+
+                // Example: Log the data to the console
+                console.log(jsonData);
+                
+                // You can now use jsonData as a JavaScript variable
+                // and perform operations with it on your HTML template
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    console.log(jsonData)
+    // Call the function to fetch data
+    window.onload = function() {
+    fetchDataFromDjangoView();  // Sayfa yüklendiğinde verileri alın
+};
+        var current_page = 1;
+var records_per_page = 4;
+jsonData = [];
+        {% for item in sourcearticles %}
+        jsonData.push("{{ item.title }}"); 
+        {% endfor %}
+console.log(jsonData)
+
+function prevPage()
+{
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+    }
+}
+
+function nextPage()
+{
+    if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+    }
+}
+
+function changePage(page)
+{
+    var btn_next = document.getElementById("btn_next");
+    var btn_prev = document.getElementById("btn_prev");
+    var listing_table = document.getElementById("data-container");
+    var page_span = document.getElementById("page");
+    console.log(jsonData)
+    if (page < 1) page = 1;
+    if (page > numPages()) page = numPages();
+
+    listing_table.innerHTML = "";
+
+    for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
+        listing_table.innerHTML += jsonData[i] + "<br>";
+    }
+    page_span.innerHTML = page;
+
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
+
+    if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+}
+
+function numPages()
+{
+    return Math.ceil(jsonData.length / records_per_page);
+}
+
+window.onload = function() {
+    changePage(1);
+};
+    </script>
 
    <!-- JS here -->
    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
