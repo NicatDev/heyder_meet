@@ -1112,7 +1112,7 @@
         var current_page = 1;
 var records_per_page = 4;
 
-var objJson = {{articlesource|safe}}
+var objJson = JSON.parse('{{ articlesource|escapejs }}');
 console.log(objJson)
 
 function prevPage()
