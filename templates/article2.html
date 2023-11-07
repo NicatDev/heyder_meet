@@ -588,7 +588,7 @@
                         <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
-                              {% for blg in sourcearticles %}
+                              {% for blg in sourcearticles|slice:2 %}
                               <div {{forloop.counter}} class="rc__post">
                                  <div class="rc__post-thumb">
                                     <a href="{{blg.href}}">{{forloop.counter}}</a>
