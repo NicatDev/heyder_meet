@@ -1,5 +1,5 @@
 from django.contrib import admin
-from heyderapp.models import Book,Interview,InMemory,Testimonial,Head,Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Partners
+from heyderapp.models import AnotherSourceArticles,Book,Interview,InMemory,Testimonial,Head,Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Partners
 # Register your models here.
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
@@ -35,3 +35,4 @@ admin.site.register(Head)
 admin.site.register(Testimonial)
 admin.site.register(InMemory,MyNameAdminVideo)
 admin.site.register(Book)
+admin.site.register(AnotherSourceArticles)

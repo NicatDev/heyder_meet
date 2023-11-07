@@ -96,6 +96,7 @@ def article(request):
     allheader = AllHeader.objects.all()
     interviews = Interview.objects.all()
     books =  Book.objects.all()
+    sourcearticles = AnotherSourceArticles.objects.all()
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -103,7 +104,8 @@ def article(request):
         'vidcategories':vidcategories,
         'allheader':allheader,
         'interviews':interviews,
-        'books':books
+        'books':books,
+        'sourcearticles':list(sourcearticles.values())
         }
     if Head.objects.all().exists():
         head = Head.objects.first()
