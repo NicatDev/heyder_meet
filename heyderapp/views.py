@@ -80,7 +80,7 @@ def blog(request):
         context['pagcheck']='1'
     return render(request,'blog.html',context)
 
-def article(request):
+def article2(request):
     articles = Article.objects.all()
     tag_name = request.GET.get('tag','')
     if tag_name:
@@ -112,7 +112,7 @@ def article(request):
         context['head'] = head
     return render(request,'article.html',context)
 
-def article2(request):
+def article(request):
     articles = Article.objects.all()
     tag_name = request.GET.get('tag','')
     if tag_name:
@@ -129,6 +129,7 @@ def article2(request):
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
+    pagecount = [x+1 for x in range(len(sourcearticles)//2+1)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -137,7 +138,9 @@ def article2(request):
         'allheader':allheader,
         'interviews':interviews,
         'books':books,
-        'sourcearticles':list(sourcearticles.values())
+        'sourcearticles':list(sourcearticles.values()),
+        'pagecount':pagecount
+        
         }
     if Head.objects.all().exists():
         head = Head.objects.first()
@@ -216,7 +219,7 @@ def home(request):
         video.embed_full = embed(video.embed)
     
     photos = Photo.objects.all().order_by('-created_at')
-    if len(photos)>8:
+    if len(photos)>11:
         photos = photos[0:14]
     if About.objects.all().exists():
         about = About.objects.first()
@@ -231,6 +234,8 @@ def home(request):
     for video in inmemories:
         video.embed_full = embed(video.embed)
     context['inmemories']=inmemories
+    embed_code = embed(HomeHeader.href)
+    context['embed']=embed_code
     return render(request,'season-full.html',context)
 
 def video(request):
@@ -249,6 +254,8 @@ def video(request):
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     fcount = Video.objects.all().count()
+    page_count = paginator.num_pages
+    count = [count for count in range(page_count)]
     context = {
         'video_list':video_list,
         # 'movies':movies,
@@ -258,7 +265,8 @@ def video(request):
         'artcategories':artcategories,
         'vidcategories':vidcategories,
         'fcount':fcount,
-        'allheader':allheader
+        'allheader':allheader,
+        'count':count
     }
     if Head.objects.all().exists():
         head = Head.objects.first()

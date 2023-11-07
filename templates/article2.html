@@ -33,6 +33,7 @@
    <link rel="stylesheet" href="{% static 'assets/css/flaticon_faime.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+   <link rel="stylesheet" href="{% static 'templatestyles/css/meqaleler.css' %}">
    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 
@@ -453,9 +454,10 @@
          <div class="container">
             <div class="row section-title-spacing">
                <div class="col-xl-6">
+                
                   <div class="section-title">
-                     <span class="section-subtitle title-anim">Bizimlə gündəmdə qal</span>
-                     <h2 class="section-main-title title-anim">Son xəbərlər </h2>
+                     <span style="opacity: 1;" class="">E-kitabxana</span>
+                     <h2 style="opacity: 1;"  class="">Məqalə, Müsahibə və kitablar toplusu </h2>
                   </div>
                </div>
 
@@ -463,11 +465,20 @@
          </div>
       </section>
       <!-- page titler area end -->
-   
+      <div style="margin-top:10px;margin-bottom:30px;padding:0 3.5%;">
+        <div data-ui-tablist="navigation" class="tabs">
+            <button data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
+            <button data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+            <button data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
+        </div>
+        <div class="tabpanels">
+
+        </div>
+    </div>
       <!-- postbox area start -->
       <section class="postbox__area section-spacing-bottom">
          <div class="container">
-            <div class="row g-40">
+            <div class="row g-40 tabpanel" id="account">
                <div class="col-xxl-8 col-xl-7 col-lg-7">
                   <div class="postbox__wrapper">
                      <!-- bloglar baslayir-->
@@ -491,7 +502,7 @@
                               <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                            </h3>
                            <div class="postbox__text ">
-                              <p>{{blog.content_without_ck|slice:200}}...</p>
+                              <p>{{blog.content|slice:200}}...</p>
                            </div>
                            <div class="col-xl-12 ">
 
@@ -574,58 +585,36 @@
                         </div>
                      </div>
                      <div class="sidebar__widget ">
-                        <h3 class="sidebar__widget-title mb-30">Ən çox oxunanlar</h3>
+                        <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
-                              {% for blg in most_blogs %}
-                              <div class="rc__post">
-                                 <div class="rc__post-thumb">
-                                    <a href="{% url 'blogsingle' blg.slug %}"><img src="{{blg.image.url}}"
-                                          alt="img not found"></a>
-                                 </div>
-                                 <div class="rc__post-content">
-                                    <h5 class="rc__post-title">
-                                       <a href="{% url 'blogsingle' blg.slug %}">{{blg.name}}</a>
-                                    </h5>
-                                    <div class="postbox__meta">
-                                       
-                                       <span>
-                                          <a href="#">{{tags.first.name}}</a>
-                                       </span>
-                                   
-                                       <span>
-                                          {{blg.created_at}}
-                                       </span>
-                                    </div>
-                                 </div>
+                              {% for blg in sourcearticles|slice:2 %}
+                              <div {{forloop.counter}} class="rc__post">
+                                <div class="rc__post-thumb">
+                                <a href="{{blg.href}}">{{forloop.counter}}</a>
+                                </div>
+                                <div class="rc__post-content">
+                                <h5 class="rc__post-title">
+                                <a href="{{blg.href}}">{{blg.title}}</a>
+                                </h5>
+                                <div class="postbox__meta">
+                                </div>
+                                </div>
                               </div>
                               {% endfor %}
+                              <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;">
+                              {% for count in pagecount %}<span style="font-size:22px;"  id="{{count}}">{{count}}</span>{% endfor %}
+                              </div>
                            </div>
                         </div>
                      </div>
-                     <div class="sidebar__widget ">
-                        <h3 class="sidebar__widget-title mb-30">Ən çox axtarılanlar</h3>
-                        <div class="sidebar__widget-content">
-                           <ul>
-                              {% for x in tags %}
+             <script></script>
                      
-                              {% if current_tag == x.name %}
-                              <li><a style="background-color: var(--clr-theme-1);font-weight:500;color:white" href="?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                              {% else %}
-                              <li><a  href="?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                       
-                              {% endif %}
-
-                              {% endfor %}
-                           </ul>
-                        </div>
-                     </div>
-            
                     
                   </div>
                </div>
             </div>
-            <div style="display: none;" class="row g-40">
+            <div  id="bonuses" hidden class="row g-40 tabpanel">
                 {% for book in books %}
                 <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
                     <div
@@ -660,7 +649,7 @@
                 </main>
                 {% endfor %}
             </div>
-            <div style="display: none;" class="row g-40">      
+            <div  id="inventory" hidden class="row g-40 tabpanel">      
                 {% for article in interviews %}
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                     <div class="fm-blog-grid-single bdFadeUp last-one">

@@ -42,7 +42,7 @@
 
 
         <div class="popup" id="media-popup">
-            <iframe id="myiframe" style="width: 50%;height:50%;" src="https://www.youtube.com/embed/acF0HQH-VGc"
+            <iframe id="myiframe" allow="autoplay" style="width: 50%;height:50%;" src="https://www.youtube.com/embed/acF0HQH-VGc"
                 title="PASTER - YENİDƏN (Official Music Video)" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -514,7 +514,7 @@
                                 <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
                                 <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
                                 <p style="user-select:none;font-size: 16px !important;">{{ HomeHeader.title|safe }}</p>
-                                <a href="{{HomeHeader.href}}" target="_blank" class="btn btn-lg"
+                                <a href="#media-popup" data-media="{{embed}}"  class="btn btn-lg"
                                     style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
                                         src="{% static 'templatestyles/images/play.png' %}" alt="icn">İNDİ İZLƏ</a>
                             </div>
@@ -1066,7 +1066,9 @@
 
 
     <!--photo galery-->
-    <div id="loadmorediv" style="height: 600px;overflow: hidden;margin-bottom:3%;">
+    <div id="loadmorediv" style="    height: 881px;
+    overflow-y: scroll;
+    overflow-x: hidden; margin-bottom:3%;">
     <div class="grid-containerr">
 
         {% for image in photos %}
@@ -1094,15 +1096,7 @@
 </div>
     {% endif %}
    
-    <div id="loadmorebutton"  class="fm-header-right d-none d-xl-block" style="text-align: center;">
-        <a id="fillload" class="fill-btn"
-            style="font-size:15px;line-height:20px;border-radius: 3px;">Daha çoxu
-            <span>
-                <i class="fa-regular fa-arrow-right"></i>
-            </span>
-        </a>
-    </div>
-
+ 
     <section>
         <!-- meqale area -->
         {% if article1.image.url %}
@@ -1225,7 +1219,7 @@
     <!-- Xatirelerde section start -->
     <div>
         <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
-            <h3 style="user-select:none ;">Xatirələrdə Heydər Əliyev</h3>
+            <h3 style="user-select:none ;">Heydər Əliyev xatirələrdə </h3>
             <div style="display: flex;align-items:center;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
                 <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
@@ -2226,7 +2220,7 @@
         column-gap: 1.5rem;
         width: 90%;
         margin: 0 auto;
-        max-height: 902px;
+
         overflow: hidden;
     }
 
