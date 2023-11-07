@@ -462,207 +462,190 @@
         <!-- breadcrumb-area-end -->
 
         <!-- fm-blog-grid-area-start -->
-        <div class="fm-blog-grid-area section-spacing row">
-            <div class="container-fluid col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                <div style="margin-top:15px;">
-                    <div data-ui-tablist="navigation" class="tabs">
-                        <button data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
-                        <button data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
-                        <button data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
-                    </div>
-                    <div class="tabpanels">
-
-                    </div>
-                </div>
-
-                <div class="row g-5 tabpanel" id="account">
-                    {% for article in articles %}
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="fm-blog-grid-single bdFadeUp last-one">
-                            <div class="fm-blog-grid-single-img w_100">
-                                <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"
-                                        src="{{article.image.url}}" alt="img"></a>
-                            </div>
-                            <div class="fm-blog-grid-single-content">
-                                <div class="fm-blog-grid-meta">
-                                    <span class="fm-blog-grid-meta-date">{{article.created_at}}</span> <span
-                                        class="seperator">/</span>
-                                    <span class="fm-blog-grid-meta-poster">{{article.category}}</span>
-                                    <span class="seperator">/</span>
-                                    <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
-                                </div>
-                                <h4 class="fm-blog-grid-single-title title-color"><a
-                                        href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
-                                {% if article.name|length > 85 %}
-                                <p>{{article.content|slice:90}}...</p>
-                                {% elif article.name|length > 65 %}
-                                <p>{{article.content|slice:140}}...</p>
-                                {% else %}
-                                <p>{{article.content|slice:200}}...</p>
-                                {% endif %}
-                            </div>
+        <div class="fm-blog-grid-area section-spacing ">
+            <div class="row">
+                <div class="container-fluid col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    <div style="margin-top:15px;">
+                        <div data-ui-tablist="navigation" class="tabs">
+                            <button data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
+                            <button data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+                            <button data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
+                        </div>
+                        <div class="tabpanels">
+    
                         </div>
                     </div>
-                    {% endfor %}
-
-                    <div class="bd-basic__pagination d-flex align-items-center
-                  bdFadeUp" style="justify-content: center; margin-top:80px;margin-bottom:80px;">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a {% if not blog_list.has_previous %} disabled="true" style="cursor:not-allowed" {%endif %} {% if blog_list.has_previous %} href="?page={{ blog_list.previous_page_number}} " {% endif%}>
-                                        <i class="fa-light fa-arrow-left-long"></i>
-                                    </a>
-                                </li>
-                                {% if not pagcheck %}
-                                <li>
-                                    <a href="?page=1">1</a>
-                                </li>
-                                {% endif %}
-                                {% for page_num in iterator %}
-
-                                <li>
-                                    <a href="?page={{ page_num }}">{{page_num}}</a>
-                                </li>
-
-                                {% endfor %}
-
-                                <li>
-                                    <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed;" {%endif %} {% if blog_list.has_next %} href="?page={{ blog_list.next_page_number }}" {% endif%}>
-                                        <i class="fa-light fa-arrow-right-long"></i>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row g-5 tabpanel" style="display: flex;padding-bottom:2%;" id="bonuses" hidden>
-                    <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
-                        <div
-                            style="width:85% !important;display: flex;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);">
-                            <div style="width: 100%;box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;"
-                                class="book-card">
-                                <div class="book-card__cover">
-                                    <div class="book-card__book">
-                                        <div class="book-card__book-front">
-                                            <img class="book-card__img"
-                                                src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg" />
-                                        </div>
-                                        <div class="book-card__book-back"></div>
-                                        <div class="book-card__book-side"></div>
-                                    </div>
+    
+                    <div class="row g-5 tabpanel" id="account">
+                        {% for article in articles %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                            <div class="fm-blog-grid-single bdFadeUp last-one">
+                                <div class="fm-blog-grid-single-img w_100">
+                                    <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"
+                                            src="{{article.image.url}}" alt="img"></a>
                                 </div>
-                                <div style="text-align: center;margin-left:16px;">
-                                    <h4>Harry Potter</h4>
-                                    <p>Müəllif: J.K.Rowling</p>
-                                    <p>Nəşr ili: 2021</p>
-                                    <div class="d-flex" style="justify-content: center;">
-                                        <p style="color:rgb(235, 182, 23)55, 255, 255;cursor: pointer;">Yükləmək</p><i
-                                            style="font-size:large;color:rgb(223, 0, 0);line-height: 25px;margin-left:10px;"
-                                            class="fa-solid fa-download"></i>
+                                <div class="fm-blog-grid-single-content">
+                                    <div class="fm-blog-grid-meta">
+                                        <span class="fm-blog-grid-meta-date">{{article.created_at}}</span> <span
+                                            class="seperator">/</span>
+                                        <span class="fm-blog-grid-meta-poster">{{article.category}}</span>
+                                        <span class="seperator">/</span>
+                                        <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
                                     </div>
-
+                                    <h4 class="fm-blog-grid-single-title title-color"><a
+                                            href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
+                                    {% if article.name|length > 85 %}
+                                    <p>{{article.content|slice:90}}...</p>
+                                    {% elif article.name|length > 65 %}
+                                    <p>{{article.content|slice:140}}...</p>
+                                    {% else %}
+                                    <p>{{article.content|slice:200}}...</p>
+                                    {% endif %}
                                 </div>
-
                             </div>
                         </div>
-                    </main>
-                    {% for book in books %}
-                    <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
-                        <div
-                            style="width:85% !important;display: flex;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);">
-                            <div style="width: 100%;box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;"
-                                class="book-card">
-                                <div class="book-card__cover">
-                                    <div class="book-card__book">
-                                        <div class="book-card__book-front">
-                                            <img class="book-card__img" src="{{book.image.url}}" />
-                                        </div>
-                                        <div class="book-card__book-back"></div>
-                                        <div class="book-card__book-side"></div>
-                                    </div>
-                                </div>
-                                <div style="text-align: center;margin-left:16px;">
-                                    <h4>{{book.name}}</h4>
-                                    <p>Müəllif: {{book.writer}}</p>
-                                    <p>Nəşr ili: {{book.year}}</p>
-                                    <div class="d-flex" style="justify-content: center;">
-                                        <a style="display: flex;" href="{{book.book.url}}">
-                                            <p style="color:rgb(235, 182, 23)55, 255, 255;cursor: pointer;">Yükləmək</p>
-                                            <i style="font-size:large;color:rgb(223, 0, 0);line-height: 25px;margin-left:10px;"
-                                                class="fa-solid fa-download"></i>
+                        {% endfor %}
+    
+                        <div class="bd-basic__pagination d-flex align-items-center
+                      bdFadeUp" style="justify-content: center; margin-top:80px;margin-bottom:80px;">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a {% if not blog_list.has_previous %} disabled="true" style="cursor:not-allowed" {%endif %} {% if blog_list.has_previous %} href="?page={{ blog_list.previous_page_number}} " {% endif%}>
+                                            <i class="fa-light fa-arrow-left-long"></i>
                                         </a>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </main>
-                    {% endfor %}
-
-                </div>
-                <div class="row g-5 tabpanel" id="inventory" hidden>
-                    {% for article in interviews %}
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="fm-blog-grid-single bdFadeUp last-one">
-                            <div class="fm-blog-grid-single-img w_100">
-                                <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"
-                                        src="{{article.image.url}}" alt="img"></a>
-                            </div>
-                            <div class="fm-blog-grid-single-content">
-                                <div class="fm-blog-grid-meta">
-                                    <span class="fm-blog-grid-meta-date">{{article.created_at}}</span> <span
-                                        class="seperator">/</span>
-                                    <span class="fm-blog-grid-meta-poster">{{article.category}}</span>
-                                    <span class="seperator">/</span>
-                                    <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
-                                </div>
-                                <h4 class="fm-blog-grid-single-title title-color"><a
-                                        href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
-                                {% if article.name|length > 85 %}
-                                <p>{{article.content|slice:90}}...</p>
-                                {% elif article.name|length > 65 %}
-                                <p>{{article.content|slice:140}}...</p>
-                                {% else %}
-                                <p>{{article.content|slice:200}}...</p>
-                                {% endif %}
-                            </div>
+                                    </li>
+                                    {% if not pagcheck %}
+                                    <li>
+                                        <a href="?page=1">1</a>
+                                    </li>
+                                    {% endif %}
+                                    {% for page_num in iterator %}
+    
+                                    <li>
+                                        <a href="?page={{ page_num }}">{{page_num}}</a>
+                                    </li>
+    
+                                    {% endfor %}
+    
+                                    <li>
+                                        <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed;" {%endif %} {% if blog_list.has_next %} href="?page={{ blog_list.next_page_number }}" {% endif%}>
+                                            <i class="fa-light fa-arrow-right-long"></i>
+                                        </a>
+                                    </li>
+    
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="row g-5 tabpanel" style="display: flex;padding-bottom:2%;" id="bonuses" hidden>
+                        <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
+                            <div
+                                style="width:85% !important;display: flex;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);">
+                                <div style="width: 100%;box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;"
+                                    class="book-card">
+                                    <div class="book-card__cover">
+                                        <div class="book-card__book">
+                                            <div class="book-card__book-front">
+                                                <img class="book-card__img"
+                                                    src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg" />
+                                            </div>
+                                            <div class="book-card__book-back"></div>
+                                            <div class="book-card__book-side"></div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;margin-left:16px;">
+                                        <h4>Harry Potter</h4>
+                                        <p>Müəllif: J.K.Rowling</p>
+                                        <p>Nəşr ili: 2021</p>
+                                        <div class="d-flex" style="justify-content: center;">
+                                            <p style="color:rgb(235, 182, 23)55, 255, 255;cursor: pointer;">Yükləmək</p><i
+                                                style="font-size:large;color:rgb(223, 0, 0);line-height: 25px;margin-left:10px;"
+                                                class="fa-solid fa-download"></i>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </main>
+                        {% for book in books %}
+                        <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
+                            <div
+                                style="width:85% !important;display: flex;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);">
+                                <div style="width: 100%;box-shadow: 0 3px 6px rgba(255, 254, 254, 0.16), 0 3prgba(255, 255, 255, 0.23) 0.23;"
+                                    class="book-card">
+                                    <div class="book-card__cover">
+                                        <div class="book-card__book">
+                                            <div class="book-card__book-front">
+                                                <img class="book-card__img" src="{{book.image.url}}" />
+                                            </div>
+                                            <div class="book-card__book-back"></div>
+                                            <div class="book-card__book-side"></div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;margin-left:16px;">
+                                        <h4>{{book.name}}</h4>
+                                        <p>Müəllif: {{book.writer}}</p>
+                                        <p>Nəşr ili: {{book.year}}</p>
+                                        <div class="d-flex" style="justify-content: center;">
+                                            <a style="display: flex;" href="{{book.book.url}}">
+                                                <p style="color:rgb(235, 182, 23)55, 255, 255;cursor: pointer;">Yükləmək</p>
+                                                <i style="font-size:large;color:rgb(223, 0, 0);line-height: 25px;margin-left:10px;"
+                                                    class="fa-solid fa-download"></i>
+                                            </a>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </main>
+                        {% endfor %}
+    
+                    </div>
+                    <div class="row g-5 tabpanel" id="inventory" hidden>
+                        {% for article in interviews %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                            <div class="fm-blog-grid-single bdFadeUp last-one">
+                                <div class="fm-blog-grid-single-img w_100">
+                                    <a href="{% url 'articlesingle' article.slug %}"><img class="myresponse"
+                                            src="{{article.image.url}}" alt="img"></a>
+                                </div>
+                                <div class="fm-blog-grid-single-content">
+                                    <div class="fm-blog-grid-meta">
+                                        <span class="fm-blog-grid-meta-date">{{article.created_at}}</span> <span
+                                            class="seperator">/</span>
+                                        <span class="fm-blog-grid-meta-poster">{{article.category}}</span>
+                                        <span class="seperator">/</span>
+                                        <!-- <span class="fm-blog-grid-meta-author">By Richard</span> -->
+                                    </div>
+                                    <h4 class="fm-blog-grid-single-title title-color"><a
+                                            href="{% url 'articlesingle' article.slug %}">{{article.name}}</a></h4>
+                                    {% if article.name|length > 85 %}
+                                    <p>{{article.content|slice:90}}...</p>
+                                    {% elif article.name|length > 65 %}
+                                    <p>{{article.content|slice:140}}...</p>
+                                    {% else %}
+                                    <p>{{article.content|slice:200}}...</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <section class="xeberler_web col-sm-12 col-md-4 col-lg-4 col-xl-4">
-
-                <div style="border: 1px solid #ebebeb;margin-right:15px;margin-top:20px;
-                  padding: 22px 27px;
-                  -webkit-border-radius: 3px;
-                  -moz-border-radius: 3px;
-                  -o-border-radius: 3px;
-                  border-radius: 3px;    margin-bottom: 30px;">
-                    <h5 style="    color: #e8280b;font-size: 24px;
-                      font-weight: 300 !important;
-                      margin: 0 0 20px;">Xeberler</h5>
-                    <ul>
-                        <li style="    border: none;
-                          padding: 8px 0 0;
-                          margin: 0;">
-                            <div class="order" style="float: left;
-                              line-height: 25px;
-                              padding: 0 17px 0 0;">1</div>
-                            <p>
-                                <a style="color: #181818;
-                                  font-size: 16px;
-                                  line-height: 24px;
-                                  overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                            </p>
-                        </li>
-
-                    </ul>
-
-                    <div id="data-container">
+                <div class="xeberler_web col-sm-12 col-md-4 col-lg-4 col-xl-4">
+    
+                    <div style="border: 1px solid #ebebeb;margin-right:15px;margin-top:20px;
+                      padding: 22px 27px;
+                      -webkit-border-radius: 3px;
+                      -moz-border-radius: 3px;
+                      -o-border-radius: 3px;
+                      border-radius: 3px;    margin-bottom: 30px;">
+                        <h5 style="    color: #e8280b;font-size: 24px;
+                          font-weight: 300 !important;
+                          margin: 0 0 20px;">Xeberler</h5>
                         <ul>
                             <li style="    border: none;
                               padding: 8px 0 0;
@@ -677,77 +660,97 @@
                                       overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
                                 </p>
                             </li>
-                            <li style="    border: none;
-                              padding: 8px 0 0;
-                              margin: 0;">
-                                <div class="order" style="float: left;
-                                  line-height: 25px;
-                                  padding: 0 17px 0 0;">1</div>
-                                <p>
-                                    <a style="color: #181818;
-                                      font-size: 16px;
-                                      line-height: 24px;
-                                      overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                                </p>
-                            </li>
-                            <li style="    border: none;
-                              padding: 8px 0 0;
-                              margin: 0;">
-                                <div class="order" style="float: left;
-                                  line-height: 25px;
-                                  padding: 0 17px 0 0;">1</div>
-                                <p>
-                                    <a style="color: #181818;
-                                      font-size: 16px;
-                                      line-height: 24px;
-                                      overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                                </p>
-                            </li>
-                            <li style="    border: none;
-                              padding: 8px 0 0;
-                              margin: 0;">
-                                <div class="order" style="float: left;
-                                  line-height: 25px;
-                                  padding: 0 17px 0 0;">1</div>
-                                <p>
-                                    <a style="color: #181818;
-                                      font-size: 16px;
-                                      line-height: 24px;
-                                      overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                                </p>
-                            </li>
-                            <li style="    border: none;
-                              padding: 8px 0 0;
-                              margin: 0;">
-                                <div class="order" style="float: left;
-                                  line-height: 25px;
-                                  padding: 0 17px 0 0;">1</div>
-                                <p>
-                                    <a style="color: #181818;
-                                      font-size: 16px;
-                                      line-height: 24px;
-                                      overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                                </p>
-                            </li>
-                            <li style="    border: none;
-                              padding: 8px 0 0;
-                              margin: 0;">
-                                <div class="order" style="float: left;
-                                  line-height: 25px;
-                                  padding: 0 17px 0 0;">1</div>
-                                <p>
-                                    <a style="color: #181818;
-                                      font-size: 16px;
-                                      line-height: 24px;
-                                      overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
-                                </p>
-                            </li>
+    
                         </ul>
+    
+                        <div id="data-container">
+                            <ul>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                                <li style="    border: none;
+                                  padding: 8px 0 0;
+                                  margin: 0;">
+                                    <div class="order" style="float: left;
+                                      line-height: 25px;
+                                      padding: 0 17px 0 0;">1</div>
+                                    <p>
+                                        <a style="color: #181818;
+                                          font-size: 16px;
+                                          line-height: 24px;
+                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="pagination-container"></div>
                     </div>
-                    <div id="pagination-container"></div>
+    
                 </div>
-
-            </section>
+            </div>
+         
 
         </div>
 
