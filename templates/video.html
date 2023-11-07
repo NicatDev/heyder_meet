@@ -580,7 +580,7 @@
                     <div class="col-sm-12">
                         <div class="row">
                             {% for video in video_list %}
-                            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25" style="max-height:400px;min-height: 400px;">
+                            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 mb-15" style="max-height:400px;min-height: 400px;">
                                 <a class="slide-one" href={{video.video.url}} target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content">
@@ -710,8 +710,8 @@
         <div class="footer-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
-                            src="{{head.logoheader}}" alt=""></div>
+                    <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
+                        height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
                     <div class="col-sm-8 text-left">
                         <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
                             remove the chain from about my victim’s neck only through language.</h4>
