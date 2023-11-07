@@ -132,7 +132,7 @@ class AnotherSourceArticles(models.Model):
 class HomeHeader(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)
     content = models.TextField(null=True,blank=True)
-    href = models.CharField(max_length=1200,null=True,blank=True)
+    href = models.CharField(max_length=12000,null=True,blank=True)
     video = models.FileField(null=True,blank=True)
     image = models.ImageField(null=True,blank=True)
 
