@@ -609,11 +609,7 @@
                                     <i class="fa-light fa-arrow-left-long"></i>
                                  </a>
                               </li>
-                              {% if not pagcheck %}
-                              <li>
-                                 <a href="?page=1">1</a>
-                              </li>
-                              {% endif %}
+                             
                               {% for page_num in count %}
                                  
                               <li {% if forloop.counter == video_list.number %} class="current" {% endif %}> 
