@@ -142,7 +142,7 @@ def article2(request):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
-    return render(request,'article.html',context)
+    return render(request,'article2.html',context)
 
 def blogsingle(request,slug=None):
 
