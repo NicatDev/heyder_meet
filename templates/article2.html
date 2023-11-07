@@ -492,7 +492,7 @@
                               <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
                            </h3>
                            <div class="postbox__text ">
-                              <p>{{blog.content_without_ck|slice:200}}...</p>
+                              <p>{{blog.content|slice:200}}...</p>
                            </div>
                            <div class="col-xl-12 ">
 
