@@ -249,6 +249,8 @@ def video(request):
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     fcount = Video.objects.all().count()
+    page_count = paginator.num_pages
+    count = [count for count in range(page_count)]
     context = {
         'video_list':video_list,
         # 'movies':movies,
@@ -258,7 +260,8 @@ def video(request):
         'artcategories':artcategories,
         'vidcategories':vidcategories,
         'fcount':fcount,
-        'allheader':allheader
+        'allheader':allheader,
+        'count':count
     }
     if Head.objects.all().exists():
         head = Head.objects.first()
