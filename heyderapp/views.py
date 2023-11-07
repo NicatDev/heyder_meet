@@ -129,6 +129,7 @@ def article(request):
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
+    pagecount = [x for x in range(len(sourcearticles))]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -137,7 +138,9 @@ def article(request):
         'allheader':allheader,
         'interviews':interviews,
         'books':books,
-        'sourcearticles':list(sourcearticles.values())
+        'sourcearticles':list(sourcearticles.values()),
+        'pagecount':pagecount
+        
         }
     if Head.objects.all().exists():
         head = Head.objects.first()
