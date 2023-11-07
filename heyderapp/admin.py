@@ -22,6 +22,11 @@ class MyNameAdmin2(admin.ModelAdmin):
 admin.site.register(Interview,MyNameAdmin2)
 class MyNameAdminVideo(admin.ModelAdmin):
     exclude = ('name','content','coverimage')
+class MyNameAdminVideo2(admin.ModelAdmin):
+    exclude = ('name','content','coverimage') 
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget(config_name='default')},
+    }
 class MyOnlyNameAdmin(admin.ModelAdmin):
     exclude = ('name','content','coverimage')
 class MyminiTitleAdmin(admin.ModelAdmin):
@@ -41,6 +46,6 @@ admin.site.register(AllHeader,MyTitleAdmin)
 admin.site.register(Partners)
 admin.site.register(Head)
 admin.site.register(Testimonial)
-admin.site.register(InMemory,MyNameAdminVideo)
+admin.site.register(InMemory,MyNameAdminVideo2)
 admin.site.register(Book)
 admin.site.register(AnotherSourceArticles)
