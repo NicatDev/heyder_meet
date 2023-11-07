@@ -242,7 +242,7 @@ class Book(BaseMixin):
     name = models.CharField(max_length=1200)
     writer = models.CharField(max_length=1200,null=True,blank=True)
     image = models.ImageField()
-    
+    year = models.CharField(max_length=1200,null=True,blank=True)
     def __str__(self):
         return self.name  + ' --kitab'
     
