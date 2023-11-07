@@ -234,8 +234,8 @@ def home(request):
     for video in inmemories:
         video.embed_full = embed(video.embed)
     context['inmemories']=inmemories
-    embed = embed(HomeHeader.href)
-    context['embed']=embed
+    embed_code = embed(HomeHeader.href)
+    context['embed']=embed_code
     return render(request,'season-full.html',context)
 
 def video(request):
