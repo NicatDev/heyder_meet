@@ -1014,7 +1014,9 @@
     }
     console.log(jsonData)
     // Call the function to fetch data
-    fetchDataFromDjangoView();
+    window.onload = function() {
+    fetchDataFromDjangoView();  // Sayfa yüklendiğinde verileri alın
+};
         var current_page = 1;
 var records_per_page = 4;
 
