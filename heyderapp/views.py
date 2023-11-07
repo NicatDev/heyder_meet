@@ -80,7 +80,7 @@ def blog(request):
         context['pagcheck']='1'
     return render(request,'blog.html',context)
 
-def article(request):
+def article2(request):
     articles = Article.objects.all()
     tag_name = request.GET.get('tag','')
     if tag_name:
@@ -112,7 +112,7 @@ def article(request):
         context['head'] = head
     return render(request,'article.html',context)
 
-def article2(request):
+def article(request):
     articles = Article.objects.all()
     tag_name = request.GET.get('tag','')
     if tag_name:
