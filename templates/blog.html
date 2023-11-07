@@ -1,7 +1,10 @@
 {% load static %}
 <html class="no-js" lang="zxx">
 
-
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 <!-- Mirrored from html.bdevs.net/faime-prev/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:00:53 GMT -->
 <head>
    <meta charset="utf-8">
@@ -345,9 +348,8 @@
    <div class="fm-header-sidebar-area fm-header-sidebar-left">
       <div class="fm-header-sidebar-wrapper">
          <div class="fm-header-sidebar-action mb-65">
-            <div class="fm-header-sidebar-logo">
-               <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
-            </div>
+            <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
+               height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
             <div class="offcanvas-close">
                <a class="offcanvas-btn" href="#0">
                   <i class="fa-thin fa-times"></i>

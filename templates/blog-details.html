@@ -1,6 +1,9 @@
 {% load static %}
 <html class="no-js" lang="zxx">
-
+   {% load static %}
+   {% load i18n %}
+   {% get_current_language as LANGUAGE_CODE %}
+   {% get_available_languages as LANGUAGES %}
 
 <!-- Mirrored from html.bdevs.net/faime-prev/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:00:58 GMT -->
 <head>
@@ -718,8 +721,8 @@
    <div class="footer-wrapper">
       <div class="container">
           <div class="row">
-              <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
-                      src="{{head.logoheader}}" alt=""></div>
+            <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
+               height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
               <div class="col-sm-8 text-left">
                   <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
                       remove the chain from about my victim’s neck only through language.</h4>

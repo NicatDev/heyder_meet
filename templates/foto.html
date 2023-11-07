@@ -1,6 +1,9 @@
 {% load static %}
 <html lang="en">
-   
+  {% load static %}
+  {% load i18n %}
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
 <!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:01:07 GMT -->
 <head>
     <meta charset="UTF-8">
@@ -518,8 +521,8 @@
         <div class="footer-wrapper">
           <div class="container">
               <div class="row">
-                  <div class="col-sm-4 text-left" style="padding-right: 60px;padding-left:40px;"><img
-                          src="{{head.logoheader}}" alt=""></div>
+                <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
+                  height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
                   <div class="col-sm-8 text-left">
                       <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
                           remove the chain from about my victim’s neck only through language.</h4>
