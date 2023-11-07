@@ -650,7 +650,7 @@
     
                         <div id="data-container">
                             <ul>
-                                <li style="    border: none;
+                                <li class="list-group-item"  style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -664,7 +664,7 @@
                                     </p>
                                 </li>
                                 <hr style="width: 3px; color: #86c023;">
-                                <li style="    border: none;
+                                <li class="list-group-item" style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -678,7 +678,7 @@
                                     </p>
                                 </li>
                                 <hr>
-                                <li style="    border: none;
+                                <li class="list-group-item" style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -692,7 +692,7 @@
                                     </p>
                                 </li>
                                 <hr>
-                                <li style="    border: none;
+                                <li class="list-group-item" style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -706,7 +706,7 @@
                                     </p>
                                 </li>
                                 <hr>
-                                <li style="    border: none;
+                                <li class="list-group-item" style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -720,7 +720,7 @@
                                     </p>
                                 </li>
                                 <hr>
-                                <li style="    border: none;
+                                <li class="list-group-item" style="    border: none;
                                   padding: 8px 0 0;
                                   margin: 0;">
                                     <div class="order" style="float: left;
@@ -730,13 +730,69 @@
                                         <a style="color: #181818;
                                           font-size: 16px;
                                           line-height: 24px;
-                                          overflow: hidden;" href="#">Salam Salam Salam Salam Saqol</a>
+                                          overflow: hidden;" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui aspernatur est officia tempora corrupti pariatur beatae alias facilis, architecto, cupiditate totam accusantium, blanditiis excepturi impedit deserunt nostrum voluptate. Inventore.</a>
                                     </p>
                                 </li>
                                 <hr>
+                                <li class="list-group-item" style="    border: none;
+                                padding: 8px 0 0;
+                                margin: 0;">
+                                  <div class="order" style="float: left;
+                                    line-height: 25px;
+                                    padding: 0 17px 0 0;">1</div>
+                                  <p>
+                                      <a style="color: #181818;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        overflow: hidden;" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui aspernatur est officia tempora corrupti pariatur beatae alias facilis, architecto, cupiditate totam accusantium, blanditiis excepturi impedit deserunt nostrum voluptate. Inventore.</a>
+                                  </p>
+                              </li>
+                              <hr>
+                              <li class="list-group-item" style="    border: none;
+                              padding: 8px 0 0;
+                              margin: 0;">
+                                <div class="order" style="float: left;
+                                  line-height: 25px;
+                                  padding: 0 17px 0 0;">1</div>
+                                <p>
+                                    <a style="color: #181818;
+                                      font-size: 16px;
+                                      line-height: 24px;
+                                      overflow: hidden;" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui aspernatur est officia tempora corrupti pariatur beatae alias facilis, architecto, cupiditate totam accusantium, blanditiis excepturi impedit deserunt nostrum voluptate. Inventore.</a>
+                                </p>
+                            </li>
+                            <hr>
+                            <li class="list-group-item" style="    border: none;
+                            padding: 8px 0 0;
+                            margin: 0;">
+                              <div class="order" style="float: left;
+                                line-height: 25px;
+                                padding: 0 17px 0 0;">1</div>
+                              <p>
+                                  <a style="color: #181818;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    overflow: hidden;" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui aspernatur est officia tempora corrupti pariatur beatae alias facilis, architecto, cupiditate totam accusantium, blanditiis excepturi impedit deserunt nostrum voluptate. Inventore.</a>
+                              </p>
+                          </li>
+                          <hr>
+                          <li class="list-group-item" style="    border: none;
+                          padding: 8px 0 0;
+                          margin: 0;">
+                            <div class="order" style="float: left;
+                              line-height: 25px;
+                              padding: 0 17px 0 0;">1</div>
+                            <p>
+                                <a style="color: #181818;
+                                  font-size: 16px;
+                                  line-height: 24px;
+                                  overflow: hidden;" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui aspernatur est officia tempora corrupti pariatur beatae alias facilis, architecto, cupiditate totam accusantium, blanditiis excepturi impedit deserunt nostrum voluptate. Inventore.</a>
+                            </p>
+                        </li>
+                        <hr>
                             </ul>
                         </div>
-                        <div id="pagination-container"></div>
+                       
                     </div>
     
                 </div>
@@ -1051,54 +1107,15 @@
     </script>
 
     <script>
-        const data = [...]; // Your data array
-
-        const itemsPerPage = 10;
-        let currentPage = 1;
-
-        function displayData(page) {
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const paginatedData = data.slice(startIndex, endIndex);
-
-            const dataContainer = document.getElementById("data-container");
-            dataContainer.innerHTML = ""; // Clear previous data
-
-            for (const item of paginatedData) {
-                const itemElement = document.createElement("div");
-                itemElement.textContent = item;
-                dataContainer.appendChild(itemElement);
-            }
+        const listArray = []
+      for (let i=0; i<40; i++) {
+       listArray.push(`<li class="list-group-item">${i}</li>`)
         }
 
-        function displayPagination() {
-            const totalItems = data.length;
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            const paginationContainer = document.getElementById("pagination-container");
-            paginationContainer.innerHTML = ""; // Clear previous pagination
-
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement("a");
-                pageLink.textContent = i;
-                pageLink.href = "#";
-                pageLink.addEventListener("click", () => {
-                    currentPage = i;
-                    displayData(currentPage);
-                    displayPagination();
-                });
-
-                if (i === currentPage) {
-                    pageLink.classList.add("active");
-                }
-
-                paginationContainer.appendChild(pageLink);
-            }
-        }
-
-        // Initial display
-        displayData(currentPage);
-        displayPagination();
-
+        const numberOfItems = listArray.length
+        const numberPerPage = 5
+        const currentPage = 1
+        const numberOfPages = Math.ceil(numberOfItems/numberPerPage)
     </script>
 </body>
 
