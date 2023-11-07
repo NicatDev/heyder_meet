@@ -1831,7 +1831,7 @@ i[class^=flaticon-] {
 .fm-header-nav ul li {
   list-style: none;
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 15px;
   position: relative;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

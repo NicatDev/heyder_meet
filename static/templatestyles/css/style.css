@@ -11900,12 +11900,11 @@ label.error {
   }
 }
 .header-wrapper {
-  padding: 20px 0;
   background-color: transparent;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 1024x) {
   .header-wrapper {
-    padding: 15px;
+    padding: 20px;
   }
 }
 .header-wrapper .logo {
