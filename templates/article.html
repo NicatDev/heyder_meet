@@ -530,9 +530,7 @@
                                 {% endfor %}
 
                                 <li>
-                                    <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed;" {%
-                                        endif %} {% if blog_list.has_next %}
-                                        href="?page={{ blog_list.next_page_number }}" {% endif%}>
+                                    <a {% if not blog_list.has_next %} disabled="true" style="cursor:not-allowed;" {%endif %} {% if blog_list.has_next %} href="?page={{ blog_list.next_page_number }}" {% endif%}>
                                         <i class="fa-light fa-arrow-right-long"></i>
                                     </a>
                                 </li>
