@@ -465,11 +465,20 @@
          </div>
       </section>
       <!-- page titler area end -->
-   
+      <div style="margin-top:10px;">
+        <div data-ui-tablist="navigation" class="tabs">
+            <button data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
+            <button data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+            <button data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
+        </div>
+        <div class="tabpanels">
+
+        </div>
+    </div>
       <!-- postbox area start -->
       <section class="postbox__area section-spacing-bottom">
          <div class="container">
-            <div class="row g-40">
+            <div class="row g-40 tabpanel" id="account">
                <div class="col-xxl-8 col-xl-7 col-lg-7">
                   <div class="postbox__wrapper">
                      <!-- bloglar baslayir-->
@@ -627,7 +636,7 @@
                   </div>
                </div>
             </div>
-            <div style="display: none;" class="row g-40">
+            <div style="display: none;" id="bonuses" class="row g-40">
                 {% for book in books %}
                 <main class="col-xl-4 col-lg-6 col-md-12 col-sm-12" style="display: flex;justify-content: center;">
                     <div
@@ -662,7 +671,7 @@
                 </main>
                 {% endfor %}
             </div>
-            <div style="display: none;" class="row g-40">      
+            <div style="display: none;" id="inventory" class="row g-40">      
                 {% for article in interviews %}
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                     <div class="fm-blog-grid-single bdFadeUp last-one">
