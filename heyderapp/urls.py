@@ -9,8 +9,10 @@ urlpatterns = [
     path('foto',foto,name='foto'),
     path('xeberler',blog,name='blog'),
     path('meqale',article,name='article'),
+    path('AnotherSourceView',AnotherSourceView,name='AnotherSourceView'),
     path('xeber/<slug>',blogsingle,name='blogsingle'),
     path('meqale/<slug>',articlesingle,name='articlesingle'),
+    
 ]
 urlpatterns += [
 

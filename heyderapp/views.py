@@ -335,3 +335,8 @@ def articlesingle(request,slug=None):
         head = Head.objects.first()
         context['head'] = head
     return render(request,'articlesingle.html',context)
+
+
+def AnotherSourceView(request):
+    data = list(AnotherSourceArticles.objects.all().values())  # Replace with your queryset
+    return JsonResponse(data, safe=False)
