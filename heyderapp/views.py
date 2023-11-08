@@ -148,7 +148,7 @@ def article3(request):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
-    return render(request,'article.html',context)
+    return render(request,'xatireler3.html',context)
 
 
 def article(request):
