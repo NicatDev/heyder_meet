@@ -632,6 +632,17 @@
                                         rcPost.style.display = 'none';
                                     }
                                 });
+                                rcPostElements.forEach(rcPost => {
+                                    const dataFilter = rcPost.getAttribute('data-filter');
+                                    
+                                    console.log(dataFilter,filterValue)
+                                    if (parseInt(dataFilter) === parseInt(1)*3 || parseInt(dataFilter) === parseInt(1)*3-1 || parseInt(dataFilter) === parseInt(1)*3-2) {
+                                        
+                                        rcPost.style.display = 'block';
+                                    } else {
+                                        rcPost.style.display = 'none';
+                                    }
+                                });
                     
                                 // Highlight the clicked pagespan
                                 pagespanElements.forEach(span => {
