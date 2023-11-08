@@ -113,15 +113,17 @@ def article2(request):
     return render(request,'article.html',context)
 
 def article3(request):
-    articles = InMemory.objects.all()
-    tag_name = request.GET.get('tag','')
-    if tag_name:
-        articles = articles.filter(tag__name = tag_name)
+    articles = InMemory.objects.filter(video_or_not=False)
+    articless = InMemory.objects.all(video_or_not=True)
+
+
     paginator = Paginator(articles, 12)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
-    tags = Tag.objects.all()
-    categories = Category.objects.all()
+    paginatorr = Paginator(articless, 12)
+    pages = request.GET.get("pages", 1)
+    article_lists = paginatorr.get_page(pages)
+  
     fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
@@ -130,11 +132,10 @@ def article3(request):
     books =  Book.objects.all()
 
 
-    products_per_page = 3
 
- 
     context = {
         'inmemories':article_list,
+        'invideomemories':article_lists,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories,
