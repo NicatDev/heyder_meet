@@ -623,7 +623,9 @@
                                 // Hide all rc__post elements
                                 rcPostElements.forEach(rcPost => {
                                     const dataFilter = rcPost.getAttribute('data-filter');
+                                    console.log(dataFilter,filterValue)
                                     if (parseInt(dataFilter)*3 === parseInt(filterValue) || parseInt(dataFilter)*3 === parseInt(filterValue)-1 || parseInt(dataFilter)*3 === parseInt(filterValue)-3) {
+                                       
                                         rcPost.style.display = 'block';
                                     } else {
                                         rcPost.style.display = 'none';
