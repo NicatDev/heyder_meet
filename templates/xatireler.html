@@ -562,10 +562,37 @@
         
         <!-- desktop foto video 020202-->
         <!-- slider wrapper -->
+        <div style="margin-top:10px;margin-bottom:30px;padding:0 3.5%;">
+            <div data-ui-tablist="navigation" class="tabs">
+                <button style="width:50%" data-ui-tablist-tab="account" class="tabs-tab activee">Videolar</button>
+                <button style="width:50%"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+     
+            </div>
+            <div class="tabpanels">
+    
+            </div>
+        </div>
+        
+    <script>
+        var tabElements = document.querySelectorAll('.tabs-tab');
+        tabElements.forEach(function (tabElement) {
+            tabElement.addEventListener('click', function () {
+                var tabData = tabElement.getAttribute('data-ui-tablist-tab');
+                var mytab = document.getElementById(tabData)
+                var tabPanels = document.querySelectorAll('.tabpanel');
+
+                tabPanels.forEach(function (tabElement) {
+                    tabElement.hidden = true
+                });
+                mytab.removeAttribute("hidden");
+                console.log('Tıklanan tab verisi:', tabData);
+            });
+        });
+    </script>
         <div style="margin-top:2%;" class="slide-wrapper">
             <div class="container">
      
-                <div class="row">
+                <div id="inventory" hidden class="row g-40 tabpanel">
                     <div class="col-sm-12">
                         <div class="row">
                             {% for video in inmemories %}
@@ -618,39 +645,12 @@
                         </nav>
                      </div>
                 </div>
+                <div id="account" hidden class="row g-40 tabpanel">
             </div>
         </div>
         <!-- slider wrapper -->
         <!-- slider wrapper -->
-        <div style="display: none;" class="slide-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 text-left mb-4 mt-1">
-                        <h2>Tövsiyyə olunan videolar</h2>
-                    </div>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="slide-slider owl-carousel owl-theme">
-                            {% for video in related_videos %}
-                            <div class="owl-items">
-                                <a class="slide-one" href={{video.video.url}} target="_blank">
-                                    <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;" src="{{ video.coverimage.url }}" alt="image"></div>
-                                    <div class="slide-content" style="height:9em">
-                                        <h2>{{video.name}}  </h2>
-                                        <p style="line-height: 25px;">{{video.content|slice:70}}</p>
-                                   
-                                        <span class="tag">{{video.created_at}}</span>
-                                    </div>
-                                </a>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <!-- slider wrapper -->
 
         <!-- slider wrapper -->
