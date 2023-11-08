@@ -14,9 +14,11 @@ translator.register(About, AboutTranslationOptions)
 class VideoTranslationOptions(TranslationOptions):
     fields = ('name', 'content','coverimage')
 
+class VideoTranslationOptions2(TranslationOptions):
+    fields = ('name', 'content','coverimage','interview')
 
 translator.register(Video, VideoTranslationOptions)
-translator.register(InMemory, VideoTranslationOptions)
+translator.register(InMemory, VideoTranslationOptions2)
 
 class MovieTranslationOptions(TranslationOptions):
     fields = ('name', 'content')
@@ -60,11 +62,11 @@ translator.register(Blog, BlogTranslationOptions)
 
 class ArticleTranslationOptions(TranslationOptions):
     fields = ('name','content')
-class ArticleTranslationOptions2(TranslationOptions):
-    fields = ('name','content','interview')
+class ArticleTranslationOptions(TranslationOptions):
+    fields = ('name','content')
 
 translator.register(Article,ArticleTranslationOptions)
-translator.register(Interview,ArticleTranslationOptions2)
+translator.register(Interview,ArticleTranslationOptions)
 class BookTranslationOptions(TranslationOptions):
     fields = ('writer', 'name')
 translator.register(Book,BookTranslationOptions)
