@@ -588,8 +588,8 @@
                         <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
-                              {% for blg in sourcearticles|slice:2 %}
-                              <div {{forloop.counter}} class="rc__post">
+                              {% for blg in sourcearticles %}
+                              <div data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
                                 <a href="{{blg.href}}">{{forloop.counter}}</a>
                                 </div>
@@ -603,12 +603,41 @@
                               </div>
                               {% endfor %}
                               <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;">
-                              {% for count in pagecount %}<span style="font-size:22px;"  id="{{count}}">{{count}}</span>{% endfor %}
+                              {% for count in pagecount %}<span class="pagespan" id="{{count}}" style="font-size:22px;"  id="{{count}}">{{count}}</span>{% endfor %}
                               </div>
                            </div>
                         </div>
                      </div>
-             <script></script>
+                     <script>
+                        // Get all the pagespan elements
+                        const pagespanElements = document.querySelectorAll('.pagespan');
+                        
+                        // Get all the rc__post elements
+                        const rcPostElements = document.querySelectorAll('.rc__post');
+                    
+                        // Add a click event listener to each pagespan
+                        pagespanElements.forEach(pagespan => {
+                            pagespan.addEventListener('click', function () {
+                                const filterValue = this.id;
+                    
+                                // Hide all rc__post elements
+                                rcPostElements.forEach(rcPost => {
+                                    const dataFilter = rcPost.getAttribute('data-filter');
+                                    if (dataFilter === filterValue) {
+                                        rcPost.style.display = 'block';
+                                    } else {
+                                        rcPost.style.display = 'none';
+                                    }
+                                });
+                    
+                                // Highlight the clicked pagespan
+                                pagespanElements.forEach(span => {
+                                    span.style.fontWeight = 'normal';
+                                });
+                                this.style.fontWeight = 'bold';
+                            });
+                        });
+                    </script>
                      
                     
                   </div>
