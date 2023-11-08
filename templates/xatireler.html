@@ -594,9 +594,9 @@
             <div class="container">
      
                 <div id="inventory" hidden class="row g-40 tabpanel">
-                    <div class="col-sm-12">
+                    <div class="col-xxl-8 col-xl-7 col-lg-7">
                         <div class="row">
-                            {% for video in inmemories %}
+                            {% for video in invideomemories %}
                             <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
                                 <a class="slide-one" href={{video.video.url}} target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
@@ -613,7 +613,75 @@
                         </div>
                     </div>
 
-                 
+                    <div class="col-xxl-4 col-xl-5 col-lg-5">
+                        <div class="sidebar__wrapper">
+                           <div class="sidebar__widget ">
+                              <div class="sidebar__widget-content">
+                                 <div class="sidebar__search">
+                                    <form action="#" method="GET">
+                                       {% csrf_token %}
+                                       <div class="sidebar__search-input">
+                                          <input name="blog" type="text" placeholder="Xəbərlərdə axtar...">
+                                          <button type="submit">
+                                             <i class="flaticon-search"></i>
+                                          </button>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                         
+                           <script>
+                              // Get all the pagespan elements
+                              const pagespanElements = document.querySelectorAll('.pagespan');
+                              
+                              // Get all the rc__post elements
+                              const rcPostElements = document.querySelectorAll('.rc__post');
+                              function setInitialState() {
+                              const firstPagespan = pagespanElements[0];
+                              firstPagespan.click(); 
+                                              }
+                              // Add a click event listener to each pagespan
+                              pagespanElements.forEach(pagespan => {
+                                  pagespan.addEventListener('click', function () {
+                                      const filterValue = this.id;
+                          
+                                      // Hide all rc__post elements
+                                      rcPostElements.forEach(rcPost => {
+                                          const dataFilter = rcPost.getAttribute('data-filter');
+                                          
+                                          console.log(dataFilter,filterValue)
+                                          if (parseInt(dataFilter) === parseInt(filterValue)*3 || parseInt(dataFilter) === parseInt(filterValue)*3-1 || parseInt(dataFilter) === parseInt(filterValue)*3-2) {
+                                              
+                                              rcPost.style.display = 'block';
+                                          } else {
+                                              rcPost.style.display = 'none';
+                                          }
+                                      });
+                                 
+                                      // Highlight the clicked pagespan
+                                      pagespanElements.forEach(span => {
+                                          span.style.fontWeight = 'normal';
+                                      });
+                                      this.style.fontWeight = 'bold';
+                                  });
+      
+                          
+                              });
+                              setInitialState()
+                              // rcPostElements.forEach(rcPost => {
+                              //             const dataFilter = rcPost.getAttribute('data-filter');
+                              //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
+                              //                 rcPost.style.display = 'block';
+                              //             } else {
+                              //                 rcPost.style.display = 'none';
+                              //             }
+                              //         });
+                          </script>
+                           
+                          
+                        </div>
+                     </div>
 
                     <div class="bd-basic__pagination d-flex align-items-center bdFadeUp mt-30" style="justify-content:center">
                         <nav>
