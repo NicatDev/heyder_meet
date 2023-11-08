@@ -589,7 +589,7 @@
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
                               {% for blg in sourcearticles %}
-                              <div {%  if forloop.counter != '1' or forloop.counter != '2' or forloop.counter != '3'  %} style="display: none;"{% endif %} data-filter="{{forloop.counter}}" class="rc__post">
+                              <div  style="display: none;"{% endif %} data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
                                 <a href="{{blg.href}}">{{forloop.counter}}</a>
                                 </div>
@@ -614,7 +614,10 @@
                         
                         // Get all the rc__post elements
                         const rcPostElements = document.querySelectorAll('.rc__post');
-                    
+                        function setInitialState() {
+                        const firstPagespan = pagespanElements[0];
+                        firstPagespan.click(); 
+                                        }
                         // Add a click event listener to each pagespan
                         pagespanElements.forEach(pagespan => {
                             pagespan.addEventListener('click', function () {
@@ -642,6 +645,7 @@
 
                     
                         });
+                        setInitialState()
                         // rcPostElements.forEach(rcPost => {
                         //             const dataFilter = rcPost.getAttribute('data-filter');
                         //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
