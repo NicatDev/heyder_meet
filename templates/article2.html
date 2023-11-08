@@ -623,7 +623,7 @@
                                 // Hide all rc__post elements
                                 rcPostElements.forEach(rcPost => {
                                     const dataFilter = rcPost.getAttribute('data-filter');
-                                    if (dataFilter === filterValue) {
+                                    if (dataFilter*3 === filterValue || dataFilter*3 === filterValue-1 || dataFilter*3 === filterValue-3) {
                                         rcPost.style.display = 'block';
                                     } else {
                                         rcPost.style.display = 'none';
@@ -637,6 +637,14 @@
                                 this.style.fontWeight = 'bold';
                             });
                         });
+                        rcPostElements.forEach(rcPost => {
+                                    const dataFilter = rcPost.getAttribute('data-filter');
+                                    if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
+                                        rcPost.style.display = 'block';
+                                    } else {
+                                        rcPost.style.display = 'none';
+                                    }
+                                });
                     </script>
                      
                     
