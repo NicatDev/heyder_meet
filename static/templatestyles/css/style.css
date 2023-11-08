@@ -11959,7 +11959,7 @@ label.error {
   display: inline-block;
   float: left;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 992px) {
   .header-wrapper .nav-menu li {
     padding: 15px 0;
     text-align: left;
