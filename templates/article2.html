@@ -624,7 +624,7 @@
                                 rcPostElements.forEach(rcPost => {
                                     const dataFilter = rcPost.getAttribute('data-filter');
                                     console.log(dataFilter,filterValue)
-                                    if (parseInt(dataFilter)*3 === parseInt(filterValue) || parseInt(dataFilter)*3 === parseInt(filterValue)-1 || parseInt(dataFilter)*3 === parseInt(filterValue)-3) {
+                                    if (parseInt(dataFilter) === parseInt(filterValue)*3 || parseInt(dataFilter) === parseInt(filterValue)*3-1 || parseInt(dataFilter) === parseInt(filterValue)*3-3) {
                                        
                                         rcPost.style.display = 'block';
                                     } else {
