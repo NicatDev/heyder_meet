@@ -35,1946 +35,1235 @@
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 
-<body>
+<body class="theme-dark">
+
     <div class="preloader"></div>
-    <!-- cursor animation-->
-    <div class="mouseCursor cursor-outer "></div>
-    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
- 
- 
-    <!-- Go Top Button -->
-    <button id="scroll_top" class="scroll-top">
-       <i class="fa-solid fa-arrow-up"></i>
-    </button>
- 
-    <!-- Preloader -->
-    <!-- <div class="loader">
-       <div class="loader__container">
-          <div class="loader__film">
-             <img class=loader__film-img src="{% static 'assets/img/loader/film.png' %}" alt="img not found">
-             <img class=loader__film-img src="{% static 'assets/img/loader/film-2.png' %}" alt="img not found">
-          </div>
-          <img class=loader__camera src="{% static 'assets/img/loader/camera.png' %}" alt="img not found">
-       </div>
+
+    <div class="backdrop"></div>
+    <!-- <div class="switchcolor"><img src="{% static 'templatestyles/images/settings.png' %}" alt="icon"></div>
+    <div class="switchcolor-wrap">
+        <a class="link sheet-close"><i class="ti-close"></i></a>
+        <h2>Settings</h2>
+        <h4>Choose Color Theme</h4>
+        <ul>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="red" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-red" style="background-color: #ff3b30;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="green"><i class="ti-check"></i>
+                    <span class="circle-color bg-green" style="background-color: #4cd964;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="blue" checked=""><i class="ti-check"></i>
+                    <span class="circle-color bg-blue" style="background-color: #132977;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="pink"><i class="ti-check"></i>
+                    <span class="circle-color bg-pink" style="background-color: #ff2d55;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="yellow"><i class="ti-check"></i>
+                    <span class="circle-color bg-yellow" style="background-color: #ffcc00;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="orange"><i class="ti-check"></i>
+                    <span class="circle-color bg-orange" style="background-color: #ff9500;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="gray"><i class="ti-check"></i>
+                    <span class="circle-color bg-gray" style="background-color: #8e8e93;"></span>
+                </label>
+            </li>
+
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="brown"><i class="ti-check"></i>
+                    <span class="circle-color bg-brown" style="background-color: #D2691E;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkgreen"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkgreen" style="background-color: #228B22;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="deeppink"><i class="ti-check"></i>
+                    <span class="circle-color bg-deeppink" style="background-color: #FFC0CB;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="cadetblue"><i class="ti-check"></i>
+                    <span class="circle-color bg-cadetblue" style="background-color: #5f9ea0;"></span>
+                </label>
+            </li>
+            <li>
+                <label class="item-radio item-content">
+                    <input type="radio" name="color-radio" value="darkorchid"><i class="ti-check"></i>
+                    <span class="circle-color bg-darkorchid" style="background-color: #9932cc;"></span>
+                </label>
+            </li>
+            
+            
+        </ul>
+        <div class="toggle-div mt-4">
+            <h4 class="d-inline">Dark Mode</h4>
+            <div class="d-inline float-right">
+                <label class="toggle toggle-init"><input type="checkbox"><span class="toggle-icon"></span></label>
+            </div>
+        </div>
     </div> -->
- 
-   <!-- header wrapper -->
-   <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
-     <div class="container">
-         <div class="row align-items-center justify-content-lg-between pr-5 pl-5">
-             <div class="header-wrapper">
-                 <div class="fm-header-logo-wrapper">
-                     <a href="{% url 'home' %}" class="fm-header-logo">
-                         <img src="{{head.logoheader.url}}" alt="img not found">
-                     </a>
-                     <span class="separator d-none d-xl-block"></span>
- 
-                     <div class="dinozavr"
-                         style="display:flex;align-items:center;justify-content:center;gap:2rem;">
-                         <div id="lang_selector" class="language-dropdown">
-                             <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
-                                 <span class="flag"></span>
-                             </label>
-                             <ul class="lang-list">
-                                 <li class="lang lang-en selected" title="AZ">
-                                     <span class="flag"></span>
-                                 </li>
-                                 <li class="lang lang-pt" title="RU">
-                                     <span class="flag"></span>
-                                 </li>
- 
-                             </ul>
-                         </div>
- 
-                         <a href="#0" class="fm-header-bar-1" id="ancaqmobile">
-                             <span class="fm-header-bar-line fm-header-bar-line-1"></span>
-                             <span class="fm-header-bar-line fm-header-bar-line-2"></span>
-                             <span class="fm-header-bar-line fm-header-bar-line-3"></span>
-                         </a>
-                         <!-- <img src=" {% static 'russia.png' %}" alt="">
-                
-                 {% static 'azerbaijan.png' %} -->
- 
- 
-                     </div>
-                     <style>
-                         .shadow-1,
-                         .language-dropdown ul.lang-list,
-                         .language-dropdown label {
-                             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                         }
- 
-                         .shadow-2,
-                         .language-dropdown.open label {
-                             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-                         }
- 
-                         .shadow-3 {
-                             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-                         }
- 
-                         .shadow-4 {
-                             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-                         }
- 
-                         .shadow-5 {
-                             box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-                         }
- 
-                         .language-dropdown {
-                             display: inline-block;
-                             overflow: hidden;
-                             height: 40px;
- 
-                         }
- 
-                         .language-dropdown .lang-en {
-                             border-left: 4px solid rgb(24, 24, 24);
-                         }
- 
-                         .language-dropdown .lang-en .flag {
-                             background-image: url("{% static 'azerbaijan.png' %}");
-                         }
- 
-                         .language-dropdown .lang-pt {
-                             border-left: 4px solid rgb(24, 24, 24);
-                         }
- 
-                         .language-dropdown .lang-pt .flag {
-                             background-image: url("{% static 'russia.png' %}");
-                         }
- 
-                         .language-dropdown .lang-es {
-                             border-left: 4px solid rgb(24, 24, 24);
-                         }
- 
-                         .language-dropdown .lang-es .flag {
-                             background-image: url("http://www.imaginarium.pt/responsive/2015/images/iconsFicha/banderaES.png");
-                         }
- 
-                         .language-dropdown label,
-                         .language-dropdown ul li {
-                             display: block;
-                             width: 50px;
-                             height: 38px;
-                             background: rgb(25, 25, 25);
-                             padding: 0px 6px;
-                             cursor: pointer;
-                         }
- 
-                         .language-dropdown ul.lang-list {
-                             position: relative;
-                             visibility: hidden;
-                             opacity: 0;
-                             z-index: 1;
-                         }
- 
-                         .language-dropdown ul.lang-list li {
-                             border-bottom: 1px solid rgb(24, 24, 24);
-                         }
- 
-                         .language-dropdown ul.lang-list li:last-child {
-                             border-bottom-right-radius: 2px;
-                             border-bottom-left-radius: 2px;
-                         }
- 
-                         .language-dropdown ul.lang-list li.selected {
-                             display: none;
-                         }
- 
-                         .language-dropdown label {
-                             position: relative;
-                             border-bottom: 1px solid rgb(24, 24, 24);
-                             border-radius: 3px;
-                             z-index: 2;
-                         }
- 
-                         .language-dropdown .lang-flag .flag,
-                         .language-dropdown .lang-list .lang .flag {
-                             float: left;
-                             width: 100%;
-                             height: 100%;
-                             cursor: pointer;
-                             background-size: 35px 35px;
-                             background-repeat: no-repeat;
-                             background-position: center;
-                         }
- 
-                         .language-dropdown.open ul.lang-list {
-                             visibility: visible;
-                             opacity: 1;
-                         }
- 
-                         .language-dropdown.open label {
-                             border-bottom-left-radius: 0px;
-                             border-bottom-right-radius: 0px;
-                         }
- 
-                         .animate,
-                         .lang-flag,
-                         .lang-list {
-                             cursor: pointer;
-                             -webkit-transition: all 0.5s;
-                             -moz-transition: all 0.5s;
-                             -ms-transition: all 0.5s;
-                             -ms-transition: all 0.5s;
-                             transition: all 0.5s;
-                             backface-visibility: hidden;
-                             -webkit-backface-visibility: hidden;
-                             -moz-backface-visibility: hidden;
-                             -ms-backface-visibility: hidden;
-                         }
-                     </style>
-                     <script>
- 
-                         $(document).ready(function () {
-                             $(".lang-flag").click(function () {
-                                 $(".language-dropdown").toggleClass("open");
-                                 $(".language-dropdown").css(
-                                     { 'overflow': 'visible' }
-                                 )
-                             });
- 
-                             $("ul.lang-list li").click(function () {
-                                 $("ul.lang-list li").removeClass("selected");
-                                 $(this).addClass("selected");
-                                 if ($(this).hasClass('lang-en')) {
-                                     $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-pt");
-                                     $("#lang_selected").html("<p>AZ</p>")
-                                     window.location.href = '/'
-                                 } else if ($(this).hasClass('lang-pt')) {
-                                     $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
-                                     $("#lang_selected").html("<p>RU</p>")
-                                     window.location.href = '/ru'
-                                 }
-                                 $(".language-dropdown").removeClass("open");
-                             });
-                         })
-                         $(document).click(function (e) {
-                             if (!$(e.target).closest(".language-dropdown").length) {
-                                 $(".language-dropdown").removeClass("open");
-                             }
-                         });
-                     </script>
-                     <script>
-                         var currentURL = "{{ request.build_absolute_uri }}";
-                         if (currentURL.endsWith('ru/')) {
-                             $("ul.lang-list li").removeClass("selected");
- 
- 
-                             $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
-                             $("#lang_selected").html("<p>RU</p>")
-                             $("ul.lang-list li.lang-pt").remove();
-                         }
-                     </script>
- 
-                 </div>
- 
-                 <div class="header-menu-spc d-none d-xl-block">
-                     <div class="fm-header-nav">
- 
-                         <nav id="mobile-menu" style="display: block;">
-                             <ul>
-                                 <li class="has-dropdown">
-                                     <a href="{% url 'home' %}">Əsas səhifə</a>
- 
-                                 </li>
-                                 <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
-                                 </li>
- 
-                                 <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
-                                     <!-- <ul class="submenu">
-                                         {% for cat in vidcategories %}
-                                         <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                         {% endfor %}
-                                     </ul> -->
-                                 </li>
- 
-                                 <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
-                                     <!-- <ul class="submenu">
-                                         {% for cat in fotcategories %}
-                                         <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                         {% endfor %}
-                                     </ul> -->
-                                 </li>
-                                 <li class="has-dropdown"><a href="{% url 'article' %}">Məqalələr</a>
- 
-                                 </li>
-                                 <li class="has-dropdown"><a href="{% url 'article' %}">Xatirələr</a>
- 
-                                 </li>
-                                 <li class="has-dropdown has-mega-menu">
-                                     <a href="{% url 'blog' %}">Xəbərlər</a>
- 
-                                 </li>
- 
-                                 
- 
- 
-                                 
-                             </ul>
-                         </nav>
- 
-                     </div>
-                 </div>
-                 <!-- sd -->
-                 <div class="fm-header-right d-none d-xl-block mr-10" style="text-align: center;">
-                     <a href="http://75.119.147.165:199/" class="fill-btn"
-                         style="font-size:15px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
-                         <span>
-                             <i class="fa-regular fa-arrow-right"></i>
-                         </span>
-                     </a>
-                 </div>
-             </div>
- 
-         </div>
-     </div>
- </header>
- <!-- header wrapper -->
- 
- <!-- Headerin sonu hekayenin baslangici gradientd-->
- 
- 
- 
-    <!-- sidebar area start -->
-    <div class="fm-header-sidebar-area fm-header-sidebar-left">
-       <div class="fm-header-sidebar-wrapper">
-          <div class="fm-header-sidebar-action mb-65">
-             <div class="col-sm-3 text-left" style="padding-right: 60px;padding-left:60px;"><img style="width: 220px;
-                height: 105px;" src="{{head.logoheader.url}}" alt=""></div>
-             <div class="offcanvas-close">
-                <a class="offcanvas-btn" href="#0">
-                   <i class="fa-thin fa-times"></i>
-                </a>
-             </div>
-          </div>
-          <div class="d-none d-sm-block">
-             <div class="fm-header-sidebar-search">
-                <form action="https://html.bdevs.net/faime-prev/index.html">
-                   <input type="text" placeholder="Search here">
-                   <button type="submit"><i class="flaticon flaticon-search"></i></button>
-                </form>
-             </div>
-          </div>
-          <div class="mobile-menu"></div>
-          <div class="d-none d-sm-block">
-             <div class="fm-offcanvas-about mt-30 mb-30">
-                <h4>About Faime</h4>
-                <p>We Believe Film And Moving Image Has The Power
-                   To
-                   Create
-                   Significant Change.</p>
-             </div>
-          </div>
-          <div class="offcanvas-contact mt-30 mb-30">
-             <h4 class="offcanvas-contact-title">Contact Information</h4>
-             <ul>
-                <li class="d-flex align-items-center gap-2">
-                   <div class="offcanvas-contact-icon">
-                      <a target="_blank"
-                         href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
-                         <i class="fal fa-map-marker-alt"></i></a>
-                   </div>
-                   <div class="offcanvas-contact-text">
-                      <a target="_blank"
-                         href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
-                         Broadway, NY 10013 Bournemouth</a>
-                   </div>
-                </li>
-                <li class="d-flex align-items-center gap-2">
-                   <div class="offcanvas-contact-icon">
-                      <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
-                   </div>
-                   <div class="offcanvas-contact-text">
-                      <a href="tel:915550303420">+91 555 0303 420</a>
-                   </div>
-                </li>
-                <li class="d-flex align-items-center gap-2">
-                   <div class="offcanvas-contact-icon">
-                      <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#53202623233c212713343e323a3f7d303c3e"><i class="fal fa-envelope"></i></a>
-                   </div>
-                   <div class="offcanvas-contact-text">
-                      <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#224a474e4e4d6244434b4f474f47464b430c414d4f"><span class="__cf_email__" data-cfemail="d0b8b5bcbcbf90b6b1b9bdb5bdb5b4b9b1feb3bfbd">[email&#160;protected]</span></a>
-                   </div>
-                </li>
-             </ul>
-          </div>
-          <div class="d-none d-sm-block d-sm-none d-md-block">
-             <div class="fm-offcanvas-social">
-                <span class="social-text">Follow :</span>
-                <div class="fm-offcanvas-social-icon">
-                   <a href="https://www.facebook.com/" target="_blank"><i style="line-height: 2;" class="fa-brands fa-facebook-f"></i></a>
-                   <a href="https://twitter.com/" target="_blank"><i style="line-height: 2;" class="fa-brands fa-twitter"></i></a>
-                   <a href="https://www.instagram.com/" target="_blank"><i style="line-height: 2;" class="fa-brands fa-instagram"></i></a>
-                   <a href="https://www.pinterest.com/" target="_blank"><i style="line-height: 2;" class="fa-brands fa-pinterest-p"></i></a>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
-    <div class="overlay"></div>
-    <!-- sidebar area end -->
- 
- 
-    <main>
-       <div class="adjust-header-space bg-common-black"></div>
- <!-- breadcrumb-area-start -->
- <div class="fm-breadcrumb-area" data-background="{% static 'assets/img/bg/breadcrumb-bg.png' %}">
-    <div class="container">
-       <div class="row justify-content-center">
-          <div class="col-12">
-             <div class="page-title-wrapper">
-                <h1 class="page-title p-text">Xəbərlər</h1>
-             </div>
-             <div class="breadcrumb-menu">
-                <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
-                   <ul class="trail-items">
-                    
-                   </ul>
-                </nav>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
- <!-- breadcrumb-area-end -->
- 
-       <!-- page title area start -->
-       <section class="page-title-area section-spacing-top">
-          <div class="container">
-             <div class="row section-title-spacing">
-                <div class="col-xl-6">
-                 
-                   <div class="section-title">
-                      <span style="opacity: 1;" class="">E-kitabxana</span>
-                      <h2 style="opacity: 1;"  class="">Məqalə, Müsahibə və kitablar toplusu </h2>
-                   </div>
-                </div>
- 
-             </div>
-          </div>
-       </section>
-       <!-- page titler area end -->
-       <div style="margin-top:10px;margin-bottom:30px;padding:0 3.5%;">
-         <div data-ui-tablist="navigation" class="tabs">
-             <button style="width:50%" data-ui-tablist-tab="account" class="tabs-tab activee">Videolar</button>
-             <button style="width:50%"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
-  
-         </div>
-         <div class="tabpanels">
- 
-         </div>
-     </div>
-       <!-- postbox area start -->
-       <section class="postbox__area section-spacing-bottom">
-          <div class="container">
-             <div class="row g-40 tabpanel" id="account">
-                <div class="col-xxl-8 col-xl-7 col-lg-7">
-                   <div class="postbox__wrapper">
-                      <!-- bloglar baslayir-->
-                      {% for blog in inmemories %}
-                      <article class="postbox__item mb-60 bdFadeUp">
-                         <div class="postbox__thumb mb-30">
-                            <a href="{% url 'blogsingle' blog.slug %}">
-                               <img src="{{blog.coverimage.url}}" alt="img not found">
+
+    <div class="main-wrapper">
+             <!-- header wrapper -->
+        <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
+            <div class="container">
+                <div class="row align-items-center justify-content-lg-between pr-5 pl-5">
+                    <div class="header-wrapper">
+                        <div class="fm-header-logo-wrapper">
+                            <a href="{% url 'home' %}" class="fm-header-logo">
+                                <img src="{{head.logoheader.url}}" alt="img not found">
                             </a>
-                         </div>
-                         <div class="postbox__content">
-                            <div class="postbox__meta mb-20">
-                               
-                            
+                            <span class="separator d-none d-xl-block"></span>
+
+                            <div class="dinozavr"
+                                style="display:flex;align-items:center;justify-content:center;gap:2rem;">
+                                <div id="lang_selector" class="language-dropdown">
+                                    <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
+                                        <span class="flag"></span>
+                                    </label>
+                                    <ul class="lang-list">
+                                        <li class="lang lang-en selected" title="AZ">
+                                            <span class="flag"></span>
+                                        </li>
+                                        <li class="lang lang-pt" title="RU">
+                                            <span class="flag"></span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <a href="#0" class="fm-header-bar-1" id="ancaqmobile">
+                                    <span class="fm-header-bar-line fm-header-bar-line-1"></span>
+                                    <span class="fm-header-bar-line fm-header-bar-line-2"></span>
+                                    <span class="fm-header-bar-line fm-header-bar-line-3"></span>
+                                </a>
+                                <!-- <img src=" {% static 'russia.png' %}" alt="">
+                       
+                        {% static 'azerbaijan.png' %} -->
+
+
                             </div>
-                            <h3 class="postbox__title">
-                               <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
-                            </h3>
-                            <div class="postbox__text ">
-                               <p>{{blog.content|slice:200}}...</p>
+                            <style>
+                                .shadow-1,
+                                .language-dropdown ul.lang-list,
+                                .language-dropdown label {
+                                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                                }
+
+                                .shadow-2,
+                                .language-dropdown.open label {
+                                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                                }
+
+                                .shadow-3 {
+                                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                                }
+
+                                .shadow-4 {
+                                    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                                }
+
+                                .shadow-5 {
+                                    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+                                }
+
+                                .language-dropdown {
+                                    display: inline-block;
+                                    overflow: hidden;
+                                    height: 40px;
+
+                                }
+
+                                .language-dropdown .lang-en {
+                                    border-left: 4px solid rgb(24, 24, 24);
+                                }
+
+                                .language-dropdown .lang-en .flag {
+                                    background-image: url("{% static 'azerbaijan.png' %}");
+                                }
+
+                                .language-dropdown .lang-pt {
+                                    border-left: 4px solid rgb(24, 24, 24);
+                                }
+
+                                .language-dropdown .lang-pt .flag {
+                                    background-image: url("{% static 'russia.png' %}");
+                                }
+
+                                .language-dropdown .lang-es {
+                                    border-left: 4px solid rgb(24, 24, 24);
+                                }
+
+                                .language-dropdown .lang-es .flag {
+                                    background-image: url("http://www.imaginarium.pt/responsive/2015/images/iconsFicha/banderaES.png");
+                                }
+
+                                .language-dropdown label,
+                                .language-dropdown ul li {
+                                    display: block;
+                                    width: 50px;
+                                    height: 38px;
+                                    background: rgb(25, 25, 25);
+                                    padding: 0px 6px;
+                                    cursor: pointer;
+                                }
+
+                                .language-dropdown ul.lang-list {
+                                    position: relative;
+                                    visibility: hidden;
+                                    opacity: 0;
+                                    z-index: 1;
+                                }
+
+                                .language-dropdown ul.lang-list li {
+                                    border-bottom: 1px solid rgb(24, 24, 24);
+                                }
+
+                                .language-dropdown ul.lang-list li:last-child {
+                                    border-bottom-right-radius: 2px;
+                                    border-bottom-left-radius: 2px;
+                                }
+
+                                .language-dropdown ul.lang-list li.selected {
+                                    display: none;
+                                }
+
+                                .language-dropdown label {
+                                    position: relative;
+                                    border-bottom: 1px solid rgb(24, 24, 24);
+                                    border-radius: 3px;
+                                    z-index: 2;
+                                }
+
+                                .language-dropdown .lang-flag .flag,
+                                .language-dropdown .lang-list .lang .flag {
+                                    float: left;
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                    background-size: 35px 35px;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                }
+
+                                .language-dropdown.open ul.lang-list {
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+
+                                .language-dropdown.open label {
+                                    border-bottom-left-radius: 0px;
+                                    border-bottom-right-radius: 0px;
+                                }
+
+                                .animate,
+                                .lang-flag,
+                                .lang-list {
+                                    cursor: pointer;
+                                    -webkit-transition: all 0.5s;
+                                    -moz-transition: all 0.5s;
+                                    -ms-transition: all 0.5s;
+                                    -ms-transition: all 0.5s;
+                                    transition: all 0.5s;
+                                    backface-visibility: hidden;
+                                    -webkit-backface-visibility: hidden;
+                                    -moz-backface-visibility: hidden;
+                                    -ms-backface-visibility: hidden;
+                                }
+                            </style>
+                            <script>
+
+                                $(document).ready(function () {
+                                    $(".lang-flag").click(function () {
+                                        $(".language-dropdown").toggleClass("open");
+                                        $(".language-dropdown").css(
+                                            { 'overflow': 'visible' }
+                                        )
+                                    });
+
+                                    $("ul.lang-list li").click(function () {
+                                        $("ul.lang-list li").removeClass("selected");
+                                        $(this).addClass("selected");
+                                        if ($(this).hasClass('lang-en')) {
+                                            $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-pt");
+                                            $("#lang_selected").html("<p>AZ</p>")
+                                            window.location.href = '/'
+                                        } else if ($(this).hasClass('lang-pt')) {
+                                            $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
+                                            $("#lang_selected").html("<p>RU</p>")
+                                            window.location.href = '/ru'
+                                        }
+                                        $(".language-dropdown").removeClass("open");
+                                    });
+                                })
+                                $(document).click(function (e) {
+                                    if (!$(e.target).closest(".language-dropdown").length) {
+                                        $(".language-dropdown").removeClass("open");
+                                    }
+                                });
+                            </script>
+                            <script>
+                                var currentURL = "{{ request.build_absolute_uri }}";
+                                if (currentURL.endsWith('ru/')) {
+                                    $("ul.lang-list li").removeClass("selected");
+
+
+                                    $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
+                                    $("#lang_selected").html("<p>RU</p>")
+                                    $("ul.lang-list li.lang-pt").remove();
+                                }
+                            </script>
+
+                        </div>
+
+                        <div class="header-menu-spc d-none d-xl-block">
+                            <div class="fm-header-nav">
+
+                                <nav id="mobile-menu" style="display: block;">
+                                    <ul>
+                                        <li class="has-dropdown">
+                                            <a href="{% url 'home' %}">Əsas səhifə</a>
+
+                                        </li>
+                                        <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
+                                        </li>
+
+                                        <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                                            <!-- <ul class="submenu">
+                                                {% for cat in vidcategories %}
+                                                <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                                {% endfor %}
+                                            </ul> -->
+                                        </li>
+
+                                        <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                                            <!-- <ul class="submenu">
+                                                {% for cat in fotcategories %}
+                                                <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
+                                                {% endfor %}
+                                            </ul> -->
+                                        </li>
+                                        <li class="has-dropdown"><a href="{% url 'article' %}">Məqalələr</a>
+
+                                        </li>
+                                        <li class="has-dropdown"><a href="{% url 'article' %}">Xatirələr</a>
+
+                                        </li>
+                                        <li class="has-dropdown has-mega-menu">
+                                            <a href="{% url 'blog' %}">Xəbərlər</a>
+
+                                        </li>
+
+                                        
+
+
+                                        
+                                    </ul>
+                                </nav>
+
                             </div>
-                            <div class="col-xl-12 ">
- 
-                               <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
-                            </div>
-                         </div>
-                      </article>
-                      {% endfor %}
- 
-                      
-                      <!-- bloglar bitir -->
-                  
-                      {% if not articles %}
-                         <div class="container">
-                            <div class="row section-title-spacing">
-                               <div class="col-xl-6">
-                                  <div class="section-title">
-                                     <span class="section-subtitle title-anim">Nəticə mövcud deyil</span>
- 
-                                  </div>
-                               </div>
-                
-                            </div>
-                         </div>
- 
-                      {% endif %}
-                   </div>
+                        </div>
+                        <!-- sd -->
+                        <div class="fm-header-right d-none d-xl-block mr-10" style="text-align: center;">
+                            <a href="http://75.119.147.165:199/" class="fill-btn"
+                                style="font-size:15px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
+                                <span>
+                                    <i class="fa-regular fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-xxl-4 col-xl-5 col-lg-5">
-                   <div class="sidebar__wrapper">
-                      <div class="sidebar__widget ">
-                         <div class="sidebar__widget-content">
-                            <div class="sidebar__search">
-                               <form action="#" method="GET">
-                                  {% csrf_token %}
-                                  <div class="sidebar__search-input">
-                                     <input name="blog" type="text" placeholder="Xəbərlərdə axtar...">
-                                     <button type="submit">
-                                        <i class="flaticon-search"></i>
-                                     </button>
-                                  </div>
-                               </form>
-                            </div>
-                         </div>
-                      </div>
-                    
-                      <script>
-                         // Get all the pagespan elements
-                         const pagespanElements = document.querySelectorAll('.pagespan');
-                         
-                         // Get all the rc__post elements
-                         const rcPostElements = document.querySelectorAll('.rc__post');
-                         function setInitialState() {
-                         const firstPagespan = pagespanElements[0];
-                         firstPagespan.click(); 
-                                         }
-                         // Add a click event listener to each pagespan
-                         pagespanElements.forEach(pagespan => {
-                             pagespan.addEventListener('click', function () {
-                                 const filterValue = this.id;
-                     
-                                 // Hide all rc__post elements
-                                 rcPostElements.forEach(rcPost => {
-                                     const dataFilter = rcPost.getAttribute('data-filter');
-                                     
-                                     console.log(dataFilter,filterValue)
-                                     if (parseInt(dataFilter) === parseInt(filterValue)*3 || parseInt(dataFilter) === parseInt(filterValue)*3-1 || parseInt(dataFilter) === parseInt(filterValue)*3-2) {
-                                         
-                                         rcPost.style.display = 'block';
-                                     } else {
-                                         rcPost.style.display = 'none';
-                                     }
-                                 });
-                            
-                                 // Highlight the clicked pagespan
-                                 pagespanElements.forEach(span => {
-                                     span.style.fontWeight = 'normal';
-                                 });
-                                 this.style.fontWeight = 'bold';
-                             });
- 
-                     
-                         });
-                         setInitialState()
-                         // rcPostElements.forEach(rcPost => {
-                         //             const dataFilter = rcPost.getAttribute('data-filter');
-                         //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
-                         //                 rcPost.style.display = 'block';
-                         //             } else {
-                         //                 rcPost.style.display = 'none';
-                         //             }
-                         //         });
-                     </script>
-                      
-                     
-                   </div>
-                </div>
-             </div>
-          
-             <div  id="inventory" hidden class="row g-40 tabpanel">      
-               
-                 <div class="col-sm-12">
-                     <div class="row">
-                         {% for blog in invideomemories %}
-                         <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
-                             <a class="slide-one" href={{video.embed.url}} target="_blank">
-                                 <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if blog.coverimage %} src="{{blog.coverimage.url}}" {% endif %} alt="image" ></div>
-                                 <div class="slide-content" >
-                                     <h2 style="height:6rem">{{blog.name}} </h2>
-                                     <p style="height: 4rem;">{{blog.content|slice:70}}...</p>
-                              
-                                     <!-- <span class="tag">{{video.created_at}}</span> -->
-                            
-                                 </div>
-                             </a>
-                         </div>
-                         {% endfor %}
-                     </div>
-                 </div>
-               </div>
-          </div>
-       </section>
- 
-       <!-- contact-area-start -->
- 
-       <!-- contact-area-end -->
- 
-    </main>
-    <div style="display: flex;justify-content: center;align-items: center;">  {% if articles %}
-     <div class="bd-basic__pagination d-flex align-items-center bdFadeUp">
-        <nav>
-           <ul>
-              <li>
-                 <a {% if not articles.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  articles.has_previous %}  href="?page={{ articles.previous_page_number }} "{% endif%}>
-                    <i class="fa-light fa-arrow-left-long"></i>
+            </div>
+        </header>
+        <!-- header wrapper -->
+    
+       <!-- sidebar area start -->
+       <div class="fm-header-sidebar-area fm-header-sidebar-left">
+        <div class="fm-header-sidebar-wrapper">
+           <div class="fm-header-sidebar-action mb-65">
+              <div class="fm-header-sidebar-logo">
+                 <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+              </div>
+              <div class="offcanvas-close">
+                 <a class="offcanvas-btn" href="#0">
+                    <i class="fa-thin fa-times"></i>
                  </a>
-              </li>
-              {% if not pagcheck %}
-              <li>
-                 <a href="?page=1">1</a>
-              </li>
-              {% endif %}
-              {% for page_num in iterator %}
-                 
-              <li>
-                 <a href="?page={{ page_num }}">{{page_num}}</a>
-              </li>
-  
-              {% endfor %}
-              
-         
-  
+              </div>
+           </div>
+           <div class="d-none d-sm-block">
+              <div class="fm-header-sidebar-search">
+                 <form action="https://html.bdevs.net/faime-prev/index.html">
+                    <input type="text" placeholder="Search here">
+                    <button type="submit"><i class="flaticon flaticon-search"></i></button>
+                 </form>
+              </div>
+           </div>
+           <div class="mobile-menu"></div>
+           <div class="d-none d-sm-block">
+              <div class="fm-offcanvas-about mt-30 mb-30">
+                 <h4>About Faime</h4>
+                 <p>We Believe Film And Moving Image Has The Power
+                    To
+                    Create
+                    Significant Change.</p>
+              </div>
+           </div>
+           <div class="offcanvas-contact mt-30 mb-30">
+              <h4 class="offcanvas-contact-title">Contact Information</h4>
+              <ul>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                          <i class="fal fa-map-marker-alt"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a target="_blank"
+                          href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">477-463
+                          Broadway, NY 10013 Bournemouth</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="tel:915550303420">+91 555 0303 420</a>
+                    </div>
+                 </li>
+                 <li class="d-flex align-items-center gap-2">
+                    <div class="offcanvas-contact-icon">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#53202623233c212713343e323a3f7d303c3e"><i class="fal fa-envelope"></i></a>
+                    </div>
+                    <div class="offcanvas-contact-text">
+                       <a href="https://html.bdevs.net/cdn-cgi/l/email-protection#224a474e4e4d6244434b4f474f47464b430c414d4f"><span class="__cf_email__" data-cfemail="d0b8b5bcbcbf90b6b1b9bdb5bdb5b4b9b1feb3bfbd">[email&#160;protected]</span></a>
+                    </div>
+                 </li>
+              </ul>
+           </div>
+           <div class="d-none d-sm-block d-sm-none d-md-block">
+              <div class="fm-offcanvas-social">
+                 <span class="social-text">Follow :</span>
+                 <div class="fm-offcanvas-social-icon">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="overlay"></div>
+     <!-- sidebar area end -->
+        
+        <!-- banenr wrapper -->
+             <!-- breadcrumb-area-start -->
+             <div class="fm-breadcrumb-area" data-background="{% static 'assets/img/bg/breadcrumb-bg.png' %}">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="page-title-wrapper">
+                                <h1 class="page-title p-text">Videolar</h1>
+                            </div>
+                            <div class="breadcrumb-menu">
+                                <nav aria-label="Breadcrumbs" class="breadcrumb-trail
+                               breadcrumbs">
+                                    <ul class="trail-items">
+    
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- breadcrumb-area-end -->
+        <!-- banenr wrapper -->
+
+        <!-- desktop foto video 020202-->
+        <!-- <div class="category-wrapper slide-wrapper" style="padding-bottom:3% ;">
+            <div class="container">
+                <div class="row big-category">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Kateqoriyalar</h2>
+                    </div>
+                     
+                </div>
+                <div class="row big-category">
+                    <div class="col-sm-12">
+                        <div class="category-slider owl-carousel owl-theme">
+                        
+                        {% for cat in categories %}
+                            <div class="owl-items">
+                                <a href="{% url 'video' %}?movzu={{cat.id}}" target="_blank" class="category-wrap" style="background: linear-gradient(to right, rgb(147, 147, 147), rgb(211, 211, 211), rgb(147, 147, 147));"><p>{{cat.name}}</p></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="aboutimagetitle-div mini-category" style="display: none;align-items:center;justify-content:space-between;width:100%;margin-top:3%;margin-bottom:1%;">
+                    <h3>Videolar</h3>
+                    <div class="isotope-filter isotope-filter--isotope" style="align-items: center;margin:0">
+                        <div style="margin-left:auto" class='containerr'>
+                            <div class='triggerrs'>
+                              <input id='first' type='checkbox'>
+                              <label class='label' for='first' style="background-color: white;margin-bottom:0px !important;">
+                                Kateqoriyalar <i class="fa-solid fa-caret-down"></i>
+                                <div class='contentt'>
+                                  <div class='inner-section'>
+                                    <span class='section-name'><a data-count="{{fcount}}" href="?movzu=">Hamısı</a></span>    
+                           {% for cat in vidcategories %}
+                                            <span class='section-name'><a data-count="{{cat.videolar.count}}" href="?movzu={{cat.id}}" target="_blank">{{cat.name}}</a></span>       
+                                    
+                                     {% endfor %}
+                           
+                                  </div>
+                                  
+                           
+                                </div>
+                              </label>
+                            </div>
+                          </div>
              
-  
-              <li>
-                 <a {% if not articles.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if articles.has_next %}  href="?page={{ articles.next_page_number }}" {% endif%}>
-                    <i class="fa-light fa-arrow-right-long"></i>
-                 </a>
-              </li>
-              
-           </ul>
-        </nav>
-     </div>
-     {% endif %}</div>
-  
-    <!-- footer-area-start -->
-    <div class="footer-wrapper">
-     <div class="container">
-         <div class="row" style="align-items: center;">
-             <div class="col-xl-3 text-left" style="display: flex;justify-content: center;margin-bottom: 10px;" ><img style="
-                 height: 105px; " src="{{head.logoheader.url}}" alt=""></div>
-             <div class="col-xl-9 text-left">
-                 <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
-                     remove the chain from about my victim’s neck only through language.</h4>
-             </div>
- 
- 
-             <div style="margin-bottom:3%" class="col-sm-12">
-                 <div class="middle-footer">
-                     <div class="row">
- 
-                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks">
-                             <div style="text-align: start;">
-                                 <h5 style="font-size: large;">Sosİal şəbəkələr</h5>
-                                 <ul>
-                                     <li><a style="font-size: medium;" href="#">İnstagram</a></li>
-                                     <li><a style="font-size:medium ;" href="#">Facebook</a></li>
-                                     <li><a style="font-size:medium ;" href="#">Youtube</a></li>
- 
-                                 </ul>
-                             </div>
- 
-                         </div>
- 
- 
- 
-                         <div style="display: flex;justify-content:center;"
-                             class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
-                             <div style="text-align:start">
-                                 <h5 class="mb-3" style="font-size:large;width:150px;">Lİnklər</h5>
-                                 <br>
-                                 <a href="{% url 'home' %}">
-                                     <p class="footerLinks">Əsas Səhifə</p>
-                                 </a>
-                                 <a href="{% url 'video' %}">
-                                     <p class="footerLinks">Video</p>
-                                 </a>
-                                 <a href="{% url 'foto' %}">
-                                     <p class="footerLinks">Foto</p>
-                                 </a>
-                                 <a href="{% url 'blog' %}">
-                                     <p class="footerLinks">Xəbərlər</p>
-                                 </a>
-                                 <a href="{% url 'article' %}">
-                                     <p class="footerLinks">Məqalələr</p>
-                                 </a>
-                                 <a href="{% url 'about' %}">
-                                     <p class="footerLinks">Layihə haqqında</p>
-                                 </a>
-                             </div>
-                         </div>
- 
-                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
-                             style="display: flex;justify-content:center;">
-                             <div style="width: 100%;text-align:start;">
-                                 <h5 style="font-size: large; ">Bİzİmlə əlaqə</h5>
-                                 <ul>
-                                     <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
-                                     <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
-                                     </li>
-                                     <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
-                                     </li>
- 
- 
-                                 </ul>
-                             </div>
- 
-                         </div>
- 
- 
-                     </div>
-                 </div>
-             </div>
- 
- 
-         </div>
-     </div>
- </div>
- <style>
-      .footerLinks {
-         width: 100% !important;
-         font-size: medium !important
-     }
-     .divSosialLinks {
-         display: flex;
-         justify-content: center;
-     }
- 
-     .slide-wrapper .slide-two .slide-image:before {
-         bottom: 40%;
-         right: 45%;
-         background-color: var(--clr-theme-1);
- 
-     }
- 
-     .owl-carousel .owl-item {
-         position: initial;
-     }
- 
-     element.style {
-         width: 305.92px;
-         margin-right: 15px;
-     }
- 
-     .full-wrap .owl-carousel .owl-stage-outer .owl-item.active {
-         opacity: 1;
-     }
- 
-     .full-wrap .owl-carousel .owl-stage-outer .owl-item {
-         opacity: 0.4;
-     }
- 
-     .owl-carousel.owl-drag .owl-item {
-         -ms-touch-action: pan-y;
-         touch-action: pan-y;
-         -webkit-user-select: none;
-         -moz-user-select: none;
-         -ms-user-select: none;
-         user-select: none;
-     }
- 
-     .owl-carousel .owl-item {
-         min-height: 1px;
-         float: left;
-         -webkit-touch-callout: none;
-     }
- 
-     .owl-carousel,
-     .owl-carousel .owl-item {
-         position: initial !important;
-     }
- 
-     .pop .fm-single-featured:after {
-         background-color: transparent !important;
-         background: none !important;
- 
-     }
- 
-     .pop .fm-single-featured i {
-         display: none !important;
-     }
- 
-     @media (max-width: 2300px) {
- 
-         .full-wrap .container-fluid,
-         .full-wrap .container-sm,
-         .full-wrap .container-md,
-         .full-wrap .container-lg,
-         .full-wrap .container-xl {
-             padding-left: 5% !important;
-             padding-right: 5% !important;
-         }
-     }
- 
-     #testimonial .cards .cardd {
-         margin-right: 3%;
-     }
- </style>
-    <!-- footer-area-end -->
-     <!-- footer-area-end -->
-     <style>
-         .section-spacing {
-             padding-top: 80px;
-             padding-bottom: 80px;
-         }
-     </style>
-     <style>
-         .pagination-wrapper {
-             text-align: center;
-             margin: 40px 0;
-             margin-left: auto;
-             margin-right: auto
-         }
- 
-         .pagination {
-             display: inline-block;
-             height: 70px;
-             margin-top: 40px;
-             padding: 0 25px;
-             border-radius: 35px;
-             background-color: #eee;
-         }
- 
-         @media only screen and (max-width: 1199px) {
-             .pagination {
-                 height: 50px;
-                 margin-top: 50px;
-                 padding: 0 10px;
-                 border-radius: 25px;
-             }
-         }
- 
-         .fm-blog-grid-single-content p {
-             margin-top: 1%;
-             background-color: rgba(252, 252, 252, 0.021);
-             text-align: justify;
-         }
- 
-         .mybiggest {
-             width: 100%;
-             height: 100%;
-             border-radius: 100%;
-             border: 1px solid black;
-             background: linear-gradient(red, blue, green);
-         }
- 
-         .page-numbers {
-             display: block;
-             padding: 0 25px;
-             float: left;
-             transition: 400ms ease;
-             color: #595959;
-             font-size: 20px;
-             letter-spacing: 0.1em;
-             line-height: 70px;
-         }
- 
-         .page-numbers:hover,
-         .page-numbers.current {
-             background-color: #555555;
-             color: #fff;
-         }
- 
-         .page-numbers.prev:hover,
-         .page-numbers.next:hover {
-             background-color: transparent;
-             color: #86c023;
-         }
- 
-         .myresponse {
-             height: 20rem;
-         }
- 
-         @media only screen and (max-width: 580px) {
-             .myresponse {
-                 height: 300px;
-             }
- 
-             @media only screen and (max-width: 540px) {
-                 .myresponse {
-                     height: 260px;
-                 }
-             }
- 
-             @media only screen and (min-width:1400px) {
-                 .myresponse {
-                     height: 300px !important;
-                 }
-             }
- 
-             @media only screen and (max-width: 1199px) {
-                 .page-numbers {
-                     padding: 0 15px;
-                     font-size: 16px;
-                     line-height: 50px;
-                 }
-             }
- 
-             @media only screen and (min-width: 120px) and (max-width: 1024px) {
-                 .page-numbers {
-                     padding: 0 14px;
-                     display: none;
-                 }
- 
-                 .page-numbers:nth-of-type(2) {
-                     position: relative;
-                     padding-right: 50px;
-                 }
- 
-                 .page-numbers:nth-of-type(2)::after {
-                     content: "...";
-                     position: absolute;
-                     font-size: 25px;
-                     top: 0;
-                     left: 45px;
-                 }
- 
-                 .page-numbers:nth-child(-n+3),
-                 .page-numbers:nth-last-child(-n+3) {
-                     display: block;
-                 }
- 
-                 .page-numbers:nth-last-child(-n+4) {
-                     padding-right: 14px;
-                 }
- 
-                 .page-numbers:nth-last-child(-n+4)::after {
-                     content: none;
-                 }
-             }
- 
- 
-             .section-spacing {
-                 padding-top: 30px !important;
- 
-             }
-     </style>
-     <style>
-         .tabs-tab {
-             font-size: 18px;
-             width: 100%;
-         }
-     </style>
-     <style>
-          .footerLinks {
-         width: 100% !important;
-         font-size: medium !important
-     }
-         .divSosialLinks {
-             display: flex;
-             justify-content: center;
-         }
+                    </div>
+                   </div>
+            </div>            
+        </div> -->
+        
+        <!-- desktop foto video 020202-->
+        <!-- slider wrapper -->
+        <div style="margin-top:2%;" class="slide-wrapper">
+            <div class="container">
      
-         .slide-wrapper .slide-two .slide-image:before {
-             bottom: 40%;
-             right: 45%;
-             background-color: var(--clr-theme-1);
-     
-         }
-     
-         .owl-carousel .owl-item {
-             position: initial;
-         }
-     
-         element.style {
-             width: 305.92px;
-             margin-right: 15px;
-         }
-     
-         .full-wrap .owl-carousel .owl-stage-outer .owl-item.active {
-             opacity: 1;
-         }
-     
-         .full-wrap .owl-carousel .owl-stage-outer .owl-item {
-             opacity: 0.4;
-         }
-     
-         .owl-carousel.owl-drag .owl-item {
-             -ms-touch-action: pan-y;
-             touch-action: pan-y;
-             -webkit-user-select: none;
-             -moz-user-select: none;
-             -ms-user-select: none;
-             user-select: none;
-         }
-     
-         .owl-carousel .owl-item {
-             min-height: 1px;
-             float: left;
-             -webkit-touch-callout: none;
-         }
-     
-         .owl-carousel,
-         .owl-carousel .owl-item {
-             position: initial !important;
-         }
-     
-         .pop .fm-single-featured:after {
-             background-color: transparent !important;
-             background: none !important;
-     
-         }
-     
-         .pop .fm-single-featured i {
-             display: none !important;
-         }
-     
-         @media (max-width: 2300px) {
-     
-             .full-wrap .container-fluid,
-             .full-wrap .container-sm,
-             .full-wrap .container-md,
-             .full-wrap .container-lg,
-             .full-wrap .container-xl {
-                 padding-left: 5% !important;
-                 padding-right: 5% !important;
-             }
-         }
-     
-         #testimonial .cards .cardd {
-             margin-right: 3%;
-         }
-     </style>
-     <style>    
-         .theme-dark {
-             background-color: #171717
-         }
-         
- a {
-     text-decoration: none;
-   }
-   
-   .pagination-wrapper {
-     text-align: center;
-     margin: 40px 0;
-     margin-left:auto;
-     margin-right:auto
-   }
-   
-   .pagination {
-     display: inline-block;
-     height: 70px;
-     margin-top: 40px;
-     padding: 0 25px;
-     border-radius: 35px;
-     background-color: #eee;
-   }
-   @media only screen and (max-width: 1199px) {
-     .pagination {
-       height: 50px;
-       margin-top: 50px;
-       padding: 0 10px;
-       border-radius: 25px;
-     }
-   }
-   
-   .page-numbers {
-     display: block;
-     padding: 0 25px;
-     float: left;
-     transition: 400ms ease;
-     color: #595959;
-     font-size: 20px;
-     letter-spacing: 0.1em;
-     line-height: 70px;
-   }
-   .page-numbers:hover, .page-numbers.current {
-     background-color: #555555;
-     color: #fff;
-   }
-   .page-numbers.prev:hover, .page-numbers.next:hover {
-     background-color: transparent;
-     color: #86c023;
-   }
-   @media only screen and (max-width: 1199px) {
-     .big-category{
-         display: none;
-     }
-    
-   }
-   @media only screen and (max-width: 1198px){
-     .mini-category{
-         display: none;
-     }
-   }
- 
-   @media only screen and (max-width: 1199px) {
-     .mini-category{
-         display:flex !important;
-     }
-   }
-   @media only screen and (max-width: 1199px) {
-     .page-numbers {
-       padding: 0 15px;
-       font-size: 16px;
-       line-height: 50px;
-     }
-   }
-   @media only screen and (min-width: 120px) and (max-width: 1024px) {
-     .page-numbers {
-       padding: 0 14px;
-       display: none;
-     }
-     .page-numbers:nth-of-type(2) {
-       position: relative;
-       padding-right: 50px;
-     }
-     .page-numbers:nth-of-type(2)::after {
-       content: "...";
-       position: absolute;
-       font-size: 25px;
-       top: 0;
-       left: 45px;
-     }
-     .page-numbers:nth-child(-n+3), .page-numbers:nth-last-child(-n+3) {
-       display: block;
-     }
-     .page-numbers:nth-last-child(-n+4) {
-       padding-right: 14px;
-     }
-     .page-numbers:nth-last-child(-n+4)::after {
-       content: none;
-     }
-   }
-   .owl-items p{
-     color:black;
-     line-height: 50px;
-     font-weight: 500;
-   }
-   .transparent-header{
-     position: relative;
- }
- .banner-wrapper{
-     margin-top:10px;
- }
- </style>
- <style>
-     .isotope-filter--isotope{
-        --wp--preset--font-size--normal: 16px;
-        --wp--preset--font-size--huge: 42px;
-        --drawer-width: 480px;
-        --neg-drawer-width: calc(var(--drawer-width)*-1);
-        --woocommerce: #7F54B3;
-        --wc-green: #7ad03a;
-        --wc-red: #a00;
-        --wc-orange: #ffba00;
-        --wc-blue: #2ea2cc;
-        --wc-primary: #7F54B3;
-        --wc-primary-text: white;
-        --wc-secondary: #e9e6ed;
-        --wc-secondary-text: #515151;
-        --wc-highlight: #b3af54;
-        --wc-highligh-text: white;
-        --wc-content-bg: #fff;
-        --wc-subtext: #767676;
-        --page-title-display: block;
-        --wp--preset--color--black: #000000;
-        --wp--preset--color--cyan-bluish-gray: #abb8c3;
-        --wp--preset--color--white: #ffffff;
-        --wp--preset--color--pale-pink: #f78da7;
-        --wp--preset--color--vivid-red: #cf2e2e;
-        --wp--preset--color--luminous-vivid-orange: #ff6900;
-        --wp--preset--color--luminous-vivid-amber: #fcb900;
-        --wp--preset--color--light-green-cyan: #7bdcb5;
-        --wp--preset--color--vivid-green-cyan: #00d084;
-        --wp--preset--color--pale-cyan-blue: #8ed1fc;
-        --wp--preset--color--vivid-cyan-blue: #0693e3;
-        --wp--preset--color--vivid-purple: #9b51e0;
-        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
-        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
-        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
-        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
-        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
-        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
-        --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
-        --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
-        --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
-        --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
-        --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
-        --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
-        --wp--preset--font-size--small: 13px;
-        --wp--preset--font-size--medium: 20px;
-        --wp--preset--font-size--large: 36px;
-        --wp--preset--font-size--x-large: 42px;
-        --wp--preset--spacing--20: 0.44rem;
-        --wp--preset--spacing--30: 0.67rem;
-        --wp--preset--spacing--40: 1rem;
-        --wp--preset--spacing--50: 1.5rem;
-        --wp--preset--spacing--60: 2.25rem;
-        --wp--preset--spacing--70: 3.38rem;
-        --wp--preset--spacing--80: 5.06rem;
-        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
-        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
-        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
-        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
-        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        color: #9da1a5;
-        --e-global-color-primary: #6EC1E4;
-        --e-global-color-secondary: #54595F;
-        --e-global-color-text: #7A7A7A;
-        --e-global-color-accent: #61CE70;
-        --e-global-color-1c81762: #4054B2;
-        --e-global-color-3a972d51: #23A455;
-        --e-global-color-6c80e7e5: #000;
-        --e-global-color-528eeb43: #FFF;
-        --e-global-typography-primary-font-family: "Roboto";
-        --e-global-typography-primary-font-weight: 600;
-        --e-global-typography-secondary-font-family: "Roboto Slab";
-        --e-global-typography-secondary-font-weight: 400;
-        --e-global-typography-text-font-family: "Roboto";
-        --e-global-typography-text-font-weight: 400;
-        --e-global-typography-accent-font-family: "Roboto";
-        --e-global-typography-accent-font-weight: 500;
-        --e-column-margin-right: 0px;
-        --e-column-margin-left: 0px;
-        --flex-direction: initial;
-        --flex-wrap: initial;
-        --justify-content: initial;
-        --align-items: initial;
-        --align-content: initial;
-        --gap: initial;
-        --flex-basis: initial;
-        --flex-grow: initial;
-        --flex-shrink: initial;
-        --order: initial;
-        --align-self: initial;
-        --swiper-theme-color: #000;
-        --swiper-navigation-size: 44px;
-        --swiper-pagination-bullet-size: 6px;
-        --swiper-pagination-bullet-horizontal-gap: 6px;
-        --widgets-spacing: 20px 20px;
-        box-sizing: border-box;
-        margin-right: auto;
-        margin-left: auto;
-        width: 1170px;
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 22px;
-        text-align: right;}
-        .isotope-filter a.active:before {
-            width: 100%;
-        }
-        .isotope-filter a:before {
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            width: 0;
-            transform: translateX(-50%);
-            -webkit-transform: translateX(-50%);
-            content: '';
-            border-top: 1px solid;
-            transition: all 300ms;
-        }
-       .isotope-filter a:after{
-            margin-left: 4px;
-            content: '('attr(data-count)')';
-            font-size: 0.8em;
-            line-height: 1;
-            vertical-align: super;
-            letter-spacing: 0;
-        }
-        .elementor-widget-gt3-core-portfolio .isotope-filter a:after, .elementor-widget-gt3-core-team .isotope-filter a:after, .isotope-filter a span.count {
-            margin-left: 4px;
-            content: '('attr(data-count)')';
-            font-size: 0.8em;
-            line-height: 1;
-            vertical-align: super;
-            letter-spacing: 0;
-        }
-        .isotope-filter--isotope a{
-        text-align: right;
-        outline: none !important;
-        box-sizing: border-box;
-        box-shadow: none;
-        text-decoration: none;
-        padding: 10px 0;
-        font-size: 12px;
-        letter-spacing: .08em;
-        line-height: 24px;
-        transition: all .4s;
-        margin-right: 30px;
-        position: relative;
-        display: inline-block;
-        text-transform: uppercase;
-        color: #FFFFFF;}
-    
-    
-        .transparent-header{
-            position: relative;
-        }
-        .banner-wrapper{
-            margin-top:10px;
-        }
-    </style>
-    <style>.containerr {
-     height: 100%;
-     display: flex;
-     justify-content: right;
-     align-items: center;
-   }
-   input[type='checkbox'] {
-     display: none;
-   }
-   .triggerrs {
-     display: flex;
-   }
-   .contentt {
-     position: absolute;
-     display: none;
-     z-index: 2;
-     top: 100%;
-     border-radius: 3px;
-   }
-   .inner-section span:hover {
-     font-size: large;
-   }
-   .inner-section span a {
-     color: black;
-     font-weight: 600;
-   }
-   .label {
-     border: 1px solid #7d7d7d;
-     padding: 0.5em 1.7em;
-     cursor: pointer;
-     position: relative;
-   }
-   .label:hover {
-     background: #bcbcbc;
-   }
-   .triggerrs > input:checked + label {
-     background: #bcbcbc;
-     border: 1px solid transparent;
-   }
-   .triggerrs > input:checked + label > div.contentt {
-     display: flex;
-     top: 100%;
-     padding: 0.5em;
-     background: #d3d3d3;
-     right: -1px;
-   }
-   .triggerrs > input:checked + label > div.contentt div {
-     padding: 0em 0.5em;
-   }
-   .triggerrs > input:checked + label > div.contentt div + div {
-     border-left: 1px solid #7d7d7d;
-   }</style>
-     <!-- JS here -->
- 
-     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-     <script src="{% static 'assets/js/meanmenu.js' %}"></script>
-     <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
-     <script src="{% static 'assets/js/slick.min.js' %}"></script>
-     <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
-     <script src="{% static 'assets/js/parallax.min.js' %}"></script>
-     <script src="{% static 'assets/js/gsap.min.js' %}"></script>
-     <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-     <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
-     <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
-     <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
-     <script src="{% static 'assets/js/knob.min.js' %}"></script>
-     <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
-     <script src="{% static 'assets/js/ajax-form.js' %}"></script>
-     <script src="{% static 'assets/js/wow.min.js' %}"></script>
-     <script src="{% static 'assets/js/sidebar.js' %}"></script>
-     <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
-     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
-     <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
-     <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
-     <script src="{% static 'assets/js/main.js' %}"></script>
- 
-     <script>
-         var tabElements = document.querySelectorAll('.tabs-tab');
-         tabElements.forEach(function (tabElement) {
-             tabElement.addEventListener('click', function () {
-                 var tabData = tabElement.getAttribute('data-ui-tablist-tab');
-                 var mytab = document.getElementById(tabData)
-                 var tabPanels = document.querySelectorAll('.tabpanel');
- 
-                 tabPanels.forEach(function (tabElement) {
-                     tabElement.hidden = true
-                 });
-                 mytab.removeAttribute("hidden");
-                 console.log('Tıklanan tab verisi:', tabData);
-             });
-         });
-     </script>
- 
-     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
-     <script>
-         if (window.innerWidth > 1500) {
- 
-             var myResponseElements = document.querySelectorAll('.myresponse');
- 
-             myResponseElements.forEach(function (element) {
- 
-                 element.style.height = '270px';
-             });
-         }
-     </script>
-     /* active js */
-     <script>
-   
- </script>
- 
-     <script>
-         const navLinks = document.querySelectorAll(' .tabs-tab ');
- 
- 
-         navLinks.forEach(link => {
-             link.addEventListener('click', function (event) {
- 
-                 navLinks.forEach(link => {
-                     link.classList.remove('activee');
-                 });
- 
- 
-                 this.classList.add('activee');
-             });
-         });
-     </script>
- 
-     <script>
-         var jsonData
-         var url = '{% url "AnotherSourceView" %}'
-     function fetchDataFromDjangoView() {
-         fetch(url)  // Replace with the URL of your Django view
-             .then(response => {
-                 if (!response.ok) {
-                     throw new Error('Network response was not ok');
-                 }
-                 return response.json();  // Parse the response as JSON
-             })
-             .then(data => {
-                 // Process the data received from the server
-                 // You can work with the data as needed
-                  jsonData = data;
- 
-                 // Example: Log the data to the console
-                 console.log(jsonData);
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            {% for video in video_list %}
+                            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
+                                <a class="slide-one" href={{video.video.url}} target="_blank">
+                                    <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
+                                    <div class="slide-content" style="">
+                                        <h2 style="height:6rem">{{video.name}} </h2>
+                                        <p style="height: 4rem;">{{video.content|slice:70}}...</p>
+                                 
+                                        <!-- <span class="tag">{{video.created_at}}</span> -->
+                               
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
                  
-                 // You can now use jsonData as a JavaScript variable
-                 // and perform operations with it on your HTML template
-             })
-             .catch(error => {
-                 console.error('Error:', error);
-             });
-     }
-     console.log(jsonData)
-     // Call the function to fetch data
-     window.onload = function() {
-     fetchDataFromDjangoView();  // Sayfa yüklendiğinde verileri alın
- };
-         var current_page = 1;
- var records_per_page = 4;
- jsonData = [];
-         {% for item in sourcearticles %}
-         jsonData.push("{{ item.title }}"); 
-         {% endfor %}
- console.log(jsonData)
- 
- function prevPage()
- {
-     if (current_page > 1) {
-         current_page--;
-         changePage(current_page);
-     }
- }
- 
- function nextPage()
- {
-     if (current_page < numPages()) {
-         current_page++;
-         changePage(current_page);
-     }
- }
- 
- function changePage(page)
- {
-     var btn_next = document.getElementById("btn_next");
-     var btn_prev = document.getElementById("btn_prev");
-     var listing_table = document.getElementById("data-container");
-     var page_span = document.getElementById("page");
-     console.log(jsonData)
-     if (page < 1) page = 1;
-     if (page > numPages()) page = numPages();
- 
-     listing_table.innerHTML = "";
- 
-     for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
-         listing_table.innerHTML += jsonData[i] + "<br>";
-     }
-     page_span.innerHTML = page;
- 
-     if (page == 1) {
-         btn_prev.style.visibility = "hidden";
-     } else {
-         btn_prev.style.visibility = "visible";
-     }
- 
-     if (page == numPages()) {
-         btn_next.style.visibility = "hidden";
-     } else {
-         btn_next.style.visibility = "visible";
-     }
- }
- 
- function numPages()
- {
-     return Math.ceil(jsonData.length / records_per_page);
- }
- 
- window.onload = function() {
-     changePage(1);
- };
-     </script>
- 
-     <style>
-          .footerLinks {
-         width: 100% !important;
-         font-size: medium !important
-     }
-         .divSosialLinks {
-             display: flex;
-             justify-content: center;
-         }
-     
-         .slide-wrapper .slide-two .slide-image:before {
-             bottom: 40%;
-             right: 45%;
-             background-color: var(--clr-theme-1);
-     
-         }
-     
-         .owl-carousel .owl-item {
-             position: initial;
-         }
-     
-         element.style {
-             width: 305.92px;
-             margin-right: 15px;
-         }
-     
-         .full-wrap .owl-carousel .owl-stage-outer .owl-item.active {
-             opacity: 1;
-         }
-     
-         .full-wrap .owl-carousel .owl-stage-outer .owl-item {
-             opacity: 0.4;
-         }
-     
-         .owl-carousel.owl-drag .owl-item {
-             -ms-touch-action: pan-y;
-             touch-action: pan-y;
-             -webkit-user-select: none;
-             -moz-user-select: none;
-             -ms-user-select: none;
-             user-select: none;
-         }
-     
-         .owl-carousel .owl-item {
-             min-height: 1px;
-             float: left;
-             -webkit-touch-callout: none;
-         }
-     
-         .owl-carousel,
-         .owl-carousel .owl-item {
-             position: initial !important;
-         }
-     
-         .pop .fm-single-featured:after {
-             background-color: transparent !important;
-             background: none !important;
-     
-         }
-     
-         .pop .fm-single-featured i {
-             display: none !important;
-         }
-     
-         @media (max-width: 2300px) {
-     
-             .full-wrap .container-fluid,
-             .full-wrap .container-sm,
-             .full-wrap .container-md,
-             .full-wrap .container-lg,
-             .full-wrap .container-xl {
-                 padding-left: 5% !important;
-                 padding-right: 5% !important;
-             }
-         }
-     
-         #testimonial .cards .cardd {
-             margin-right: 3%;
-         }
-     </style>
-     <style>    
-         .theme-dark {
-             background-color: #171717
-         }
-         
- a {
-     text-decoration: none;
-   }
-   
-   .pagination-wrapper {
-     text-align: center;
-     margin: 40px 0;
-     margin-left:auto;
-     margin-right:auto
-   }
-   
-   .pagination {
-     display: inline-block;
-     height: 70px;
-     margin-top: 40px;
-     padding: 0 25px;
-     border-radius: 35px;
-     background-color: #eee;
-   }
-   @media only screen and (max-width: 1199px) {
-     .pagination {
-       height: 50px;
-       margin-top: 50px;
-       padding: 0 10px;
-       border-radius: 25px;
-     }
-   }
-   
-   .page-numbers {
-     display: block;
-     padding: 0 25px;
-     float: left;
-     transition: 400ms ease;
-     color: #595959;
-     font-size: 20px;
-     letter-spacing: 0.1em;
-     line-height: 70px;
-   }
-   .page-numbers:hover, .page-numbers.current {
-     background-color: #555555;
-     color: #fff;
-   }
-   .page-numbers.prev:hover, .page-numbers.next:hover {
-     background-color: transparent;
-     color: #86c023;
-   }
-   @media only screen and (max-width: 1199px) {
-     .big-category{
-         display: none;
-     }
+
+                    <div class="bd-basic__pagination d-flex align-items-center bdFadeUp mt-30" style="justify-content:center">
+                        <nav>
+                           <ul>
+                              <li>
+                                 <a {% if not video_list.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  video_list.has_previous %}  href="?page={{ video_list.previous_page_number }} "{% endif%}>
+                                    <i class="fa-light fa-arrow-left-long"></i>
+                                 </a>
+                              </li>
+                             
+                              {% for page_num in count %}
+                                 
+                              <li {% if forloop.counter == video_list.number %} class="current" {% endif %}> 
+                                 <a href="?page={{forloop.counter}}">{{forloop.counter}}</a>
+                              </li>
+
+                              {% endfor %}
+                              
+                         
+
+                             
+
+                              <li>
+                                 <a {% if not video_list.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if video_list.has_next %}  href="?page={{ video_list.next_page_number }}" {% endif%}>
+                                    <i class="fa-light fa-arrow-right-long"></i>
+                                 </a>
+                              </li>
+                              
+                           </ul>
+                        </nav>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+        <div style="display: none;" class="slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Tövsiyyə olunan videolar</h2>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider owl-carousel owl-theme">
+                            {% for video in related_videos %}
+                            <div class="owl-items">
+                                <a class="slide-one" href={{video.video.url}} target="_blank">
+                                    <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;" src="{{ video.coverimage.url }}" alt="image"></div>
+                                    <div class="slide-content" style="height:9em">
+                                        <h2>{{video.name}}  </h2>
+                                        <p style="line-height: 25px;">{{video.content|slice:70}}</p>
+                                   
+                                        <span class="tag">{{video.created_at}}</span>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+
+        <!-- slider wrapper -->
+        <div style="display: none;" class="slide-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-left mb-4 mt-1">
+                        <h2>Filmlər</h2>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider owl-carousel owl-theme">
+                            {% for movie in movies %}
+                            <div class="owl-items">
+                                <a class="slide-one slide-two" href="{{movie.video.url}}" target="_blank">
+                                    <div class="slide-image" style="background-image: url('{% static 'templatestyles/images/s17.png' %}');"></div>
+                                    <div class="slide-content">
+                                        <h2>{{movie.name}} <img src="{% static 'templatestyles/images/plus.png' %}" alt="icon" class="add-wishlist"></h2>
+                                        <span class="tag">{{ movie.created_at }}</span>
+                                    
+                                   
+                            
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
+  
+        <!-- slider wrapper -->
+        <!-- slider wrapper -->
     
-   }
-   @media only screen and (max-width: 1198px){
-     .mini-category{
-         display: none;
-     }
-   }
- 
-   @media only screen and (max-width: 1199px) {
-     .mini-category{
-         display:flex !important;
-     }
-   }
-   @media only screen and (max-width: 1199px) {
-     .page-numbers {
-       padding: 0 15px;
-       font-size: 16px;
-       line-height: 50px;
-     }
-   }
-   @media only screen and (min-width: 120px) and (max-width: 1024px) {
-     .page-numbers {
-       padding: 0 14px;
-       display: none;
-     }
-     .page-numbers:nth-of-type(2) {
-       position: relative;
-       padding-right: 50px;
-     }
-     .page-numbers:nth-of-type(2)::after {
-       content: "...";
-       position: absolute;
-       font-size: 25px;
-       top: 0;
-       left: 45px;
-     }
-     .page-numbers:nth-child(-n+3), .page-numbers:nth-last-child(-n+3) {
-       display: block;
-     }
-     .page-numbers:nth-last-child(-n+4) {
-       padding-right: 14px;
-     }
-     .page-numbers:nth-last-child(-n+4)::after {
-       content: none;
-     }
-   }
-   .owl-items p{
-     color:black;
-     line-height: 50px;
-     font-weight: 500;
-   }
-   .transparent-header{
-     position: relative;
- }
- .banner-wrapper{
-     margin-top:10px;
- }
- </style>
- <style>
-     .isotope-filter--isotope{
-        --wp--preset--font-size--normal: 16px;
-        --wp--preset--font-size--huge: 42px;
-        --drawer-width: 480px;
-        --neg-drawer-width: calc(var(--drawer-width)*-1);
-        --woocommerce: #7F54B3;
-        --wc-green: #7ad03a;
-        --wc-red: #a00;
-        --wc-orange: #ffba00;
-        --wc-blue: #2ea2cc;
-        --wc-primary: #7F54B3;
-        --wc-primary-text: white;
-        --wc-secondary: #e9e6ed;
-        --wc-secondary-text: #515151;
-        --wc-highlight: #b3af54;
-        --wc-highligh-text: white;
-        --wc-content-bg: #fff;
-        --wc-subtext: #767676;
-        --page-title-display: block;
-        --wp--preset--color--black: #000000;
-        --wp--preset--color--cyan-bluish-gray: #abb8c3;
-        --wp--preset--color--white: #ffffff;
-        --wp--preset--color--pale-pink: #f78da7;
-        --wp--preset--color--vivid-red: #cf2e2e;
-        --wp--preset--color--luminous-vivid-orange: #ff6900;
-        --wp--preset--color--luminous-vivid-amber: #fcb900;
-        --wp--preset--color--light-green-cyan: #7bdcb5;
-        --wp--preset--color--vivid-green-cyan: #00d084;
-        --wp--preset--color--pale-cyan-blue: #8ed1fc;
-        --wp--preset--color--vivid-cyan-blue: #0693e3;
-        --wp--preset--color--vivid-purple: #9b51e0;
-        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
-        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
-        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
-        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
-        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
-        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
-        --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
-        --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
-        --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
-        --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
-        --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
-        --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
-        --wp--preset--font-size--small: 13px;
-        --wp--preset--font-size--medium: 20px;
-        --wp--preset--font-size--large: 36px;
-        --wp--preset--font-size--x-large: 42px;
-        --wp--preset--spacing--20: 0.44rem;
-        --wp--preset--spacing--30: 0.67rem;
-        --wp--preset--spacing--40: 1rem;
-        --wp--preset--spacing--50: 1.5rem;
-        --wp--preset--spacing--60: 2.25rem;
-        --wp--preset--spacing--70: 3.38rem;
-        --wp--preset--spacing--80: 5.06rem;
-        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
-        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
-        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
-        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
-        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        color: #9da1a5;
-        --e-global-color-primary: #6EC1E4;
-        --e-global-color-secondary: #54595F;
-        --e-global-color-text: #7A7A7A;
-        --e-global-color-accent: #61CE70;
-        --e-global-color-1c81762: #4054B2;
-        --e-global-color-3a972d51: #23A455;
-        --e-global-color-6c80e7e5: #000;
-        --e-global-color-528eeb43: #FFF;
-        --e-global-typography-primary-font-family: "Roboto";
-        --e-global-typography-primary-font-weight: 600;
-        --e-global-typography-secondary-font-family: "Roboto Slab";
-        --e-global-typography-secondary-font-weight: 400;
-        --e-global-typography-text-font-family: "Roboto";
-        --e-global-typography-text-font-weight: 400;
-        --e-global-typography-accent-font-family: "Roboto";
-        --e-global-typography-accent-font-weight: 500;
-        --e-column-margin-right: 0px;
-        --e-column-margin-left: 0px;
-        --flex-direction: initial;
-        --flex-wrap: initial;
-        --justify-content: initial;
-        --align-items: initial;
-        --align-content: initial;
-        --gap: initial;
-        --flex-basis: initial;
-        --flex-grow: initial;
-        --flex-shrink: initial;
-        --order: initial;
-        --align-self: initial;
-        --swiper-theme-color: #000;
-        --swiper-navigation-size: 44px;
-        --swiper-pagination-bullet-size: 6px;
-        --swiper-pagination-bullet-horizontal-gap: 6px;
-        --widgets-spacing: 20px 20px;
-        box-sizing: border-box;
-        margin-right: auto;
-        margin-left: auto;
-        width: 1170px;
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 22px;
-        text-align: right;}
-        .isotope-filter a.active:before {
-            width: 100%;
-        }
-        .isotope-filter a:before {
-            position: absolute;
-            bottom: 6px;
-            left: 50%;
-            width: 0;
-            transform: translateX(-50%);
-            -webkit-transform: translateX(-50%);
-            content: '';
-            border-top: 1px solid;
-            transition: all 300ms;
-        }
-       .isotope-filter a:after{
-            margin-left: 4px;
-            content: '('attr(data-count)')';
-            font-size: 0.8em;
-            line-height: 1;
-            vertical-align: super;
-            letter-spacing: 0;
-        }
-        .elementor-widget-gt3-core-portfolio .isotope-filter a:after, .elementor-widget-gt3-core-team .isotope-filter a:after, .isotope-filter a span.count {
-            margin-left: 4px;
-            content: '('attr(data-count)')';
-            font-size: 0.8em;
-            line-height: 1;
-            vertical-align: super;
-            letter-spacing: 0;
-        }
-        .isotope-filter--isotope a{
-        text-align: right;
-        outline: none !important;
-        box-sizing: border-box;
-        box-shadow: none;
-        text-decoration: none;
-        padding: 10px 0;
-        font-size: 12px;
-        letter-spacing: .08em;
-        line-height: 24px;
-        transition: all .4s;
-        margin-right: 30px;
-        position: relative;
-        display: inline-block;
-        text-transform: uppercase;
-        color: #FFFFFF;}
+        <!-- slider wrapper -->
+        <!-- footer wrapper -->
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row" style="align-items: center;">
+                    <div class="col-xl-3 text-left" style="display: flex;justify-content: center;margin-bottom: 10px;" ><img style="
+                        height: 105px; " src="{{head.logoheader.url}}" alt=""></div>
+                    <div class="col-xl-9 text-left">
+                        <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
+                            remove the chain from about my victim’s neck only through language.</h4>
+                    </div>
     
     
-        .transparent-header{
-            position: relative;
+                    <div style="margin-bottom:3%" class="col-sm-12">
+                        <div class="middle-footer">
+                            <div class="row">
+    
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6 divSosialLinks">
+                                    <div style="text-align: start;">
+                                        <h5 style="font-size: large;">Sosİal şəbəkələr</h5>
+                                        <ul>
+                                            <li><a style="font-size: medium;" href="#">İnstagram</a></li>
+                                            <li><a style="font-size:medium ;" href="#">Facebook</a></li>
+                                            <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+    
+                                        </ul>
+                                    </div>
+    
+                                </div>
+    
+    
+    
+                                <div style="display: flex;justify-content:center;"
+                                    class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
+                                    <div style="text-align:start">
+                                        <h5 class="mb-3" style="font-size:large;width:150px;">Lİnklər</h5>
+                                        <br>
+                                        <a href="{% url 'home' %}">
+                                            <p class="footerLinks">Əsas Səhifə</p>
+                                        </a>
+                                        <a href="{% url 'video' %}">
+                                            <p class="footerLinks">Video</p>
+                                        </a>
+                                        <a href="{% url 'foto' %}">
+                                            <p class="footerLinks">Foto</p>
+                                        </a>
+                                        <a href="{% url 'blog' %}">
+                                            <p class="footerLinks">Xəbərlər</p>
+                                        </a>
+                                        <a href="{% url 'article' %}">
+                                            <p class="footerLinks">Məqalələr</p>
+                                        </a>
+                                        <a href="{% url 'about' %}">
+                                            <p class="footerLinks">Layihə haqqında</p>
+                                        </a>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
+                                    style="display: flex;justify-content:center;">
+                                    <div style="width: 100%;text-align:start;">
+                                        <h5 style="font-size: large; ">Bİzİmlə əlaqə</h5>
+                                        <ul>
+                                            <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
+                                            <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                            </li>
+                                            <li><a style="font-size: medium;" href="#">Əlaqə nömrəsi: +994 51 312 65 99</a>
+                                            </li>
+    
+    
+                                        </ul>
+                                    </div>
+    
+                                </div>
+    
+    
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+        <!-- footer wrapper -->
+
+    </div>
+
+    <div class="player-container lightbox" style="display: none">
+        <a href="#" class="close-video-player btn-lightbox-close"><i class="ti-close"></i></a>
+        <div class='player'>
+            <video id='video' src="{% static 'templatestyles/images/video1.mp4' %}" playsinline></video>
+                <div class='play-btn-big'></div>
+                <div class='controls'>
+                    <div class="time"><span class="time-current"></span><span class="time-total"></span></div>
+                    <div class='progress'>
+                        <div class='progress-filled'></div>
+                    </div>
+                    <div class='controls-main'>
+                        <div class='controls-left'>
+                            <div class='volume'>
+                                <div class='volume-btn loud'>
+                                    <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.75497 17.6928H2C0.89543 17.6928 0 16.7973 0 15.6928V8.30611C0 7.20152 0.895431 6.30611 2 6.30611H6.75504L13.9555 0.237289C14.6058 -0.310807 15.6 0.151473 15.6 1.00191V22.997C15.6 23.8475 14.6058 24.3098 13.9555 23.7617L6.75497 17.6928Z" transform="translate(0 0.000518799)" fill="white"/>
+                                        <path id="volume-low" d="M0 9.87787C2.87188 9.87787 5.2 7.66663 5.2 4.93893C5.2 2.21124 2.87188 0 0 0V2C1.86563 2 3.2 3.41162 3.2 4.93893C3.2 6.46625 1.86563 7.87787 0 7.87787V9.87787Z" transform="translate(17.3333 7.44955)" fill="white"/>
+
+                                        <path id="volume-high" d="M0 16.4631C4.78647 16.4631 8.66667 12.7777 8.66667 8.23157C8.66667 3.68539 4.78647 0 0 0V2C3.78022 2 6.66667 4.88577 6.66667 8.23157C6.66667 11.5773 3.78022 14.4631 0 14.4631V16.4631Z" transform="translate(17.3333 4.15689)" fill="white"/> 
+                                <path id="volume-off" d="M1.22565 0L0 1.16412L3.06413 4.0744L0 6.98471L1.22565 8.14883L4.28978 5.23853L7.35391 8.14883L8.57956 6.98471L5.51544 4.0744L8.57956 1.16412L7.35391 0L4.28978 2.91031L1.22565 0Z" transform="translate(17.3769 8.31403)" fill="white"/>
+                                    </svg>
+
+                                </div>
+                                <div class='volume-slider'>
+                                    <div class='volume-filled'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='play-btn paused'></div>
+                        <div class="controls-right">
+                            <div class='speed'>
+                                <ul class='speed-list'>
+                                    <li class='speed-item' data-speed='0.5'>0.5x</li>
+                                    <li class='speed-item' data-speed='0.75'>0.75x</li>
+                                    <li class='speed-item active' data-speed='1'>1x</li>
+                                    <li class='speed-item' data-speed='1.5'>1.5x</li>
+                                    <li class='speed-item' data-speed='2'>2x</li>
+                                </ul>
+                            </div>
+                            <div class='fullscreen'>
+                                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0V-1.5H-1.5V0H0ZM0 18H-1.5V19.5H0V18ZM26 18V19.5H27.5V18H26ZM26 0H27.5V-1.5H26V0ZM1.5 6.54545V0H-1.5V6.54545H1.5ZM0 1.5H10.1111V-1.5H0V1.5ZM-1.5 11.4545V18H1.5V11.4545H-1.5ZM0 19.5H10.1111V16.5H0V19.5ZM24.5 11.4545V18H27.5V11.4545H24.5ZM26 16.5H15.8889V19.5H26V16.5ZM27.5 6.54545V0H24.5V6.54545H27.5ZM26 -1.5H15.8889V1.5H26V-1.5Z" transform="translate(2 2)" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+         .footerLinks {
+        width: 100% !important;
+        font-size: medium !important
+    }
+        .divSosialLinks {
+            display: flex;
+            justify-content: center;
         }
-        .banner-wrapper{
-            margin-top:10px;
+    
+        .slide-wrapper .slide-two .slide-image:before {
+            bottom: 40%;
+            right: 45%;
+            background-color: var(--clr-theme-1);
+    
+        }
+    
+        .owl-carousel .owl-item {
+            position: initial;
+        }
+    
+        element.style {
+            width: 305.92px;
+            margin-right: 15px;
+        }
+    
+        .full-wrap .owl-carousel .owl-stage-outer .owl-item.active {
+            opacity: 1;
+        }
+    
+        .full-wrap .owl-carousel .owl-stage-outer .owl-item {
+            opacity: 0.4;
+        }
+    
+        .owl-carousel.owl-drag .owl-item {
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        .owl-carousel .owl-item {
+            min-height: 1px;
+            float: left;
+            -webkit-touch-callout: none;
+        }
+    
+        .owl-carousel,
+        .owl-carousel .owl-item {
+            position: initial !important;
+        }
+    
+        .pop .fm-single-featured:after {
+            background-color: transparent !important;
+            background: none !important;
+    
+        }
+    
+        .pop .fm-single-featured i {
+            display: none !important;
+        }
+    
+        @media (max-width: 2300px) {
+    
+            .full-wrap .container-fluid,
+            .full-wrap .container-sm,
+            .full-wrap .container-md,
+            .full-wrap .container-lg,
+            .full-wrap .container-xl {
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+            }
+        }
+    
+        #testimonial .cards .cardd {
+            margin-right: 3%;
         }
     </style>
-    <style>.containerr {
-     height: 100%;
-     display: flex;
-     justify-content: right;
-     align-items: center;
-   }
-   input[type='checkbox'] {
-     display: none;
-   }
-   .triggerrs {
-     display: flex;
-   }
-   .contentt {
-     position: absolute;
-     display: none;
-     z-index: 2;
-     top: 100%;
-     border-radius: 3px;
-   }
-   .inner-section span:hover {
-     font-size: large;
-   }
-   .inner-section span a {
-     color: black;
-     font-weight: 600;
-   }
-   .label {
-     border: 1px solid #7d7d7d;
-     padding: 0.5em 1.7em;
-     cursor: pointer;
-     position: relative;
-   }
-   .label:hover {
-     background: #bcbcbc;
-   }
-   .triggerrs > input:checked + label {
-     background: #bcbcbc;
-     border: 1px solid transparent;
-   }
-   .triggerrs > input:checked + label > div.contentt {
-     display: flex;
-     top: 100%;
-     padding: 0.5em;
-     background: #d3d3d3;
-     right: -1px;
-   }
-   .triggerrs > input:checked + label > div.contentt div {
-     padding: 0em 0.5em;
-   }
-   .triggerrs > input:checked + label > div.contentt div + div {
-     border-left: 1px solid #7d7d7d;
-   }</style>
- 
-     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
-     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
-     <script src="{% static 'templatestyles/js/video-player.js' %}"></script>
-     <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-     <script src="{% static 'assets/js/meanmenu.js' %}"></script>
-     <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
-     <script src="{% static 'assets/js/slick.min.js' %}"></script>
-     <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
-     <script src="{% static 'assets/js/parallax.min.js' %}"></script>
-     <script src="{% static 'assets/js/gsap.min.js' %}"></script>
-     <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-     <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
-     <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
-     <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
-     <script src="{% static 'assets/js/appair.min.js' %}"></script>
-     <script src="{% static 'assets/js/knob.min.js' %}"></script>
-     <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
-     <script src="{% static 'assets/js/ajax-form.js' %}"></script>
-     <script src="{% static 'assets/js/wow.min.js' %}"></script>
-     <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
-     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
-     <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
-     <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
-     <script src="{% static 'assets/js/main.js' %}"></script>
-     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
-    </body>
+    <style>    
+        .theme-dark {
+            background-color: #171717
+        }
+        
+a {
+    text-decoration: none;
+  }
+  
+  .pagination-wrapper {
+    text-align: center;
+    margin: 40px 0;
+    margin-left:auto;
+    margin-right:auto
+  }
+  
+  .pagination {
+    display: inline-block;
+    height: 70px;
+    margin-top: 40px;
+    padding: 0 25px;
+    border-radius: 35px;
+    background-color: #eee;
+  }
+  @media only screen and (max-width: 1199px) {
+    .pagination {
+      height: 50px;
+      margin-top: 50px;
+      padding: 0 10px;
+      border-radius: 25px;
+    }
+  }
+  
+  .page-numbers {
+    display: block;
+    padding: 0 25px;
+    float: left;
+    transition: 400ms ease;
+    color: #595959;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    line-height: 70px;
+  }
+  .page-numbers:hover, .page-numbers.current {
+    background-color: #555555;
+    color: #fff;
+  }
+  .page-numbers.prev:hover, .page-numbers.next:hover {
+    background-color: transparent;
+    color: #86c023;
+  }
+  @media only screen and (max-width: 1199px) {
+    .big-category{
+        display: none;
+    }
+   
+  }
+  @media only screen and (max-width: 1198px){
+    .mini-category{
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .mini-category{
+        display:flex !important;
+    }
+  }
+  @media only screen and (max-width: 1199px) {
+    .page-numbers {
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 50px;
+    }
+  }
+  @media only screen and (min-width: 120px) and (max-width: 1024px) {
+    .page-numbers {
+      padding: 0 14px;
+      display: none;
+    }
+    .page-numbers:nth-of-type(2) {
+      position: relative;
+      padding-right: 50px;
+    }
+    .page-numbers:nth-of-type(2)::after {
+      content: "...";
+      position: absolute;
+      font-size: 25px;
+      top: 0;
+      left: 45px;
+    }
+    .page-numbers:nth-child(-n+3), .page-numbers:nth-last-child(-n+3) {
+      display: block;
+    }
+    .page-numbers:nth-last-child(-n+4) {
+      padding-right: 14px;
+    }
+    .page-numbers:nth-last-child(-n+4)::after {
+      content: none;
+    }
+  }
+  .owl-items p{
+    color:black;
+    line-height: 50px;
+    font-weight: 500;
+  }
+  .transparent-header{
+    position: relative;
+}
+.banner-wrapper{
+    margin-top:10px;
+}
+</style>
+<style>
+    .isotope-filter--isotope{
+       --wp--preset--font-size--normal: 16px;
+       --wp--preset--font-size--huge: 42px;
+       --drawer-width: 480px;
+       --neg-drawer-width: calc(var(--drawer-width)*-1);
+       --woocommerce: #7F54B3;
+       --wc-green: #7ad03a;
+       --wc-red: #a00;
+       --wc-orange: #ffba00;
+       --wc-blue: #2ea2cc;
+       --wc-primary: #7F54B3;
+       --wc-primary-text: white;
+       --wc-secondary: #e9e6ed;
+       --wc-secondary-text: #515151;
+       --wc-highlight: #b3af54;
+       --wc-highligh-text: white;
+       --wc-content-bg: #fff;
+       --wc-subtext: #767676;
+       --page-title-display: block;
+       --wp--preset--color--black: #000000;
+       --wp--preset--color--cyan-bluish-gray: #abb8c3;
+       --wp--preset--color--white: #ffffff;
+       --wp--preset--color--pale-pink: #f78da7;
+       --wp--preset--color--vivid-red: #cf2e2e;
+       --wp--preset--color--luminous-vivid-orange: #ff6900;
+       --wp--preset--color--luminous-vivid-amber: #fcb900;
+       --wp--preset--color--light-green-cyan: #7bdcb5;
+       --wp--preset--color--vivid-green-cyan: #00d084;
+       --wp--preset--color--pale-cyan-blue: #8ed1fc;
+       --wp--preset--color--vivid-cyan-blue: #0693e3;
+       --wp--preset--color--vivid-purple: #9b51e0;
+       --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+       --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+       --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+       --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+       --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+       --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+       --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+       --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+       --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+       --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+       --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+       --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+       --wp--preset--font-size--small: 13px;
+       --wp--preset--font-size--medium: 20px;
+       --wp--preset--font-size--large: 36px;
+       --wp--preset--font-size--x-large: 42px;
+       --wp--preset--spacing--20: 0.44rem;
+       --wp--preset--spacing--30: 0.67rem;
+       --wp--preset--spacing--40: 1rem;
+       --wp--preset--spacing--50: 1.5rem;
+       --wp--preset--spacing--60: 2.25rem;
+       --wp--preset--spacing--70: 3.38rem;
+       --wp--preset--spacing--80: 5.06rem;
+       --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+       --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+       --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+       --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+       --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: 16px;
+       line-height: 24px;
+       font-weight: 400;
+       color: #9da1a5;
+       --e-global-color-primary: #6EC1E4;
+       --e-global-color-secondary: #54595F;
+       --e-global-color-text: #7A7A7A;
+       --e-global-color-accent: #61CE70;
+       --e-global-color-1c81762: #4054B2;
+       --e-global-color-3a972d51: #23A455;
+       --e-global-color-6c80e7e5: #000;
+       --e-global-color-528eeb43: #FFF;
+       --e-global-typography-primary-font-family: "Roboto";
+       --e-global-typography-primary-font-weight: 600;
+       --e-global-typography-secondary-font-family: "Roboto Slab";
+       --e-global-typography-secondary-font-weight: 400;
+       --e-global-typography-text-font-family: "Roboto";
+       --e-global-typography-text-font-weight: 400;
+       --e-global-typography-accent-font-family: "Roboto";
+       --e-global-typography-accent-font-weight: 500;
+       --e-column-margin-right: 0px;
+       --e-column-margin-left: 0px;
+       --flex-direction: initial;
+       --flex-wrap: initial;
+       --justify-content: initial;
+       --align-items: initial;
+       --align-content: initial;
+       --gap: initial;
+       --flex-basis: initial;
+       --flex-grow: initial;
+       --flex-shrink: initial;
+       --order: initial;
+       --align-self: initial;
+       --swiper-theme-color: #000;
+       --swiper-navigation-size: 44px;
+       --swiper-pagination-bullet-size: 6px;
+       --swiper-pagination-bullet-horizontal-gap: 6px;
+       --widgets-spacing: 20px 20px;
+       box-sizing: border-box;
+       margin-right: auto;
+       margin-left: auto;
+       width: 1170px;
+       max-width: 100%;
+       padding: 0;
+       margin-bottom: 22px;
+       text-align: right;}
+       .isotope-filter a.active:before {
+           width: 100%;
+       }
+       .isotope-filter a:before {
+           position: absolute;
+           bottom: 6px;
+           left: 50%;
+           width: 0;
+           transform: translateX(-50%);
+           -webkit-transform: translateX(-50%);
+           content: '';
+           border-top: 1px solid;
+           transition: all 300ms;
+       }
+      .isotope-filter a:after{
+           margin-left: 4px;
+           content: '('attr(data-count)')';
+           font-size: 0.8em;
+           line-height: 1;
+           vertical-align: super;
+           letter-spacing: 0;
+       }
+       .elementor-widget-gt3-core-portfolio .isotope-filter a:after, .elementor-widget-gt3-core-team .isotope-filter a:after, .isotope-filter a span.count {
+           margin-left: 4px;
+           content: '('attr(data-count)')';
+           font-size: 0.8em;
+           line-height: 1;
+           vertical-align: super;
+           letter-spacing: 0;
+       }
+       .isotope-filter--isotope a{
+       text-align: right;
+       outline: none !important;
+       box-sizing: border-box;
+       box-shadow: none;
+       text-decoration: none;
+       padding: 10px 0;
+       font-size: 12px;
+       letter-spacing: .08em;
+       line-height: 24px;
+       transition: all .4s;
+       margin-right: 30px;
+       position: relative;
+       display: inline-block;
+       text-transform: uppercase;
+       color: #FFFFFF;}
+   
+   
+       .transparent-header{
+           position: relative;
+       }
+       .banner-wrapper{
+           margin-top:10px;
+       }
+   </style>
+   <style>.containerr {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  .triggerrs {
+    display: flex;
+  }
+  .contentt {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    top: 100%;
+    border-radius: 3px;
+  }
+  .inner-section span:hover {
+    font-size: large;
+  }
+  .inner-section span a {
+    color: black;
+    font-weight: 600;
+  }
+  .label {
+    border: 1px solid #7d7d7d;
+    padding: 0.5em 1.7em;
+    cursor: pointer;
+    position: relative;
+  }
+  .label:hover {
+    background: #bcbcbc;
+  }
+  .triggerrs > input:checked + label {
+    background: #bcbcbc;
+    border: 1px solid transparent;
+  }
+  .triggerrs > input:checked + label > div.contentt {
+    display: flex;
+    top: 100%;
+    padding: 0.5em;
+    background: #d3d3d3;
+    right: -1px;
+  }
+  .triggerrs > input:checked + label > div.contentt div {
+    padding: 0em 0.5em;
+  }
+  .triggerrs > input:checked + label > div.contentt div + div {
+    border-left: 1px solid #7d7d7d;
+  }</style>
+
+    <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
+    <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
+    <script src="{% static 'templatestyles/js/video-player.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
+    <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
+    <script src="{% static 'assets/js/appair.min.js' %}"></script>
+    <script src="{% static 'assets/js/knob.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax-form.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/fontawesome.min.js' %}"></script>
+    <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+</body>
 
 
 <!-- Mirrored from uitheme.net/vstream/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Sep 2023 08:02:21 GMT -->
