@@ -589,7 +589,7 @@
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
                               {% for blg in sourcearticles %}
-                              <div {% if not forloop.counter|divisibleby:1 and not forloop.counter|divisibleby:2 and not forloop.counter|divisibleby:3 %} style="display: none;"{% endif %} data-filter="{{forloop.counter}}" class="rc__post">
+                              <div {% if not forloop.first %} style="display: none;"{% endif %} data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
                                 <a href="{{blg.href}}">{{forloop.counter}}</a>
                                 </div>
