@@ -54,4 +54,4 @@ admin.site.register(AnotherSourceArticles)
 class CategoryAdmin(admin.ModelAdmin):
     exclude = ('name',) 
 
-admin.site.register(Category,CategoryAdmin)
+admin.site.register(Category)
