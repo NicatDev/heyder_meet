@@ -769,11 +769,7 @@ pre code {
   }
 
 }
-@media (max-width:1024px){
-  h3{
-    font-size: 21px !important;
-  }
-}
+
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
   width: 100%;
