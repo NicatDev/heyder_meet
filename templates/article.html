@@ -62,18 +62,19 @@
 
 
 
-    <!-- header area start -->
-    <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
+     <!-- header wrapper -->
+     <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
         <div class="container">
-            <div class="row align-items-center justify-content-lg-between">
+            <div class="row align-items-center justify-content-lg-between pr-5 pl-5">
                 <div class="header-wrapper">
                     <div class="fm-header-logo-wrapper">
                         <a href="{% url 'home' %}" class="fm-header-logo">
-                            <img src="{% static 'assets/img/logo/logo.svg'  %}" alt="img not found">
+                            <img src="{{head.logoheader.url}}" alt="img not found">
                         </a>
                         <span class="separator d-none d-xl-block"></span>
 
-                        <div class="dinozavr" style="display:flex;align-items:center;justify-content:center;gap:2rem;">
+                        <div class="dinozavr"
+                            style="display:flex;align-items:center;justify-content:center;gap:2rem;">
                             <div id="lang_selector" class="language-dropdown">
                                 <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
                                     <span class="flag"></span>
@@ -95,8 +96,8 @@
                                 <span class="fm-header-bar-line fm-header-bar-line-3"></span>
                             </a>
                             <!-- <img src=" {% static 'russia.png' %}" alt="">
-                    
-                     {% static 'azerbaijan.png' %} -->
+                   
+                    {% static 'azerbaijan.png' %} -->
 
 
                         </div>
@@ -237,17 +238,18 @@
                                         { 'overflow': 'visible' }
                                     )
                                 });
+
                                 $("ul.lang-list li").click(function () {
                                     $("ul.lang-list li").removeClass("selected");
                                     $(this).addClass("selected");
                                     if ($(this).hasClass('lang-en')) {
                                         $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-pt");
                                         $("#lang_selected").html("<p>AZ</p>")
-                                        window.location.href = '/meqale'
+                                        window.location.href = '/'
                                     } else if ($(this).hasClass('lang-pt')) {
                                         $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
                                         $("#lang_selected").html("<p>RU</p>")
-                                        window.location.href = '/ru/meqale'
+                                        window.location.href = '/ru'
                                     }
                                     $(".language-dropdown").removeClass("open");
                                 });
@@ -258,21 +260,9 @@
                                 }
                             });
                         </script>
-                        <!-- 33 -->
                         <script>
-
                             var currentURL = "{{ request.build_absolute_uri }}";
                             if (currentURL.endsWith('ru/')) {
-                                console.log('1')
-                                $("ul.lang-list li").removeClass("selected");
-
-
-                                $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
-                                $("#lang_selected").html("<p>RU</p>")
-                                $("ul.lang-list li.lang-pt").remove();
-                            }
-                            else if (currentURL.includes('ru')) {
-                                console.log('2')
                                 $("ul.lang-list li").removeClass("selected");
 
 
@@ -289,50 +279,52 @@
 
                             <nav id="mobile-menu" style="display: block;">
                                 <ul>
-                                    <li class="active has-dropdown">
+                                    <li class="has-dropdown">
                                         <a href="{% url 'home' %}">Əsas səhifə</a>
 
                                     </li>
-
+                                    <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
+                                    </li>
 
                                     <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
-                                        <ul class="submenu">
+                                        <!-- <ul class="submenu">
                                             {% for cat in vidcategories %}
                                             <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                             {% endfor %}
-
-                                        </ul>
+                                        </ul> -->
                                     </li>
 
                                     <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
-                                        <ul class="submenu">
+                                        <!-- <ul class="submenu">
                                             {% for cat in fotcategories %}
                                             <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                             {% endfor %}
-
-                                        </ul>
+                                        </ul> -->
                                     </li>
+                                    <li class="has-dropdown"><a href="{% url 'article' %}">Məqalələr</a>
 
+                                    </li>
+                                    <li class="has-dropdown"><a href="{% url 'article' %}">Xatirələr</a>
+
+                                    </li>
                                     <li class="has-dropdown has-mega-menu">
                                         <a href="{% url 'blog' %}">Xəbərlər</a>
 
                                     </li>
 
-                                    <li class="has-dropdown"><a href="{% url 'article' %}"> Məqalələr</a>
-
-                                    </li>
+                                    
 
 
-                                    <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
-                                    </li>
+                                    
                                 </ul>
                             </nav>
 
                         </div>
                     </div>
-                    <div class="fm-header-right d-none d-xl-block" style="text-align: center;">
-                        <a href="contact.html" class="fill-btn" style="font-size:14px;line-height:20px">REABİLİTASİYA
-                            <br> HƏYATDIR
+                    <!-- sd -->
+                    <div class="fm-header-right d-none d-xl-block mr-10" style="text-align: center;">
+                        <a href="http://75.119.147.165:199/" class="fill-btn"
+                            style="font-size:15px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
                             <span>
                                 <i class="fa-regular fa-arrow-right"></i>
                             </span>
@@ -343,7 +335,7 @@
             </div>
         </div>
     </header>
-    <!-- header area end -->
+    <!-- header wrapper -->
 
     <!-- sidebar area start -->
     <div class="fm-header-sidebar-area fm-header-sidebar-left">
@@ -695,11 +687,12 @@
     </main>
 
     <!-- footer-area-start -->
-    <div class="footer-wrapper" style="margin-top:0px !important;">
+    <div class="footer-wrapper">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-3 text-left under_logo" ><img src="{{head.logoheader.url}}" alt=""></div>
-                <div class="col-sm-8 text-left">
+            <div class="row" style="align-items: center;">
+                <div class="col-xl-3 text-left" style="display: flex;justify-content: center;margin-bottom: 10px;" ><img style="
+                    height: 105px; " src="{{head.logoheader.url}}" alt=""></div>
+                <div class="col-xl-9 text-left">
                     <h4 class="mb-4">We are digital agency, a small design agency based in paris as i was groping to
                         remove the chain from about my victim’s neck only through language.</h4>
                 </div>
@@ -713,12 +706,17 @@
                                 <div style="text-align: start;">
                                     <h5 style="font-size: large;">Sosİal şəbəkələr</h5>
                                     <ul>
-                                        <li><a style="font-size:medium;" href="#">İnstagram</a></li>
+                                        <li><a style="font-size: medium;" href="#">İnstagram</a></li>
                                         <li><a style="font-size:medium ;" href="#">Facebook</a></li>
                                         <li><a style="font-size:medium ;" href="#">Youtube</a></li>
+
                                     </ul>
                                 </div>
+
                             </div>
+
+
+
                             <div style="display: flex;justify-content:center;"
                                 class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                                 <div style="text-align:start">
@@ -747,7 +745,7 @@
 
                             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" id="elaqe"
                                 style="display: flex;justify-content:center;">
-                                <div style="text-align:start;">
+                                <div style="width: 100%;text-align:start;">
                                     <h5 style="font-size: large; ">Bİzİmlə əlaqə</h5>
                                     <ul>
                                         <li><a style="font-size: medium;" href="#">e-mail:example@gmail.com</a></li>
