@@ -10,7 +10,7 @@ class Category(models.Model):
     name = models.CharField(max_length=800)
     
     def __str__(self):
-        return self.name
+        return self.name + '--category'
 
 class Tag(models.Model):
     name = models.CharField(max_length=800)
