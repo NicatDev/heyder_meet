@@ -767,6 +767,9 @@ pre code {
   .container {
     max-width: 1199px;
   }
+
+}
+@media (max-width:1200px){
   .aboutimagetitle-div h3{
     font-size: 21px;
   }
