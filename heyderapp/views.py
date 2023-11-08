@@ -112,6 +112,44 @@ def article2(request):
         context['head'] = head
     return render(request,'article.html',context)
 
+def article3(request):
+    articles = InMemory.objects.all()
+    tag_name = request.GET.get('tag','')
+    if tag_name:
+        articles = articles.filter(tag__name = tag_name)
+    paginator = Paginator(articles, 12)
+    page = request.GET.get("page", 1)
+    article_list = paginator.get_page(page)
+    tags = Tag.objects.all()
+    categories = Category.objects.all()
+    fotcategories = Category.objects.annotate(photo_count=Count('fotolar')).filter(photo_count__gt=0)
+    vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
+    artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
+    allheader = AllHeader.objects.all()
+    interviews = Interview.objects.all()
+    books =  Book.objects.all()
+
+
+    products_per_page = 3
+
+ 
+    context = {
+        'inmemories':article_list,
+        'fotcategories':fotcategories,
+        'artcategories':artcategories,
+        'vidcategories':vidcategories,
+        'allheader':allheader,
+        'interviews':interviews,
+        'books':books,
+
+        
+        }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
+    return render(request,'article.html',context)
+
+
 def article(request):
     articles = Article.objects.all()
     tag_name = request.GET.get('tag','')
