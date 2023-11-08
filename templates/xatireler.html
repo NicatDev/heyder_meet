@@ -646,6 +646,32 @@
                      </div>
                 </div>
                 <div id="account" hidden class="row g-40 tabpanel">
+                    {% for blog in inmemories %}
+                    <article class="postbox__item mb-60 bdFadeUp">
+                       <div class="postbox__thumb mb-30">
+                          <a href="{% url 'blogsingle' blog.slug %}">
+                             <img src="{{blog.coverimage.url}}" alt="img not found">
+                          </a>
+                       </div>
+                       <div class="postbox__content">
+                          <div class="postbox__meta mb-20">
+                             
+                          
+                          </div>
+                          <h3 class="postbox__title">
+                             <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
+                          </h3>
+                          <div class="postbox__text ">
+                             <p>{{blog.content|slice:200}}...</p>
+                          </div>
+                          <div class="col-xl-12 ">
+
+                             <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                          </div>
+                       </div>
+                    </article>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <!-- slider wrapper -->
