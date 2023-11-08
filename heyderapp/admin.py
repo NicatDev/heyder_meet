@@ -29,6 +29,8 @@ class MyNameAdminVideo2(admin.ModelAdmin):
     }
 class MyOnlyNameAdmin(admin.ModelAdmin):
     exclude = ('name','content','coverimage')
+class BookAdmin(admin.ModelAdmin):
+    exclude = ('name','writer')
 class MyminiTitleAdmin(admin.ModelAdmin):
     exclude = ('minititle','title','content','content2','contentbig')
 admin.site.register(HomeHeader,MyTitleAdmin)
@@ -47,5 +49,5 @@ admin.site.register(Partners)
 admin.site.register(Head)
 admin.site.register(Testimonial)
 admin.site.register(InMemory,MyNameAdminVideo2)
-admin.site.register(Book)
+admin.site.register(Book,BookAdmin)
 admin.site.register(AnotherSourceArticles)
