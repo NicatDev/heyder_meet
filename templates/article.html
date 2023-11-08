@@ -595,33 +595,26 @@
             </div>
          
             <div  id="inventory" hidden class="row g-40 tabpanel">      
-                {% for blog in invideomemories %}
-                <article class="postbox__item mb-60 bdFadeUp">
-                    <div class="postbox__thumb mb-30">
-                       <a href="{% url 'blogsingle' blog.slug %}">
-                          <img src="{{blog.image.url}}" alt="img not found">
-                       </a>
+              
+                <div class="col-sm-12">
+                    <div class="row">
+                        {% for blog in invideomemories %}
+                        <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
+                            <a class="slide-one" href={{video.video.url}} target="_blank">
+                                <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
+                                <div class="slide-content" style="">
+                                    <h2 style="height:6rem">{{video.name}} </h2>
+                                    <p style="height: 4rem;">{{video.content|slice:70}}...</p>
+                             
+                                    <!-- <span class="tag">{{video.created_at}}</span> -->
+                           
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="postbox__content">
-                       <div class="postbox__meta mb-20">
-                        
-                          <span>
-                             {{blog.date}}
-                          </span>
-                       </div>
-                       <h3 class="postbox__title">
-                          <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
-                       </h3>
-                       <div class="postbox__text ">
-                          <p>{{blog.content|slice:200}}...</p>
-                       </div>
-                       <div class="col-xl-12 ">
-
-                          <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
-                       </div>
-                    </div>
-                 </article>
-                {% endfor %}</div>
+                </div>
+              </div>
          </div>
       </section>
 
