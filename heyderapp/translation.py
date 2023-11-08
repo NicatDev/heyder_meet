@@ -68,3 +68,7 @@ class BookTranslationOptions(TranslationOptions):
     fields = ('writer', 'name')
 translator.register(Book,BookTranslationOptions)
     
+class CatTranslationOptions(TranslationOptions):
+    fields = ( 'name',)
+
+translator.register(Category,CatTranslationOptions)
