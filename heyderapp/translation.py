@@ -66,5 +66,5 @@ translator.register(Article,ArticleTranslationOptions)
 translator.register(Interview,ArticleTranslationOptions)
 class BookTranslationOptions(TranslationOptions):
     fields = ('writer', 'name')
-translator.register(Book,ArticleTranslationOptions)
+translator.register(Book,BookTranslationOptions)
     
