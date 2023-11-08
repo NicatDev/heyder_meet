@@ -589,7 +589,7 @@
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
                               {% for blg in sourcearticles %}
-                              <div data-filter="{{forloop.counter}}" class="rc__post">
+                              <div {% if forloop.counter not in [1, 2, 3] %} style="display: none;"{% endif %} data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
                                 <a href="{{blg.href}}">{{forloop.counter}}</a>
                                 </div>
@@ -639,17 +639,7 @@
                                 });
                                 this.style.fontWeight = 'bold';
                             });
-                            rcPostElements.forEach(rcPost => {
-                                    const dataFilter = rcPost.getAttribute('data-filter');
-                                    
-                                    console.log(dataFilter,filterValue)
-                                    if (parseInt(dataFilter) === parseInt(1)*3 || parseInt(dataFilter) === parseInt(1)*3-1 || parseInt(dataFilter) === parseInt(1)*3-2) {
-                                        
-                                        rcPost.style.display = 'block';
-                                    } else {
-                                        rcPost.style.display = 'none';
-                                    }
-                                });
+
                     
                         });
                         // rcPostElements.forEach(rcPost => {
