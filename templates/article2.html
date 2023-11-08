@@ -595,7 +595,7 @@
                                 </div>
                                 <div class="rc__post-content">
                                 <h5 class="rc__post-title">
-                                <a href="{{blg.href}}">{{blg.title}}</a>
+                                <a href="{{blg.href}}">{{forloop.counter}}-{{blg.title}}</a>
                                 </h5>
                                 <div class="postbox__meta">
                                 </div>
@@ -623,9 +623,10 @@
                                 // Hide all rc__post elements
                                 rcPostElements.forEach(rcPost => {
                                     const dataFilter = rcPost.getAttribute('data-filter');
+                                    
                                     console.log(dataFilter,filterValue)
                                     if (parseInt(dataFilter) === parseInt(filterValue)*3 || parseInt(dataFilter) === parseInt(filterValue)*3-1 || parseInt(dataFilter) === parseInt(filterValue)*3-3) {
-                                       
+                                        
                                         rcPost.style.display = 'block';
                                     } else {
                                         rcPost.style.display = 'none';
