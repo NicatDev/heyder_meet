@@ -632,7 +632,14 @@
                                         rcPost.style.display = 'none';
                                     }
                                 });
-                                rcPostElements.forEach(rcPost => {
+                           
+                                // Highlight the clicked pagespan
+                                pagespanElements.forEach(span => {
+                                    span.style.fontWeight = 'normal';
+                                });
+                                this.style.fontWeight = 'bold';
+                            });
+                            rcPostElements.forEach(rcPost => {
                                     const dataFilter = rcPost.getAttribute('data-filter');
                                     
                                     console.log(dataFilter,filterValue)
@@ -644,12 +651,6 @@
                                     }
                                 });
                     
-                                // Highlight the clicked pagespan
-                                pagespanElements.forEach(span => {
-                                    span.style.fontWeight = 'normal';
-                                });
-                                this.style.fontWeight = 'bold';
-                            });
                         });
                         // rcPostElements.forEach(rcPost => {
                         //             const dataFilter = rcPost.getAttribute('data-filter');
