@@ -68,12 +68,13 @@ class Video(BaseMixin):
         super(Video, self).save(*args, **kwargs)
 
 class InMemory(BaseMixin):
+    video_or_not = models.BooleanField(null=True,blank=True,verbose_name='video musahiblerde clickleyin')
     name = models.CharField(max_length=800)
-    content = models.TextField()
+    content = models.TextField(verbose_name='coverimagein altinda olan yazi')
     coverimage = models.ImageField()
-    video = models.CharField(max_length=3200)
+    interview = models.TextField(null=True,blank=True,verbose_name='musahibe hissesi, videodusa bos qalsin')
     ordering = models.IntegerField(null=True,blank=True)
-    embed = models.CharField(max_length=4000,null=True,blank=True)
+    embed = models.CharField(max_length=4000,null=True,blank=True,verbose_name='youtube linki')
     
     def __str__(self):
         return self.name + ' -InMemory'
