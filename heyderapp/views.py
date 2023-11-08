@@ -148,6 +148,7 @@ def article3(request):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
+    context['videos'] = Video.objects.all()
     return render(request,'xatireler.html',context)
 
 
