@@ -560,7 +560,7 @@
                                 </div>
                               </div>
                               {% endfor %}
-                              <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;">
+                              <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
                               {% for count in pagecount %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
                               </div>
                            </div>
@@ -810,6 +810,10 @@
     </div>
 </div>
 <style>
+     .footerLinks {
+        width: 100% !important;
+        font-size: medium !important
+    }
     .divSosialLinks {
         display: flex;
         justify-content: center;
