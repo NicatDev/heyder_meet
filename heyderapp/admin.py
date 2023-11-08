@@ -15,7 +15,7 @@ class MyNameAdmin(admin.ModelAdmin):
     exclude = ('name','content')
 
 class MyNameAdmin2(admin.ModelAdmin):
-    exclude = ('name','content')
+    exclude = ('name','content','interview')
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget(config_name='default')},
     }

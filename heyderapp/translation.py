@@ -60,10 +60,11 @@ translator.register(Blog, BlogTranslationOptions)
 
 class ArticleTranslationOptions(TranslationOptions):
     fields = ('name','content')
-
+class ArticleTranslationOptions2(TranslationOptions):
+    fields = ('name','content','interview')
 
 translator.register(Article,ArticleTranslationOptions)
-translator.register(Interview,ArticleTranslationOptions)
+translator.register(Interview,ArticleTranslationOptions2)
 class BookTranslationOptions(TranslationOptions):
     fields = ('writer', 'name')
 translator.register(Book,BookTranslationOptions)
