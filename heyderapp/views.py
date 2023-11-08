@@ -130,7 +130,7 @@ def article3(request):
     allheader = AllHeader.objects.all()
     interviews = Interview.objects.all()
     books =  Book.objects.all()
-
+    sourcearticles = AnotherSourceArticles.objects.all()
 
 
     context = {
@@ -142,6 +142,7 @@ def article3(request):
         'allheader':allheader,
         'interviews':interviews,
         'books':books,
+        'sourcearticles':sourcearticles
 
         
         }

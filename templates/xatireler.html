@@ -674,16 +674,24 @@
                         <div class="sidebar__wrapper">
                            <div class="sidebar__widget ">
                               <div class="sidebar__widget-content">
-                                 <div class="sidebar__search">
-                                    <form action="#" method="GET">
-                                       {% csrf_token %}
-                                       <div class="sidebar__search-input">
-                                          <input name="blog" type="text" placeholder="Xəbərlərdə axtar...">
-                                          <button type="submit">
-                                             <i class="flaticon-search"></i>
-                                          </button>
-                                       </div>
-                                    </form>
+                                <div class="sidebar__post">
+                                    {% for blg in sourcearticles %}
+                                    <div   data-filter="{{forloop.counter}}" class="rc__post">
+                                      <div class="rc__post-thumb">
+                                      <a href="{{blg.href}}">{{forloop.counter}}</a>
+                                      </div>
+                                      <div class="rc__post-content">
+                                      <h5 class="rc__post-title">
+                                      <a href="{{blg.href}}">{{forloop.counter}}-{{blg.title}}</a>
+                                      </h5>
+                                      <div class="postbox__meta">
+                                      </div>
+                                      </div>
+                                    </div>
+                                    {% endfor %}
+                                    <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
+                                    {% for count in pagecount %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
+                                    </div>
                                  </div>
                               </div>
                            </div>
