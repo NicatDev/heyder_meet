@@ -41,7 +41,7 @@ admin.site.register(Blog,MyModelAdmin)
 admin.site.register(Video,MyNameAdminVideo)
 admin.site.register(Photo,MyNameAdmin)
 admin.site.register(Tag)
-y)
+
 admin.site.register(Movie,MyOnlyNameAdmin)
 admin.site.register(About,MyminiTitleAdmin)
 admin.site.register(AllHeader,MyTitleAdmin)
@@ -54,4 +54,4 @@ admin.site.register(AnotherSourceArticles)
 class CategoryAdmin(admin.ModelAdmin):
     exclude = ('name',) 
 
-admin.site.register(Category)
+admin.site.register(Category,CategoryAdmin)
