@@ -769,9 +769,9 @@ pre code {
   }
 
 }
-@media (max-width:1200px){
-  .aboutimagetitle-div h3{
-    font-size: 21px;
+@media (max-width:1024px){
+  h3{
+    font-size: 21px !important;
   }
 }
 
