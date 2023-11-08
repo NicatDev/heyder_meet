@@ -12001,6 +12001,12 @@ label.error {
     width: 200px;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .header-wrapper  {
+    padding: 10px;
+  }
+  
+}
 .header-wrapper .search-div:after {
   font-family: "themify";
   content: "";
