@@ -1109,103 +1109,14 @@
         });
     </script>
 
-    <script>
-        var jsonData
-        var url = '{% url "AnotherSourceView" %}'
-    function fetchDataFromDjangoView() {
-        fetch(url)  // Replace with the URL of your Django view
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();  // Parse the response as JSON
-            })
-            .then(data => {
-                // Process the data received from the server
-                // You can work with the data as needed
-                 jsonData = data;
 
-                // Example: Log the data to the console
-                console.log(jsonData);
-                
-                // You can now use jsonData as a JavaScript variable
-                // and perform operations with it on your HTML template
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
-    console.log(jsonData)
-    // Call the function to fetch data
-    window.onload = function() {
-    fetchDataFromDjangoView();  // Sayfa yüklendiğinde verileri alın
-};
-        var current_page = 1;
-var records_per_page = 4;
-jsonData = [];
-        {% for item in sourcearticles %}
-        jsonData.push("{{ item.title }}"); 
-        {% endfor %}
-console.log(jsonData)
-
-function prevPage()
-{
-    if (current_page > 1) {
-        current_page--;
-        changePage(current_page);
-    }
-}
-
-function nextPage()
-{
-    if (current_page < numPages()) {
-        current_page++;
-        changePage(current_page);
-    }
-}
-
-function changePage(page)
-{
-    var btn_next = document.getElementById("btn_next");
-    var btn_prev = document.getElementById("btn_prev");
-    var listing_table = document.getElementById("data-container");
-    var page_span = document.getElementById("page");
-    console.log(jsonData)
-    if (page < 1) page = 1;
-    if (page > numPages()) page = numPages();
-
-    listing_table.innerHTML = "";
-
-    for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
-        listing_table.innerHTML += jsonData[i] + "<br>";
-    }
-    page_span.innerHTML = page;
-
-    if (page == 1) {
-        btn_prev.style.visibility = "hidden";
-    } else {
-        btn_prev.style.visibility = "visible";
-    }
-
-    if (page == numPages()) {
-        btn_next.style.visibility = "hidden";
-    } else {
-        btn_next.style.visibility = "visible";
-    }
-}
-
-function numPages()
-{
-    return Math.ceil(jsonData.length / records_per_page);
-}
-
-window.onload = function() {
-    changePage(1);
-};
-    </script>
 
    <!-- JS here -->
-   <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+   <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
+    <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
+    <script src="{% static 'templatestyles/js/video-player.js' %}"></script>
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
@@ -1229,8 +1140,9 @@ window.onload = function() {
    <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
    <script src="{% static 'assets/js/main.js' %}"></script>
    <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
-</body>
+   <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+
+   </body>
 
 
-<!-- Mirrored from html.bdevs.net/faime-prev/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Sep 2023 07:00:58 GMT -->
 </html>
