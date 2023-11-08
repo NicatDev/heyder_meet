@@ -129,7 +129,7 @@ def article(request):
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
-    pagecount = [x+1 for x in range(len(sourcearticles)//3)]
+    pagecount = [x+1 for x in range(len(sourcearticles)//3+1)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
