@@ -485,7 +485,7 @@ def interviewsingle(request,slug=None):
     # Adjust the number of related blogs as needed
 
     if len(related_blogs)<2:
-        related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
+        related_blogs = (related_blogs | Interview.objects.all()).distinct()[:3]
     most_blogs = Interview.objects.all().order_by('views')[0:3]
     context = {
         'blog':blog,
