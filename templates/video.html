@@ -574,7 +574,7 @@
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 300px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content" style="">
                                         
-                                        <p style="height: 4rem;display:block !important;">{{video.content|slice:70}}...</p>
+                                        <p class="metn" style="height: 4rem;display:block !important;">{{video.content|slice:70}}...</p>
                                  
                                         <!-- <span class="tag">{{video.created_at}}</span> -->
                                
@@ -1247,7 +1247,16 @@ a {
   }
 .basliq{
     font-size:14px !important;
-}}</style>
+}}
+@media only screen and (max-width: 576px){
+.slide-wrapper .slide-one .slide-image:before {
+   
+     opacity: 0;}
+    .metn{
+        font-size:19px;display:block !important;
+    }}
+     
+</style>
 
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
