@@ -165,7 +165,7 @@ def article(request):
     tag_name = request.GET.get('tag','')
     if tag_name:
         articles = articles.filter(tag__name = tag_name)
-    paginator = Paginator(articles, 12)
+    paginator = Paginator(articles, 4)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
     tags = Tag.objects.all()
@@ -175,6 +175,9 @@ def article(request):
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     allheader = AllHeader.objects.all()
     interviews = Interview.objects.all()
+    paginator2 = Paginator(interviews, 4)
+    page2 = request.GET.get("ipage", 1)
+    interviews = paginator2.get_page(page2)
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
     sourceinterviews = AnotherSourceInterviews.objects.all()
@@ -187,6 +190,10 @@ def article(request):
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
     pagecounts = [x+1 for x in range(page_counts)] 
+    page_count = paginator.num_pages
+    count = [count for count in range(page_count)]
+    page_count2 = paginator2.num_pages
+    count2 = [count for count in range(page_count2)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -198,10 +205,11 @@ def article(request):
         'sourcearticles':list(sourcearticles.values()),
         'sourceinterviews':list(sourceinterviews.values()),
         'pagecount':pagecount,
-        'pagecounts':pagecounts
-        
+        'pagecounts':pagecounts,
+        'count':count,
+        'count2':count2
         }
-    # ss
+    
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
