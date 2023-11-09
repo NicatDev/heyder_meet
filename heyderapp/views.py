@@ -488,7 +488,7 @@ def inmemorysingle(request,slug=None):
 
     if len(related_blogs)<2:
         related_blogs = (related_blogs | InMemory.objects.all()).distinct()[:3]
-    most_blogs = InMemory.objects.all().order_by('views')[0:3]
+    most_blogs = InMemory.objects.all()[0:3]
     context = {
         'blog':blog,
  
