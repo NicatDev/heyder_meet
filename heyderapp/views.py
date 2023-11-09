@@ -61,6 +61,8 @@ def blog(request):
     if len(most_blogs)>4:
         most_blogs=most_blogs[0:4]
     allheader = AllHeader.objects.all()
+    if allheader.exists():
+        allheader = allheader.first()
     context = {
         'blog_list':blog_list,
         'tags':tags,
@@ -94,6 +96,8 @@ def article2(request):
     vidcategories = Category.objects.annotate(photo_count=Count('videolar')).filter(photo_count__gt=0)
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     allheader = AllHeader.objects.all()
+    if allheader.exists():
+        allheader = allheader.first()
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
@@ -132,7 +136,8 @@ def article3(request):
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
 
-
+    if allheader.exists():
+        allheader = allheader.first()
     context = {
         'inmemories':article_list,
         'invideomemories':article_lists,
@@ -172,7 +177,8 @@ def article(request):
     sourcearticles = AnotherSourceArticles.objects.all()
     product_count = len(sourcearticles) 
     products_per_page = 3
-
+    if allheader.exists():
+        allheader = allheader.first()
     page_count = (product_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
     context = {
@@ -208,7 +214,8 @@ def blogsingle(request,slug=None):
         related_blogs = (related_blogs | Blog.objects.all()).distinct()[:3]
     most_blogs = Blog.objects.all().order_by('views')[0:3]
     allheader = AllHeader.objects.all()
-
+    if allheader.exists():
+        allheader = allheader.first()
     context = {
         'blog':blog,
         'tags':tags,
@@ -285,7 +292,8 @@ def home(request):
 
 def video(request):
     allheader = AllHeader.objects.all()
-
+    if allheader.exists():
+        allheader = allheader.first()
     videos = Video.objects.all()
     cat = request.GET.get('movzu')
     if cat:
@@ -320,7 +328,8 @@ def video(request):
 
 def foto(request):
     allheader = AllHeader.objects.all()
-    
+    if allheader.exists():
+        allheader = allheader.first()
     fcount = Photo.objects.all().count()
     photos = Photo.objects.all().order_by('created_at')
     if request.GET.get('movzu'):
@@ -348,7 +357,8 @@ def foto(request):
 
 def about(request):
     allheader = AllHeader.objects.all()
-
+    if allheader.exists():
+        allheader = allheader.first()
     if About.objects.all().exists():
         about = About.objects.first()
     else:
@@ -378,7 +388,8 @@ def about(request):
 
 def articlesingle(request,slug=None):
     allheader = AllHeader.objects.all()
-
+    if allheader.exists():
+        allheader = allheader.first()
     blog = get_object_or_404(Article,slug=slug)
     
     if blog.date==None:
