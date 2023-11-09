@@ -449,7 +449,7 @@
                         </div>
                         <div class="fm__postbox-thumb mb-30">
                           
-                           <img src="{{blog.image.url}}" data-speed="auto" alt="{{blog.alt}}">
+                           <img src="{{blog.coverimage.url}}" data-speed="auto" alt="{{blog.alt}}">
 
                         </div>
                         <div class="">
@@ -573,7 +573,7 @@
                                        <span class="tag">{{x.tag.first}}</span>
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
-                                             <a href="{% url 'inmemorysingle' x.slug %}"><img src="{{x.image.url}}"
+                                             <a href="{% url 'inmemorysingle' x.slug %}"><img src="{{x.coverimage.url}}"
                                                    alt="img not found"></a>
                                           </div>
                                           <div class="blogpost-box-3__content">
@@ -618,7 +618,7 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="blog-details.html"><img src="{{blg.image.url}}"
+                                    <a href="blog-details.html"><img src="{{blg.coverimage.url}}"
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
