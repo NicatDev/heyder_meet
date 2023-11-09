@@ -585,9 +585,9 @@
                 tabPanels.forEach(function (tabElement) {
                     tabElement.hidden = true
                     console.log(tabElement)
-                    tabElement.classList.remove('active')
+                    tabElement.classList.remove('activee')
                 });
-                mytab.classList.add('active')
+                mytab.classList.add('activee')
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
             });
@@ -1378,7 +1378,13 @@ a {
     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
     <script>
         var page = "{{ request.GET.page }}";
-            if(page){document.getElementById("dugmeId2").click();console.log('00000------------------')}else{document.getElementById("dugmeId").click();console.log('1111111111111-----------------')}
+            if(page){document.getElementById("dugmeId2").click();
+            document.getElementById("dugmeId2").classList.add('activee');
+            document.getElementById("dugmeId").classList.remove('activee');
+            console.log('00000------------------')}else{document.getElementById("dugmeId").click();
+            document.getElementById("dugmeId2").classList.remove('activee');
+            document.getElementById("dugmeId").classList.add('activee');
+            console.log('1111111111111-----------------')}
             
         
     </script>
