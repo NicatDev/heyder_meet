@@ -11552,7 +11552,7 @@ blockquote > p {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 6px;
-  text-transform: capitalize;
+
   line-height: 1.5;
 }
 .rc__post-title a:hover {
