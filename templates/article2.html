@@ -534,7 +534,7 @@
                               {% for blg in sourcearticles %}
                               <div   data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
-                                <a target="_blank" href="{{blg.href}}">{{forloop.counter}}</a>
+                                <a target="_blank" style="display: none;" href="{{blg.href}}">{{forloop.counter}}</a>
                                 </div>
                                 <div class="rc__post-content">
                                 <h5 class="rc__post-title">
@@ -691,7 +691,7 @@
                             {% for blg in sourceinterviews %}
                             <div   data-filter="{{forloop.counter}}" class="rc__post rgpost">
                               <div class="rc__post-thumb">
-                              <a target="_blank" href="{{blg.href}}">{{forloop.counter}}</a>
+                              <a style="display: none;" target="_blank" href="{{blg.href}}">{{forloop.counter}}</a>
                               </div>
                               <div class="rc__post-content">
                               <h5 class="rc__post-title">
