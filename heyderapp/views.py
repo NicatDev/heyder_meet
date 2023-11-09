@@ -481,7 +481,7 @@ def inmemorysingle(request,slug=None):
             pre_post = blog
     
     tags = blog.tag.all()
-    related_blogs = InMemory.objects.filter(tag__in=tags).exclude(slug=slug)
+    related_blogs = InMemory.objects.filter().exclude(slug=slug)
     if related_blogs.exists():
         related_blogs = related_blogs[:3]
     # Adjust the number of related blogs as needed
