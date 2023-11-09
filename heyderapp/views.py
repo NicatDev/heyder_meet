@@ -503,7 +503,7 @@ def inmemorysingle(request,slug=None):
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
-    return render(request,'inmemorysingle.html',context)
+    return render(request,'inmemory.html',context)
 
 def interviewsingle(request,slug=None):
     allheader = AllHeader.objects.all()
