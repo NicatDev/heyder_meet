@@ -184,7 +184,7 @@ def article(request):
     page_count = (product_count + products_per_page - 1) // products_per_page
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
-    pagecounts = [x+1 for x in range(page_counts)] +1
+    pagecounts = [x+1 for x in range(page_counts)] 
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
