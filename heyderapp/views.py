@@ -452,6 +452,53 @@ def articlesingle(request,slug=None):
     return render(request,'articlesingle.html',context)
 
 
+
+def interviewsingle(request,slug=None):
+    allheader = AllHeader.objects.all()
+    if allheader.exists():
+        allheader = allheader.first()
+    blog = get_object_or_404(Interview,slug=slug)
+    
+    if blog.date==None:
+        blog.date = datetime.now()
+        blog.save()
+    next_post = Interview.objects.filter(date__gt=blog.date).order_by('date').first()
+    pre_post = Interview.objects.filter(date__lt=blog.date).order_by('-date').first()
+    if not next_post:
+        next_post = Interview.objects.exclude(slug=blog.slug)
+        if next_post:
+            next_post = next_post.first()
+        else:
+            next_post = blog
+    if not pre_post:
+        pre_post = Interview.objects.exclude(slug=blog.slug).exclude(slug=next_post.slug)
+        if pre_post:
+            pre_post = pre_post.first()
+        else:
+            pre_post = blog
+    
+    tags = blog.tag.all()
+    related_blogs = Interview.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
+
+    if len(related_blogs)<2:
+        related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
+    most_blogs = Interview.objects.all().order_by('views')[0:3]
+    context = {
+        'blog':blog,
+        'tags':tags,
+        'alltags':Tag.objects.all(),
+        'next':next_post,
+        'pre':pre_post,
+        'related_blogs':related_blogs,
+        'most_blogs':most_blogs,
+        'allheader':allheader
+        
+    }
+    if Head.objects.all().exists():
+        head = Head.objects.first()
+        context['head'] = head
+    return render(request,'interview.html',context)
+
 def AnotherSourceView(request):
     data = list(AnotherSourceArticles.objects.all().values())  # Replace with your queryset
     return JsonResponse(data, safe=False)

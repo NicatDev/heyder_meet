@@ -13,6 +13,7 @@ urlpatterns = [
     path('AnotherSourceView',AnotherSourceView,name='AnotherSourceView'),
     path('xeber/<slug>',blogsingle,name='blogsingle'),
     path('meqale/<slug>',articlesingle,name='articlesingle'),
+    path('musahibe/<slug>',interviewsingle,name='interviewsingle'),
     
 ]
 urlpatterns += [
