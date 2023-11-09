@@ -135,7 +135,8 @@ def article3(request):
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
-
+    page_count = paginator.num_pages
+    count = [count for count in range(page_count)]
     if allheader.exists():
         allheader = allheader.first()
     context = {
@@ -147,7 +148,8 @@ def article3(request):
         'allheader':allheader,
         'interviews':interviews,
         'books':books,
-        'sourcearticles':sourcearticles
+        'sourcearticles':sourcearticles,
+        'count':count
 
         
         }
