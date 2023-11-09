@@ -580,7 +580,7 @@
                                
                                     </div>
                                 </a>
-                                <h2 style="    width: 100%;
+                                <h2 class="basliq" style="    width: 100%;
                                 position: absolute;
                                 top: 3%;
                                 font-size: 20px;
@@ -1240,7 +1240,14 @@ a {
   }
   .triggerrs > input:checked + label > div.contentt div + div {
     border-left: 1px solid #7d7d7d;
-  }</style>
+  }
+  @media only screen and (max-width: 576px){
+  .slide-wrapper .slide-one .slide-image {
+      height: 300px;
+  }
+.basliq{
+    font-size:14px
+}}</style>
 
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
