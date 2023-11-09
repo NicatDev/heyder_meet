@@ -328,6 +328,9 @@ def video(request):
     fcount = Video.objects.all().count()
     page_count = paginator.num_pages
     count = [count for count in range(page_count)]
+    for video in video_list:
+        video.embed_full = embed(video.embed)
+  
     context = {
         'video_list':video_list,
         # 'movies':movies,
