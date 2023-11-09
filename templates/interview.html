@@ -481,7 +481,7 @@
                      </div>
                      <div class="postbox__navigation mb-70 ">
                         <div class="postbox__more-left">
-                           <a class="postbox__more-link mb-15" href="{% url 'articlesingle' pre.slug %}">
+                           <a class="postbox__more-link mb-15" href="{% url 'interviewsingle' pre.slug %}">
                               <span>
                                  <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -494,7 +494,7 @@
                            </a>
                            <div class="postbox__more-content">
                               <h5>
-                                 <a {% if pre %} href="{% url 'articlesingle' pre.slug %}" {% endif %}>{{pre.name}}</a>
+                                 <a {% if pre %} href="{% url 'interviewsingle' pre.slug %}" {% endif %}>{{pre.name}}</a>
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not pre.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{pre.tag.first}}</a></span>
@@ -513,7 +513,7 @@
                            </span>
                         </div>
                         <div class="postbox__more-right">
-                           <a class="postbox__more-link mb-15" href="{% url 'articlesingle' next.slug %}">
+                           <a class="postbox__more-link mb-15" href="{% url 'interviewsingle' next.slug %}">
                               <h5>Növbəti</h5>
                               <span>
                                  <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
@@ -526,7 +526,7 @@
                            </a>
                            <div class="postbox__more-content">
                               <h5>
-                                 <a {% if next %}  href="{% url 'articlesingle' next.slug %}" {% endif %}>{{next.name}}</a>
+                                 <a {% if next %}  href="{% url 'interviewsingle' next.slug %}" {% endif %}>{{next.name}}</a>
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not next.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{next.tag.first}}</a></span>
@@ -570,11 +570,11 @@
                                        <span class="tag">{{x.tag.first}}</span>
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
-                                             <a href="{% url 'articlesingle' x.slug %}"><img src="{{x.image.url}}"
+                                             <a href="{% url 'interviewsingle' x.slug %}"><img src="{{x.image.url}}"
                                                    alt="img not found"></a>
                                           </div>
                                           <div class="blogpost-box-3__content">
-                                             <h4 class="blogpost-title"><a href="{% url 'articlesingle' x.slug %}">{{x.name}}</a></h4>
+                                             <h4 class="blogpost-title"><a href="{% url 'interviewsingle' x.slug %}">{{x.name}}</a></h4>
                                           </div>
                                        </div>
                                  
