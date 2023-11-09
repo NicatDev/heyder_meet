@@ -415,7 +415,7 @@
             <div class="row justify-content-center">
                <div class="col-12">
                   <div class="page-title-wrapper ">
-                     <h1 class="page-title ">Məqalə</h1>
+                     <h1 class="page-title ">Müsahibə</h1>
                   </div>
 
                   <div class="breadcrumb-menu ">
@@ -445,7 +445,7 @@
                      <div class="postbox__item mb-60">
                         <div class="postbox__meta mb-20">
                            <span><a href="#">{{blog.tag.first.name}}</a></span>
-                           <span>{{blog.date}}</span>
+     
                         </div>
                         <div class="fm__postbox-thumb mb-30">
                           
@@ -498,7 +498,7 @@
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not pre.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{pre.tag.first}}</a></span>
-                                 <span>{{pre.date}}</span>
+                          
                               </div>
                            </div>
                         </div>
@@ -530,7 +530,7 @@
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not next.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{next.tag.first}}</a></span>
-                                 <span>{{next.date}}</span>
+                          
                               </div>
                            </div>
                         </div>
@@ -545,7 +545,7 @@
                               <div class="fm-blog-slide-wrapper">
 
                                  <div class="section__title-wrapper">
-                                    <h2 class="section-main-title">Oxşar məqalələr</h2>
+                                    <h2 class="section-main-title">Oxşar müsahibələr</h2>
                                  </div>
 
                                  <div class="blog-slider-btn">
@@ -577,7 +577,7 @@
                                              <h4 class="blogpost-title"><a href="{% url 'articlesingle' x.slug %}">{{x.name}}</a></h4>
                                           </div>
                                        </div>
-                                       <div class="blogpost-date"><span>{{x.date}}</span></div>
+                                 
                                     </div>
                                  </div>
                                  {% endfor %}
@@ -597,7 +597,7 @@
                               <form action="{% url 'blog' %}">
                                  {% csrf_token %}
                                  <div class="sidebar__search-input">
-                                    <input type="text" name="blog" placeholder="Məqalələrdə axtar...">
+                                    <input type="text" name="blog" placeholder="Müsahibələrdə axtar...">
                                     <button type="submit">
                                        <i class="flaticon-search"></i>
                                     </button>
@@ -627,10 +627,7 @@
                                        <span>
                                           <a href="#">{{tags.first.name}}</a>
                                        </span>
-                                   
-                                       <span>
-                                          {{blg.created_at}}
-                                       </span>
+                       
                                     </div>
                                  </div>
                               </div>
