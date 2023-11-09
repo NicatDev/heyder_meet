@@ -681,7 +681,7 @@
                         <div class="row">
                             {% for video in invideomemories %}
                             <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
-                                <a class="slide-one" href={{video.video.url}} target="_blank">
+                                <a class="slide-one"  href="#media-popup" data-media="{{movie.embed_full}}" target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content" style="">
                                         <h2 style="height:6rem">{{video.name}} </h2>
@@ -731,7 +731,7 @@
                     <div class="col-xxl-8 col-xl-7 col-lg-7">   {% for blog in inmemories %}
                         <article class="postbox__item mb-60 bdFadeUp">
                            <div class="postbox__thumb mb-30">
-                              <a href="{% url 'blogsingle' blog.slug %}">
+                              <a href="{% url 'inmemorysingle' blog.slug %}">
                                  <img src="{{blog.coverimage.url}}" alt="img not found">
                               </a>
                            </div>
@@ -741,14 +741,14 @@
                               
                               </div>
                               <h3 class="postbox__title">
-                                 <a href="{% url 'blogsingle' blog.slug %}">{{blog.name}}</a>
+                                 <a href="{% url 'inmemorysingle' blog.slug %}">{{blog.name}}</a>
                               </h3>
                               <div class="postbox__text ">
                                  <p>{{blog.content|slice:200}}...</p>
                               </div>
                               <div class="col-xl-12 ">
     
-                                 <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                                 <a href="{% url 'inmemorysingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
                               </div>
                            </div>
                         </article>

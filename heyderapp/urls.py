@@ -12,6 +12,7 @@ urlpatterns = [
     path('xatireler',article3,name='article2'),
     path('AnotherSourceView',AnotherSourceView,name='AnotherSourceView'),
     path('xeber/<slug>',blogsingle,name='blogsingle'),
+    path('xatire/<slug>',inmemorysingle,name='inmemorysingle'),
     path('meqale/<slug>',articlesingle,name='articlesingle'),
     path('musahibe/<slug>',interviewsingle,name='interviewsingle'),
     
