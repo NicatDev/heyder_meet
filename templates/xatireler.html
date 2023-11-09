@@ -587,7 +587,15 @@
                     console.log(tabElement)
                
                 });
-
+                var btn1 = document.getElementById('dugmeId')
+                var btn2 = document.getElementById('dugmeId2')
+                if (btn1.classList.contains('activee')){
+                    btn1.classList.remove('activee')
+                    btn2.classList.add('activee')
+                }else{
+                    btn1.classList.add('activee')
+                    btn2.classList.remove('activee')
+                }
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
             });
