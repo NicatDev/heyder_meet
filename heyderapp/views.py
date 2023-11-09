@@ -177,11 +177,14 @@ def article(request):
     sourcearticles = AnotherSourceArticles.objects.all()
     sourceinterviews = AnotherSourceInterviews.objects.all()
     product_count = len(sourcearticles) 
+    products_count = len(sourceinterviews)
     products_per_page = 3
     if allheader.exists():
         allheader = allheader.first()
     page_count = (product_count + products_per_page - 1) // products_per_page
+    page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
+    pagecounts = [x+1 for x in range(page_counts)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
@@ -192,9 +195,11 @@ def article(request):
         'books':books,
         'sourcearticles':list(sourcearticles.values()),
         'sourceinterviews':list(sourceinterviews.values()),
-        'pagecount':pagecount
+        'pagecount':pagecount,
+        'pagecount':pagecounts
         
         }
+    # ss
     if Head.objects.all().exists():
         head = Head.objects.first()
         context['head'] = head
