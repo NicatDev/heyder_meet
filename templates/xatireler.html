@@ -702,6 +702,8 @@
                               
                               // Get all the rc__post elements
                               const rcPostElements = document.querySelectorAll('.rc__post');
+                              var page = "{{ request.GET.page }}";
+                            console.log('Sayfa Numarası:', page);
                               function setInitialState() {
                               const firstPagespan = pagespanElements[0];
                               firstPagespan.click(); 
