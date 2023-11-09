@@ -474,9 +474,7 @@
                               <span>
                                 {% for tag in blog.tag.all %} <a href="#"></a>{% endfor %}
                               </span>
-                              <span>
-                                 {{blog.created_at}}
-                              </span>
+                       
                            </div>
                            <h3 class="postbox__title">
                               <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
