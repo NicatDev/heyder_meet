@@ -497,7 +497,7 @@
                                  <a {% if pre %} href="{% url 'articlesingle' pre.slug %}" {% endif %}>{{pre.name}}</a>
                               </h5>
                               <div class="postbox__meta">
-                                 <span><a href="blog.html">{{pre.tag.first}}</a></span>
+                                 <span><a {% if not pre.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{pre.tag.first}}</a></span>
                                  <span>{{pre.date}}</span>
                               </div>
                            </div>
@@ -529,7 +529,7 @@
                                  <a {% if next %}  href="{% url 'articlesingle' next.slug %}" {% endif %}>{{next.name}}</a>
                               </h5>
                               <div class="postbox__meta">
-                                 <span><a href="blog.html">{{next.tag.first}}</a></span>
+                                 <span><a {% if not next.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{next.tag.first}}</a></span>
                                  <span>{{next.date}}</span>
                               </div>
                            </div>
