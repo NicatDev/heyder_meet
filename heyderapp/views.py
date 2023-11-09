@@ -136,7 +136,7 @@ def article3(request):
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
     page_count = paginator.num_pages
-    count = [count for count in range(page_count)]
+    count = [count+1 for count in range(page_count)]
     if allheader.exists():
         allheader = allheader.first()
     context = {
@@ -191,9 +191,9 @@ def article(request):
     pagecount = [x+1 for x in range(page_count)]
     pagecounts = [x+1 for x in range(page_counts)] 
     page_count = paginator.num_pages
-    count = [count for count in range(page_count)]
+    count = [count+1 for count in range(page_count)]
     page_count2 = paginator2.num_pages
-    count2 = [count for count in range(page_count2)]
+    count2 = [count+1 for count in range(page_count2)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
