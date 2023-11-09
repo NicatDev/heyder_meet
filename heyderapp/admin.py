@@ -1,5 +1,5 @@
 from django.contrib import admin
-from heyderapp.models import AnotherSourceArticles,Book,Interview,InMemory,Testimonial,Head,Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Partners
+from heyderapp.models import AnotherSourceInterviews,AnotherSourceArticles,Book,Interview,InMemory,Testimonial,Head,Article,Blog,HomeHeader,HomeHeaderVideo,Video,Photo,Tag,Category,Movie,About,AllHeader,Partners
 # Register your models here.
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
@@ -55,7 +55,9 @@ admin.site.register(Head)
 admin.site.register(Testimonial)
 admin.site.register(InMemory,MyNameAdminVideo3)
 admin.site.register(Book,BookAdmin)
-admin.site.register(AnotherSourceArticles)
+admin.site.register(AnotherSourceArticles,MyTitleAdmin)
+admin.site.register(AnotherSourceInterviews,MyTitleAdmin)
+
 class CategoryAdmin(admin.ModelAdmin):
     exclude = ('name',) 
 

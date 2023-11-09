@@ -175,6 +175,7 @@ def article(request):
     interviews = Interview.objects.all()
     books =  Book.objects.all()
     sourcearticles = AnotherSourceArticles.objects.all()
+    sourceinterviews = AnotherSourceInterviews.objects.all()
     product_count = len(sourcearticles) 
     products_per_page = 3
     if allheader.exists():
@@ -190,6 +191,7 @@ def article(request):
         'interviews':interviews,
         'books':books,
         'sourcearticles':list(sourcearticles.values()),
+        'sourceinterviews':list(sourceinterviews.values()),
         'pagecount':pagecount
         
         }
