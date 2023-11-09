@@ -287,7 +287,7 @@ def home(request):
     for video in homeHeaderVideo:
         video.embed_full = embed(video.embed)
     
-    photos = Photo.objects.all().order_by('-created_at')
+    photos = Photo.objects.all().order_by('-created_at').filter(inhome=True)
     if len(photos)>11:
         photos = photos[0:14]
     if About.objects.all().exists():
