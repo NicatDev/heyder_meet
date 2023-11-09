@@ -573,13 +573,20 @@
                                 <a class="slide-one" href={{video.video.url}} target="_blank">
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content" style="">
-                                        <h2 style="height:6rem">{{video.name}} </h2>
+                                        
                                         <p style="height: 4rem;">{{video.content|slice:70}}...</p>
                                  
                                         <!-- <span class="tag">{{video.created_at}}</span> -->
                                
                                     </div>
                                 </a>
+                                <div
+                                style="display:flex;justify-content: space-evenly;padding-bottom:auto;height: 100%;">
+                                <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;"
+                                    src="{{head.logoheader.url}}" alt="">
+                                <h2 style="font-size:20px;text-align: center;margin-left:auto;padding-right: 14px;padding-top:5%;color:rgba(229, 229, 229, 0.863) !important; text-shadow: 2px 2px 4px #333;
+                               ">{{video.name}}</h2>
+                            </div>
                             </div>
                             {% endfor %}
                         </div>
