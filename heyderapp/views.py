@@ -465,8 +465,8 @@ def inmemorysingle(request,slug=None):
     blog = get_object_or_404(InMemory,slug=slug)
     
 
-    next_post = InMemory.objects.filter(date__gt=blog.date).order_by('date').first()
-    pre_post = InMemory.objects.filter(date__lt=blog.date).order_by('-date').first()
+    next_post = InMemory.objects.filter(date__gt=blog.date).order_by('created_at').first()
+    pre_post = InMemory.objects.filter(date__lt=blog.date).order_by('-created_at').first()
     if not next_post:
         next_post = InMemory.objects.exclude(slug=blog.slug)
         if next_post:
