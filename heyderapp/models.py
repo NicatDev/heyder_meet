@@ -152,7 +152,9 @@ class AllHeader(models.Model):
     
     def __str__(self):
         return 'Diger Sehife Header '+self.title
-    
+    def save(self, *args, **kwargs):
+        self.pk = 1
+        super(AllHeader, self).save(*args, **kwargs)
 class HomeHeaderVideo(models.Model):
     name = models.CharField(max_length=230)
     video = models.CharField(max_length=3400)
