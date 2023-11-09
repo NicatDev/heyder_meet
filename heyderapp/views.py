@@ -401,7 +401,7 @@ def articlesingle(request,slug=None):
     
     tags = blog.tag.all()
     related_blogs = Article.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
-    print(len(related_blogs))
+
     if len(related_blogs)<2:
         related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
     most_blogs = Article.objects.all().order_by('views')[0:3]
