@@ -565,7 +565,7 @@
         <!-- slider wrapper -->
         <div style="margin-top:10px;margin-bottom:30px;padding:0 3.5%;">
             <div data-ui-tablist="navigation" class="tabs">
-                <button style="width:50%" data-ui-tablist-tab="account" class="tabs-tab activee">Müsahibələr</button>
+                <button style="width:50%" data-ui-tablist-tab="account" class="tabs-tab activee" id="dugmeId">Müsahibələr</button>
                 <button style="width:50%"  data-ui-tablist-tab="inventory" class="tabs-tab">Videolar</button>
      
             </div>
@@ -1343,6 +1343,9 @@ a {
   .text-line{
         transform:translate(0px, 0px) !important;
     }</style>
+    <script>
+        document.getElementById("dugmeId").click();
+    </script>
 
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
