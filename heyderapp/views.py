@@ -230,7 +230,7 @@ def blogsingle(request,slug=None):
     tags = blog.tag.all()
     related_blogs = Blog.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
     if len(related_blogs)<2:
-        related_blogs = (Blog.objects.filter(tag__in=tags).exclude(slug=slug) | Blog.objects.all()).distinct()[:3]
+        related_blogs = (related_blogs | Blog.objects.all()).distinct()[:3]
     most_blogs = Blog.objects.all().order_by('views')[0:3]
     allheader = AllHeader.objects.all()
     if allheader.exists():
@@ -435,9 +435,10 @@ def articlesingle(request,slug=None):
             pre_post = blog
     
     tags = blog.tag.all()
-    related_blogs = Article.objects.filter(tag__in=tags).exclude(slug=slug).distinct() # Adjust the number of related blogs as needed
+    related_blogs = Article.objects.filter(tag__in=tags).exclude(slug=slug)# Adjust the number of related blogs as needed
     if related_blogs.exists():
         related_blogs = related_blogs[:3]
+    
     if len(related_blogs)<2:
         related_blogs = (related_blogs | Article.objects.all()).distinct()[:3]
     most_blogs = Article.objects.all().order_by('views')[0:3]
