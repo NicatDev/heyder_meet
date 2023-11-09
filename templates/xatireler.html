@@ -590,12 +590,7 @@
             });
         });
     </script>
-    <script>
-        var page = "{{ request.GET.page }}";
-            if(page){document.getElementById("dugmeId").click();console.log('00000------------------')}else{document.getElementById("dugmeId2").click();console.log('1111111111111-----------------')}
-            
-  
-    </script>
+
         <div style="margin-top:2%;" class="slide-wrapper">
             <div class="container">
      
@@ -1378,6 +1373,12 @@ a {
     <script src="{% static 'assets/js/ui-range-slider.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script>
+        var page = "{{ request.GET.page }}";
+            if(page){document.getElementById("dugmeId").click();console.log('00000------------------')}else{document.getElementById("dugmeId2").click();console.log('1111111111111-----------------')}
+            
+  
+    </script>
 </body>
 
 
