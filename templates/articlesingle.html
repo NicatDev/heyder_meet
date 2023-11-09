@@ -570,11 +570,11 @@
                                        <span class="tag">{{x.tag.first}}</span>
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
-                                             <a href="{% url 'blogsingle' x.slug %}"><img src="{{x.image.url}}"
+                                             <a href="{% url 'articlesingle' x.slug %}"><img src="{{x.image.url}}"
                                                    alt="img not found"></a>
                                           </div>
                                           <div class="blogpost-box-3__content">
-                                             <h4 class="blogpost-title"><a href="{% url 'blogsingle' x.slug %}">{{x.name}}</a></h4>
+                                             <h4 class="blogpost-title"><a href="{% url 'articlesingle' x.slug %}">{{x.name}}</a></h4>
                                           </div>
                                        </div>
                                        <div class="blogpost-date"><span>{{x.date}}</span></div>
