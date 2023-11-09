@@ -120,7 +120,8 @@ def article3(request):
     articles = InMemory.objects.filter(video_or_not=False)
     articless = InMemory.objects.filter(video_or_not=True)
 
-
+    for video in articless:
+        video.embed_full = embed(video.embed)
     paginator = Paginator(articles, 12)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
@@ -139,6 +140,7 @@ def article3(request):
     count = [count+1 for count in range(page_count)]
     if allheader.exists():
         allheader = allheader.first()
+        
     context = {
         'inmemories':article_list,
         'invideomemories':article_lists,
@@ -228,7 +230,7 @@ def blogsingle(request,slug=None):
     tags = blog.tag.all()
     related_blogs = Blog.objects.filter(tag__in=tags).exclude(slug=slug).distinct()[:3]  # Adjust the number of related blogs as needed
     if len(related_blogs)<2:
-        related_blogs = (related_blogs | Blog.objects.all()).distinct()[:3]
+        related_blogs = (Blog.objects.filter(tag__in=tags).exclude(slug=slug) | Blog.objects.all()).distinct()[:3]
     most_blogs = Blog.objects.all().order_by('views')[0:3]
     allheader = AllHeader.objects.all()
     if allheader.exists():
