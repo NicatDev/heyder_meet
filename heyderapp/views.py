@@ -87,7 +87,7 @@ def article2(request):
     tag_name = request.GET.get('tag','')
     if tag_name:
         articles = articles.filter(tag__name = tag_name)
-    paginator = Paginator(articles, 12)
+    paginator = Paginator(articles, 1)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
     tags = Tag.objects.all()
