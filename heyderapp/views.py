@@ -480,7 +480,7 @@ def inmemorysingle(request,slug=None):
         else:
             pre_post = blog
     
-    tags = blog.tag.all()
+ 
     related_blogs = InMemory.objects.filter().exclude(slug=slug)
     if related_blogs.exists():
         related_blogs = related_blogs[:3]
@@ -491,7 +491,7 @@ def inmemorysingle(request,slug=None):
     most_blogs = InMemory.objects.all().order_by('views')[0:3]
     context = {
         'blog':blog,
-        'tags':tags,
+ 
         'alltags':Tag.objects.all(),
         'next':next_post,
         'pre':pre_post,
