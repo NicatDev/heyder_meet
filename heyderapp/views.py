@@ -196,7 +196,7 @@ def article(request):
         'sourcearticles':list(sourcearticles.values()),
         'sourceinterviews':list(sourceinterviews.values()),
         'pagecount':pagecount,
-        'pagecount':pagecounts
+        'pagecounts':pagecounts
         
         }
     # ss
