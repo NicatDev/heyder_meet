@@ -531,7 +531,7 @@
                         <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
-                            {{ sourcearticles|length }}
+                      
                               {% for blg in sourcearticles %}
                               
                               <div   data-filter="{{forloop.counter}}" class="rc__post">
@@ -547,6 +547,7 @@
                                 </div>
                               </div>
                               {% endfor %}
+                              {{pagecount|length}}
                               <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
                               {% for count in pagecount %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
                               </div>
