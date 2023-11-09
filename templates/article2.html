@@ -531,7 +531,9 @@
                         <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
                         <div class="sidebar__widget-content">
                            <div class="sidebar__post">
+                            {{ sourcearticles|length }
                               {% for blg in sourcearticles %}
+                              
                               <div   data-filter="{{forloop.counter}}" class="rc__post">
                                 <div class="rc__post-thumb">
                                 <a target="_blank" style="display: none;" href="{{blg.href}}">{{forloop.counter}}</a>
@@ -562,6 +564,7 @@
                         firstPagespan.click(); 
                                         }
                         // Add a click event listener to each pagespan
+                        
                         pagespanElements.forEach(pagespan => {
                             pagespan.addEventListener('click', function () {
                                 const filterValue = this.id;
