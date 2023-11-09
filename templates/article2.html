@@ -683,7 +683,7 @@
                 
                 <article class="postbox__item mb-60 bdFadeUp">
                     <div class="postbox__thumb mb-30">
-                       <a href="{% url 'articlesingle' blog.slug %}">
+                       <a href="{% url 'interviewsingle' blog.slug %}">
                           <img src="{{blog.image.url}}" alt="img not found">
                        </a>
                     </div>
@@ -693,14 +693,14 @@
                         
                        </div>
                        <h3 class="postbox__title">
-                          <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
+                          <a href="{% url 'interviewsingle' blog.slug %}">{{blog.name}}</a>
                        </h3>
                        <div class="postbox__text ">
                           <p>{{blog.content|slice:200|safe}}...</p>
                        </div>
                        <div class="col-xl-12 ">
 
-                          <a href="{% url 'articlesingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                          <a href="{% url 'interviewsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
                        </div>
                     </div>
                  </article>
