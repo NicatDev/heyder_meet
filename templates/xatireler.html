@@ -566,7 +566,7 @@
         <div style="margin-top:10px;margin-bottom:30px;padding:0 3.5%;">
             <div data-ui-tablist="navigation" class="tabs">
                 <button style="width:50%" data-ui-tablist-tab="account" class="tabs-tab activee" id="dugmeId">Müsahibələr</button>
-                <button style="width:50%"  data-ui-tablist-tab="inventory" class="tabs-tab">Videolar</button>
+                <button style="width:50%"  data-ui-tablist-tab="inventory" class="tabs-tab" id="dugmeId2">Videolar</button>
      
             </div>
             <div class="tabpanels">
@@ -589,6 +589,12 @@
                 console.log('Tıklanan tab verisi:', tabData);
             });
         });
+    </script>
+    <script>
+        var page = "{{ request.GET.page }}";
+            if(page){document.getElementById("dugmeId2").click();}else{document.getElementById("dugmeId2").click();}
+            
+  
     </script>
         <div style="margin-top:2%;" class="slide-wrapper">
             <div class="container">
@@ -702,14 +708,9 @@
                               
                               // Get all the rc__post elements
                               const rcPostElements = document.querySelectorAll('.rc__post');
-                              var page = "{{ request.GET.page }}";
-                            
-                            console.log('Sayfa Numarası:', page);
-                              function setInitialState(page) {
-                                if (page){const firstPagespan = pagespanElements[1];}else{
-                                    const firstPagespan = pagespanElements[0];
-                                }
                               
+                              function setInitialState() {
+                              const firstPagespan = pagespanElements[0];
                               firstPagespan.click(); 
                                               }
                               // Add a click event listener to each pagespan
@@ -1349,9 +1350,7 @@ a {
   .text-line{
         transform:translate(0px, 0px) !important;
     }</style>
-    <script>
-        document.getElementById("dugmeId").click();
-    </script>
+
 
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
