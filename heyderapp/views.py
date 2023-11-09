@@ -178,7 +178,7 @@ def article(request):
     sourceinterviews = AnotherSourceInterviews.objects.all()
     product_count = len(sourcearticles) 
     products_count = len(sourceinterviews)
-    products_per_page = 3
+    products_per_page = 6
     if allheader.exists():
         allheader = allheader.first()
     page_count = (product_count + products_per_page - 1) // products_per_page
