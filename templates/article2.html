@@ -447,13 +447,14 @@
       <!-- page titler area end -->
       <div style="margin-top:35px;margin-bottom:30px;padding:0 3.5%;">
         <div data-ui-tablist="navigation" class="tabs">
-            <button style="width:33.33333%" data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
-            <button style="width:33.33333%"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
-            <button style="width:33.33333%"  data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
+            <button style="width:33.33333%" id="meqale23" data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
+            <button style="width:33.33333%" id="musahibe23"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+            <button style="width:33.33333%" id="kitab23"  data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
         </div>
         <div class="tabpanels">
 
         </div>
+  
     </div>
       <!-- postbox area start -->
       <section class="postbox__area section-spacing-bottom">
@@ -480,7 +481,7 @@
                               <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
                            </h3>
                            <div class="postbox__text ">
-                              <p>{{blog.content|slice:200}}...</p>
+                              <p>{{blog.content|slice:200|safe}}...</p>
                            </div>
                            <div class="col-xl-12 ">
 
@@ -1320,7 +1321,17 @@ window.onload = function() {
     changePage(1);
 };
     </script>
-
+    <script>
+        var url = "{{ request.GET.page }}"
+        var urls = "{{ request.GET.pages }}"
+        if (url){
+            document.getElementById('meqale23').click()
+        }
+        else if(urls){
+            document.getElementById('musahibe23').click()
+        }
+        else{document.getElementById('meqale23').click()}
+    </script>
    <!-- JS here -->
    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
