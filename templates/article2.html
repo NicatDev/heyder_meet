@@ -689,7 +689,7 @@
                       <div class="sidebar__widget-content">
                          <div class="sidebar__post">
                             {% for blg in sourceinterviews %}
-                            <div   data-filter="{{forloop.counter}}" class="rc__post">
+                            <div   data-filter="{{forloop.counter}}" class="rc__post rgpost">
                               <div class="rc__post-thumb">
                               <a target="_blank" href="{{blg.href}}">{{forloop.counter}}</a>
                               </div>
@@ -704,28 +704,28 @@
                             {% endfor %}
                             <!-- s -->
                             <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
-                            {% for count in pagecounts %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
+                            {% for count in pagecounts %}<span class="pagespan peygspan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
                             </div>
                          </div>
                       </div>
                    </div>
                    <script>
                       // Get all the pagespan elements
-                      const pagespanElements = document.querySelectorAll('.pagespan');
+                      const pagespanElementss = document.querySelectorAll('.peygspan');
                       
                       // Get all the rc__post elements
-                      const rcPostElements = document.querySelectorAll('.rc__post');
+                      const rcPostElementss = document.querySelectorAll('.rgpost');
                       function setInitialState() {
-                      const firstPagespan = pagespanElements[0];
+                      const firstPagespan = pagespanElementss[0];
                       firstPagespan.click(); 
                                       }
                       // Add a click event listener to each pagespan
-                      pagespanElements.forEach(pagespan => {
+                      pagespanElementss.forEach(pagespan => {
                           pagespan.addEventListener('click', function () {
                               const filterValue = this.id;
                   
                               // Hide all rc__post elements
-                              rcPostElements.forEach(rcPost => {
+                              rcPostElementss.forEach(rcPost => {
                                   const dataFilter = rcPost.getAttribute('data-filter');
                                   
                                   console.log(dataFilter,filterValue)
@@ -738,7 +738,7 @@
                               });
                          
                               // Highlight the clicked pagespan
-                              pagespanElements.forEach(span => {
+                              pagespanElementss.forEach(span => {
                                   span.style.fontWeight = 'normal';
                               });
                               this.style.fontWeight = 'bold';
