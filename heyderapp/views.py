@@ -303,7 +303,9 @@ def home(request):
     for video in inmemories:
         video.embed_full = embed(video.embed)
     context['inmemories']=inmemories
-    embed_code = embed(HomeHeader.href)
+    homeheader = HomeHeader.objects.exists()
+    if homeheader:
+        embed_code = embed(HomeHeader.objects.first().href)
     context['embed']=embed_code
     return render(request,'season-full.html',context)
 
