@@ -119,7 +119,8 @@ def article2(request):
 def article3(request):
     articles = InMemory.objects.filter(video_or_not=False)
     articless = InMemory.objects.filter(video_or_not=True)
-
+    for x in articless:
+        x.embed_full = embed(x.embed)
     for video in articless:
         video.embed_full = embed(video.embed)
     paginator = Paginator(articles, 12)
