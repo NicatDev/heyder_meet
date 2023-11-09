@@ -638,23 +638,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="sidebar__widget ">
-                        <h3 class="sidebar__widget-title mb-30">Ən çox axtarılanlar</h3>
-                        <div class="sidebar__widget-content">
-                           <ul>
-                              {% for x in alltags %}
-                     
-                              {% if current_tag == x.name %}
-                              <li><a style="background-color: var(--clr-theme-1);font-weight:500;color:white" href="{% url 'article' %}?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                              {% else %}
-                              <li><a  href="{% url 'article' %}?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                       
-                              {% endif %}
-
-                              {% endfor %}
-                           </ul>
-                        </div>
-                     </div>
+              
               
                  
                   </div>
