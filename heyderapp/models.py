@@ -130,6 +130,14 @@ class AnotherSourceArticles(models.Model):
     def __str__(self):
         return  '---Basqa menbe meqaleleri'
     
+class AnotherSourceMemories(models.Model):
+    title = models.CharField(max_length=1200,null=True,blank=True)
+    content = models.TextField(null=True,blank=True)
+    href = models.CharField(max_length=1200,null=True,blank=True)
+
+    def __str__(self):
+        return  '---Basqa menbe xatirelerde musahibe '
+    
 class AnotherSourceInterviews(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)
     content = models.TextField(null=True,blank=True)

@@ -141,7 +141,15 @@ def article3(request):
     count = [count+1 for count in range(page_count)]
     if allheader.exists():
         allheader = allheader.first()
-        
+    sourcememories = AnotherSourceMemories.objects.all()
+
+    product_count = len(sourcememories) 
+
+    products_per_page = 6
+    
+    page_count = (product_count + products_per_page - 1) // products_per_page
+
+    pagecount = [x+1 for x in range(page_count)]
     context = {
         'inmemories':article_list,
         'invideomemories':article_lists,
@@ -151,8 +159,9 @@ def article3(request):
         'allheader':allheader,
         'interviews':interviews,
         'books':books,
-        'sourcearticles':sourcearticles,
-        'count':count
+        'sourcememories':sourcememories,
+        'count':count,
+        'pagecount':pagecount
 
         
         }
@@ -186,13 +195,14 @@ def article(request):
     page2 = request.GET.get("ipage", 1)
     interviews = paginator2.get_page(page2)
     books =  Book.objects.all()
+    if allheader.exists():
+        allheader = allheader.first()
     sourcearticles = AnotherSourceArticles.objects.all()
     sourceinterviews = AnotherSourceInterviews.objects.all()
     product_count = len(sourcearticles) 
     products_count = len(sourceinterviews)
     products_per_page = 6
-    if allheader.exists():
-        allheader = allheader.first()
+    
     page_count = (product_count + products_per_page - 1) // products_per_page
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
