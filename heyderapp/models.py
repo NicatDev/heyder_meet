@@ -128,7 +128,7 @@ class AnotherSourceArticles(models.Model):
     href = models.CharField(max_length=1200,null=True,blank=True)
 
     def __str__(self):
-        return self.title + '---Basqa menbe meqaleleri'
+        return  '---Basqa menbe meqaleleri'
     
 class AnotherSourceInterviews(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)
@@ -136,7 +136,7 @@ class AnotherSourceInterviews(models.Model):
     href = models.CharField(max_length=1200,null=True,blank=True)
 
     def __str__(self):
-        return self.title + '---Basqa menbe interviewlari'
+        return  '---Basqa menbe interviewlari'
     
 class HomeHeader(models.Model):
     title = models.CharField(max_length=1200,null=True,blank=True)
