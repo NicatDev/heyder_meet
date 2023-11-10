@@ -1327,6 +1327,12 @@ window.onload = function() {
 };
     </script>
     <script>
+        var kitab = "{{request.GET.kitab}}"
+        var musahibe = "{{request.GET.musahibe}}"
+        var meqale = "{{request.GET.muqavile}}"
+        if (kitab) { document.getElementById('kitab23').click()}
+        if (musahibe) { document.getElementById('musahibe23').click()}
+        if (meqale) { document.getElementById('meqale23').click()}
         var url = "{{ request.GET.page }}"
         var urls = "{{ request.GET.pages }}"
         var urlsmu = "{{ request.GET.searchmusahibe }}"
