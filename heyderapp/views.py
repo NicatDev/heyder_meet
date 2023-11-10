@@ -162,12 +162,14 @@ def article3(request):
     context['video_list'] = Video.objects.all()
     return render(request,'xatireler.html',context)
 
-
 def article(request):
     articles = Article.objects.all()
-    tag_name = request.GET.get('tag','')
-    if tag_name:
-        articles = articles.filter(tag__name = tag_name)
+    searchmusahibe = request.GET.get('searchmusahibe','')
+    searchmeqale = request.GET.get('searchmeqale','')
+
+    if searchmeqale:
+        articles = articles.filter(Q(name__icontains=searchmeqale) | Q(content__icontains=searchmeqale))
+    
     paginator = Paginator(articles, 4)
     page = request.GET.get("page", 1)
     article_list = paginator.get_page(page)
@@ -178,6 +180,8 @@ def article(request):
     artcategories = Category.objects.annotate(photo_count=Count('meqaleler')).filter(photo_count__gt=0)
     allheader = AllHeader.objects.all()
     interviews = Interview.objects.all()
+    if searchmusahibe:
+        interviews = interviews.filter(Q(name__icontains=searchmusahibe) | Q(content__icontains=searchmusahibe))
     paginator2 = Paginator(interviews, 4)
     page2 = request.GET.get("ipage", 1)
     interviews = paginator2.get_page(page2)
