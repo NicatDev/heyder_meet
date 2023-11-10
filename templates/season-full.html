@@ -525,7 +525,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="banner-wrap justify-content-between align-items-center" style="background-image:url('{{HomeHeader.image.url}}')">
+                        <div class="banner-wrap justify-content-between align-items-center" style="background-image:url('{{HomeHeader.image.url}}');background-size: cover;background-repeat: no-repeat;">
                             <div class="left-wrap">
                                 <span style="opacity:0;" class="rnd">IMDb 6.7</span>
                                 <h2 style="user-select:none ;">{{HomeHeader.content|slice:350|safe}}</h2>
@@ -541,7 +541,7 @@
                             </div>
                             <div class="right-wrap">
                                 {% if HomeHeader.image %}
-                                <img style="width: 100%;height:100%;filter: contrast(120%) brightness(120%);"
+                                <img  style="opacity:0;width: 100%;height:100%;filter: contrast(120%) brightness(120%);"
                                     src="{{HomeHeader.image.url}}" alt="">
                                 {% endif %}
                             </div>
