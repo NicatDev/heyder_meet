@@ -155,6 +155,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
+        'extraPlugins': 'blockquote',
     },
 }
 STATICFILES_FINDERS = (
