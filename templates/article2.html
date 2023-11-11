@@ -824,11 +824,12 @@
     </div>
 </div>
 <script>
-    // Get the strong tag
-    var strongTag = document.querySelector('strong');
+    console.log('-232323')
+    // Get all strong tags
+    var strongTags = document.querySelectorAll('strong');
 
-    // Check if the strong tag is found
-    if (strongTag) {
+    // Iterate through each strong tag
+    strongTags.forEach(function(strongTag) {
       // Get the div element inside the strong tag with the specified classes
       var divElement = strongTag.querySelector('.col-xxl-4.col-xl-5.col-lg-5');
 
@@ -843,7 +844,7 @@
         // Add the classes to the strong tag
         strongTag.className = classes;
       }
-    }
+    });
   </script>
 <script>
     // Get all the pagespan elements
