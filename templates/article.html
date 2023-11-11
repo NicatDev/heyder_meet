@@ -1465,9 +1465,7 @@ a {
         var current_page = 1;
 var records_per_page = 4;
 jsonData = [];
-        {% for item in sourcearticles %}
-        jsonData.push("{{ item.title }}"); 
-        {% endfor %}
+     
 console.log(jsonData)
 
 function prevPage()
@@ -1948,6 +1946,11 @@ a {
         display: none;
     }}
     </style>
+    <style>
+        .lang_selector{
+            display: none;
+        }
+        </style>
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
