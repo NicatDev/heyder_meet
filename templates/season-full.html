@@ -510,8 +510,8 @@
                                 {% for video in HomeHeaderVideo %}
 
                                 <div class="owl-items">
-                                    <div class="myplaybtn" >
-                                        <i style="height: 50px;font-size:50px;width:50px;color:rgb(5, 5, 139);margin-right:px;" class="fa-solid fa-circle-play"></i> 
+                                    <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;">
+                                        <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i> 
                                     </div>
                                     <a href="#media-popup" data-media="{{video.embed_full}}"
                                         class="slide-one slide-two slide-three">
@@ -2435,6 +2435,12 @@
     .brand-carousel {
 
         margin-top: 3% !important;
+    }
+    .myplaybtn{
+        display: none;
+    }
+    .myplaybtn:hover{
+        display: block;
     }
 </style>
 <style>
