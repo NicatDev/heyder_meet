@@ -243,6 +243,7 @@ class Interview(BaseMixin):
     content = models.TextField()
     image = models.ImageField()
     views = models.CharField(max_length=12000,null=True,blank=True)
+    contentforall = models.CharField(max_length=240,null=True,blank=True)
     
     def __str__(self):
         return self.name  + '--interview'

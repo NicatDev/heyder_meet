@@ -24,7 +24,7 @@ class MyNameAdmin2(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget(config_name='default')},
     }
-admin.site.register(Interview,MyNameAdmin2)
+admin.site.register(Interview,MyNameAdmin222)
 class MyNameAdminVideo(admin.ModelAdmin):
     exclude = ('name','content','coverimage')
 class MyNameAdminVideo2(admin.ModelAdmin):
