@@ -824,28 +824,40 @@
     </div>
 </div>
 <script>
-    console.log('-232323')
-    // Get all strong tags
-    var strongTags = document.querySelectorAll('strong');
-
-    // Iterate through each strong tag
-    strongTags.forEach(function(strongTag) {
-      // Get the div element inside the strong tag with the specified classes
-      var divElement = strongTag.querySelector('.col-xxl-4.col-xl-5.col-lg-5');
-
-      // Check if the div element is found
-      if (divElement) {
+    // Get all div elements with the specified classes
+    var divElements = document.querySelectorAll('.col-xxl-4.col-xl-5.col-lg-5');
+  
+    // Iterate through each div element
+    divElements.forEach(function(divElement) {
+      // Find the parent strong tag
+      var strongTag = findParentWithTag(divElement, 'strong');
+  
+      // Check if the strong tag is found
+      if (strongTag) {
         // Get the classes from the div element
         var classes = divElement.className;
-
+  
         // Remove all classes from the div element
         divElement.className = '';
-
+  
         // Add the classes to the strong tag
         strongTag.className = classes;
       }
     });
+  
+    // Helper function to find the parent element with a specific tag
+    function findParentWithTag(element, tagName) {
+      tagName = tagName.toUpperCase();
+  
+      // Traverse up the DOM tree until the body element
+      while (element && element.tagName !== tagName && element !== document.body) {
+        element = element.parentElement;
+      }
+  
+      return element.tagName === tagName ? element : null;
+    }
   </script>
+  
 <script>
     // Get all the pagespan elements
     const pagespanElementss = document.querySelectorAll('.peygspan');
