@@ -193,7 +193,7 @@ def article(request):
         interviews = interviews.filter(Q(name__icontains=searchmusahibe) | Q(content__icontains=searchmusahibe))
     paginator2 = Paginator(interviews, 4)
     page2 = request.GET.get("ipage", 1)
-    interviews = paginator2.get_page(page2)
+    interview_list = paginator2.get_page(page2)
     books =  Book.objects.all()
     if allheader.exists():
         allheader = allheader.first()
@@ -207,17 +207,15 @@ def article(request):
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
     pagecounts = [x+1 for x in range(page_counts)] 
-    page_count3 = paginator.num_pages
-    count = [count+1 for count in range(page_count3)]
-    page_count4 = paginator2.num_pages
-    count2 = [count+1 for count in range(page_count4)]
+    count = (len(articles)+3)/4
+    count2 = (len(interviews)+3)/4
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
         'artcategories':artcategories,
         'vidcategories':vidcategories,
         'allheader':allheader,
-        'interviews':interviews,
+        'interviews':interview_list,
         'books':books,
         'sourcearticles':list(sourcearticles.values()),
         'sourceinterviews':list(sourceinterviews.values()),
