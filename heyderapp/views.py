@@ -207,9 +207,9 @@ def article(request):
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
     pagecounts = [x+1 for x in range(page_counts)] 
-    count = (len(articles)+3)/4
+    count = (len(articles)+3)//4
     count = [x+1 for x in range(count)]
-    count2 = (len(interviews)+3)/4
+    count2 = (len(interviews)+3)//4
     count2 = [x+1 for x in range(count2)]
     context = {
         'articles':article_list,
