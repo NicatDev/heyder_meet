@@ -544,7 +544,7 @@
                      
                   </div>
                </div>
-               <div class="col-xxl-4 col-xl-5 col-lg-5">
+               <div class="w23">
                   <div class="sidebar__wrapper">
                      <div class="sidebar__widget ">
                         <div class="sidebar__widget-content">
@@ -741,7 +741,7 @@
                     {% endif %}</div>
                  
             </div>
-            <div class="col-xxl-4 col-xl-5 col-lg-5">
+            <div class="w23">
                 <div class="sidebar__wrapper">
                    <div class="sidebar__widget ">
                       <div class="sidebar__widget-content">
@@ -784,6 +784,25 @@
                          </div>
                       </div>
                    </div>
+                   <script>
+                    // Select all strong tags
+                    var strongElements = document.querySelectorAll('strong');
+                
+                    // Add the specified classes to each strong tag
+                    strongElements.forEach(function(strongElement) {
+                        strongElement.classList.add('col-xxl-4', 'col-xl-5', 'col-lg-5');
+                    });
+                </script>
+                
+                    
+
+
+                            <style>
+                    .w23{
+                        width:100% !important;
+                    }
+                   </style>
+                 
                    <script>
                       // Get all the pagespan elements
                       const pagespanElementss = document.querySelectorAll('.peygspan');
@@ -913,30 +932,7 @@
         </div>
     </div>
 </div>
-<script>
-    // Tüm strong etiketlerini seç
-    var strongElements = document.querySelectorAll('strong');
 
-console.log(strongElements,'-------------------------------')
-    strongElements.forEach(function(strongElement) {
-      
-        var allClasses = Array.from(strongElement.classList);
-
-        // Strong etiketinin sınıflarını temizle
-        strongElement.removeAttribute('class');
-
-        // Strong etiketinin tüm sınıflarını al ve ekstra sınıflarla birleştir
-        var combinedClasses = allClasses.join(' ');
-
-        // Strong etiketinin sınıflarına tüm sınıfları ekle (ancak tekrar etmeyenler)
-        combinedClasses.split(' ').forEach(function(className) {
-            if (!strongElement.classList.contains(className)) {
-                console.log(className)
-                strongElement.classList.add(className);
-            }
-        });
-    });
-</script>
 
 <style>
     .divSosialLinks {
