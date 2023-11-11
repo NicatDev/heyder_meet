@@ -461,7 +461,7 @@
          <div class="container">
             
             <div class="row g-40 tabpanel" id="account">
-             <div class="col-12">
+             
                <div class="col-xxl-8 col-xl-7 col-lg-7">
                   <div class="postbox__wrapper">
                      <!-- bloglar baslayir-->
@@ -598,7 +598,7 @@
                      
                     
                   </div>
-               </div></div>
+               </div>
             </div>
             <div  id="bonuses" hidden class="row g-40 tabpanel">
                 {% for book in books %}
@@ -823,6 +823,28 @@
         </div>
     </div>
 </div>
+<script>
+    // Get the strong tag
+    var strongTag = document.querySelector('strong');
+
+    // Check if the strong tag is found
+    if (strongTag) {
+      // Get the div element inside the strong tag with the specified classes
+      var divElement = strongTag.querySelector('.col-xxl-4.col-xl-5.col-lg-5');
+
+      // Check if the div element is found
+      if (divElement) {
+        // Get the classes from the div element
+        var classes = divElement.className;
+
+        // Remove all classes from the div element
+        divElement.className = '';
+
+        // Add the classes to the strong tag
+        strongTag.className = classes;
+      }
+    }
+  </script>
 <script>
     // Get all the pagespan elements
     const pagespanElementss = document.querySelectorAll('.peygspan');
