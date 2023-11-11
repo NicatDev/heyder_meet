@@ -913,32 +913,23 @@
         </div>
     </div>
 </div>
-
 <script>
     // Tüm strong etiketlerini seç
     var strongElements = document.querySelectorAll('strong');
 
     // Her bir strong etiketi için işlem yap
     strongElements.forEach(function(strongElement) {
-        // İlk çocuğunun tüm sınıflarını al
-        var firstChildClasses = strongElement.firstElementChild.classList;
+        // Tüm sınıfları al
+        var allClasses = Array.from(strongElement.classList);
 
-        // Strong etiketinin içeriğini ve tüm sınıflarını birleştir
-        var combinedContent = strongElement.innerHTML + ' ' + Array.from(firstChildClasses).join(' ');
+        // Strong etiketinin tüm sınıflarını al ve ekstra sınıflarla birleştir
+        var combinedClasses = allClasses.join(' ');
 
-        // Strong etiketinin içeriğini ve tüm sınıflarını değiştir
-        strongElement.innerHTML = '<div style="width: 100%;">' + combinedContent + '</div>';
-
-        // İlk çocuğunun tüm sınıflarını sil
-        firstChildClasses.forEach(function(className) {
-            strongElement.firstElementChild.classList.remove(className);
-        });
-
-        // İlk çocuğunun tüm sınıflarını strong etiketinden kaldır
-        strongElement.removeAttribute('class');
+        // Strong etiketinin sınıflarına tüm sınıfları ekle
+        strongElement.classList.add(combinedClasses);
     });
 </script>
-{% comment %} s {% endcomment %}
+
 <style>
     .divSosialLinks {
         display: flex;
