@@ -207,10 +207,10 @@ def article(request):
     page_counts = (products_count + products_per_page - 1) // products_per_page
     pagecount = [x+1 for x in range(page_count)]
     pagecounts = [x+1 for x in range(page_counts)] 
-    page_count = paginator.num_pages
-    count = [count+1 for count in range(page_count)]
-    page_count2 = paginator2.num_pages
-    count2 = [count+1 for count in range(page_count2)]
+    page_count3 = paginator.num_pages
+    count = [count+1 for count in range(page_count3)]
+    page_count4 = paginator2.num_pages
+    count2 = [count+1 for count in range(page_count4)]
     context = {
         'articles':article_list,
         'fotcategories':fotcategories,
