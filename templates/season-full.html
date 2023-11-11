@@ -1026,7 +1026,10 @@
                     <div class="slide-slider-full owl-carousel owl-theme">
                         {% for video in videos %}
                         <div class="owl-items">
-                            <div class="myplaybtn" style="border-radius:50%;background-color: rgb(0, 0, 63);height: 40px;width:40px;z-index:1;"></div></button>
+                            <div class="myplaybtn" style="border-radius:50%;background-color: rgb(0, 0, 63);height: 40px;width:40px;z-index:1;">
+                                <div class="triangle-container">
+                                    <div class="triangle"></div>
+                                  </div></div>
                             <a href="#media-popup" data-media="{{video.embed_full}}"
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
 
@@ -2436,6 +2439,26 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+    .triangle-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000; /* Çerçeveyi göstermek için */
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 173.21px solid #4CAF50; /* Dik üçgen için */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
     </style>
 <style>
     @media (min-width: 1199px) {
