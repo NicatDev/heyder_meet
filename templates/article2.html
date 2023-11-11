@@ -931,6 +931,7 @@ console.log(strongElements,'-------------------------------')
         // Strong etiketinin sınıflarına tüm sınıfları ekle (ancak tekrar etmeyenler)
         combinedClasses.split(' ').forEach(function(className) {
             if (!strongElement.classList.contains(className)) {
+                console.log(className)
                 strongElement.classList.add(className);
             }
         });
