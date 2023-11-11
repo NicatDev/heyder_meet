@@ -544,7 +544,7 @@
                      
                   </div>
                </div>
-               <div class="w23">
+               <div class="col-xxl-4 col-xl-5 col-lg-5">
                   <div class="sidebar__wrapper">
                      <div class="sidebar__widget ">
                         <div class="sidebar__widget-content">
@@ -741,7 +741,7 @@
                     {% endif %}</div>
                  
             </div>
-            <div class="w23">
+            <div class="col-xxl-4 col-xl-5 col-lg-5">
                 <div class="sidebar__wrapper">
                    <div class="sidebar__widget ">
                       <div class="sidebar__widget-content">
@@ -784,66 +784,7 @@
                          </div>
                       </div>
                    </div>
-                   <script>
-                    </script
-                    
-
-
-                            <style>
-                    .w23{
-                        width:100% !important;
-                    }
-                   </style>
-                 
-                   <script>
-                      // Get all the pagespan elements
-                      const pagespanElementss = document.querySelectorAll('.peygspan');
-                      
-                      // Get all the rc__post elements
-                      const rcPostElementss = document.querySelectorAll('.rgpost');
-                      function setInitialStates() {
-                      const firstPagespan = pagespanElementss[0];
-                      firstPagespan.click(); 
-                                      }
-                      // Add a click event listener to each pagespan
-                      pagespanElementss.forEach(pagespan => {
-                          pagespan.addEventListener('click', function () {
-                              const filterValue = this.id;
-                  
-                              // Hide all rc__post elements
-                              rcPostElementss.forEach(rcPost => {
-                                  const dataFilter = rcPost.getAttribute('data-filter');
-                                  
-                                  console.log(dataFilter,filterValue)
-                                  if (parseInt(dataFilter) === parseInt(filterValue)*6 || parseInt(dataFilter) === parseInt(filterValue)*6-1 || parseInt(dataFilter) === parseInt(filterValue)*6-2 
-                                  || parseInt(dataFilter) === parseInt(filterValue)*6-3  || parseInt(dataFilter) === parseInt(filterValue)*6-4  || parseInt(dataFilter) === parseInt(filterValue)*6-5 )  {
-                                      
-                                      rcPost.style.display = 'block';
-                                  } else {
-                                      rcPost.style.display = 'none';
-                                  }
-                              });
-                         
-                              // Highlight the clicked pagespan
-                              pagespanElementss.forEach(span => {
-                                  span.style.fontWeight = 'normal';
-                              });
-                              this.style.fontWeight = 'bold';
-                          });
-
-                  
-                      });
-                      setInitialStates()
-                      // rcPostElements.forEach(rcPost => {
-                      //             const dataFilter = rcPost.getAttribute('data-filter');
-                      //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
-                      //                 rcPost.style.display = 'block';
-                      //             } else {
-                      //                 rcPost.style.display = 'none';
-                      //             }
-                      //         });
-                  </script>
-                   
+              
                   
                 </div>
              </div>
@@ -924,7 +865,55 @@
         </div>
     </div>
 </div>
+<script>
+    // Get all the pagespan elements
+    const pagespanElementss = document.querySelectorAll('.peygspan');
+    
+    // Get all the rc__post elements
+    const rcPostElementss = document.querySelectorAll('.rgpost');
+    function setInitialStates() {
+    const firstPagespan = pagespanElementss[0];
+    firstPagespan.click(); 
+                    }
+    // Add a click event listener to each pagespan
+    pagespanElementss.forEach(pagespan => {
+        pagespan.addEventListener('click', function () {
+            const filterValue = this.id;
 
+            // Hide all rc__post elements
+            rcPostElementss.forEach(rcPost => {
+                const dataFilter = rcPost.getAttribute('data-filter');
+                
+                console.log(dataFilter,filterValue)
+                if (parseInt(dataFilter) === parseInt(filterValue)*6 || parseInt(dataFilter) === parseInt(filterValue)*6-1 || parseInt(dataFilter) === parseInt(filterValue)*6-2 
+                || parseInt(dataFilter) === parseInt(filterValue)*6-3  || parseInt(dataFilter) === parseInt(filterValue)*6-4  || parseInt(dataFilter) === parseInt(filterValue)*6-5 )  {
+                    
+                    rcPost.style.display = 'block';
+                } else {
+                    rcPost.style.display = 'none';
+                }
+            });
+       
+            // Highlight the clicked pagespan
+            pagespanElementss.forEach(span => {
+                span.style.fontWeight = 'normal';
+            });
+            this.style.fontWeight = 'bold';
+        });
+
+
+    });
+    setInitialStates()
+    // rcPostElements.forEach(rcPost => {
+    //             const dataFilter = rcPost.getAttribute('data-filter');
+    //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
+    //                 rcPost.style.display = 'block';
+    //             } else {
+    //                 rcPost.style.display = 'none';
+    //             }
+    //         });
+</script>
+ 
 
 <style>
     .divSosialLinks {
