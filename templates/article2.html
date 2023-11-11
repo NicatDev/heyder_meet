@@ -916,17 +916,24 @@
 <script>
     // Tüm strong etiketlerini seç
     var strongElements = document.querySelectorAll('strong');
-console.log('2222222222222222222222222222222222222',strongElements)
+
     // Her bir strong etiketi için işlem yap
     strongElements.forEach(function(strongElement) {
         // Tüm sınıfları al
         var allClasses = Array.from(strongElement.classList);
 
+        // Strong etiketinin sınıflarını temizle
+        strongElement.removeAttribute('class');
+
         // Strong etiketinin tüm sınıflarını al ve ekstra sınıflarla birleştir
         var combinedClasses = allClasses.join(' ');
 
-        // Strong etiketinin sınıflarına tüm sınıfları ekle
-        strongElement.classList.add(combinedClasses);
+        // Strong etiketinin sınıflarına tüm sınıfları ekle (ancak tekrar etmeyenler)
+        combinedClasses.split(' ').forEach(function(className) {
+            if (!strongElement.classList.contains(className)) {
+                strongElement.classList.add(className);
+            }
+        });
     });
 </script>
 
