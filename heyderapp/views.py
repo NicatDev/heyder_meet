@@ -192,7 +192,7 @@ def article(request):
     if searchmusahibe:
         interviews = interviews.filter(Q(name__icontains=searchmusahibe) | Q(content__icontains=searchmusahibe))
     paginator2 = Paginator(interviews, 4)
-    page2 = request.GET.get("ipage", 1)
+    page2 = request.GET.get("pages", 1)
     interview_list = paginator2.get_page(page2)
     books =  Book.objects.all()
     if allheader.exists():
