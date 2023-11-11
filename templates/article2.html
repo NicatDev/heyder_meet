@@ -589,55 +589,7 @@
                            </div>
                         </div>
                      </div>
-                     <script>
-                        // Get all the pagespan elements
-                        const pagespanElements = document.querySelectorAll('.pagespan');
-                        
-                        // Get all the rc__post elements
-                        const rcPostElements = document.querySelectorAll('.rc__post');
-                        function setInitialState() {
-                        const firstPagespan = pagespanElements[0];
-                        firstPagespan.click(); 
-                                        }
-                        // Add a click event listener to each pagespan
-                        
-                        pagespanElements.forEach(pagespan => {
-                            pagespan.addEventListener('click', function () {
-                                const filterValue = this.id;
-                    
-                                // Hide all rc__post elements
-                                rcPostElements.forEach(rcPost => {
-                                    const dataFilter = rcPost.getAttribute('data-filter');
-                                    
-                                    console.log(dataFilter,filterValue)
-                                    if (parseInt(dataFilter) === parseInt(filterValue)*6 || parseInt(dataFilter) === parseInt(filterValue)*6-1 || parseInt(dataFilter) === parseInt(filterValue)*6-2 
-                                    || parseInt(dataFilter) === parseInt(filterValue)*6-3  || parseInt(dataFilter) === parseInt(filterValue)*6-4  || parseInt(dataFilter) === parseInt(filterValue)*6-5 )  {
-                                        
-                                        rcPost.style.display = 'block';
-                                    } else {
-                                        rcPost.style.display = 'none';
-                                    }
-                                });
-                           
-                                // Highlight the clicked pagespan
-                                pagespanElements.forEach(span => {
-                                    span.style.fontWeight = 'normal';
-                                });
-                                this.style.fontWeight = 'bold';
-                            });
-
-                    
-                        });
-                        setInitialState()
-                        // rcPostElements.forEach(rcPost => {
-                        //             const dataFilter = rcPost.getAttribute('data-filter');
-                        //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
-                        //                 rcPost.style.display = 'block';
-                        //             } else {
-                        //                 rcPost.style.display = 'none';
-                        //             }
-                        //         });
-                    </script>
+                 
                      
                     
                   </div>
@@ -749,12 +701,12 @@
                             <form action="#" method="GET">
                                {% csrf_token %}
                                
-<div class="sidebar__search-input">
-    <input name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
-    <button type="submit">
-       <i class="flaticon-search"></i>
-    </button>
- </div>
+                                <div class="sidebar__search-input">
+                                    <input name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
+                                    <button type="submit">
+                                    <i class="flaticon-search"></i>
+                                    </button>
+                                </div>
                             </form>
                          </div>
                       </div>
@@ -914,7 +866,55 @@
     //         });
 </script>
  
+<script>
+    // Get all the pagespan elements
+    const pagespanElements = document.querySelectorAll('.pagespan');
+    
+    // Get all the rc__post elements
+    const rcPostElements = document.querySelectorAll('.rc__post');
+    function setInitialState() {
+    const firstPagespan = pagespanElements[0];
+    firstPagespan.click(); 
+                    }
+    // Add a click event listener to each pagespan
+    
+    pagespanElements.forEach(pagespan => {
+        pagespan.addEventListener('click', function () {
+            const filterValue = this.id;
 
+            // Hide all rc__post elements
+            rcPostElements.forEach(rcPost => {
+                const dataFilter = rcPost.getAttribute('data-filter');
+                
+                console.log(dataFilter,filterValue)
+                if (parseInt(dataFilter) === parseInt(filterValue)*6 || parseInt(dataFilter) === parseInt(filterValue)*6-1 || parseInt(dataFilter) === parseInt(filterValue)*6-2 
+                || parseInt(dataFilter) === parseInt(filterValue)*6-3  || parseInt(dataFilter) === parseInt(filterValue)*6-4  || parseInt(dataFilter) === parseInt(filterValue)*6-5 )  {
+                    
+                    rcPost.style.display = 'block';
+                } else {
+                    rcPost.style.display = 'none';
+                }
+            });
+       
+            // Highlight the clicked pagespan
+            pagespanElements.forEach(span => {
+                span.style.fontWeight = 'normal';
+            });
+            this.style.fontWeight = 'bold';
+        });
+
+
+    });
+    setInitialState()
+    // rcPostElements.forEach(rcPost => {
+    //             const dataFilter = rcPost.getAttribute('data-filter');
+    //             if (dataFilter === 1 || dataFilter*3 === 2 || dataFilter*3 === 3) {
+    //                 rcPost.style.display = 'block';
+    //             } else {
+    //                 rcPost.style.display = 'none';
+    //             }
+    //         });
+</script>
 <style>
     .divSosialLinks {
         display: flex;
