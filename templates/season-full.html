@@ -2437,11 +2437,12 @@
         margin-top: 3% !important;
     }
     .myplaybtn{
-        display: none;
+       opacity: 0;
     }
-    .myplaybtn:hover{
-        display: block;
+    .owl-items:hover .myplaybtn {
+      opacity: 1; /* Change opacity to 1 on parent hover */
     }
+   
 </style>
 <style>
     .myplaybtn{
