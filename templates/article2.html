@@ -458,143 +458,144 @@
     </div>
       <!-- postbox area start -->
       <section class="postbox__area section-spacing-bottom">
+        <div class="col-xxl-7 col-xl-7 col-lg-7">
+            <div class="postbox__wrapper">
+               <!-- bloglar baslayir-->
+               {% for blog in articles %}
+               <article class="postbox__item mb-60 bdFadeUp">
+                  <div class="postbox__thumb mb-30">
+                     <a href="{% url 'articlesingle' blog.slug %}">
+                        <img src="{{blog.image.url}}" alt="img not found">
+                     </a>
+                  </div>
+                  <div class="postbox__content">
+                     <div class="postbox__meta mb-20">
+                        <span>
+                          {% for tag in blog.tag.all %} <a href="#"></a>{% endfor %}
+                        </span>
+                 
+                     </div>
+                     <h3 class="postbox__title">
+                        <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
+                     </h3>
+                     <div class="postbox__text ">
+                        <p>{{blog.content|slice:200|safe}}...</p>
+                     </div>
+                     <div class="col-xl-12 ">
+
+                        <a href="{% url 'articlesingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                     </div>
+                  </div>
+               </article>
+               {% endfor %}
+
+               
+
+               <!-- bloglar bitir -->
+           
+               {% if not articles %}
+                  <div class="container">
+                     <div class="row section-title-spacing">
+                        <div class="col-xl-6">
+                           <div class="section-title">
+                              <span class="section-subtitle title-anim">Nəticə mövcud deyil</span>
+
+                           </div>
+                        </div>
+         
+                     </div>
+                  </div>
+
+               {% endif %}
+               <div style="display: flex;justify-content: center;align-items: center;">  {% if articles %}
+                  <div class="bd-basic__pagination d-flex align-items-center bdFadeUp">
+                     <nav>
+                        <ul>
+                           <li>
+                              <a {% if not articles.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  articles.has_previous %}  href="?page={{ articles.previous_page_number }} "{% endif%}>
+                                 <i class="fa-light fa-arrow-left-long"></i>
+                              </a>
+                           </li>
+                       
+                           {% for page_num in count %}
+                              
+                           <li>
+                              <a href="?page={{ page_num }}">{{page_num}}</a>
+                           </li>
+               
+                           {% endfor %}
+                           
+                      
+               
+                          
+               
+                           <li>
+                              <a {% if not articles.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if articles.has_next %}  href="?page={{ articles.next_page_number }}" {% endif%}>
+                                 <i class="fa-light fa-arrow-right-long"></i>
+                              </a>
+                           </li>
+                           
+                        </ul>
+                     </nav>
+                  </div>
+                  {% endif %}</div>
+               
+            </div>
+         </div>
+
+         <div class="col-xxl-5 col-xl-5 col-lg-5">
+            <div class="sidebar__wrapper">
+               <div class="sidebar__widget ">
+                  <div class="sidebar__widget-content">
+                     <div class="sidebar__search">
+                        <form action="#" method="GET">
+                           {% csrf_token %}
+                         
+              <div class="sidebar__search-input">
+                  <input name="searchmeqale" type="text" placeholder="Meqalelerde axtar...">
+                  <button type="submit">
+                  <i class="flaticon-search"></i>
+                  </button>
+              </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar__widget ">
+                  <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
+                  <div class="sidebar__widget-content">
+                     <div class="sidebar__post">
+                
+                        {% for blg in sourcearticles %}
+                        
+                        <div   data-filter="{{forloop.counter}}" class="rc__post">
+                          <div class="rc__post-thumb">
+                          <a target="_blank" style="display: none;" href="{{blg.href}}">{{forloop.counter}}</a>
+                          </div>
+                          <div class="rc__post-content">
+                          <h5 class="rc__post-title">
+                          <a target="_blank" href="{{blg.href}}">{{forloop.counter}}-{{blg.title}}</a>
+                          </h5>
+                          <div class="postbox__meta">
+                          </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                 
+                        <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
+                        {% for count in pagecount %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+           
+               
+              
+            </div>
+         </div>
          <div class="container">
             <div class="row g-40 tabpanel" id="account">
-               <div class="col-xxl-7 col-xl-7 col-lg-7">
-                  <div class="postbox__wrapper">
-                     <!-- bloglar baslayir-->
-                     {% for blog in articles %}
-                     <article class="postbox__item mb-60 bdFadeUp">
-                        <div class="postbox__thumb mb-30">
-                           <a href="{% url 'articlesingle' blog.slug %}">
-                              <img src="{{blog.image.url}}" alt="img not found">
-                           </a>
-                        </div>
-                        <div class="postbox__content">
-                           <div class="postbox__meta mb-20">
-                              <span>
-                                {% for tag in blog.tag.all %} <a href="#"></a>{% endfor %}
-                              </span>
-                       
-                           </div>
-                           <h3 class="postbox__title">
-                              <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
-                           </h3>
-                           <div class="postbox__text ">
-                              <p>{{blog.content|slice:200|safe}}...</p>
-                           </div>
-                           <div class="col-xl-12 ">
-
-                              <a href="{% url 'articlesingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
-                           </div>
-                        </div>
-                     </article>
-                     {% endfor %}
-
-                     
-
-                     <!-- bloglar bitir -->
-                 
-                     {% if not articles %}
-                        <div class="container">
-                           <div class="row section-title-spacing">
-                              <div class="col-xl-6">
-                                 <div class="section-title">
-                                    <span class="section-subtitle title-anim">Nəticə mövcud deyil</span>
-
-                                 </div>
-                              </div>
-               
-                           </div>
-                        </div>
-
-                     {% endif %}
-                     <div style="display: flex;justify-content: center;align-items: center;">  {% if articles %}
-                        <div class="bd-basic__pagination d-flex align-items-center bdFadeUp">
-                           <nav>
-                              <ul>
-                                 <li>
-                                    <a {% if not articles.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  articles.has_previous %}  href="?page={{ articles.previous_page_number }} "{% endif%}>
-                                       <i class="fa-light fa-arrow-left-long"></i>
-                                    </a>
-                                 </li>
-                             
-                                 {% for page_num in count %}
-                                    
-                                 <li>
-                                    <a href="?page={{ page_num }}">{{page_num}}</a>
-                                 </li>
-                     
-                                 {% endfor %}
-                                 
-                            
-                     
-                                
-                     
-                                 <li>
-                                    <a {% if not articles.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if articles.has_next %}  href="?page={{ articles.next_page_number }}" {% endif%}>
-                                       <i class="fa-light fa-arrow-right-long"></i>
-                                    </a>
-                                 </li>
-                                 
-                              </ul>
-                           </nav>
-                        </div>
-                        {% endif %}</div>
-                     
-                  </div>
-               </div>
-    
-               <div class="col-xxl-5 col-xl-5 col-lg-5">
-                  <div class="sidebar__wrapper">
-                     <div class="sidebar__widget ">
-                        <div class="sidebar__widget-content">
-                           <div class="sidebar__search">
-                              <form action="#" method="GET">
-                                 {% csrf_token %}
-                               
-                    <div class="sidebar__search-input">
-                        <input name="searchmeqale" type="text" placeholder="Meqalelerde axtar...">
-                        <button type="submit">
-                        <i class="flaticon-search"></i>
-                        </button>
-                    </div>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="sidebar__widget ">
-                        <h3 class="sidebar__widget-title mb-30">Digər mənbələr</h3>
-                        <div class="sidebar__widget-content">
-                           <div class="sidebar__post">
-                      
-                              {% for blg in sourcearticles %}
-                              
-                              <div   data-filter="{{forloop.counter}}" class="rc__post">
-                                <div class="rc__post-thumb">
-                                <a target="_blank" style="display: none;" href="{{blg.href}}">{{forloop.counter}}</a>
-                                </div>
-                                <div class="rc__post-content">
-                                <h5 class="rc__post-title">
-                                <a target="_blank" href="{{blg.href}}">{{forloop.counter}}-{{blg.title}}</a>
-                                </h5>
-                                <div class="postbox__meta">
-                                </div>
-                                </div>
-                              </div>
-                              {% endfor %}
-                       
-                              <div style=" margin-left:auto; margin-right:auto; display:flex; align-items:center;justify-content:center;gap:8px;cursor: pointer;text-decoration: none;">
-                              {% for count in pagecount %}<span class="pagespan"  style="font-size:22px;"  id="{{forloop.counter}}">{{forloop.counter}}</span>{% endfor %}
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                 
-                     
-                    
-                  </div>
-               </div>
+             
             </div>
             <div  id="bonuses" hidden class="row g-40 tabpanel">
                 {% for book in books %}
