@@ -544,7 +544,7 @@
                      
                   </div>
                </div>
-               <div class="col-xxl-4 col-xl-4 col-lg-4">
+               <div class="col-xxl-4 col-xl-5 col-lg-5">
                   <div class="sidebar__wrapper">
                      <div class="sidebar__widget ">
                         <div class="sidebar__widget-content">
@@ -698,15 +698,15 @@
                    <div class="sidebar__widget ">
                       <div class="sidebar__widget-content">
                          <div class="sidebar__search">
-                            <form action="#" method="GET">
+         
                                {% csrf_token %}
                                
-                                <div class="sidebar__search-input">
-                                    <input name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
-                                    <button type="submit">
-                                    <i class="flaticon-search"></i>
-                                    </button>
-                                </div>
+                            <div class="sidebar__search-input">
+                                <input name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
+                                <button type="submit">
+                                <i class="flaticon-search"></i>
+                                </button>
+                            </div>
                             </form>
                          </div>
                       </div>
@@ -1161,7 +1161,7 @@
     </style>
 
 
-
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/js/meanmenu.js' %}"></script>
     <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'assets/js/slick.min.js' %}"></script>
@@ -1354,7 +1354,7 @@ window.onload = function() {
     </script>
    <!-- JS here -->
    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
-
+   <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
    <script src="{% static 'assets/js/slick.min.js' %}"></script>
