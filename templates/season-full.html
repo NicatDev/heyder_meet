@@ -510,7 +510,7 @@
                                 {% for video in HomeHeaderVideo %}
 
                                 <div class="owl-items">
-                                    <div class="myplaybtn" style="color:#000;z-index:1; background:linear-gradient(to right, rgb(255 255 255 / 0%), rgb(50 50 50 / 34%), rgba(255, 255, 255, 0));;border-radius: 50%;height: 50px;width: 50px;">
+                                    <div class="myplaybtn" style="">
                                         <i style="height: 50px;font-size:50px;width:50px;color:#000;margin-right:px;" class="fa-solid fa-circle-play"></i> 
                                     </div>
                                     <a href="#media-popup" data-media="{{video.embed_full}}"
@@ -2439,7 +2439,7 @@
 </style>
 <style>
     .myplaybtn{
-
+        color:rgb(26, 26, 100) !important;z-index:1; background:linear-gradient(to right, rgb(255 255 255 / 0%), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));;border-radius: 50%;height: 50px;width: 50px;
         position: absolute;
       top: 50%;
       left: 50%;
