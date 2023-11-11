@@ -509,11 +509,11 @@
                             <div class="slide-slider-full owl-carousel owl-theme">
                                 {% for video in HomeHeaderVideo %}
 
-                                <div class="owl-items">
+                                <div class="owl-items">          <a href="#media-popup" data-media="{{video.embed_full}}">
                                     <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;">
-                                        <a href="#media-popup" data-media="{{video.embed_full}}">
-                                        <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i> </a>
-                                    </div>
+                              
+                                        <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i> 
+                                    </div></a>
                                     <a href="#media-popup" data-media="{{video.embed_full}}"
                                         class="slide-one slide-two slide-three">
                                         <div class="slide-image"
