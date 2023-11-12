@@ -234,7 +234,7 @@
                                       } else if ($(this).hasClass('lang-pt')) {
                                           $(".language-dropdown").find(".lang-flag").addClass("lang-pt").removeClass("lang-en");
                                           $("#lang_selected").html("<p>RU</p>")
-                                          window.location.href = '/ru'
+                                          window.location.href = '/ru' +  
                                       }
                                       $(".language-dropdown").removeClass("open");
                                   });
@@ -1182,7 +1182,10 @@ a {
     text-transform: uppercase;
     color: #FFFFFF;}
 
-
+    .page-title .p-text{
+            display: flex;
+            justify-content: center;
+        }
     .transparent-header{
         position: relative;
     }
