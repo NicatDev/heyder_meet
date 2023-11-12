@@ -8887,7 +8887,7 @@ i[class^=flaticon-] {
 @media (max-width: 575px) {
   .page-title {
     font-size: 40px;
-    justify-content: start;
+    justify-content: center;
   }
 }
 
