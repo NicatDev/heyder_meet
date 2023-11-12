@@ -8891,7 +8891,7 @@ i[class^=flaticon-] {
   }
 }
 .fm-breadcrumb-area{
-  background-size: center;
+  background-position: center;
 }
 .achieve-text-clr {
   color: #777;
