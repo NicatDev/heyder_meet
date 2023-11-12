@@ -327,7 +327,7 @@
         <div class="fm-header-sidebar-wrapper">
            <div class="fm-header-sidebar-action mb-65">
               <div class="fm-header-sidebar-logo">
-                 <a href="index-2.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt="logo not found"></a>
+                 <a href="index-2.html"><img src="{{head.logoheader.url}}" alt="logo not found"></a>
               </div>
               <div class="offcanvas-close">
                  <a class="offcanvas-btn" href="#0">
@@ -1184,7 +1184,7 @@ a {
 
     .page-title .p-text{
             display: flex;
-            justify-content: center;
+            justify-content: center;text-align:center;
         }
     .transparent-header{
         position: relative;
