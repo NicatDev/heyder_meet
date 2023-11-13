@@ -1218,7 +1218,8 @@
                     tabElement.hidden = true
                 });
                 console.log(tabElement.id)
-                localStorage.setItem('tabid',tabElement.id)
+                if(tabElement.id != 'meqale23'){
+                localStorage.setItem('tabid',tabElement.id)}
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
             });
