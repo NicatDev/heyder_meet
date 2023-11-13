@@ -1084,9 +1084,7 @@
 
 
     <!--photo galery-->
-    <div id="loadmorediv" style="    height: 881px;
-    overflow-y: scroll;
-    overflow-x: hidden; margin-bottom:3%;">
+    <div id="loadmorediv" style="    height: 881px; overflow-y: scroll; overflow-x: hidden; margin-bottom:3%;">
     <div class="grid-containerr">
 
         {% for image in photos %}
@@ -1112,6 +1110,34 @@
 
     </div>
 </div>
+<div id="loadmorediv2" style="    height: 881px; overflow-y: scroll; overflow-x: hidden; margin-bottom:3%;">
+                            {% for video in photos %}
+                        <div class="owl-items clickable-div" >
+                            <a href="#media-popup" data-media="{{video.embed_full}}">
+                            <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) )">
+                                <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i>
+                            </div> </a>
+                            <a href="#media-popup" data-media="{{video.embed_full}}"
+                                style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
+
+                                <div class="slide-image">
+                                    {% if video.coverimage %}
+                                    <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
+                                        src="{{video.image.url}}" alt="image" loading="lazy">
+                                    {% endif %}
+                                    <div
+                                        style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
+                                        <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
+                                       ">{{video.name}}</h3>
+                                    </div>
+
+                                </div>
+                       
+                            </a>
+                        </div>
+                        {% endfor %}  
+  
+    </div>
     {% endif %}
    
  
@@ -2294,6 +2320,15 @@
 
     }
 </style>
+<style>
+    
+    @media (max-width: 465px) {
+    .loadmorediv{display: none !important;}
+}
+@media (min-width: 466px) {
+    .loadmorediv2{display: none !important;}
+}
+    </style>
 <style>
     .divSosialLinks {
         display: flex;
