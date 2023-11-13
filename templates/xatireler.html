@@ -652,7 +652,7 @@
         var tabElements = document.querySelectorAll('.tabs-tab');
         tabElements.forEach(function (tabElement) {
             tabElement.addEventListener('click', function () {
-                localStorage.setItem('tabid',tabElement.id)
+                
                 var tabData = tabElement.getAttribute('data-ui-tablist-tab');
                 var mytab = document.getElementById(tabData)
                 var tabPanels = document.querySelectorAll('.tabpanel');
@@ -672,6 +672,8 @@
                     btn2.classList.remove('activee')
                 }
                 mytab.removeAttribute("hidden");
+                localStorage.setItem('tabid',tabElement.id)
+                console.log(tabElement.id)
                 console.log('Tıklanan tab verisi:', tabData);
             });
         });
