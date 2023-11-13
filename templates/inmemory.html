@@ -564,7 +564,7 @@
                                        <span class="tag">{{x.tag.first}}</span>
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
-                                             <a href="{% url 'inmemorysingle' x.slug %}"><img src="{{x.coverimage.url}}"
+                                             <a href="{% url 'inmemorysingle' x.slug %}"><img {% if x.coverimage %} src="{{x.coverimage.url}}" {% endif %}
                                                    alt="img not found"></a>
                                           </div>
                                           <div class="blogpost-box-3__content">
