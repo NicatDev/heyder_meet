@@ -529,8 +529,8 @@
                                  <a {% if pre %} href="{% url 'blogsingle' pre.slug %}" {% endif %}>{{pre.name}}</a>
                               </h5>
                               <div class="postbox__meta">
-            
-                                 <span>{{pre.date}}</span>
+                                 <span><a >{{pre.date}}</a></span>
+                  
                               </div>
                            </div>
                         </div>
@@ -562,7 +562,7 @@
                               </h5>
                               <div class="postbox__meta">
                         
-                                 <span>{{next.date}}</span>
+                                 <span><a >{{next.date}}</a></span>
                               </div>
                            </div>
                         </div>
