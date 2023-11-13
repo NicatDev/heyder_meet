@@ -1110,6 +1110,39 @@
 
     </div>
 </div>
+ <div id="loadmorediv2" style="display: none;">
+    <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="slide-slider-full owl-carousel owl-theme">
+                        {% for video in photos %}
+                        <div class="owl-items">
+                         
+                            <a 
+                                style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
+
+                                <div class="slide-image">
+                                    {% if video.image %}
+                                    <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
+                                        src="{{video.image.url}}" alt="image" loading="lazy">
+                                    {% endif %}
+                                    <div
+                                        style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
+                                        <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
+                                       ">{{video.name}}</h3>
+                                    </div>
+
+                                </div>
+                         
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
     {% endif %}
    
  
@@ -2659,6 +2692,14 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
 
 
 </script>
+<style>
+    @media (max-width: 466px) {
+    #loadmorediv{
+    display: none !important;}}
+    @media (min-width: 467px) {
+    #loadmorediv{
+    display: block !important;}}
+    </style>
 <script>
     let card = document.querySelectorAll(".cardd");
     let contentBox = document.querySelectorAll(".contentBox");
