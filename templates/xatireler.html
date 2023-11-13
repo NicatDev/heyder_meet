@@ -769,7 +769,7 @@
                                       </div>
                                       <div class="rc__post-content">
                                       <h5 class="rc__post-title">
-                                      <a href="{{blg.href}}">{{forloop.counter}}-{{blg.title}}</a>
+                                      <a href="{{blg.href}}">{{blg.title}}</a>
                                       </h5>
                                       <div class="postbox__meta">
                                       </div>
@@ -1159,6 +1159,15 @@ a {
       line-height: 50px;
     }
   }
+  
+
+    .rc__post {
+        margin-bottom:17px !important
+    }
+    .rc__post-content{
+        background-color: #f0f0f0;border-radius:4%;padding:5px;
+    }
+
   @media only screen and (min-width: 120px) and (max-width: 1024px) {
     .page-numbers {
       padding: 0 14px;
