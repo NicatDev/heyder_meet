@@ -1122,7 +1122,7 @@
                             <a 
                                 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
 
-                                <div class="slide-image">
+                                <div class="slide-image myimagedivphoto">
                                     {% if video.image %}
                                     <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
                                         src="{{video.image.url}}" alt="image" loading="lazy">
@@ -2693,6 +2693,7 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
 
 </script>
 <style>
+    
     @media (max-width: 467px) {
     #loadmorediv2{
         display: block !important;
@@ -2724,7 +2725,10 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
         });
     }
 </script>
-
+<style>
+    .myimagedivphoto:after{
+        background:none !important
+    }</style>
 
 <script>
     function myFunction() {
