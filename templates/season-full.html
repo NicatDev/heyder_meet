@@ -2292,15 +2292,7 @@
 
     }
 </style>
-<style>
-    
-    @media (max-width: 465px) {
-    .loadmorediv{display: none !important;}
-}
-@media (min-width: 466px) {
-    .loadmorediv2{display: none !important;}
-}
-    </style>
+
 <style>
     .divSosialLinks {
         display: flex;
@@ -2509,41 +2501,7 @@
         display: none;
     }}
     </style>
-<script>
 
-    const clickableDivs = document.querySelectorAll(".clickable-div");
-    var modal = document.getElementById("myModal");
-    const clickableImages = document.querySelectorAll(".myallimages");
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-
-    clickableDivs.forEach(function (div) {
-        div.addEventListener("click", function () {
-            // Inside this function, "this" refers to the clicked image element
-            const img = div.querySelector("img");
-
-            handleImageClick(img);
-        });
-    });
-    function handleImageClick(clickedImage) {
- 
-        modal.style.display = "block";
-        modalImg.src = clickedImage.src;
-
-    }
-
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-</script>
 
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
