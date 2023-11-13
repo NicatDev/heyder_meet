@@ -652,6 +652,7 @@
         var tabElements = document.querySelectorAll('.tabs-tab');
         tabElements.forEach(function (tabElement) {
             tabElement.addEventListener('click', function () {
+                localStorage.setItem('tabid',tabElement.id)
                 var tabData = tabElement.getAttribute('data-ui-tablist-tab');
                 var mytab = document.getElementById(tabData)
                 var tabPanels = document.querySelectorAll('.tabpanel');
@@ -1470,15 +1471,9 @@ a {
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
     <script>
-        var page = "{{ request.GET.page }}";
-            if(page){document.getElementById("dugmeId2").click();
-            document.getElementById("dugmeId2").classList.add('activee');
-            document.getElementById("dugmeId").classList.remove('activee');
-            console.log('00000------------------')}else{document.getElementById("dugmeId").click();
-            document.getElementById("dugmeId2").classList.remove('activee');
-            document.getElementById("dugmeId").classList.add('activee');
-            console.log('1111111111111-----------------')}
-            
+
+            let tabid = localStorage.getItem('tabid')
+            document.getElementById(tabid).click()
         
     </script>
 </body>
