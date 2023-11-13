@@ -1217,6 +1217,8 @@
                 tabPanels.forEach(function (tabElement) {
                     tabElement.hidden = true
                 });
+
+                localStorage.setItem('tabid',tabData.id)
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
             });
@@ -1261,25 +1263,29 @@
     </script>
 
     <script>
-        var kitab = "{{request.GET.kitab}}"
-        var musahibe = "{{request.GET.musahibe}}"
-        var meqale = "{{request.GET.muqavile}}"
-        if (kitab) { document.getElementById('kitab23').click()}
-        if (musahibe) { document.getElementById('musahibe23').click()}
-        if (meqale) { document.getElementById('meqale23').click()}
-        var url = "{{ request.GET.page }}"
-        var urls = "{{ request.GET.pages }}"
-        var urlsmu = "{{ request.GET.searchmusahibe }}"
-        var urlme = "{{ request.GET.searchmeqale }}"
-        if (url){
-            document.getElementById('meqale23').click()
-        }
-        else if(urls){
-            document.getElementById('musahibe23').click()
-        }
-        else if(urlsmu){document.getElementById('musahibe23').click()}
-        else if(urlsme){document.getElementById('meqale23').click()}
-        else{document.getElementById('meqale23').click()}
+        // var kitab = "{{request.GET.kitab}}"
+        // var musahibe = "{{request.GET.musahibe}}"
+        // var meqale = "{{request.GET.muqavile}}"
+        // if (kitab) { document.getElementById('kitab23').click()}
+        // if (musahibe) { document.getElementById('musahibe23').click()}
+        // if (meqale) { document.getElementById('meqale23').click()}
+        // var url = "{{ request.GET.page }}"
+        // var urls = "{{ request.GET.pages }}"
+        // var urlsmu = "{{ request.GET.searchmusahibe }}"
+        // var urlme = "{{ request.GET.searchmeqale }}"
+        // if (url){
+        //     document.getElementById('meqale23').click()
+        // }
+        // else if(urls){
+        //     document.getElementById('musahibe23').click()
+        // }
+        // else if(urlsmu){document.getElementById('musahibe23').click()}
+        // else if(urlsme){document.getElementById('meqale23').click()}
+        // else{document.getElementById('meqale23').click()}
+        let tabid = localStorage.getItem('tabid')
+        if (tabid='meqale23'){document.getElementById('meqale23').click()}
+        if (tabid='musahibe23'){document.getElementById('meqmusahibe23ale23').click()}
+        if (tabid='kitab23'){document.getElementById('kitab23').click()}
     </script>
     <style>
         #lang_selector{
