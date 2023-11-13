@@ -609,7 +609,7 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="blog-details.html"><img src="{{blg.coverimage.url}}"
+                                    <a href="blog-details.html"><img {% if blog.coverimage %} src="{{blg.coverimage.url}}" {% endif %}
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
