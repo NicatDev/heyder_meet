@@ -1477,12 +1477,14 @@ a {
             console.log(tabid)
             if (localStorage.getItem('tabid') == 'dugmeId2'){
             document.getElementById('dugmeId2').click()}
-            else if (localStorage.getItem('tabid') != 'dugmeId'){
+            else if (localStorage.getItem('tabid') == 'dugmeId'){
                 console.log('---------------010101')
                 document.getElementById('dugmeId').click()
+
+        }
+        else{
             document.getElementById('dugmeId').click()
         }
-        
     </script>
 </body>
 
