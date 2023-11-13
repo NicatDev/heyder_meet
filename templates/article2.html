@@ -1283,10 +1283,21 @@
         // else if(urlsme){document.getElementById('meqale23').click()}
         // else{document.getElementById('meqale23').click()}
         let tabid = localStorage.getItem('tabid')
-        console.log(tabid,'--------------')
+        if(tabid){
+
+
         if (tabid=='meqale23'){document.getElementById('meqale23').click();console.log('1')}
         if (tabid=='musahibe23'){document.getElementById('musahibe23').click();console.log('1')}
-        if (tabid=='kitab23'){document.getElementById('kitab23').click();console.log('1')}
+        if (tabid=='kitab23'){document.getElementById('kitab23').click();console.log('1')}}
+        else{
+            var kitab = "{{request.GET.kitab}}"
+        var musahibe = "{{request.GET.musahibe}}"
+        var meqale = "{{request.GET.muqavile}}"
+        if (kitab) { document.getElementById('kitab23').click()}
+        if (musahibe) { document.getElementById('musahibe23').click()}
+        if (meqale) { document.getElementById('meqale23').click()}
+        }
+    
     </script>
     <style>
         #lang_selector{
