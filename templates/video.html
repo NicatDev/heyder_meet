@@ -664,43 +664,22 @@
                     </div>
                     
                 </div>
-                <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="slide-slider-full owl-carousel owl-theme">
-                                    {% for video in videos %}
-                                    <div class="owl-items">
-                                        <a href="#media-popup" data-media="{{video.embed_full}}">
-                                        <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) )">
-                                            <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i>
-                                        </div> </a>
-                                        <a href="#media-popup" data-media="{{video.embed_full}}"
-                                            style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
-            
-                                            <div class="slide-image">
-                                                {% if video.coverimage %}
-                                                <img style="object-fit: cover;max-height: 350px;min-height: 350px;"
-                                                    src="{{video.coverimage.url}}" alt="image" loading="lazy">
-                                                {% endif %}
-                                                <div
-                                                    style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
-                                                    <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
-                                                   ">{{video.name}}</h3>
-                                                </div>
-            
-                                            </div>
-                                            <div class="slide-content" style="height: 8rem !important;">
-            
-                                                <p style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" style="height:4rem">
-                                                    {{video.content|slice:90}}...</p>
-            
-                                            </div>
-                                        </a>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide-slider owl-carousel owl-theme">
+                            {% for video in related_videos %}
+                            <div class="owl-items">
+                                <a class="slide-one"  href="#media-popup" data-media="{{video.embed_full}}">
+                                    <div class="slide-image"><img style="object-fit: cover; max-height:250px !important; height:250px ;" src="{{ video.coverimage.url }}" alt="image"></div>
+                                    <div class="slide-content" style="height:9em">
+                                        <h2>{{video.name}}  </h2>
+                                        <p style="line-height: 25px;">{{video.content|slice:70}}</p>
+                                   
+                                        <span class="tag">{{video.created_at}}</span>
                                     </div>
-                                    {% endfor %}
-                                </div>
+                                </a>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
