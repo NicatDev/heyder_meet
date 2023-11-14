@@ -416,7 +416,7 @@
                      <article class="postbox__item mb-60 bdFadeUp">
                         <div class="postbox__thumb mb-30">
                            <a href="{% url 'articlesingle' blog.slug %}">
-                              <img src="{{blog.image.url}}" alt="img not found">
+                              <img style="height: 500px;" src="{{blog.image.url}}" alt="img not found">
                            </a>
                         </div>
                         <div class="postbox__content">
@@ -568,7 +568,7 @@
                                 <p>Müəllif: {{book.writer}}</p>
                                 <p>Nəşr ili: {{book.year}}</p>
                                 <div class="d-flex" style="justify-content: center;">
-                                    <a style="display: flex;" target="_blank" href="{{book.book.url}}">
+                                    <a style="display: flex;" target="_blank" href="{{book.href}}">
                                         <p style="color:rgb(235, 182, 23)55, 255, 255;cursor: pointer;">Yükləmək</p>
                                         <i style="font-size:large;color:rgb(223, 0, 0);line-height: 25px;margin-left:10px;"
                                             class="fa-solid fa-download"></i>
@@ -590,7 +590,7 @@
                 <article class="postbox__item mb-60 bdFadeUp">
                     <div class="postbox__thumb mb-30">
                        <a href="{% url 'interviewsingle' blog.slug %}">
-                          <img src="{{blog.image.url}}" alt="img not found">
+                          <img style="height: 500px;" src="{{blog.image.url}}" alt="img not found">
                        </a>
                     </div>
                     <div class="postbox__content">

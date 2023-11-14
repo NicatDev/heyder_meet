@@ -273,6 +273,7 @@ class Book(BaseMixin):
     image = models.ImageField()
     year = models.CharField(max_length=1200,null=True,blank=True)
     book = models.FileField(null=True,blank=True)
+    href = models.CharField(max_length=2000,null=True,blank=True)
     def __str__(self):
         return self.name  + ' --kitab'
     
