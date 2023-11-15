@@ -463,52 +463,71 @@
                 </div>
             </div>
         </div>
-        <div class="fm-header-sidebar-area fm-header-sidebar-left">
-            <div class="fm-header-sidebar-wrapper">
-                <div class="fm-header-sidebar-action mb-65">
-                    <div class="fm-header-sidebar-logo">
-                        <a href="{% url 'home' %}"><img style="width:80px" src="{{head.logoheader.url}}"
-                                alt="logo not found"></a>
-                    </div>
-                    <div class="offcanvas-close">
-                        <a class="offcanvas-btn" href="#0">
-                            <i class="fa-thin fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="d-none d-sm-block">
-              
-
-
-                </div>
-                <div class="mobile-menu"></div>
-                <div class="fm-header-right d-none d-xl-block mr-10" style="text-align: center;display: block !important;">
-                            <a href="http://75.119.147.165:199/" class="fill-btn"
-                                style="font-size:15px;line-height:20px;border-radius: 3px;">Reabilitasiya <br> Həyatdır
-                                <span>
-                                    <i class="fa-regular fa-arrow-right"></i>
-                                </span>
-                            </a>
+        
+        <div class="overlay"></div>
+        <!-- sidebar area end -->
+        <!-- banenr wrapper -->
+        <div class="banner-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="banner-wrap justify-content-between align-items-center" style="background:#21181300;">
+                            <div style="position: absolute;z-index: 1;" class="left-wrap">
+                                <span style="opacity:0;" class="rnd">IMDb 6.7</span>
+                                <h2 style="user-select:none ;">{{HomeHeader.content|slice:350|safe}}</h2>
+                                <span style="opacity:0;cursor:none" class="tag"><b>Heyder Eliyev</b></span>
+                                <span style="opacity:0;cursor:none" class="tag">2020</span>
+                                <span style="opacity:0;cursor:none" class="tag"><b>HD</b></span>
+                                <span style="opacity:0;cursor:none" class="tag"><b>16+</b></span>
+                                <span style="opacity:0;cursor:none" class="tag">2 h 20 min</span>
+                                <p style="user-select:none;font-size: 16px !important;">{{ HomeHeader.title|safe }}</p>
+                                <a href="#media-popup" data-media="{{embed}}"  class="btn btn-lg"
+                                    style="background-color:var(--clr-theme-1);margin-top:10px;border-radius:5px !important;padding-top:8px !important;padding-bottom:8px !important;height:initial !important;width:200px !important;text-align:center !important;"><img
+                                        src="{% static 'templatestyles/images/play.png' %}" alt="icn">İNDİ İZLƏ</a>
+                            </div>
+                            <div style="    background: linear-gradient(90deg, #181616 24%, #0000001f);width: 100%;flex:0 0 100%;max-width: 100%;" class="right-wrap">
+                              <div style="mix-blend-mode: overlay;width: 100%;">
+                                <video  autoplay muted loop width="100%" style="height: initial !important;" >
+                                    <source src="{% static 's2.mp4' %}" type="video/mp4">
+                                </video>
+                            </div>
+                            </div>
                         </div>
-             
-                <div class="d-none d-sm-block d-sm-none d-md-block">
-                    <div class="fm-offcanvas-social">
-                        <span class="social-text">Sosial şəbəkələr</span>
-                        <div class="fm-offcanvas-social-icon">
-                            <a href="https://www.instagram.com/" target="_blank"><i  style="padding: 10px;line-height: 28px;"
-                                    class="fa-brands fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/" target="_blank"><i style="padding: 10px;line-height: 28px;"
-                                    class="fa-brands fa-facebook-f"></i></a>
-                            <a href="https://youtube.com/" target="_blank"><i style="padding: 9px;line-height: 28px;"
-                                    class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="slide-wrapper">
+                            <div class="slide-slider-full owl-carousel owl-theme">
+                                {% for video in HomeHeaderVideo %}
+<div class="owl-items">                                <a href="#media-popup" data-media="{{video.embed_full}}">
+                                    <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) )">
+                                        <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i>
+                                    </div> </a>
+                                  
+                                    <a href="#media-popup" data-media="{{video.embed_full}}"
+                                        class="slide-one slide-two slide-three">
+                                        <div class="slide-image"
+                                            style="background-image:url('{{video.coverimage.url}}');"></div>
+
+                                        <div style="position:absolute;width: 100%;height: 100%;padding:0;"
+                                            class="slide-content">
+                                            <div
+                                                style="display:flex;justify-content: space-evenly;padding-bottom:auto;height: 100%;">
+                                                <img style="position: absolute;width: 60px;height: 60px;right:8px;top:70%;"
+                                                    src="{{head.logoheader.url}}" alt="">
+                                                <h2 style="font-size:20px;text-align: center;margin-left:auto;padding-right: 14px;padding-top:5%;color:rgba(229, 229, 229, 0.863) !important; text-shadow: 2px 2px 4px #333;
+                                               ">{{video.name}}</h2>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="overlay"></div>
-        <!-- sidebar area end -->
-        <!-- banenr wrapper -->
         <div class="banner-wrapper">
             <div class="container-fluid">
                 <div class="row">
