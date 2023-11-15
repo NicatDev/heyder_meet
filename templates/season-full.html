@@ -467,7 +467,7 @@
         <div class="overlay"></div>
         <!-- sidebar area end -->
         <!-- banenr wrapper -->
-        <div class="banner-wrapper">
+        <div class="banner-wrapper banner1">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
@@ -528,7 +528,7 @@
                 </div>
             </div>
         </div>
-        <div  class="banner-wrapper">
+        <div   class="banner-wrapper banner2">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12">
@@ -557,7 +557,7 @@
                 </div>
             </div>
         </div>
-        <div id="kkk" class="col-sm-12" style="height: 180px;margin-top:1%;padding-right: 5%;padding-left:5%;">
+        <div id="kkk" class="col-sm-12 banner2" style="height: 180px;margin-top:1%;padding-right: 5%;padding-left:5%;">
             <div class="slide-wrapper">
                 <div style="height: 180px;" class="slide-slider-full owl-carousel owl-theme">
                     {% for video in HomeHeaderVideo %}
@@ -593,6 +593,20 @@
     @media (max-width: 576px){
 .slide-wrapper .slide-slider-full, .category-slider .slide-wrapper .slide-slider {
     width: 130% !important;}
+  }
+  @media (max-width: 576px){
+    .banner2{
+        display: block;
+
+    }
+    .banner1{display: none;}
+  }
+  @media (min-width: 576px){
+    .banner2{
+        display: none;
+
+    }
+    .banner1{display: block;}
   }
 </style>
         <!-- lahiye haqqinda -->
