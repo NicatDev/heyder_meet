@@ -319,6 +319,8 @@ def home(request):
         context['head'] = head
     for video in inmemories:
         video.embed_full = embed(video.embed)
+    if len(inmemories)>6:
+        inmemories = inmemories[0:6]
     context['inmemories']=inmemories
     homeheader = HomeHeader.objects.exists()
     if homeheader:
