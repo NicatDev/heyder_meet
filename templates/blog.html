@@ -418,9 +418,9 @@
                         </div>
                         <div class="postbox__content">
                            <div class="postbox__meta mb-20">
-                              <span>
+                              <!-- <span>
                                 {% for tag in blog.tag.all %} <a href="#"></a>{% endfor %}
-                              </span>
+                              </span> -->
                               <span>
                                  {{blog.created_at}}
                               </span>
@@ -433,7 +433,7 @@
                            </div>
                            <div class="col-xl-12 ">
 
-                              <a href="{% url 'blogsingle' blog.slug %}" class="fm-submit-btn ">Daha ətraflı</a>
+                              <a href="{% url 'blogsingle' blog.slug %}" style="padding-left:0px; padding-right:0px" class="fm-submit-btn ">Daha ətraflı</a>
                            </div>
                         </div>
                      </article>
