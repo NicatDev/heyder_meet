@@ -392,7 +392,7 @@
                      <div class="postbox__item mb-60">
                         <div class="postbox__meta mb-20">
                            <span><a href="#">{{blog.tag.first.name}}</a></span>
-                           <span>{{blog.date}}</span>
+                
                         </div>
                         <div class="fm__postbox-thumb mb-30">
                           
@@ -437,7 +437,7 @@
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not pre.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{pre.tag.first}}</a></span>
-                                 <span>{{pre.date}}</span>
+              
                               </div>
                            </div>
                         </div>
@@ -469,8 +469,7 @@
                               </h5>
                               <div class="postbox__meta">
                                  <span><a {% if not next.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{next.tag.first}}</a></span>
-                                 <span>{{next.date}}</span>
-                              </div>
+                                                     </div>
                            </div>
                         </div>
                      </div>
@@ -516,7 +515,7 @@
                                              <h4 class="blogpost-title"><a href="{% url 'articlesingle' x.slug %}">{{x.name}}</a></h4>
                                           </div>
                                        </div>
-                                       <div class="blogpost-date"><span>{{x.date}}</span></div>
+                                    
                                     </div>
                                  </div>
                                  {% endfor %}
