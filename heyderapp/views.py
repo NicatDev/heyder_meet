@@ -325,7 +325,7 @@ def home(request):
         embed_code = embed(HomeHeader.objects.first().href)
     context['embed']=embed_code
     return render(request,'season-full.html',context)
-
+# s
 def video(request):
     allheader = AllHeader.objects.all()
     if allheader.exists():
