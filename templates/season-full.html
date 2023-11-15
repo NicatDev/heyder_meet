@@ -2553,8 +2553,8 @@
 <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
 <script src="{% static 'assets/js/parallax.min.js' %}"></script>
 <script src="{% static 'assets/js/gsap.min.js' %}"></script>
-// <script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
-// <script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'assets/js/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'assets/js/ScrollToPlugin.min.js' %}"></script>
 <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
 <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
 <script src="{% static 'assets/js/knob.min.js' %}"></script>
@@ -2575,31 +2575,31 @@
     const targetElementId = "scroll"; // Elementin id'sini değiştirin
     let scrollingDown = true;
 
-function scrollElement() {
-  const element = document.getElementById('scroll');
-  console.log('scroll',element)
-  if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-    scrollingDown = false;
-    console.log('false')
-  }
+// function scrollElement() {
+//   const element = document.getElementById('scroll');
+//   console.log('scroll',element)
+//   if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+//     scrollingDown = false;
+//     console.log('false')
+//   }
 
-  // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
-  if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
-    scrollingDown = true;
-    console.log('true')
-  }
+//   // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
+//   if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
+//     scrollingDown = true;
+//     console.log('true')
+//   }
   
-  if (scrollingDown) {
-    element.scrollBy(0, height);
-    console.log('down')
-  } else {
-    element.scrollBy(0, -1000); 
-    console.log('up')
-  }
+//   if (scrollingDown) {
+//     element.scrollBy(0, height);
+//     console.log('down')
+//   } else {
+//     element.scrollBy(0, -1000); 
+//     console.log('up')
+//   }
 
 
-}
-setInterval(scrollElement, 6000);
+// }
+// setInterval(scrollElement, 6000);
 const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
     </script>
 <script>
