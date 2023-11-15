@@ -12522,11 +12522,7 @@ label.error {
 .slide-wrapper .slide-one .slide-image {
   position: relative;
 }
-@media only screen and (max-width: 576px) {
-  .slide-wrapper .slide-one .slide-image {
-    height: 130px;
-  }
-}
+
 .slide-wrapper .slide-one .slide-image img {
   width: 100%;
 }
