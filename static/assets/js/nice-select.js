@@ -63,28 +63,7 @@
                 n.find(".selected").removeClass("selected"), s.addClass("selected");
                 var i = s.data("display") || s.text();
                 n.find(".current").text(i), n.prev("select").val(s.data("value")).trigger("change");
-            }),
-            e(document).on("keydown.nice_select", ".nice-select", function (t) {
-                var s = e(this),
-                    n = e(s.find(".focus") || s.find(".list .option.selected"));
-                if (32 == t.keyCode || 13 == t.keyCode) return s.hasClass("open") ? n.trigger("click") : s.trigger("click"), !1;
-                if (40 == t.keyCode) {
-                    if (s.hasClass("open")) {
-                        var i = n.nextAll(".option:not(.disabled)").first();
-                        i.length > 0 && (s.find(".focus").removeClass("focus"), i.addClass("focus"));
-                    } else s.trigger("click");
-                    return !1;
-                }
-                if (38 == t.keyCode) {
-                    if (s.hasClass("open")) {
-                        var l = n.prevAll(".option:not(.disabled)").first();
-                        l.length > 0 && (s.find(".focus").removeClass("focus"), l.addClass("focus"));
-                    } else s.trigger("click");
-                    return !1;
-                }
-                if (27 == t.keyCode) s.hasClass("open") && s.trigger("click");
-                else if (9 == t.keyCode && s.hasClass("open")) return !1;
-            });
+            })
         var n = document.createElement("a").style;
         return (n.cssText = "pointer-events:auto"), "auto" !== n.pointerEvents && e("html").addClass("no-csspointerevents"), this;
     };
