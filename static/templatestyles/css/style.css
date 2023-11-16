@@ -14229,7 +14229,7 @@ align-items: start;
 @media screen and (max-width: 980px){
   #testimonial .content {
     overflow: hidden !important;
-        height: 110vh !important;
+        height: 96vh !important;
     }
 }
 
