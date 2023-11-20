@@ -548,12 +548,12 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="{{blog.href}}"><img src="{{blg.image.url}}"
+                                    <a href="{% url 'articlesingle' blg.slug %}"><img src="{{blg.image.url}}"
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h5 class="rc__post-title">
-                                       <a href="{{blog.href}}">{{blg.name}}</a>
+                                       <a href="{% url 'articlesingle' blg.slug %}">{{blg.name}}</a>
                                     </h5>
                                     <div class="postbox__meta">
                                        
