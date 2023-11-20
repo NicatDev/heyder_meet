@@ -1257,14 +1257,14 @@
         if (tabid=='meqale23'){document.getElementById('meqale23').click();console.log('1')}
         if (tabid=='musahibe23'){document.getElementById('musahibe23').click();console.log('1')}
         if (tabid=='kitab23'){document.getElementById('kitab23').click();console.log('1')}}
-        else{
+  
             var kitab = "{{request.GET.kitab}}"
         var musahibe = "{{request.GET.musahibe}}"
-        var meqale = "{{request.GET.muqavile}}"
+        var meqale = "{{request.GET.meqale}}"
         if (kitab) { document.getElementById('kitab23').click()}
         if (musahibe) { document.getElementById('musahibe23').click()}
         if (meqale) { document.getElementById('meqale23').click()}
-        }
+        
         var musahibe = "{{request.GET.searchmusahibe}}"
         var meqale = "{{request.GET.searchmeqale}}"
         if (musahibe){ document.getElementById('musahibe23').click()}
