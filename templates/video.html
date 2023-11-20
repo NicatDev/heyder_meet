@@ -91,6 +91,7 @@
             var $popupIframe = $(popup).find("iframe");
     
             $popupIframe.attr("src", videoUrl);
+            
     
             $("#pagepage").addClass("show-popup");
             $('body').css('overflow', 'hidden');
@@ -102,6 +103,7 @@
             e.stopPropagation();
     
             $(".page").removeClass("show-popup");
+            document.getElementById('myiframe').postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
             $('body').css('overflow', 'auto');
         });
     
