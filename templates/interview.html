@@ -554,18 +554,16 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="blog-details.html"><img src="{{blg.image.url}}"
+                                    <a href="{{blg.href}}"><img src="{{blg.image.url}}"
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h5 class="rc__post-title">
-                                       <a href="blog-details.html">{{blg.name}}</a>
+                                       <a href="{{blg.href}}">{{blg.name}}</a>
                                     </h5>
                                     <div class="postbox__meta">
                                        
-                                       <span>
-                                          <a href="#">{{tags.first.name}}</a>
-                                       </span>
+                                  
                        
                                     </div>
                                  </div>
