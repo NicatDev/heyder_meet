@@ -378,7 +378,7 @@
                                                 {% endfor %}
                                             </ul> -->
                                         </li>
-                                        <li class="has-dropdown"><a href="{% url 'article' %}?meqale=1">Məqalələr</a>
+                                        <li class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
 
                                         </li>
                                         <li class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
@@ -1193,7 +1193,7 @@
         <div class="aboutimagetitle-div" style="display: flex;align-items:center;justify-content:space-between;">
             <h3 style="user-select:none;">Məqalələr, Müsahibələr, Kitablar</h3>
             <div style="display: flex;align-items:center;display: none;">
-                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}?meqale=1">daha ətraflı</a></span>
+                <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}?m=1">daha ətraflı</a></span>
                 <span><img style=" border-radius: 5px;
                 filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
                         alt=""></span>
@@ -1712,7 +1712,7 @@
                                     <a href="{% url 'foto' %}">
                                         <p class="footerLinks">Foto</p>
                                     </a>
-                                    <a href="{% url 'article' %}?meqale=1">
+                                    <a href="{% url 'article' %}?m=1">
                                         <p class="footerLinks">Məqalələr</p>
                                     </a>
                                     <a href="{% url 'article3' %}">

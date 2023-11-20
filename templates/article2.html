@@ -298,7 +298,7 @@
                                         {% endfor %}
                                     </ul> -->
                                 </li>
-                                <li class="has-dropdown"><a href="{% url 'article' %}?meqale=1">Məqalələr</a>
+                                <li class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
 
                                 </li>
                                 <li class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
@@ -765,7 +765,7 @@
                             <a href="{% url 'foto' %}">
                                 <p class="footerLinks">Foto</p>
                             </a>
-                            <a href="{% url 'article' %}?meqale=1">
+                            <a href="{% url 'article' %}?m=1">
                                 <p class="footerLinks">Məqalələr</p>
                             </a>
                             <a href="{% url 'article3' %}">
@@ -1251,6 +1251,8 @@
         // else if(urlsme){document.getElementById('meqale23').click()}
         // else{document.getElementById('meqale23').click()}
         let tabid = localStorage.getItem('tabid')
+        var m = "{{request.GET.m}}"
+        if(m){document.getElementById('meqale23').click();}
         if(tabid){
 
 
