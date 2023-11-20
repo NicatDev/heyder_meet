@@ -490,7 +490,7 @@
                                  {% for x in related_blogs %}
                                  <div class="swiper-slide">
                                     <div class="blogpost-box-3 mb-30">
-                                       <span class="tag">{{x.tag.first}}</span>
+          
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
                                              <a href="{% url 'articlesingle' x.slug %}"><img src="{{x.image.url}}"
