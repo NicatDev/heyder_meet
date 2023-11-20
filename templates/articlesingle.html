@@ -368,10 +368,7 @@
                   <div class="breadcrumb-menu ">
                      <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
                         <ul class="trail-items">
-                           <li class="trail-item trail-begin">
-                              <a href="index-2.html"><span>{{blog.name}}</span></a>
-                           </li>
-
+                      
                         </ul>
                      </nav>
                   </div>
@@ -530,7 +527,7 @@
                      <div class="sidebar__widget mb-50">
                         <div class="sidebar__widget-content">
                            <div class="sidebar__search">
-                              <form action="{% url 'blog' %}">
+                              <form action="{% url 'article2' %}">
                                  {% csrf_token %}
                                  <div class="sidebar__search-input">
                                     <input type="text" name="blog" placeholder="Məqalələrdə axtar...">
