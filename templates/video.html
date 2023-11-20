@@ -105,8 +105,8 @@
             $(".page").removeClass("show-popup");
             var myiframe = document.getElementById('myiframe')
             console.log(myiframe,'ppppppp')
-            myiframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-            myiframe[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            $("#myiframe").contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+            $("#myiframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
 
             $('body').css('overflow', 'auto');
         });
