@@ -1251,10 +1251,11 @@
         // else if(urlsme){document.getElementById('meqale23').click()}
         // else{document.getElementById('meqale23').click()}
         let tabid = localStorage.getItem('tabid')
+        console.log("{{ request.META.HTTP_REFERER }}",'----------')
         var m = "{{request.GET.m}}"
         if(m){document.getElementById('meqale23').click();}
         if(tabid){
-
+            
 
         if (tabid=='meqale23'){document.getElementById('meqale23').click();console.log('1')}
         if (tabid=='musahibe23'){document.getElementById('musahibe23').click();console.log('1')}
