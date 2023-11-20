@@ -515,10 +515,10 @@
                      <div class="sidebar__widget mb-50">
                         <div class="sidebar__widget-content">
                            <div class="sidebar__search">
-                              <form action="{% url 'blog' %}">
+                              <form action="{% url 'article' %}">
                                  {% csrf_token %}
                                  <div class="sidebar__search-input">
-                                    <input type="text" name="blog" placeholder="Müsahibələrdə axtar...">
+                                    <input type="text" name="searchmusahibe" placeholder="Müsahibələrdə axtar...">
                                     <button type="submit">
                                        <i class="flaticon-search"></i>
                                     </button>
