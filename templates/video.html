@@ -103,7 +103,8 @@
             e.stopPropagation();
     
             $(".page").removeClass("show-popup");
-            document.getElementById('myiframe').postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            var myiframe = document.getElementById('myiframe')
+            myiframe.attr("src", '');
             $('body').css('overflow', 'auto');
         });
     
