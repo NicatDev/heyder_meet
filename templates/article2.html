@@ -1265,6 +1265,10 @@
         if (musahibe) { document.getElementById('musahibe23').click()}
         if (meqale) { document.getElementById('meqale23').click()}
         }
+        var musahibe = "{{request.GET.searchmusahibe}}"
+        var meqale = "{{request.GET.searchmeqale}}"
+        if (musahibe){ document.getElementById('musahibe23').click()}
+        if (meqale){document.getElementById('meqale23').click()}
     
     </script>
     <style>
