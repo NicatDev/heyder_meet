@@ -533,22 +533,7 @@
                </div>
                <div class="col-xxl-4 col-xl-5 col-lg-5">
                   <div class="sidebar__wrapper">
-                     <div class="sidebar__widget mb-50">
-                        <div class="sidebar__widget-content">
-                           <div class="sidebar__search">
-                              <form action="{% url 'blog' %}">
-                                 {% csrf_token %}
-                                 <div class="sidebar__search-input">
-                                    <input type="text" name="blog" placeholder="Müsahibələrdə axtar...">
-                                    <button type="submit">
-                                       <i class="flaticon-search"></i>
-                                    </button>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-                     
-                     </div>
+              
                      
                      <div class="sidebar__widget mb-50">
                         <h3 class="sidebar__widget-title mb-30">Ən çox oxunanlar</h3>
@@ -557,18 +542,16 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="blog-details.html"><img {% if blg.coverimage %} src="{{blg.coverimage.url}}" {% endif %}
+                                    <a href="{{blg.href}}"><img {% if blg.coverimage %} src="{{blg.coverimage.url}}" {% endif %}
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h5 class="rc__post-title">
-                                       <a href="blog-details.html">{{blg.name}}</a>
+                                       <a href="{{blg.href}}">{{blg.name}}</a>
                                     </h5>
                                     <div class="postbox__meta">
                                        
-                                       <span>
-                                          <a href="#">{{tags.first.name}}</a>
-                                       </span>
+                                     
                        
                                     </div>
                                  </div>
