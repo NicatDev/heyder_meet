@@ -387,10 +387,7 @@
                   <div class="postbox__wrapper">
                      <h2 class="postbox__title">{{blog.name}}</h2>
                      <div class="postbox__item mb-60">
-                        <div class="postbox__meta mb-20">
-                           <span><a href="#">{{blog.tag.first.name}}</a></span>
-                
-                        </div>
+                   
                         <div class="fm__postbox-thumb mb-30">
                           
                            <img src="{{blog.image.url}}" data-speed="auto" alt="{{blog.alt}}">
@@ -402,13 +399,6 @@
                      </div>
              
 
-
-                     <div class="sidebar__tag mb-35 mt-70 ">
-                        {% for tag in blog.tag.all %}
-                        <a href="/xeberler?tag={{tag.name}}">{{tag.name}}</a>
-                      
-                        {% endfor %}
-                     </div>
                      <div class="postbox__share-wrapper mb-60 " style="border-top:0px solid white !important;height:0px;">
                         <div class="postbox__share-love" style="opacity: 0;">
                            <span><i class="fa-light fa-heart"></i></span>
@@ -569,24 +559,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="sidebar__widget ">
-                        <h3 class="sidebar__widget-title mb-30">Ən çox axtarılanlar</h3>
-                        <div class="sidebar__widget-content">
-                           <ul>
-                              {% for x in alltags %}
-                     
-                              {% if current_tag == x.name %}
-                              <li><a style="background-color: var(--clr-theme-1);font-weight:500;color:white" href="{% url 'article' %}?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                              {% else %}
-                              <li><a  href="{% url 'article' %}?tag={{x.name}}"><span>{{x.name}}</span> <span>{{x.blog_count}}</span></a></li>
-                       
-                              {% endif %}
-
-                              {% endfor %}
-                           </ul>
-                        </div>
-                     </div>
-              
+    
                  
                   </div>
                </div>
