@@ -368,10 +368,7 @@
                   <div class="breadcrumb-menu ">
                      <nav aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
                         <ul class="trail-items">
-                           <li class="trail-item trail-begin">
-                              <a href="index-2.html"><span>{{blog.name}}</span></a>
-                           </li>
-
+                         
                         </ul>
                      </nav>
                   </div>
@@ -390,10 +387,7 @@
                   <div class="postbox__wrapper">
                      <h2 class="postbox__title">{{blog.name}}</h2>
                      <div class="postbox__item mb-60">
-                        <div class="postbox__meta mb-20">
-                           <span><a href="#">{{blog.tag.first.name}}</a></span>
-     
-                        </div>
+                      
                         <div class="fm__postbox-thumb mb-30">
                           
                            <img src="{{blog.image.url}}" data-speed="auto" alt="{{blog.alt}}">
@@ -435,10 +429,7 @@
                               <h5>
                                  <a {% if pre %} href="{% url 'interviewsingle' pre.slug %}" {% endif %}>{{pre.name}}</a>
                               </h5>
-                              <div class="postbox__meta">
-                                 <span><a {% if not pre.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{pre.tag.first}}</a></span>
                           
-                              </div>
                            </div>
                         </div>
                         <div class="postbox__navigation-icon" style="opacity: 0 !important;">
@@ -467,10 +458,7 @@
                               <h5>
                                  <a {% if next %}  href="{% url 'interviewsingle' next.slug %}" {% endif %}>{{next.name}}</a>
                               </h5>
-                              <div class="postbox__meta">
-                                 <span><a {% if not next.tag.first %} style="opacity: 0;" {% endif %} href="blog.html">{{next.tag.first}}</a></span>
-                          
-                              </div>
+                              
                            </div>
                         </div>
                      </div>
