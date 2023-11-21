@@ -1228,25 +1228,25 @@
         if(tabid){
         
 
-        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('1')}
-        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('1')}
-        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('1')}}
+        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('1s')}
+        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('2s')}
+        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('3s')}}
   
         var kitab = "{{request.GET.kitab}}"
         var musahibe = "{{request.GET.musahibe}}"
         var meqale = "{{request.GET.meqale}}"
-        if (kitab) { document.getElementById('kitab').click()}
-        if (musahibe) { document.getElementById('musahibe').click()}
-        if (meqale) { document.getElementById('meqale').click()}
+        if (kitab) { document.getElementById('kitab').click(),console.log('4s')}
+        if (musahibe) { document.getElementById('musahibe').click(),console.log('5s')}
+        if (meqale) { document.getElementById('meqale').click(),console.log('6s')}
         
         var musahibe = "{{request.GET.searchmusahibe}}"
         var meqale = "{{request.GET.searchmeqale}}"
-        if (musahibe){ document.getElementById('musahibe').click()}
-        if (meqale){document.getElementById('meqale').click()}
+        if (musahibe){ document.getElementById('musahibe').click(),console.log('7s')}
+        if (meqale){document.getElementById('meqale').click(),console.log('8s')}
 
-        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('1')}
-        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('1')}
-        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('1')}}
+        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('9s')}
+        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('10s')}
+        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('11s')}
     </script>
     <style>
         #lang_selector{
