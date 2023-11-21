@@ -98,25 +98,19 @@
 
         $("#pagepage").addClass("show-popup");
         $('body').css('overflow', 'hidden');
-l        console.log('startinggg........')
+
     });
 });
     $(".popup").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        var iframe = $("#myiframe");
-    var newVideoId = "NEW_VIDEO_ID";
-    var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
 
-    iframe.attr("src", newSrc);
         $(".page").removeClass("show-popup");
         $('body').css('overflow', 'auto');
-        console.log('stoppoingg........')
     });
 
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
-        console.log('stoppoingg........')
         $('body').css('overflow', 'auto');
     });
 </script>
