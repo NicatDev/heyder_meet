@@ -628,7 +628,7 @@
                              {% for page_num in count2 %}
                                 
                              <li>
-                                <a href="?pages={{ page_num }}">{{page_num}}</a>
+                                <a href="?pages={{ page_num }}#musahibe">{{page_num}}</a>
                              </li>
                  
                              {% endfor %}
@@ -1242,6 +1242,8 @@
         var meqale = "{{request.GET.searchmeqale}}"
         if (musahibe){ document.getElementById('musahibe').click(),console.log('7s')}
         if (meqale){document.getElementById('meqale').click(),console.log('8s')}
+        var pagination = "{{request.GET.page}}"
+        var pagination2 = "{{request.GET.pages}}"
 
         if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('9s')}
         if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('10s')}
