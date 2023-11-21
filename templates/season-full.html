@@ -2927,7 +2927,17 @@ div{
     $(".popup").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-
+        var iframe = document.getElementById("myiframe");
+  var iframeSrc = iframe.src;
+  
+  // Check if the iframe source contains "youtube.com"
+  if (iframeSrc.indexOf("youtube.com") !== -1) {
+    // Extract the video ID from the iframe source
+    var videoId = iframeSrc.split("v=")[1];
+    
+    // Stop the video by sending a command to the YouTube API
+    iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+  }
         $(".page").removeClass("show-popup");
         $('body').css('overflow', 'auto');
     });
@@ -2935,6 +2945,7 @@ div{
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
         $('body').css('overflow', 'auto');
+        
     });
 </script>
 
