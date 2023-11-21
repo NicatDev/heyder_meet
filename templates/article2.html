@@ -398,9 +398,9 @@
          <div class="container">
             <div style="margin-top:55px;margin-bottom:30px;">
                 <div data-ui-tablist="navigation" class="tabs">
-                    <button style="width:33.33333%" id="meqale23" data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
-                    <button style="width:33.33333%" id="musahibe23"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
-                    <button style="width:33.33333%" id="kitab23"  data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
+                    <button style="width:33.33333%" id="meqale" data-ui-tablist-tab="account" class="tabs-tab activee">Məqalələr</button>
+                    <button style="width:33.33333%" id="musahibe"  data-ui-tablist-tab="inventory" class="tabs-tab">Müsahibələr</button>
+                    <button style="width:33.33333%" id="kitab"  data-ui-tablist-tab="bonuses" class="tabs-tab">Kitablar</button>
                 </div>
                 <div class="tabpanels">
         
@@ -1185,7 +1185,7 @@
                     tabElement.hidden = true
                 });
                 console.log(tabElement.id)
-         
+                
                 window.location.href = '#'+tabElement.id
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
@@ -1260,9 +1260,9 @@
         if(tabid){
         
 
-        if (tabid=='#meqale23'){document.getElementById('meqale23').click();console.log('1')}
-        if (tabid=='#musahibe23'){document.getElementById('musahibe23').click();console.log('1')}
-        if (tabid=='#kitab23'){document.getElementById('kitab23').click();console.log('1')}}
+        if (tabid=='#meqale'){document.getElementById('meqale23').click();console.log('1')}
+        if (tabid=='#musahibe'){document.getElementById('musahibe23').click();console.log('1')}
+        if (tabid=='#kitab'){document.getElementById('kitab23').click();console.log('1')}}
   
             var kitab = "{{request.GET.kitab}}"
         var musahibe = "{{request.GET.musahibe}}"
