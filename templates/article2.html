@@ -1186,7 +1186,7 @@
                 });
                 console.log(tabElement.id)
          
-                localStorage.setItem('tabid',tabElement.id)
+                window.location.href = '#'+tabElement.id
                 mytab.removeAttribute("hidden");
                 console.log('Tıklanan tab verisi:', tabData);
             });
