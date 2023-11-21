@@ -2638,10 +2638,10 @@ font-size:100px !important
 <script>
     !(function (e) {
     e.fn.niceSelect = function (t) {
-        function s(t) {
+
             
             t.after(
-              
+
                 e("<div></div>")
                     .addClass("nice-select")
            
@@ -2653,7 +2653,18 @@ font-size:100px !important
             var s = t.next(),
                 n = t.find("option"),
                 i = t.find("option:selected");
-            
+            s.find(".current").html(i.data("display") || i.text()),
+                n.each(function (t) {
+                    var n = e(this),
+                        i = n.data("display");
+                    s.find("ul").append(
+                        e("<li></li>")
+                            .attr("data-value", n.val())
+                            .attr("data-display", i || null)
+                            .addClass("option" + (n.is(":selected") ? " selected" : "") + (n.is(":disabled") ? " disabled" : ""))
+                            .html(n.text())
+                    );
+                });
         }
         if ("string" == typeof t)
             return (
