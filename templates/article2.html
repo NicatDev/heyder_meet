@@ -1232,7 +1232,7 @@
         if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('1')}
         if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('1')}}
   
-            var kitab = "{{request.GET.kitab}}"
+        var kitab = "{{request.GET.kitab}}"
         var musahibe = "{{request.GET.musahibe}}"
         var meqale = "{{request.GET.meqale}}"
         if (kitab) { document.getElementById('kitab').click()}
@@ -1241,9 +1241,12 @@
         
         var musahibe = "{{request.GET.searchmusahibe}}"
         var meqale = "{{request.GET.searchmeqale}}"
-        if (musahibe){ document.getElementById('musahibe23').click()}
-        if (meqale){document.getElementById('meqale23').click()}
-    
+        if (musahibe){ document.getElementById('musahibe').click()}
+        if (meqale){document.getElementById('meqale').click()}
+
+        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('1')}
+        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('1')}
+        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('1')}}
     </script>
     <style>
         #lang_selector{
