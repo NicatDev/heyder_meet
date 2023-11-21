@@ -103,10 +103,11 @@
             e.stopPropagation();
     
             $(".page").removeClass("show-popup");
-            var myiframe = document.getElementById('myiframe')
-            console.log(myiframe,'ppppsssppp')
-            $("#myiframe").contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-            $("#myiframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            var iframe = $("#myiframe");
+    var newVideoId = "NEW_VIDEO_ID";
+    var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
+
+    iframe.attr("src", newSrc);
 
             $('body').css('overflow', 'auto');
         });

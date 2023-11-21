@@ -2931,18 +2931,15 @@ div{
         $(".page").removeClass("show-popup");
         $('body').css('overflow', 'auto');
         var iframe = $("#myiframe");
-
-    // Change the src attribute to a new YouTube video
-    // Replace "NEW_VIDEO_ID" with the actual ID of the new YouTube video
     var newVideoId = "NEW_VIDEO_ID";
     var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
-    console.log('stop1')
+
     iframe.attr("src", newSrc);
     });
 
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
-        console.log('sto22')
+
         $('body').css('overflow', 'auto');
         
         
