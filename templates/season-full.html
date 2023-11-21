@@ -2443,31 +2443,21 @@ font-size:100px !important
 <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
 <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
 <script src="{% static 'assets/js/knob.min.js' %}"></script>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all elements with the specified class
-        const sidebarElements = document.querySelectorAll('.fm-header-sidebar-area');
-        const toggleButton = document.querySelector('.toggle-sidebar');
-        const closeButton = document.querySelector('.offcanvas-close');
+    var headerBars = document.querySelectorAll('.fm-header-bar-1');
 
-        // Function to toggle the 'header-sidebar-visible' class
-        function toggleSidebar() {
-            sidebarElements.forEach(function (sidebar) {
-                sidebar.classList.toggle('header-sidebar-visible');
-            });
-        }
+// Define a function to handle the click event
+function handleClick() {
+    // Your code to be executed when a div with class "fm-header-bar-1" is clicked
+    console.log("Div clicked!");
+    // Add more code here as needed
+}
 
-        // Add click event listeners to the toggle button and close button
-        toggleButton.addEventListener('click', toggleSidebar);
-        closeButton.addEventListener('click', function() {
-            // Close the sidebar and remove the 'header-sidebar-visible' class
-            sidebarElements.forEach(function (sidebar) {
-                sidebar.classList.remove('header-sidebar-visible');
-            });
-        });
-    });
-</script>
+// Attach the click event handler to each div with class "fm-header-bar-1"
+headerBars.forEach(function (headerBar) {
+    headerBar.addEventListener('click', handleClick);
+});
+    </script>
 <script src="{% static 'assets/js/ajax-form.js' %}"></script>
 <script src="{% static 'assets/js/wow.min.js' %}"></script>
 <script src="{% static 'assets/js/sidebar.js' %}"></script>
