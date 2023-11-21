@@ -1,17 +1,7 @@
 !(function (e) {
     e.fn.niceSelect = function (t) {
         function s(t) {
-            t.after(
-                e("<div></div>")
-                    .addClass("nice-select")
-                    .addClass(t.attr("class") || "")
-                    .addClass(t.attr("disabled") ? "disabled" : "")
-                    .attr("tabindex", t.attr("disabled") ? null : "0")
-                    .html('<span class="current"></span><ul class="list"></ul>')
-            );
-            var s = t.next(),
-                n = t.find("option"),
-                i = t.find("option:selected");
+       
             s.find(".current").html(i.data("display") || i.text()),
                 n.each(function (t) {
                     var n = e(this),
