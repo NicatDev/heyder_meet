@@ -620,7 +620,7 @@
                        <nav>
                           <ul>
                              <li>
-                                <a {% if not interviews.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  interviews.has_previous %}  href="?pages={{ interviews.previous_page_number }} "{% endif%}>
+                                <a {% if not interviews.has_previous %} disabled="true" style="cursor:not-allowed" {% endif%} {% if  interviews.has_previous %}  href="?pages={{ interviews.previous_page_number }}#musahibe "{% endif%}>
                                    <i class="fa-light fa-arrow-left-long"></i>
                                 </a>
                              </li>
@@ -638,7 +638,7 @@
                             
                  
                              <li>
-                                <a {% if not interviews.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if interviews.has_next %}  href="?pages={{ interviews.next_page_number }}" {% endif%}>
+                                <a {% if not interviews.has_next %} disabled="true" style="cursor:not-allowed" {% endif%} {% if interviews.has_next %}  href="?pages={{ interviews.next_page_number }}#musahibe" {% endif%}>
                                    <i class="fa-light fa-arrow-right-long"></i>
                                 </a>
                              </li>
