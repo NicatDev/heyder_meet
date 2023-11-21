@@ -2737,7 +2737,11 @@ div{
         var dataId = showingDiv.getAttribute('data-id');
 
         if (dataId === clickedId) {
-          showingDiv.classList.add('showeddiv');
+            if (showingDiv.classList.contains('showeddiv')) {
+        showingDiv.classList.remove('showeddiv');
+      } else {
+        showingDiv.classList.add('showeddiv');
+      }
           console.log(showingDiv,'10000000000000000000000000000')
         } else {
           showingDiv.classList.remove('showeddiv');
