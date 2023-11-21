@@ -1255,21 +1255,19 @@
         var tabid = window.location.hash;
 
 
-        var m = "{{request.GET.m}}"
-        if(m){document.getElementById('meqale23').click();}
         if(tabid){
         
 
-        if (tabid=='#meqale'){document.getElementById('meqale23').click();console.log('1')}
-        if (tabid=='#musahibe'){document.getElementById('musahibe23').click();console.log('1')}
-        if (tabid=='#kitab'){document.getElementById('kitab23').click();console.log('1')}}
+        if (tabid=='#meqale'){document.getElementById('meqale').click();console.log('1')}
+        if (tabid=='#musahibe'){document.getElementById('musahibe').click();console.log('1')}
+        if (tabid=='#kitab'){document.getElementById('kitab').click();console.log('1')}}
   
             var kitab = "{{request.GET.kitab}}"
         var musahibe = "{{request.GET.musahibe}}"
         var meqale = "{{request.GET.meqale}}"
-        if (kitab) { document.getElementById('kitab23').click()}
-        if (musahibe) { document.getElementById('musahibe23').click()}
-        if (meqale) { document.getElementById('meqale23').click()}
+        if (kitab) { document.getElementById('kitab').click()}
+        if (musahibe) { document.getElementById('musahibe').click()}
+        if (meqale) { document.getElementById('meqale').click()}
         
         var musahibe = "{{request.GET.searchmusahibe}}"
         var meqale = "{{request.GET.searchmeqale}}"
