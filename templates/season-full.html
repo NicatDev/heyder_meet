@@ -1133,7 +1133,7 @@
         <section id="testimonial" style="width: 100%;">
             <div id="scroll" class="cards scroll">
                 {% for test in testimonials %}
-                <div class="cardd active" >
+                <div class="cardd mycardhover" >
                     <img src="{{test.image.url}}" alt="">
                     <div>
                         <h3>{{test.full_name}}</h3>
@@ -2784,7 +2784,19 @@ div{
     });
     intervalId = setInterval(myFunction, 6000);
 </script>
-
+<script>
+var cardElements = document.querySelectorAll('.mycardhover');
+function addClassOnHover() {
+    this.classList.add('active');
+}
+function removeClassOnHover() {
+    this.classList.remove('active');
+}
+cardElements.forEach(function (cardElement) {
+    cardElement.addEventListener('mouseover', addClassOnHover);
+    cardElement.addEventListener('mouseout', removeClassOnHover);
+});
+</script>
 <script>
     $(document).ready(function() {
         
