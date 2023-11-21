@@ -107,17 +107,7 @@
 
         $(".page").removeClass("show-popup");
         $('body').css('overflow', 'auto');
-        var iframe = document.getElementById("myiframe");
-  var iframeSrc = iframe.src;
-  
-  // Check if the iframe source contains "youtube.com"
-  if (iframeSrc.indexOf("youtube.com") !== -1) {
-    // Extract the video ID from the iframe source
-    var videoId = iframeSrc.split("v=")[1];
-    
-    // Stop the video by sending a command to the YouTube API
-    iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-  }
+        console.log('stoppoingg........')
     });
 
     $(".popup > iframe").on("click", function (e) {
