@@ -1901,7 +1901,36 @@ a {
     <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
     <script src="{% static 'assets/js/appair.min.js' %}"></script>
     <script src="{% static 'assets/js/knob.min.js' %}"></script>
-    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script>
+        var headerBars = document.querySelectorAll('.fm-header-bar-1');
+        var headerBars2 = document.querySelectorAll('.offcanvas-close');
+        
+    
+        function handleClick2() {
+    
+    var sidebarElements = document.querySelectorAll('.fm-header-sidebar-area.fm-header-sidebar-left');
+    
+    
+    sidebarElements.forEach(function (element) {
+    element.classList.remove('header-sidebar-visible');
+    });}
+    
+    function handleClick() {
+    
+        var sidebarElements = document.querySelectorAll('.fm-header-sidebar-area.fm-header-sidebar-left');
+    
+    
+    sidebarElements.forEach(function (element) {
+        element.classList.add('header-sidebar-visible');
+    });}
+    
+    headerBars.forEach(function (headerBar) {
+        headerBar.addEventListener('click', handleClick);
+    });
+    headerBars2.forEach(function (headerBar) {
+        headerBar.addEventListener('click', handleClick2);
+    });
+        </script>
     <script src="{% static 'assets/js/ajax-form.js' %}"></script>
     <script src="{% static 'assets/js/wow.min.js' %}"></script>
     <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
