@@ -2657,13 +2657,7 @@ font-size:100px !important
                 n.each(function (t) {
                     var n = e(this),
                         i = n.data("display");
-                    s.find("ul").append(
-                        e("<li></li>")
-                            .attr("data-value", n.val())
-                            .attr("data-display", i || null)
-                            .addClass("option" + (n.is(":selected") ? " selected" : "") + (n.is(":disabled") ? " disabled" : ""))
-                         
-                    );
+                
                 });
         }
         if ("string" == typeof t)
