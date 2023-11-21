@@ -1128,6 +1128,37 @@
         </section>
     </div>
 
+
+    <div id="bodyy">
+        <section id="testimonial">
+            <div id="scroll" class="cards scroll">
+                {% for test in testimonials %}
+                <div class="cardd {% if forloop.first %} active {% endif %}" data-id="content{{test.id}}">
+                    <img src="{{test.image.url}}" alt="">
+                    <div>
+                        <h3>{{test.full_name}}</h3>
+                        <p>{{test.field}}</p>
+                    </div>
+                    <div class="gradient"></div>
+                </div>
+                <div class="content">
+
+                    <div class="contentBox {% if forloop.first %} active {% endif %}" id="content{{test.id}}">
+                        <div class="text">
+                            <h2>{{test.title}}</h2>
+                            <p style="color: whitesmoke;line-height: 1.3;">{{test.field}} </p>
+                            <p>{{test.decsription|safe}}</p>
+                        </div>
+                    </div>
+               
+                </div>
+                {% endfor %}
+
+
+            </div>
+           
+        </section>
+    </div>
     <!-- section end -->
     <!-- Xatirelerde section start -->
     <div>
