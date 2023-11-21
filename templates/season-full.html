@@ -2449,7 +2449,12 @@ font-size:100px !important
 // Define a function to handle the click event
 function handleClick() {
     // Your code to be executed when a div with class "fm-header-bar-1" is clicked
-    console.log("Div clicked!");
+    var sidebarElements = document.querySelectorAll('.fm-header-sidebar-area.fm-header-sidebar-left');
+
+// Add the class "header-sidebar-visible" to each matching element
+sidebarElements.forEach(function (element) {
+    element.classList.add('header-sidebar-visible');
+});
     // Add more code here as needed
 }
 
