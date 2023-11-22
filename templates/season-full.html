@@ -48,7 +48,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);" class="popup" id="media-popup">
-            <iframe id="myiframe" allow="autoplay" style="width:70%;height:50%;" src=""
+            <iframe id="myiframe" allow="autoplay" style="width:70%;height:70%;" src=""
                 title="Heyder Eliyev" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -2744,6 +2744,11 @@ div{
     }
 </script>
 <style>
+        @media (max-width: 850px) {
+    #myiframe{
+        height: 60% !important;
+        width: 100% !important;
+    }}
        @media (max-width: 650px) {
     .fm-header-logo {
         width: 75px !important;
