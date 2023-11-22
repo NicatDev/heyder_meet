@@ -48,7 +48,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);" class="popup" id="media-popup">
-            <iframe id="myiframe" allow="autoplay" style="width:70%;height:100%;" src=""
+            <iframe id="myiframe" allow="autoplay" style="width:70%;height:50%;" src=""
                 title="Heyder Eliyev" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -1141,21 +1141,14 @@
                     </div>
                     <div class="gradient"></div>
                 </div>
-         
-
-                    <div class="cardd myshowingdiv" data-id="3{{test.id}}">
-                        <div class="text">
-                            <h2 style="font-size:25px !important">{{test.field}} </h2>
-      
-                            <p style="font-size:1.6rem !important">{{test.decsription|safe}}</p>
-                        </div>
-                    </div>
-        
+            <div class="cardd myshowingdiv" data-id="3{{test.id}}">
+                <div class="text">
+                    <h2 style="font-size:25px !important">{{test.field}} </h2>
+                    <p style="font-size:1.6rem !important">{{test.decsription|safe}}</p>
+                </div>
+            </div>    
                 {% endfor %}
-
-
             </div>
-           
         </section>
     </div>
     <!-- section end -->
