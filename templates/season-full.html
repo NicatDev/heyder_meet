@@ -2725,20 +2725,22 @@ div{
 
     function updateShowingDivs(clickedId) {
       var allShowingDivs = document.querySelectorAll('.myshowingdiv');
-
+        var myelement = document.getElementById(clickedId)
+        
       allShowingDivs.forEach(function (showingDiv) {
         var dataId = showingDiv.getAttribute('data-id');
 
         if (dataId === clickedId) {
             if (showingDiv.classList.contains('showeddiv')) {
         showingDiv.classList.remove('showeddiv');
+        myelement.classList.remove('active');
       } else {
         showingDiv.classList.add('showeddiv');
       }
-          console.log(showingDiv,'10000000000000000000000000000')
+
         } else {
           showingDiv.classList.remove('showeddiv');
-          console.log(showingDiv,'20000000000000000000000000000')
+
         }
       });
     }
