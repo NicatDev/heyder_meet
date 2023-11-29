@@ -179,14 +179,14 @@
 
                                 <nav id="mobile-menu" style="display: block;">
                                     <ul>
-                                        <li class="has-dropdown">
+                                        <li  onclick="setActive(this)" class="has-dropdown">
                                             <a href="{% url 'home' %}">Əsas səhifə</a>
 
                                         </li>
-                                        <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
+                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
                                         </li>
 
-                                        <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'video' %}">Video</a>
                                             <!-- <ul class="submenu">
                                                 {% for cat in vidcategories %}
                                                 <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
@@ -194,20 +194,20 @@
                                             </ul> -->
                                         </li>
 
-                                        <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
                                             <!-- <ul class="submenu">
                                                 {% for cat in fotcategories %}
                                                 <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                                 {% endfor %}
                                             </ul> -->
                                         </li>
-                                        <li class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
+                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
 
                                         </li>
-                                        <li class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
+                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
 
                                         </li>
-                                        <li class="has-dropdown has-mega-menu">
+                                        <li  onclick="setActive(this)" class="has-dropdown has-mega-menu">
                                             <a href="{% url 'blog' %}">Xəbərlər</a>
 
                                         </li>
@@ -883,7 +883,7 @@
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}">daha
                     ətraflı</a></span>
                     <span style="transform: rotate(45deg);" >
-                        <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                        <a href="{% url 'video' %}"> <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i> </a>
                     </span>
         </div>
     </div>
@@ -944,7 +944,7 @@
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
             <span style="transform: rotate(45deg);" >
-                <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                <a href="{% url 'foto' %}"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i></a>
             </span>
         </div>
     </div>
@@ -1020,7 +1020,8 @@
             <div style="display: flex;align-items:center;display: none;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}?m=1">daha ətraflı</a></span>
                 <span style="transform: rotate(45deg);" >
-                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    <a href="{% url 'article' %}?m=1"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    </a>
                 </span>
             </div>
         </div>
@@ -1161,7 +1162,8 @@
             <div style="display: flex;align-items:center;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article3' %}">daha ətraflı</a></span>
                 <span style="transform: rotate(45deg);" >
-                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    <a href="{% url 'article3' %}"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    </a>
                 </span>
             </div>
         </div>
@@ -1221,7 +1223,9 @@
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
             <span style="transform: rotate(45deg);" >
-                <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                <a href="{% url 'blog' %}">
+                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                </a>
             </span>
         </div>
     </div>
@@ -2896,6 +2900,15 @@ cardElements.forEach(function (cardElement) {
         
         
     });
+    function setActive(clickedElement) {
+      // Remove "active" class from all li elements
+      document.querySelectorAll("#mobile-menu li").forEach(function(li) {
+        li.classList.remove("active");
+      });
+
+      // Add "active" class to the clicked li element
+      clickedElement.classList.add("active");
+    }
 </script>
 
 </html>
