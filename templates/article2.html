@@ -429,7 +429,7 @@
                            <h5 class="postbox__title">
                               <a href="{% url 'articlesingle' blog.slug %}">{{blog.name}}</a>
                            </h5>
-                           <div class="postbox__text ">
+                           <div class="postbox__text " style="margin-bottom: 20px;">
                               <p>{{blog.contentforall|slice:200|safe}}...</p>
                            </div>
                            <div class="col-xl-12 " style="padding-left:0px !important; margin-left:0px !important">
@@ -605,7 +605,7 @@
                        <h3 class="postbox__title">
                           <a href="{% url 'interviewsingle' blog.slug %}">{{blog.name}}</a>
                        </h3>
-                       <div class="postbox__text ">
+                       <div class="postbox__text " style="margin-bottom: 20px;">
                           <p>{{blog.contentforall|slice:200|safe}}...</p>
                        </div>
                        <div class="col-xl-12 " style="padding-left:0px !important;">

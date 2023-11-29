@@ -274,7 +274,8 @@ def home(request):
 
     if HomeHeader.objects.all().exists():
         homeHeader = HomeHeader.objects.all()[0]
-
+    else:
+        homeHeader = {}
     homeHeaderVideo = HomeHeaderVideo.objects.all()
     
     article = Article.objects.all()

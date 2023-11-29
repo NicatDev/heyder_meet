@@ -116,7 +116,7 @@
                 loop: true,
                 margin: 10,
     
-                autoplay: 4000,
+                autoplay: false,
                 autoHeight: true,
                 autoplayTimeout: 6500,
                 smartSpeed: 4000,
@@ -882,8 +882,9 @@
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}">daha
                     ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
+                    <span style="transform: rotate(45deg);" >
+                        <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    </span>
         </div>
     </div>
 
@@ -942,8 +943,9 @@
         <h3 style="user-select:none ;">Fotolar</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
+            <span style="transform: rotate(45deg);" >
+                <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+            </span>
         </div>
     </div>
 
@@ -1017,9 +1019,9 @@
             <h3 style="user-select:none;">Məqalələr, Müsahibələr, Kitablar</h3>
             <div style="display: flex;align-items:center;display: none;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}?m=1">daha ətraflı</a></span>
-                <span><img style=" border-radius: 5px;
-                filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                        alt=""></span>
+                <span style="transform: rotate(45deg);" >
+                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                </span>
             </div>
         </div>
 
@@ -1158,8 +1160,9 @@
             <h3 style="user-select:none ;width: 60%;">Heydər Əliyev xatirələrdə </h3>
             <div style="display: flex;align-items:center;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article3' %}">daha ətraflı</a></span>
-                <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                        alt=""></span>
+                <span style="transform: rotate(45deg);" >
+                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                </span>
             </div>
         </div>
         <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
@@ -1217,8 +1220,9 @@
         <h3 style="user-select:none;">Xəbərlər</h3>
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
-            <span><img style="filter:  brightness(5000%) ;" src="{% static 'templatestyles/images/arrowupright.png' %}"
-                    alt=""></span>
+            <span style="transform: rotate(45deg);" >
+                <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+            </span>
         </div>
     </div>
     <!-- blog-area-start -->
@@ -1233,7 +1237,7 @@
                     <div class="fm-blog-inner blog__animation-wrapper  is-white">
 
                         <div class="fm-blog-thumb">
-                            <a href="{% url 'blogsingle' blog.slug %}"> <img style="max-height:370px;"
+                            <a href="{% url 'blogsingle' blog.slug %}"><img style="max-height:370px;"
                                     src="{{blog.image.url}}" alt="img not found"></a>
                         </div>
 
@@ -2411,7 +2415,7 @@ font-size:100px !important
         margin-top: 3% !important;
     }
     .myplaybtn{
-       opacity: 0 ;
+       opacity: 1 ;
        cursor: pointer !important;
     }
 
@@ -2420,15 +2424,14 @@ font-size:100px !important
         
     }
     .owl-items:hover .myplaybtn {
-      opacity: 1; /* Change opacity to 1 on parent hover */
+      opacity: 0.7; /* Change opacity to 1 on parent hover */
       transition: opacity 1s ease; 
     }
    
 </style>
 <style>
     .myplaybtn{
-
-        position: absolute;
+      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
