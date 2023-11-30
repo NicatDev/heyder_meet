@@ -179,14 +179,28 @@
 
                                 <nav id="mobile-menu" style="display: block;">
                                     <ul>
-                                        <li  onclick="setActive(this)" class="has-dropdown">
-                                            <a href="{% url 'home' %}">Əsas səhifə</a>
-
+                                        <li class="has-dropdown ">
+                                            {% if request.resolver_match.url_name == 'home' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'home' %}">Əsas səhifə</a>
+                                            {% else %}
+                                            <a  href="{% url 'home' %}">Əsas səhifə</a>
+                                            {% endif %}
                                         </li>
-                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
+                                        <li class="has-dropdown">
+                                            {% if request.resolver_match.url_name == 'about' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'about' %}">Haqqında</a>
+                                            {% else %}
+                                            <a  href="{% url 'about' %}">Haqqında</a>
+                                            {% endif %}
                                         </li>
 
-                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'video' %}">Video</a>
+                                        <li class="has-dropdown">
+                                            {% if request.resolver_match.url_name == 'video' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'video' %}">Video</a>
+                                            {% else %}
+                                            <a href="{% url 'video' %}">Video</a>
+                                            {% endif %}
+
                                             <!-- <ul class="submenu">
                                                 {% for cat in vidcategories %}
                                                 <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
@@ -194,22 +208,39 @@
                                             </ul> -->
                                         </li>
 
-                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
+                                        <li class="has-dropdown">
+                                            {% if request.resolver_match.url_name == 'foto' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'foto' %}">Foto</a>
+                                            {% else %}
+                                            <a href="{% url 'foto' %}">Foto</a>
+                                            {% endif %}
+
                                             <!-- <ul class="submenu">
                                                 {% for cat in fotcategories %}
                                                 <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
                                                 {% endfor %}
                                             </ul> -->
                                         </li>
-                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
-
+                                        <li  class="has-dropdown">
+                                            {% if request.resolver_match.url_name == 'article' %}
+                                            <a style="color: #fd6500 !important;"  href="{% url 'article' %}?m=1">Məqalələr</a>
+                                            {% else %}
+                                            <a href="{% url 'article' %}?m=1">Məqalələr</a>
+                                            {% endif %}
                                         </li>
-                                        <li  onclick="setActive(this)" class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
-
+                                        <li  class="has-dropdown">
+                                            {% if request.resolver_match.url_name == 'article3' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'article3' %}">Xatirələr</a>
+                                            {% else %}
+                                            <a href="{% url 'article3' %}">Xatirələr</a>
+                                            {% endif %}
                                         </li>
-                                        <li  onclick="setActive(this)" class="has-dropdown has-mega-menu">
+                                        <li  class="has-dropdown has-mega-menu">
+                                            {% if request.resolver_match.url_name == 'blog' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'blog' %}">Xəbərlər</a>
+                                            {% else %}
                                             <a href="{% url 'blog' %}">Xəbərlər</a>
-
+                                            {% endif %}
                                         </li>
 
                                         
@@ -1176,9 +1207,12 @@
                             <div class="owl-items">
                                 {% if video.video_or_not %}
                                 <a href="#media-popup" data-media="{{video.embed_full}}">
-                                    <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) )">
+                                    <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) );background-color: #ff0000;">
                                         <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i>
-                                    </div> </a>{% endif %}
+                                    </div> </a>{% else %}  <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(51,51,181) 50%, rgb(5,5,139 ));width: 60px;height: 60px;">
+                                        <i style="font-size: 30px;color:#ffffff !important;margin-top: 15px;" class="fa-solid fa-link"></i>
+                                    </div> 
+                                        {% endif %}
                                 <a  {% if video.video_or_not %}href="#media-popup" data-media="{{video.embed_full}}"{% else %}href="{% url 'inmemorysingle' video.slug %}"{% endif %}  style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
     
                                     <div class="slide-image">
@@ -1190,6 +1224,7 @@
                                             style="width:80%;position: absolute; top:15%;margin-right: auto;margin-left:auto;text-align: center; left: 50%;  transform: translate(-50%, -50%);">
                                             <h3 style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 20px;text-align: center; margin-left:center;margin-right:center;padding-left:auto;padding-right:auto;
                                            ">{{video.name}}</h3>
+                                       
                                         </div>
                                         {% if not video.embed %}
                                         <style>
@@ -2419,7 +2454,7 @@ font-size:100px !important
         margin-top: 3% !important;
     }
     .myplaybtn{
-       opacity: 1 ;
+       opacity: 0 ;
        cursor: pointer !important;
     }
 
@@ -2428,7 +2463,7 @@ font-size:100px !important
         
     }
     .owl-items:hover .myplaybtn {
-      opacity: 0.7; /* Change opacity to 1 on parent hover */
+      opacity: 1; /* Change opacity to 1 on parent hover */
       transition: opacity 1s ease; 
     }
    
@@ -2900,15 +2935,7 @@ cardElements.forEach(function (cardElement) {
         
         
     });
-    function setActive(clickedElement) {
-      // Remove "active" class from all li elements
-      document.querySelectorAll("#mobile-menu li").forEach(function(li) {
-        li.classList.remove("active");
-      });
-
-      // Add "active" class to the clicked li element
-      clickedElement.classList.add("active");
-    }
+  
 </script>
 
 </html>
