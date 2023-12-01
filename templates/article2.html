@@ -433,7 +433,7 @@
                 <article class="postbox__item mb-60 bdFadeUp">
                     <div class="postbox__thumb mb-30">
                        <a href="{% url 'interviewsingle' blog.slug %}">
-                          <img style="height: 500px;" src="{{blog.image.url}}" alt="img not found">
+                          <img class="meqaleimg" src="{{blog.image.url}}" alt="img not found">
                        </a>
                     </div>
                     <div class="postbox__content">
@@ -922,11 +922,13 @@
                 display: flex;
                 
             }
-           
+            .tabs-tab{
+                font-size: 14px !important;
+            }
         }
         @media only screen and (max-width: 320px) {
             .meqaleimg {
-                height: 250px;
+                height: 200px;
             }
             .mqlbtn{
             margin-top: 0px !important;
