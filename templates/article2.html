@@ -255,7 +255,7 @@
                      <article class="postbox__item mb-60 bdFadeUp">
                         <div class="postbox__thumb mb-30">
                            <a href="{% url 'articlesingle' blog.slug %}">
-                              <img style="height: 500px;" src="{{blog.image.url}}" alt="img not found">
+                              <img class="meqaleimg"  src="{{blog.image.url}}" alt="img not found">
                            </a>
                         </div>
                         <div class="postbox__content">
@@ -347,8 +347,8 @@
                                  {% csrf_token %}
                                
                     <div class="sidebar__search-input">
-                        <input name="searchmeqale" type="text" placeholder="Məqalələrdə axtar...">
-                        <button type="submit">
+                        <input class="searchmeqale" name="searchmeqale" type="text" placeholder="Məqalələrdə axtar...">
+                        <button class="mqlbtn" type="submit">
                         <i class="flaticon-search"></i>
                         </button>
                     </div>
@@ -510,8 +510,8 @@
                                 {% csrf_token %}
                                 
                     <div class="sidebar__search-input">
-                        <input name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
-                        <button type="submit">
+                        <input class="searchmeqale" name="searchmusahibe" type="text" placeholder="Müsahibələrdə axtar...">
+                        <button class="mqlbtn" type="submit">
                         <i class="flaticon-search"></i>
                         </button>
                     </div>
@@ -890,15 +890,65 @@
             color: #86c023;
         }
 
+        .meqaleimg{
+            height: 500px;
+        }
         .myresponse {
             height: 20rem;
         }
-
+        @media only screen and (max-width: 425px) {
+            .meqaleimg {
+                height: 300px;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+           
+        }
+        @media only screen and (max-width: 375px) {
+            .meqaleimg {
+                height: 250px;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+           
+        }
+        @media only screen and (max-width: 320px) {
+            .meqaleimg {
+                height: 250px;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+            .searchmeqale{
+                padding-inline-start: 2px !important;
+                padding-right: 0px !important;
+            }
+            .tabs-tab{
+                font-size: 14px !important;
+            }
+        }
         @media only screen and (max-width: 580px) {
             .myresponse {
                 height: 300px;
             }
-
+        }
             @media only screen and (max-width: 540px) {
                 .myresponse {
                     height: 260px;

@@ -913,7 +913,7 @@
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'video' %}">daha
                     ətraflı</a></span>
                     <span style="transform: rotate(45deg);" >
-                        <a href="{% url 'video' %}"> <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i> </a>
+                        <a href="{% url 'video' %}"> <i  class="fa-solid fa-arrow-up fa-beat-fade ox" ></i> </a>
                     </span>
         </div>
     </div>
@@ -973,7 +973,7 @@
         <div style="display: flex;align-items:center;">
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'foto' %}">daha ətraflı</a></span>
             <span style="transform: rotate(45deg);" >
-                <a href="{% url 'foto' %}"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i></a>
+                <a href="{% url 'foto' %}"><i  class="fa-solid fa-arrow-up fa-beat-fade ox" ></i></a>
             </span>
         </div>
     </div>
@@ -1049,7 +1049,7 @@
             <div style="display: flex;align-items:center;display: none;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article' %}?m=1">daha ətraflı</a></span>
                 <span style="transform: rotate(45deg);" >
-                    <a href="{% url 'article' %}?m=1"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    <a href="{% url 'article' %}?m=1"><i  class="fa-solid fa-arrow-up fa-beat-fade ox"></i>
                     </a>
                 </span>
             </div>
@@ -1191,7 +1191,7 @@
             <div style="display: flex;align-items:center;">
                 <span><a style="font-size:16px;margin-right:7px;" href="{% url 'article3' %}">daha ətraflı</a></span>
                 <span style="transform: rotate(45deg);" >
-                    <a href="{% url 'article3' %}"><i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    <a href="{% url 'article3' %}"><i class="fa-solid fa-arrow-up fa-beat-fade ox"></i>
                     </a>
                 </span>
             </div>
@@ -1259,7 +1259,7 @@
             <span><a style="font-size:16px;margin-right:7px;" href="{% url 'blog' %}">daha ətraflı</a></span>
             <span style="transform: rotate(45deg);" >
                 <a href="{% url 'blog' %}">
-                    <i  class="fa-solid fa-arrow-up fa-beat-fade" style="color: #ffffff; font-size: large;"></i>
+                    <i  class="fa-solid fa-arrow-up fa-beat-fade ox" ></i>
                 </a>
             </span>
         </div>
@@ -1394,10 +1394,15 @@
             transition: all 0.25s ease-in-out;
         }
 
+        .ox i{
+            color: white ;
+            font-size: large;
+        }
         @media(min-width:992px) {
             .nav-item:hover {
                 background-color: #D2691E;
             }
+           
         }
 
         .grid-containerr div:hover img {
@@ -1438,7 +1443,9 @@
                 display: block !important;
             }
 
-
+            .ox i{
+             font-size: small ;
+            }
         }
     </style>
     <style>

@@ -252,7 +252,7 @@
                      <article class="postbox__item mb-60 bdFadeUp">
                         <div class="postbox__thumb mb-30">
                            <a href="{% url 'blogsingle' blog.slug %}">
-                              <img style="height: 500px;" src="{{blog.image.url}}" alt="img not found">
+                              <img class="xeberimg" src="{{blog.image.url}}" alt="img not found">
                            </a>
                         </div>
                         <div class="postbox__content">
@@ -307,11 +307,12 @@
                               <form action="#" method="GET">
                                  {% csrf_token %}
                                  <div class="sidebar__search-input">
-                                    <input name="blog" type="text" placeholder="Xəbərlərdə axtar...">
-                                    <button type="submit">
+                                    <input class="searchmeqale" name="blog" type="text" placeholder="Xəbərlərdə axtar...">
+                                    <button class="mqlbtn"  type="submit">
                                        <i class="flaticon-search"></i>
                                     </button>
                                  </div>
+                                 
                               </form>
                            </div>
                         </div>
@@ -323,7 +324,7 @@
                               {% for blg in most_blogs %}
                               <div class="rc__post">
                                  <div class="rc__post-thumb">
-                                    <a href="{% url 'blogsingle' blg.slug %}"><img src="{{blg.image.url}}"
+                                    <a href="{% url 'blogsingle' blg.slug %}"><img class="xeberimg" src="{{blg.image.url}}"
                                           alt="img not found"></a>
                                  </div>
                                  <div class="rc__post-content">
@@ -454,6 +455,54 @@
   </div>
    <!-- footer-area-end -->
    <style>
+      .xeberimg{
+         height: 500px;
+      }
+      @media only screen and (max-width: 425px) {
+            .xeberimg {
+                height: 300px !important;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+           
+        }
+      @media only screen and (max-width: 375px) {
+            .xeberimg {
+                height: 250px !important;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+           
+        }
+      @media screen and (max-width: 320px){
+        .xeberimg{
+        height: 250px;
+       }
+           .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+            .searchmeqale{
+                padding-inline-start: 2px !important;
+                padding-right: 0px !important;
+            }
+      }
     @media screen and (min-width: 1200px) {
 .fm-header-bar-1{
     display: none;
