@@ -229,7 +229,7 @@
                       
                         <div class="fm__postbox-thumb mb-30">
                           
-                           <img src="{{blog.image.url}}" data-speed="auto" alt="{{blog.alt}}">
+                           <img class="meqaleimg" src="{{blog.image.url}}" data-speed="auto" alt="{{blog.alt}}">
 
                         </div>
                         <div class="">
@@ -330,7 +330,7 @@
                             
                                        <div class="blogpost-box-3__thumb-content-wrapper">
                                           <div class="blogpost-box-3__thumb">
-                                             <a href="{% url 'interviewsingle' x.slug %}"><img style="height: 280px;" src="{{x.image.url}}"
+                                             <a href="{% url 'interviewsingle' x.slug %}"><img class="det_meq" style="height: 350px;" src="{{x.image.url}}"
                                                    alt="img not found"></a>
                                           </div>
                                           <div class="blogpost-box-3__content">
@@ -357,8 +357,8 @@
                               <form action="{% url 'article' %}">
                                  {% csrf_token %}
                                  <div class="sidebar__search-input">
-                                    <input type="text" name="searchmusahibe" placeholder="Müsahibələrdə axtar...">
-                                    <button type="submit">
+                                    <input class="searchmeqale" type="text" name="searchmusahibe" placeholder="Müsahibələrdə axtar...">
+                                    <button class="mqlbtn" type="submit">
                                        <i class="flaticon-search"></i>
                                     </button>
                                  </div>
@@ -453,6 +453,71 @@
       </div>
   </div>
   <style>
+    @media only screen and (max-width: 425px) {
+      .det_meq{
+         height: 230px !important;
+      }
+            .meqaleimg {
+                height: 300px !important;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+            .fm__postbox-thumb{
+            height: 300px;
+         }
+        }
+        @media only screen and (max-width: 375px) {
+
+         .det_meq{
+         height: 200px !important;
+      }
+            .meqaleimg {
+                height: 250px !important;
+            }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+            .fm__postbox-thumb{
+            height: 280px;
+         }
+        }
+        @media only screen and (max-width: 320px) {
+         .fm__postbox-thumb{
+            height: 270px;
+         }
+            .meqaleimg {
+                height: 200px !important;
+            }
+            .det_meq{
+         height: 180px !important;
+      }
+            .mqlbtn{
+            margin-top: 0px !important;
+            width: 20% !important;
+            }
+            .sidebar__search-input{
+                display: flex;
+                
+            }
+            .searchmeqale{
+                padding-inline-start: 2px !important;
+                padding-right: 0px !important;
+            }
+            .tabs-tab{
+                font-size: 14px !important;
+            }
+        }
    @media (min-width: 1199px) {
       #ancaqmobile{
             display: none;
