@@ -40,7 +40,7 @@
   
 </head>
 
-<body class="full-wrap theme-dark">
+<body class="full-wrap theme-dark">-m
     <div class="page" id="pagepage">
 
 
@@ -2551,7 +2551,39 @@ headerBars2.forEach(function (headerBar) {
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 
+<script>
+    const firstCardElement = document.querySelector(".cardd");
+    const height = firstCardElement.getBoundingClientRect().height+8;
+    const targetElementId = "scroll"; // Elementin id'sini değiştirin
+    let scrollingDown = true;
 
+function scrollElement() {
+  const element = document.getElementById('scroll');
+  console.log('scroll',element)
+  if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+    scrollingDown = false;
+    console.log('false')
+  }
+
+  // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
+  if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
+    scrollingDown = true;
+    console.log('true')
+  }
+  
+  if (scrollingDown) {
+    element.scrollBy(0, height);
+    console.log('down')
+  } else {
+    element.scrollBy(0, -1000); 
+    console.log('up')
+  }
+
+
+}
+setInterval(scrollElement, 6000);
+const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
+    </script>
 <script>
     // Get the modal
     const clickableDivs = document.querySelectorAll(".clickable-div");
