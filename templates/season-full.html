@@ -2891,7 +2891,7 @@ cardElements.forEach(function (cardElement) {
     $(".popup").on("click", function (e) {
         const mycontentdiv = document.querySelectorAll('.slide-content')
         mycontentdiv.forEach(content=>{
-            if(content.is(e.target)) {
+            if($(e.target).closest(mycontentdiv).length > 0) {
                 console.log('22')
        return;
     }else{
