@@ -1459,7 +1459,8 @@ a {
             strongTag.className = classes;
           }
         });
-        divElements.forEach(function(divElement) {
+        var divElements2 = document.querySelectorAll('.col-xxl-4.col-xl-5.col-lg-5');
+        divElements2.forEach(function(divElement) {
           // Find the parent strong tag
           var strongTag = findParentWithTag(divElement, 'em');
       
