@@ -716,7 +716,7 @@
                      </div>
                 </div>
                 <div id="account" hidden class="row g-40 tabpanel">
-                    <div class="col-xxl-7 col-xl-7 col-lg-7">   {% for blog in inmemories %}
+                    <div class="col-xxl-8 col-xl-7 col-lg-7">   {% for blog in inmemories %}
                         <article class="postbox__item mb-60 bdFadeUp">
                            <div class="postbox__thumb mb-30">
                               <a href="{% url 'inmemorysingle' blog.slug %}">
@@ -1437,7 +1437,41 @@ a {
     <script src="{% static 'assets/js/SplitText.min.js' %}"></script>
     <script src="{% static 'assets/js/vanilla-tils.js' %}"></script>
     <script src="{% static 'assets/js/appair.min.js' %}"></script>
-    <script src="{% static 'assets/js/knob.min.js' %}"></script>
+    < src="{% static 'assets/js/knob.min.js' %}"></script>
+    <script>
+        // Get all div elements with the specified classes
+        var divElements = document.querySelectorAll('.col-xxl-4.col-xl-5.col-lg-5');
+      
+        // Iterate through each div element
+        divElements.forEach(function(divElement) {
+          // Find the parent strong tag
+          var strongTag = findParentWithTag(divElement, 'strong');
+      
+          // Check if the strong tag is found
+          if (strongTag) {
+            // Get the classes from the div element
+            var classes = divElement.className;
+      
+            // Remove all classes from the div element
+            divElement.className = '';
+      
+            // Add the classes to the strong tag
+            strongTag.className = classes;
+          }
+        });
+      
+        // Helper function to find the parent element with a specific tag
+        function findParentWithTag(element, tagName) {
+          tagName = tagName.toUpperCase();
+      
+          // Traverse up the DOM tree until the body element
+          while (element && element.tagName !== tagName && element !== document.body) {
+            element = element.parentElement;
+          }
+      
+          return element.tagName === tagName ? element : null;
+        }
+      </script>
     <script>
         var headerBars = document.querySelectorAll('.fm-header-bar-1');
         var headerBars2 = document.querySelectorAll('.offcanvas-close');
