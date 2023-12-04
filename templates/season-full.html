@@ -2892,12 +2892,10 @@ cardElements.forEach(function (cardElement) {
         const mycontentdiv = document.querySelectorAll('.slide-content')
         mycontentdiv.forEach(content=>{
             if(content.is(e.target)) {
-                
-                return;
-        }
-        
-       
-   }
+       return;
+    }
+        })
+     
         e.preventDefault();
         e.stopPropagation();
 
