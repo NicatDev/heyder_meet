@@ -1459,6 +1459,22 @@ a {
             strongTag.className = classes;
           }
         });
+        divElements.forEach(function(divElement) {
+          // Find the parent strong tag
+          var strongTag = findParentWithTag(divElement, 'em');
+      
+          // Check if the strong tag is found
+          if (strongTag) {
+            // Get the classes from the div element
+            var classes = divElement.className;
+      
+            // Remove all classes from the div element
+            divElement.className = '';
+      
+            // Add the classes to the strong tag
+            strongTag.className = classes;
+          }
+        });
       
         // Helper function to find the parent element with a specific tag
         function findParentWithTag(element, tagName) {
