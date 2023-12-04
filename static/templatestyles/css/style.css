@@ -14098,7 +14098,7 @@ place-items: center;
 #testimonial {
 display: grid;
 grid-template-columns: repeat(12, 1fr);
-width: min(120rem, 85%);
+width: min(140rem, 85%);
 margin: 0 auto;
 }
 @media screen and (min-width: 61.25rem) {
