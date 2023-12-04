@@ -2879,7 +2879,9 @@ cardElements.forEach(function (cardElement) {
         
         var spanId = $(e.target).attr('id');
         var numberPart = spanId.match(/\d+/);
-        console.log(numberPart)
+        const mydiv = document.getElementById('videodiv'+numberPart[0])
+        mydiv.style.height='100%'
+        console.log(mydiv)
     }else{
         console.log('2323')
     }
