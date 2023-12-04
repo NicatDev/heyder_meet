@@ -184,12 +184,12 @@
                                             {% if request.resolver_match.url_name == 'home' %}
                                             <a style="color: #fd6500 !important;"  href="{% url 'home' %}">Əsas səhifə</a>
                                             {% else %}
-                                            <a href="{% url 'article' %}?m=1">Əsas səhifə</a>
+                                            <a href="{% url 'home' %}">Əsas səhifə</a>
                                             {% endif %}
                                         </li>
                                         <li class="has-dropdown">
                                             {% if request.resolver_match.url_name == 'about' %}
-                                            <a  href="{% url 'about' %}">Haqqında</a>
+                                            <a style="color: #fd6500 !important;"  href="{% url 'about' %}">Haqqında</a>
                                             {% else %}
                                             <a href="{% url 'about' %}">Haqqında</a>
                                             {% endif %}
@@ -198,7 +198,7 @@
                                         <li   class="has-dropdown">
                                 
                                             {% if request.resolver_match.url_name == 'video' %}
-                                            <a  href="{% url 'video' %}">Video</a>
+                                            <a style="color: #fd6500 !important;" href="{% url 'video' %}">Video</a>
                                             {% else %}
                                             <a href="{% url 'video' %}">Video</a>
                                             {% endif %}
@@ -206,32 +206,32 @@
 
                                         <li   class="has-dropdown">
                                             {% if request.resolver_match.url_name == 'foto' %}
-                                            <a  href="{% url 'foto' %}">Foto</a>
+                                            <a style="color: #fd6500 !important;" href="{% url 'foto' %}">Foto</a>
                                             {% else %}
                                             <a href="{% url 'foto' %}">Foto</a>
                                             {% endif %}
                                         </li>
                                         <li  class="has-dropdown">
-                                            {% if request.resolver_match.url_name == 'about' %}
-                                            <a  href="{% url 'article' %}">Məqalələr</a>
+                                            {% if request.resolver_match.url_name == 'article' %}
+                                            <a style="color: #fd6500 !important;" href="{% url 'article' %}">Məqalələr</a>
                                             {% else %}
                                             <a href="{% url 'article' %}">Məqalələr</a>
                                             {% endif %}
                                         </li>
                                         <li  class="has-dropdown">
                                             {% if request.resolver_match.url_name == 'article3' %}
-                                            <a  href="{% url 'article3' %}">Xatirələr</a>
+                                            <a style="color: #fd6500 !important;" href="{% url 'article3' %}">Xatirələr</a>
                                             {% else %}
                                             <a href="{% url 'article3' %}">Xatirələr</a>
                                             {% endif %}
                                         </li>
                                         <li  class="has-dropdown has-mega-menu">
                                             {% if request.resolver_match.url_name == 'blog' %}
-                                            <a  href="{% url 'blog' %}">Xəbərlər</a>
+                                            <a style="color: #fd6500 !important;" href="{% url 'blog' %}">Xəbərlər</a>
                                             {% else %}
                                             <a href="{% url 'blog' %}">Xəbərlər</a>
                                             {% endif %}
-                                            <a href="{% url 'blog' %}">Xəbərlər</a>
+                             
 
                                         </li>
 
