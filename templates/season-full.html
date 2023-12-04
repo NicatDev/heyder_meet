@@ -2890,9 +2890,9 @@ cardElements.forEach(function (cardElement) {
         var spanId = $(e.target).attr('id');
         var numberPart = spanId.match(/\d+/);
         console.log('videodiv'+numberPart[0])
-        const mydiv = document.getElementById('videodiv-'+numberPart[0])
-        const mymetn = document.getElementById('videometn-'+numberPart[0])
-        const mymetn2 = document.getElementById('videometn2-'+numberPart[0])
+        var mydiv = document.getElementById('videodiv-'+numberPart[0])
+        var mymetn = document.getElementById('videometn-'+numberPart[0])
+        var mymetn2 = document.getElementById('videometn2-'+numberPart[0])
         mymetn.style.display='none'
         mymetn2.style.display='block'
         mydiv.style.height='12rem'
