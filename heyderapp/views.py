@@ -509,7 +509,6 @@ def inmemorysingle(request,slug=None):
     most_blogs = InMemory.objects.all()[0:3]
     context = {
         'blog':blog,
- 
         'alltags':Tag.objects.all(),
         'next':next_post,
         'pre':pre_post,
