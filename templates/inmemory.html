@@ -419,7 +419,7 @@
                         </div>
                         <div style="height: 690px;" class="fm__postbox-thumb mb-30">
                           
-                           <img style="object-position: bottom;" src="{{blog.coverimage.url}}" data-speed="auto" alt="{{blog.alt}}">
+                           <img {% if blog.id == 4 or blog.id == 6 %}  style="object-position: center;" {% else %} style="object-position: bottom;" {% endif %} src="{{blog.coverimage.url}}" data-speed="auto" alt="{{blog.alt}}">
 
                         </div>
                         <div class="">
