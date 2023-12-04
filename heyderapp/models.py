@@ -72,6 +72,7 @@ class InMemory(BaseMixin):
     name = models.CharField(max_length=800)
     content = models.TextField(verbose_name='coverimagein altinda olan yazi')
     coverimage = models.ImageField()
+    detailimage = models.ImageField(null=True,blank=True)
     interview = models.TextField(null=True,blank=True,verbose_name='musahibe hissesi, videodusa bos qalsin')
     ordering = models.IntegerField(null=True,blank=True)
     embed = models.CharField(max_length=4000,null=True,blank=True,verbose_name='youtube linki')
@@ -196,6 +197,7 @@ class Blog(BaseMixin):
     bottomcontent = models.CharField(max_length=12000,null=True,blank=True)
     bottomimage = models.ImageField(null=True,blank=True)
     views = models.CharField(max_length=1000,null=True,blank=True,default=0)
+
     def __str__(self):
         return self.name +  ' xeber'
     
