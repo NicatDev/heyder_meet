@@ -261,47 +261,70 @@
                       <div class="header-menu-spc d-none d-xl-block">
                           <div class="fm-header-nav">
 
-                              <nav id="mobile-menu" style="display: block;">
-                                  <ul>
-                                      <li class="has-dropdown">
-                                          <a href="{% url 'home' %}">Əsas səhifə</a>
+                            <nav id="mobile-menu" style="display: block;">
+                              <ul>
+                              
+                                  <li   class="has-dropdown">
+                                      {% if request.resolver_match.url_name == 'home' %}
+                                      <a style="color: #fd6500 !important;"  href="{% url 'home' %}">Əsas səhifə</a>
+                                      {% else %}
+                                      <a href="{% url 'home' %}">Əsas səhifə</a>
+                                      {% endif %}
+                                  </li>
+                                  <li class="has-dropdown">
+                                      {% if request.resolver_match.url_name == 'about' %}
+                                      <a style="color: #fd6500 !important;"  href="{% url 'about' %}">Haqqında</a>
+                                      {% else %}
+                                      <a href="{% url 'about' %}">Haqqında</a>
+                                      {% endif %}
+                                  </li>
 
-                                      </li>
-                                      <li class="has-dropdown"><a href="{% url 'about' %}">Haqqında</a>
-                                      </li>
+                                  <li   class="has-dropdown">
+                          
+                                      {% if request.resolver_match.url_name == 'video' %}
+                                      <a style="color: #fd6500 !important;" href="{% url 'video' %}">Video</a>
+                                      {% else %}
+                                      <a href="{% url 'video' %}">Video</a>
+                                      {% endif %}
+                                  </li>
 
-                                      <li class="has-dropdown"><a href="{% url 'video' %}">Video</a>
-                                          <!-- <ul class="submenu">
-                                              {% for cat in vidcategories %}
-                                              <li><a href="{% url 'video' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                              {% endfor %}
-                                          </ul> -->
-                                      </li>
+                                  <li   class="has-dropdown">
+                                      {% if request.resolver_match.url_name == 'foto' %}
+                                      <a style="color: #fd6500 !important;" href="{% url 'foto' %}">Foto</a>
+                                      {% else %}
+                                      <a href="{% url 'foto' %}">Foto</a>
+                                      {% endif %}
+                                  </li>
+                                  <li  class="has-dropdown">
+                                      {% if request.resolver_match.url_name == 'article' %}
+                                      <a style="color: #fd6500 !important;" href="{% url 'article' %}">Məqalələr</a>
+                                      {% else %}
+                                      <a href="{% url 'article' %}">Məqalələr</a>
+                                      {% endif %}
+                                  </li>
+                                  <li  class="has-dropdown">
+                                      {% if request.resolver_match.url_name == 'article3' %}
+                                      <a style="color: #fd6500 !important;" href="{% url 'article3' %}">Xatirələr</a>
+                                      {% else %}
+                                      <a href="{% url 'article3' %}">Xatirələr</a>
+                                      {% endif %}
+                                  </li>
+                                  <li  class="has-dropdown has-mega-menu">
+                                      {% if request.resolver_match.url_name == 'blog' %}
+                                      <a style="color: #fd6500 !important;" href="{% url 'blog' %}">Xəbərlər</a>
+                                      {% else %}
+                                      <a href="{% url 'blog' %}">Xəbərlər</a>
+                                      {% endif %}
+                       
 
-                                      <li class="has-dropdown"><a href="{% url 'foto' %}">Foto</a>
-                                          <!-- <ul class="submenu">
-                                              {% for cat in fotcategories %}
-                                              <li><a href="{% url 'foto' %}?movzu={{cat.id}}">{{cat.name}}</a></li>
-                                              {% endfor %}
-                                          </ul> -->
-                                      </li>
-                                      <li class="has-dropdown"><a href="{% url 'article' %}?m=1">Məqalələr</a>
+                                  </li>
 
-                                      </li>
-                                      <li class="has-dropdown"><a href="{% url 'article3' %}">Xatirələr</a>
-
-                                      </li>
-                                      <li class="has-dropdown has-mega-menu">
-                                          <a href="{% url 'blog' %}">Xəbərlər</a>
-
-                                      </li>
-
-                                      
+                                  
 
 
-                                      
-                                  </ul>
-                              </nav>
+                                  
+                              </ul>
+                          </nav>
 
                           </div>
                       </div>
