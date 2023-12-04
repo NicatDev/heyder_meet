@@ -720,6 +720,7 @@
                         <article class="postbox__item mb-60 bdFadeUp">
                            <div class="postbox__thumb mb-30">
                               <a href="{% url 'inmemorysingle' blog.slug %}">
+                                {{blog.id}}
                                  <img style="height: 690px;object-position: bottom;object-fit: cover;" src="{{blog.coverimage.url}}" alt="img not found">
                               </a>
                            </div>
