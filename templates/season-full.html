@@ -921,7 +921,7 @@
                                 
                                 <div id="videodiv-{{video.id}}" class="slide-content" style="height: 8rem !important;">
                                     <p id="videometn2-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;" >
-                                        {{video.content|slice:90}} <span class="video-span" id="videospan2-{{video.id}}" style="color: orangered;">daha az</span></p>
+                                        {{video.content}} <span class="video-span" id="videospan2-{{video.id}}" style="color: orangered;">daha az</span></p>
                             
                                     <p id="videometn-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
                                         {{video.content|slice:90}} {% if video.content|length > 90 %} <span class="video-span" id="videospan-{{video.id}}" style="color: orangered;">daha çox</span>{% endif %}</p>
