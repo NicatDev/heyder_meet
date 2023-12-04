@@ -417,26 +417,7 @@
         </div></div>
      
         <!-- banenr wrapper -->
-<style>
-    @media (max-width: 576px){
-.slide-wrapper .slide-slider-full, .category-slider .slide-wrapper .slide-slider {
-    width: 130% !important;}
-  }
-  @media (max-width: 600px){
-    .banner2{
-        display: block;
 
-    }
-    .banner1{display: none;}
-  }
-  @media (min-width: 600px){
-    .banner2{
-        display: none;
-
-    }
-    .banner1{display: block;}
-  }
-</style>
         <!-- lahiye haqqinda -->
         <section>
             <div class="aboutimagetitle-div">
@@ -2570,39 +2551,7 @@ headerBars2.forEach(function (headerBar) {
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 
-<script>
-    const firstCardElement = document.querySelector(".cardd");
-    const height = firstCardElement.getBoundingClientRect().height+8;
-    const targetElementId = "scroll"; // Elementin id'sini değiştirin
-    let scrollingDown = true;
 
-function scrollElement() {
-  const element = document.getElementById('scroll');
-  console.log('scroll',element)
-  if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-    scrollingDown = false;
-    console.log('false')
-  }
-
-  // Eğer sayfa en üstündeyse aşağı kaydırmaya başla
-  if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
-    scrollingDown = true;
-    console.log('true')
-  }
-  
-  if (scrollingDown) {
-    element.scrollBy(0, height);
-    console.log('down')
-  } else {
-    element.scrollBy(0, -1000); 
-    console.log('up')
-  }
-
-
-}
-setInterval(scrollElement, 6000);
-const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
-    </script>
 <script>
     // Get the modal
     const clickableDivs = document.querySelectorAll(".clickable-div");
@@ -2900,6 +2849,26 @@ cardElements.forEach(function (cardElement) {
     cardElement.addEventListener('mouseout', removeClassOnHover);
 });
 </script>
+<style>
+    @media (max-width: 576px){
+.slide-wrapper .slide-slider-full, .category-slider .slide-wrapper .slide-slider {
+    width: 130% !important;}
+  }
+  @media (max-width: 600px){
+    .banner2{
+        display: block;
+
+    }
+    .banner1{display: none;}
+  }
+  @media (min-width: 600px){
+    .banner2{
+        display: none;
+
+    }
+    .banner1{display: block;}
+  }
+</style>
 <script>
     $(document).ready(function() {
         
