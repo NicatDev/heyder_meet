@@ -2889,8 +2889,13 @@ cardElements.forEach(function (cardElement) {
     });
 });
     $(".popup").on("click", function (e) {
-        const mycontentdiv = document.querySelectorAll('.slide-content')
-        mycontentdiv.forEach(content=>{
+
+        $('.slide-content').each(function(index, content) {
+    if ($(e.target).closest(content).length > 0) {
+        console.log('22');
+        return;
+    }
+});
             if($(e.target).closest(content).length > 0) {
                 console.log('22')
        return;
