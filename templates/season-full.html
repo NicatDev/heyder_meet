@@ -2876,72 +2876,96 @@ cardElements.forEach(function (cardElement) {
     cardElement.addEventListener('mouseout', removeClassOnHover);
 });
 </script>
-<script>$(document).ready(function () {
+<script>
+    $(document).ready(function() {
+        
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
+  
+            if ($(e.target).hasClass('video-metn')) {
+        console.log('Tıklanan element mycontentdiv sınıfına sahip.');
+        return;
+    }else if($(e.target).hasClass('video-span')){
+        
+        var spanId = $(e.target).attr('id');
+        var numberPart = spanId.match(/\d+/);
+        console.log('videodiv'+numberPart[0])
+        var mydiv = document.getElementById('videodiv-'+numberPart[0])
+        var mymetn = document.getElementById('videometn-'+numberPart[0])
+        var mymetn2 = document.getElementById('videometn2-'+numberPart[0])
 
-        if ($(e.target).hasClass('video-metn')) {
-            console.log('Tıklanan element mycontentdiv sınıfına sahip.');
-            return;
-        } else if ($(e.target).hasClass('video-span')) {
-            handleSpanClick(e.target);
-        } else if ($(e.target).hasClass('video-span2')) {
-            handleSpan2Click(e.target);
-        } else {
-            console.log('2323');
-        }
+        mymetn2.style.display='block'
+        mydiv.style.height='12rem'
+        mydiv.style.display='none'
+        console.log(mydiv,'111-mydiv1')
+
+        return;
+    }else if($(e.target).hasClass('video-span2')){
+        
+        var spanId = $(e.target).attr('id');
+        var numberPart = spanId.match(/\d+/);
+        console.log('videodiv'+numberPart[0])
+        const mydiv = document.getElementById('videodiv-'+numberPart[0])
+        const mymetn = document.getElementById('videometn-'+numberPart[0])
+        const mymetn2 = document.getElementById('videometn2-'+numberPart[0])
+        mymetn.style.display='block'
+        mymetn2.style.display='none'
+        mydiv.style.height='8rem'
+        console.log(mydiv,'222-mydiv2')
+        return;
+    }else{
+        console.log('2323')
+    }
+
+console.log(e.target,'------')
+       
+        var $this = $(this);
+
+        var videoUrl = $this.attr("data-media");
+ 
+        var popup = $this.attr("href");
+ 
+        var $popupIframe = $(popup).find("iframe");
+
+        $popupIframe.attr("src", videoUrl);
+
+        $("#pagepage").addClass("show-popup");
+        $('body').css('overflow', 'hidden');
+
     });
-
+});
     $(".popup").on("click", function (e) {
+
+    
+     
         e.preventDefault();
         e.stopPropagation();
 
         $(".page").removeClass("show-popup");
         $('body').css('overflow', 'auto');
         var iframe = $("#myiframe");
-        var newVideoId = "NEW_VIDEO_ID";
-        var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
+    var newVideoId = "NEW_VIDEO_ID";
+    var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
 
-        iframe.attr("src", newSrc);
+    iframe.attr("src", newSrc);
     });
 
     $(".popup > iframe").on("click", function (e) {
         e.stopPropagation();
 
         $('body').css('overflow', 'auto');
+        
+        
     });
+    function setActive(clickedElement) {
+      // Remove "active" class from all li elements
+      document.querySelectorAll("#mobile-menu li").forEach(function(li) {
+        li.classList.remove("active");
+      });
 
-    function handleSpanClick(target) {
-        var spanId = $(target).attr('id');
-        var numberPart = spanId.match(/\d+/);
-        console.log('videodiv' + numberPart[0]);
-
-        var mydiv = document.getElementById('videodiv-' + numberPart[0]);
-        var mymetn = document.getElementById('videometn-' + numberPart[0]);
-        var mymetn2 = document.getElementById('videometn2-' + numberPart[0]);
-
-        mymetn.style.display = 'none';
-        mymetn2.style.display = 'block';
-        mydiv.style.height = '12rem';
-        mydiv.style.display = 'none';
-        console.log(mydiv, '111-mydiv1');
+      // Add "active" class to the clicked li element
+      clickedElement.classList.add("active");
     }
-
-    function handleSpan2Click(target) {
-        var spanId = $(target).attr('id');
-        var numberPart = spanId.match(/\d+/);
-        console.log('videodiv' + numberPart[0]);
-
-        var mydiv = document.getElementById('videodiv-' + numberPart[0]);
-        var mymetn = document.getElementById('videometn-' + numberPart[0]);
-        var mymetn2 = document.getElementById('videometn2-' + numberPart[0]);
-
-        mymetn.style.display = 'block';
-        mymetn2.style.display = 'none';
-        mydiv.style.height = '8rem';
-        console.log(mydiv, '222-mydiv2');
-    }
-});
 </script>
 
 </html>
