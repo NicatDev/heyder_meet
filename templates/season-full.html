@@ -2871,7 +2871,15 @@ cardElements.forEach(function (cardElement) {
         
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
-        
+        $('.slide-content').each(function(index, content) {
+            if ($(e.target).hasClass('slide-content')) {
+        console.log('Tıklanan element mycontentdiv sınıfına sahip.');
+        return;
+    }else{
+        console.log('2323')
+    }
+});
+console.log(e.target,'------')
        
         var $this = $(this);
 
@@ -2890,15 +2898,7 @@ cardElements.forEach(function (cardElement) {
 });
     $(".popup").on("click", function (e) {
 
-        $('.slide-content').each(function(index, content) {
-            if ($(e.target).hasClass('slide-content')) {
-        console.log('Tıklanan element mycontentdiv sınıfına sahip.');
-        return;
-    }else{
-        console.log('2323')
-    }
-});
-console.log(e.target,'------')
+    
      
         e.preventDefault();
         e.stopPropagation();
