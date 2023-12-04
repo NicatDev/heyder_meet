@@ -2891,11 +2891,11 @@ cardElements.forEach(function (cardElement) {
     $(".popup").on("click", function (e) {
 
         $('.slide-content').each(function(index, content) {
-    if ($(e.target).closest(content).length > 0) {
-        console.log('22');
+            if ($(e.target).hasClass('slide-content')) {
+        console.log('Tıklanan element mycontentdiv sınıfına sahip.');
         return;
     }else{
-        console.log('33')
+        console.log('2323')
     }
 });
 
