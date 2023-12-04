@@ -72,7 +72,7 @@ class InMemory(BaseMixin):
     name = models.CharField(max_length=800)
     content = models.TextField(verbose_name='coverimagein altinda olan yazi')
     coverimage = models.ImageField()
-    detailimage = models.ImageField(null=True,blank=True)
+
     interview = models.TextField(null=True,blank=True,verbose_name='musahibe hissesi, videodusa bos qalsin')
     ordering = models.IntegerField(null=True,blank=True)
     embed = models.CharField(max_length=4000,null=True,blank=True,verbose_name='youtube linki')
@@ -172,6 +172,7 @@ class AllHeader(models.Model):
     def save(self, *args, **kwargs):
         self.pk = 1
         super(AllHeader, self).save(*args, **kwargs)
+
 class HomeHeaderVideo(models.Model):
     name = models.CharField(max_length=230)
     video = models.CharField(max_length=3400)
