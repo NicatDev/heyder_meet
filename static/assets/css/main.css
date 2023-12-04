@@ -12003,7 +12003,7 @@ blockquote > p {
 }
 
 .p-text {
-  visibility: hidden;
+  visibility: visible;
 }
 
 .split-parent {
