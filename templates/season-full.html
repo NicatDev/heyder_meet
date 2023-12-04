@@ -2569,7 +2569,7 @@ function scrollElement() {
 
 
 }
-setInterval(scrollElement, 6000);
+var scrollid = setInterval(scrollElement, 6000);
 const scrollInterval = setInterval(scrollContent, animationDuration / element.clientHeight);
     </script>
 <script>
@@ -2849,15 +2849,17 @@ div{
     testimonialDiv.addEventListener('mouseover', function() {
         console.log('clear')
         clearInterval(intervalId);
-        clearInterval(scrollElement);
+        clearInterval(scrollid);
+
     });
     
     testimonialDiv.addEventListener('mouseout', function() {
       console.log('setint')
         intervalId = setInterval(myFunction, 6000);
-        intervalId2 = setInterval(scrollElement, 6000);
+        scrollid = setInterval(scrollElement, 6000);
+         
     });
-    intervalId2 = setInterval(scrollElement, 6000);
+
 </script>
 <script>
 var cardElements = document.querySelectorAll('.mycardhover');
