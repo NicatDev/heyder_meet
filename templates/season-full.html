@@ -921,7 +921,7 @@
                                 <div id="videodiv-{{video.id}}" class="slide-content" style="height: 8rem !important;">
 
                                     <p id="videometn-{{video.id}}" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
-                                        {{video.content|slice:90}}... {% if video.content|length > 90 %} <span onclick="getmore('{{video.id}}')">daha çox</span>{% endif %}</p>
+                                        {{video.content|slice:90}}... {% if video.content|length > 90 %} <span>daha çox</span>{% endif %}</p>
                             
 
                                 </div>
@@ -2889,6 +2889,15 @@ cardElements.forEach(function (cardElement) {
     });
 });
     $(".popup").on("click", function (e) {
+        const mycontentdiv = document.querySelectorAll('.slide-content')
+        mycontentdiv.forEach(content=>{
+            if(content.is(e.target)) {
+                
+                return;
+        }
+        
+       
+   }
         e.preventDefault();
         e.stopPropagation();
 
