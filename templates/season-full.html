@@ -920,7 +920,7 @@
                                 </div>
                                 <div id="videodiv-{{video.id}}" class="slide-content" style="height: 8rem !important;">
 
-                                    <p id="videometn-{{video.id}}" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
+                                    <p id="videometn-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
                                         {{video.content|slice:90}}... {% if video.content|length > 90 %} <span>daha çox</span>{% endif %}</p>
                             
 
@@ -2871,14 +2871,14 @@ cardElements.forEach(function (cardElement) {
         
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
-        $('.slide-content').each(function(index, content) {
-            if ($(e.target).hasClass('slide-content')) {
+  
+            if ($(e.target).hasClass('video-metn')) {
         console.log('Tıklanan element mycontentdiv sınıfına sahip.');
         return;
     }else{
         console.log('2323')
     }
-});
+
 console.log(e.target,'------')
        
         var $this = $(this);
