@@ -918,8 +918,11 @@
                                     </div>
 
                                 </div>
+                                
                                 <div id="videodiv-{{video.id}}" class="slide-content" style="height: 8rem !important;">
-
+                                    <p id="videometn2-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;" >
+                                        {{video.content|slice:90}} <span class="video-span" id="videospan2-{{video.id}}" style="color: orangered;">daha az</span></p>
+                            
                                     <p id="videometn-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
                                         {{video.content|slice:90}} {% if video.content|length > 90 %} <span class="video-span" id="videospan-{{video.id}}" style="color: orangered;">daha çox</span>{% endif %}</p>
                             
@@ -2881,6 +2884,10 @@ cardElements.forEach(function (cardElement) {
         var numberPart = spanId.match(/\d+/);
         console.log('videodiv'+numberPart[0])
         const mydiv = document.getElementById('videodiv-'+numberPart[0])
+        const mymetn = document.getElementById('videometn-'+numberPart[0])
+        const mymetn2 = document.getElementById('videometn2-'+numberPart[0])
+        mymetn.style.display='none'
+        mymetn2.style.display='block'
         mydiv.style.height='14rem'
         console.log(mydiv)
         return;
