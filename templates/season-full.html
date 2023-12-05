@@ -2834,7 +2834,7 @@ div{
     }
 </script>
 <script>
-    const scrollableDiv = document.getElementById('scrollableDiv');
+    const scrollableDiv = document.getElementById('loadmorediv');
 
 // Scroll event listener
 scrollableDiv.addEventListener('scroll', function () {
@@ -2844,14 +2844,11 @@ scrollableDiv.addEventListener('scroll', function () {
 
   // Kontrol: Div'in en altına gelindi mi?
   const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight;
-
-  // Eğer en altındaysa, body'nin scroll özelliğini etkinleştir
-  if (isScrolledToBottom) {
-    document.body.style.overflowY = 'scroll';
-  } else {
-    document.body.style.overflowY = 'hidden';
-  }
+  document.addEventListener("scrollend", (event) => {
+    document.getElementById('loadmorediv').style.overflowY = 'hidden';
 });
+  // Eğer en altındaysa, body'nin scroll özelliğini etkinleştir
+
 
 // Body'nin scroll eventini dinle
 document.body.addEventListener('scroll', function () {
