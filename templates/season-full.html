@@ -1038,7 +1038,8 @@
     
 
     </div>
-    <div style="width: 100%;display: flex;align-items: center;justify-content: center;"><button id="loadmorebutton33" style="height: 80px;width: 200px;border-radius: 20px;background-color: orangered;"></button></div>
+
+    <div style="width: 100%;display: flex;align-items: center;justify-content: center;"><i onclick="changeHeight(this)" class="fa-solid fa-angle-down"></i></div>
 </div>
 
  <div id="loadmorediv2" style="display: none;">
@@ -2801,7 +2802,7 @@ div{
         });
     }
 </script>
-<script>
+<>
        document.addEventListener('DOMContentLoaded', function () {
       // Sayfa yüklendiğinde çalışacak kod buraya yazılabilir
       attachClickEventToElements();
@@ -2842,6 +2843,24 @@ div{
     }
 </script>
 
+
+<script>
+
+  function changeHeight(clickedElement) {
+    var myDiv = document.getElementById('loadmorediv');
+    
+    // Check current height and toggle to 100% or back to initial height
+    if (myDiv.style.height === '100%') {
+      myDiv.style.height = '800px';
+      clickedElement.classList.add('fa-angle-down')
+      clickedElement.classList.remove('fa-angle-up')
+
+    } else {
+      myDiv.style.height = '100%';
+      clickedElement.classList.remove('fa-angle-down')
+      clickedElement.classList.add('fa-angle-up')
+    }
+  }
 
 </script>
 <style>
