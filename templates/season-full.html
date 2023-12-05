@@ -2839,10 +2839,10 @@ div{
     var element = this;
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       // İçerik sona erdiğinde, sayfa gövdesinin kaydırılmasını engelle
-      element.style.overflow = 'hidden';
+      element.style.overflow = 'scroll';
     } else {
       // İçerik sona gelmediğinde, sayfa gövdesinin kaydırılmasına izin ver
-      element.style.overflow = '';
+      element.style.overflow = 'hidden';
     }
   });
 </script>
