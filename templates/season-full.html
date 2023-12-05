@@ -970,6 +970,7 @@
                                     </div>
 
                                 </div>
+                                
                                 <div class="slide-content" style="height: 8rem !important;">
 
                                     <p class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px">
@@ -2551,21 +2552,7 @@ font-size:100px !important
     }}
     </style>
 
-    <script>
-    function toggleContent(element, showClass, hideClass) {
-        var parentContainer = element.closest('.slide-content');
-        if (parentContainer) {
-            var showElement = parentContainer.querySelector('.' + showClass);
-            var hideElement = parentContainer.querySelector('.' + hideClass);
-console.log('----')
-            if (showElement && hideElement) {
-                console.log('+++++++++++')
-                showElement.style.display = 'block';
-                hideElement.style.display = 'none';
-            }
-        }
-    }
-</script>
+
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
@@ -2613,7 +2600,12 @@ headerBars2.forEach(function (headerBar) {
 });
     </script>
 
+<script>
+    function getmore(id) {
+        console.log(id)
 
+}    
+        </script>
 <script src="{% static 'assets/js/ajax-form.js' %}"></script>
 <script src="{% static 'assets/js/wow.min.js' %}"></script>
 <script src="{% static 'assets/js/sidebar.js' %}"></script>
@@ -2963,6 +2955,18 @@ cardElements.forEach(function (cardElement) {
 });
 </script>
 
+<script>
+    function toggleContent(element, showClass, hideClass) {
+        var parentContainer = element.closest('.slide-content');
+        if (parentContainer) {
+            var showElement = parentContainer.querySelector('.' + showClass);
+            var hideElement = parentContainer.querySelector('.' + hideClass);
 
-
+            if (showElement && hideElement) {
+                showElement.style.display = 'block';
+                hideElement.style.display = 'none';
+            }
+        }
+    }
+</script>
 </html>
