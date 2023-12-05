@@ -2557,8 +2557,9 @@ font-size:100px !important
         if (parentContainer) {
             var showElement = parentContainer.querySelector('.' + showClass);
             var hideElement = parentContainer.querySelector('.' + hideClass);
-
+console.log('----')
             if (showElement && hideElement) {
+                console.log('+++++++++++')
                 showElement.style.display = 'block';
                 hideElement.style.display = 'none';
             }
