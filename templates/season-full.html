@@ -2959,10 +2959,12 @@ cardElements.forEach(function (cardElement) {
     function toggleContent(element, showClass, hideClass) {
         var parentContainer = element.closest('.slide-content');
         if (parentContainer) {
+        console.log('1')
             var showElement = parentContainer.querySelector('.' + showClass);
             var hideElement = parentContainer.querySelector('.' + hideClass);
-
+            console.log(showElement,hideElement,'-----')
             if (showElement && hideElement) {
+                console.log('i am in')
                 showElement.style.display = 'block';
                 hideElement.style.display = 'none';
             }
