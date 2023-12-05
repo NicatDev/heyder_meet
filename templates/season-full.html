@@ -2840,6 +2840,9 @@ div{
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       // İçerik sona erdiğinde, sayfa gövdesinin kaydırılmasını engelle
       element.style.overflow = 'hidden';
+      setTimeout(function() {
+        element.style.overflow = 'scroll';
+  }, 1000);
     } else {
       // İçerik sona gelmediğinde, sayfa gövdesinin kaydırılmasına izin ver
       element.style.overflow = 'scroll';
