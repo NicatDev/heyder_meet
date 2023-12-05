@@ -975,13 +975,13 @@
                                     <p class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px">
                                         {{video.content|slice:90}}
                                         {% if video.content|length > 90 %}
-                                        <span class="video-span" style="color: orangered;" onclick="toggleContent('video-metn', 'video-metn2')">daha çox</span>
+                                        <span class="video-span" style="color: orangered;" onclick="toggleContent(this, 'video-metn', 'video-metn2')">daha çox</span>
                                         {% endif %}
                                     </p>
                                 
                                     <p class="video-metn2" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;">
                                         {{video.content}}
-                                        <span class="video-span2" style="color: orangered;" onclick="toggleContent('video-metn2', 'video-metn')">daha az</span>
+                                        <span class="video-span2" style="color: orangered;" onclick="toggleContent(this, 'video-metn2', 'video-metn')">daha az</span>
                                     </p>
                                 
                                 </div>
@@ -2551,7 +2551,20 @@ font-size:100px !important
     }}
     </style>
 
+    <script>
+    function toggleContent(element, showClass, hideClass) {
+        var parentContainer = element.closest('.slide-content');
+        if (parentContainer) {
+            var showElement = parentContainer.querySelector('.' + showClass);
+            var hideElement = parentContainer.querySelector('.' + hideClass);
 
+            if (showElement && hideElement) {
+                showElement.style.display = 'block';
+                hideElement.style.display = 'none';
+            }
+        }
+    }
+</script>
 <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
 <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
@@ -2599,20 +2612,7 @@ headerBars2.forEach(function (headerBar) {
 });
     </script>
 
-    <script>
-    function toggleContent(element, showClass, hideClass) {
-        var parentContainer = element.closest('.slide-content');
-        if (parentContainer) {
-            var showElement = parentContainer.querySelector('.' + showClass);
-            var hideElement = parentContainer.querySelector('.' + hideClass);
 
-            if (showElement && hideElement) {
-                showElement.style.display = 'block';
-                hideElement.style.display = 'none';
-            }
-        }
-    }
-</script>
 <script src="{% static 'assets/js/ajax-form.js' %}"></script>
 <script src="{% static 'assets/js/wow.min.js' %}"></script>
 <script src="{% static 'assets/js/sidebar.js' %}"></script>
