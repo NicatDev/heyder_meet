@@ -2845,15 +2845,12 @@ div{
     var element = this;
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       // İçerik sona erdiğinde, sayfa gövdesinin kaydırılmasını engelle
-   
+      element.classList.add('myscrollclass');
       console.log('103')
-      setTimeout(function() {
-        element.classList.add('myscrollclass');
-              console.log('203')
-  },700);
+  
     } else {
       // İçerik sona gelmediğinde, sayfa gövdesinin kaydırılmasına izin ver
-      element.classList.remove('myscrollclass');
+
       console.log('303')
     }
   });
