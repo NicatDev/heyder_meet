@@ -2833,6 +2833,20 @@ div{
       });
     }
 </script>
+<script>
+    
+    document.querySelector('#loadmorediv').addEventListener('scroll', function() {
+    var element = this;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+      // İçerik sona erdiğinde, sayfa gövdesinin kaydırılmasını engelle
+      document.body.style.overflow = 'hidden';
+    } else {
+      // İçerik sona gelmediğinde, sayfa gövdesinin kaydırılmasına izin ver
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+</script>
 <style>
         @media (max-width: 850px) {
     #myiframe{
