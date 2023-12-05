@@ -2833,23 +2833,6 @@ div{
       });
     }
 </script>
-<script>
-    const scrollableDiv = document.getElementById('loadmorediv');
-
-// Scroll event listener
-scrollableDiv.addEventListener('scroll', function () {
-  const scrollTop = scrollableDiv.scrollTop;
-  const scrollHeight = scrollableDiv.scrollHeight;
-  const clientHeight = scrollableDiv.clientHeight;
-
-  // Kontrol: Div'in en altına gelindi mi?
-  const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight;
-  document.addEventListener("scrollend", (event) => {
-  document.getElementById('loadmorediv').style.overflow = 'hidden'
-  console.log('--------')
-});
-  // Eğ
-});
 
 
 </script>
