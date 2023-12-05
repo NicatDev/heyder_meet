@@ -2962,6 +2962,12 @@ cardElements.forEach(function (cardElement) {
         console.log('1')
             var showElement = parentContainer.querySelector('.' + showClass);
             var hideElement = parentContainer.querySelector('.' + hideClass);
+            if(showElement.classList.contains('video-metn2')){
+                parentContainer.style.height = '12rem'
+            }
+            else{
+                parentContainer.style.height = '8rem'
+            }
             console.log(showElement,hideElement,'-----')
             if (showElement && hideElement) {
                 console.log('i am in')
