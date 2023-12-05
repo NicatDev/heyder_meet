@@ -307,7 +307,7 @@ def home(request):
     
     photos = Photo.objects.all().order_by('-created_at').filter(inhome=True)
     if len(photos)>15:
-        photos = photos[0:15]
+        photos = photos[0:12]
     if About.objects.all().exists():
         about = About.objects.first()
     else:
