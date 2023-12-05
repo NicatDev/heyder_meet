@@ -970,15 +970,20 @@
                                     </div>
 
                                 </div>
-                                
-                                <div id="videodiv-{{video.id}}" class="slide-content" style="height: 8rem !important;">
-                                    <p id="videometn2-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;" >
-                                        {{video.content}} <span class="video-span2" id="videospan2-{{video.id}}" style="color: orangered;">daha az</span></p>
-                            
-                                    <p id="videometn-{{video.id}}" class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px" >
-                                        {{video.content|slice:90}} {% if video.content|length > 90 %} <span class="video-span" id="videospan-{{video.id}}" style="color: orangered;">daha çox</span>{% endif %}</p>
-                            
+                                <div class="slide-content" style="height: 8rem !important;">
 
+                                    <p class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px">
+                                        {{video.content|slice:90}}
+                                        {% if video.content|length > 90 %}
+                                        <span class="video-span" style="color: orangered;" onclick="toggleContent('video-metn', 'video-metn2')">daha çox</span>
+                                        {% endif %}
+                                    </p>
+                                
+                                    <p class="video-metn2" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;">
+                                        {{video.content}}
+                                        <span class="video-span2" style="color: orangered;" onclick="toggleContent('video-metn2', 'video-metn')">daha az</span>
+                                    </p>
+                                
                                 </div>
                             </a>
                         </div>
@@ -2600,6 +2605,17 @@ headerBars2.forEach(function (headerBar) {
 
 }    
         </script>
+        <script>
+    function toggleContent(showId, hideId) {
+        var showElement = document.querySelector('.' + showId);
+        var hideElement = document.querySelector('.' + hideId);
+
+        if (showElement && hideElement) {
+            showElement.style.display = 'block';
+            hideElement.style.display = 'none';
+        }
+    }
+</script>
 <script src="{% static 'assets/js/ajax-form.js' %}"></script>
 <script src="{% static 'assets/js/wow.min.js' %}"></script>
 <script src="{% static 'assets/js/sidebar.js' %}"></script>
