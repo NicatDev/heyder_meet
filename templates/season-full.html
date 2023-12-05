@@ -2983,14 +2983,14 @@ cardElements.forEach(function (cardElement) {
 <script>
     function changeHeight(clickedElement) {
       var myDiv = document.getElementById('loadmorediv');
-      
+      var mychilddiv = document.getElementById('loadmorechild')
       // Check current height and toggle to 100% or back to initial height
-      if (myDiv.style.height === '100%') {
+      if (myDiv.style.height === mychilddiv.style.height) {
         myDiv.style.height = '800px';
         clickedElement.classList.remove('fa-angle-up')
         clickedElement.classList.add('fa-angle-down')
       } else {
-        myDiv.style.height = '100%';
+        myDiv.style.height = mychilddiv.style.height;
         clickedElement.classList.add('fa-angle-up')
         clickedElement.classList.remove('fa-angle-down')
       }
