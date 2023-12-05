@@ -2845,19 +2845,13 @@ scrollableDiv.addEventListener('scroll', function () {
   // Kontrol: Div'in en altına gelindi mi?
   const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight;
   document.addEventListener("scrollend", (event) => {
-    document.getElementById('loadmorediv').style.overflowY = 'hidden';
+  document.getElementById('loadmorediv').display.overflow = 'hidden'
+  console.log('--------')
 });
-  // Eğer en altındaysa, body'nin scroll özelliğini etkinleştir
+  // Eğ
+});
 
 
-// Body'nin scroll eventini dinle
-document.body.addEventListener('scroll', function () {
-  // Eğer div'in en başına dönüldüyse ve div bitmişse body'nin scroll özelliğini devre dışı bırak
-  if (document.body.style.overflowY === 'scroll') {
-    document.body.style.overflowY = 'hidden';
-  }
-});
-</script>
 </script>
 <style>
         @media (max-width: 850px) {
