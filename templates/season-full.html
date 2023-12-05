@@ -2599,20 +2599,17 @@ headerBars2.forEach(function (headerBar) {
 });
     </script>
 
-<script>
-    function getmore(id) {
-        console.log(id)
+    <script>
+    function toggleContent(element, showClass, hideClass) {
+        var parentContainer = element.closest('.slide-content');
+        if (parentContainer) {
+            var showElement = parentContainer.querySelector('.' + showClass);
+            var hideElement = parentContainer.querySelector('.' + hideClass);
 
-}    
-        </script>
-        <script>
-    function toggleContent(showId, hideId) {
-        var showElement = document.querySelector('.' + showId);
-        var hideElement = document.querySelector('.' + hideId);
-
-        if (showElement && hideElement) {
-            showElement.style.display = 'block';
-            hideElement.style.display = 'none';
+            if (showElement && hideElement) {
+                showElement.style.display = 'block';
+                hideElement.style.display = 'none';
+            }
         }
     }
 </script>
