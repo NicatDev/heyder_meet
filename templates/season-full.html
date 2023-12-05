@@ -1039,9 +1039,9 @@
 
     </div>
 
-    <div style="width: 100%;display: flex;align-items: center;justify-content: center;"><i class="fa-solid fa-angle-down"></i></div>
-</div>
 
+</div>
+<div style="width: 100%;display: flex;align-items: center;justify-content: center;"><i onclick="changeHeight(this)" style="color: white;font-size: 30px;" class="fa-solid fa-angle-down"></i></div>
  <div id="loadmorediv2" style="display: none;">
     <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
         <div class="container-fluid">
@@ -1859,7 +1859,7 @@ font-size:100px !important
         .slide-wrapper .slide-slider-full,
         .category-slider .slide-wrapper .slide-slider {
             width: 100% !important;
-        }
+        }}
 </style>
 <!-- border-bottom title -->
 <!-- border-bottom:1px solid rgb(255, 255, 255); -->
@@ -2980,4 +2980,20 @@ cardElements.forEach(function (cardElement) {
         }
     }
 </script>
+<script>
+    function changeHeight(clickedElement) {
+      var myDiv = document.getElementById('loadmorediv');
+      
+      // Check current height and toggle to 100% or back to initial height
+      if (myDiv.style.height === '100%') {
+        myDiv.style.height = '800px';
+        clickedElement.classList.remove('fa-angle-up')
+        clickedElement.classList.add('fa-angle-down')
+      } else {
+        myDiv.style.height = '100%';
+        clickedElement.classList.add('fa-angle-up')
+        clickedElement.classList.remove('fa-angle-down')
+      }
+    }
+  </script>
 </html>
