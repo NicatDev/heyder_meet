@@ -2845,7 +2845,7 @@ scrollableDiv.addEventListener('scroll', function () {
   // Kontrol: Div'in en altına gelindi mi?
   const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight;
   document.addEventListener("scrollend", (event) => {
-  document.getElementById('loadmorediv').display.overflow = 'hidden'
+  document.getElementById('loadmorediv').style.overflow = 'hidden'
   console.log('--------')
 });
   // Eğ
