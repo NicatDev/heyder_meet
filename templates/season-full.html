@@ -108,7 +108,34 @@
             }
         }
     </style>
- 
+   <script>
+    $(document).ready(function () {
+        $(".mybrandcar").owlCarousel({
+            // Change this value to control the number of items displayed
+            loop: true,
+            margin: 10,
+
+            autoplay: true,
+            autoHeight: true,
+            autoplayTimeout: 6500,
+            smartSpeed: 4000,
+            autoplaySpeed: 4000,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+    });
+  
+   
+</script>
     <script>
         $(document).ready(function () {
             $(".owl-carousel").owlCarousel({
@@ -134,6 +161,8 @@
                 }
             });
         });
+      
+       
     </script>
 
     <div class="preloader"></div>
@@ -1194,6 +1223,10 @@
                 </span>
             </div>
         </div>
+
+
+
+
         <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
             <div class="container-fluid">
                 <div class="row">
@@ -1205,7 +1238,12 @@
                                 <a href="#media-popup" data-media="{{video.embed_full}}">
                                     <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(255, 253, 253) 50%, rgba(147, 147, 147, 0) )">
                                         <i style="font-size: 60px;color:#000;" class="fa-solid fa-circle-play"></i>
-                                    </div> </a>{% endif %}
+                                    </div> </a>{% else %}
+                                    <a href="{% url 'inmemorysingle' video.slug %}">
+                                        <div class="myplaybtn" style="color:rgb(5, 5, 139);z-index:1;border-radius: 50%;text-align: center;background:linear-gradient(to bottom, rgb(51,51,181) 50%, rgb(5,5,139 ));width: 60px;height: 60px;">
+                                            <i style="font-size: 30px;margin-top: 15px; color: white !important;" class="fa-solid fa-link"></i>
+                                        </div> 
+                                    </a> {% endif %}
                                 <a  {% if video.video_or_not %}href="#media-popup" data-media="{{video.embed_full}}"{% else %}href="{% url 'inmemorysingle' video.slug %}"{% endif %}  style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);" class="slide-one">
     
                                     <div class="slide-image">
@@ -1307,15 +1345,14 @@
     <!--photo galery-->
 
 
-
-    <div style="padding: 0px !important;background: linear-gradient(to bottom, rgb(147, 147, 147), rgb(191, 191, 191), rgb(147, 147, 147)) !important;" class="brand-carousel section-padding owl-carousel"
-        style="margin-top:3%;background:linear-gradient(to right, rgb(50, 50, 50), rgb(137, 137, 137), rgb(51, 51, 51));">
-        {% for logo in partners %}
-        <div style="display: flex;justify-content: center;align-items: center;padding-top:50px;padding-bottom:50px;" class="single-logo">
-            <img {% if logo.name == 'mitri' %} style="width: 60%;height:80px;padding-top:10px;" {% else %} style="width: 60%;height:100px;"  {% endif %} src="{{logo.image.url}}" alt="{{logo.name}}">
-        </div>
-        {% endfor %}
+    <div style="padding: 0px !important;    background: linear-gradient(to bottom, rgb(147, 147, 147), rgb(191, 191, 191), rgb(147, 147, 147)) !important;" class="brand-carousel mybrandcar section-padding owl-carousel"
+    style="margin-top:3%;background:linear-gradient(to right, rgb(50, 50, 50), rgb(137, 137, 137), rgb(51, 51, 51));">
+    {% for logo in partners %}
+    <div style="display: flex;justify-content: center;align-items: center;padding-top:50px;padding-bottom:50px;" class="single-logo">
+        <img {% if logo.name == 'mitri' %} style="width: 60%;height:80px;padding-top:10px;" {% else %} style="width: 60%;height:100px;"  {% endif %} src="{{logo.image.url}}" alt="{{logo.name}}">
     </div>
+    {% endfor %}
+</div>
 
     <style>
         .single-logo:hover{
@@ -2448,7 +2485,7 @@ font-size:100px !important
         margin-top: 3% !important;
     }
     .myplaybtn{
-       opacity: 1 ;
+       opacity: 0.6 ;
        cursor: pointer !important;
     }
 
@@ -2457,7 +2494,7 @@ font-size:100px !important
         
     }
     .owl-items:hover .myplaybtn {
-      opacity: 0.7; /* Change opacity to 1 on parent hover */
+      opacity: 1; /* Change opacity to 1 on parent hover */
       transition: opacity 1s ease; 
     }
    
