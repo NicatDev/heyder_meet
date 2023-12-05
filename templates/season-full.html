@@ -2833,27 +2833,33 @@ div{
       });
     }
 </script>
-<style>
-    .myscrollclass{
-        overflow-y: hidden;
-    }
-    
-</style>
 <script>
-    
-    document.querySelector('#loadmorediv').addEventListener('scroll', function() {
-    var element = this;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-      // İçerik sona erdiğinde, sayfa gövdesinin kaydırılmasını engelle
-      element.classList.add('myscrollclass');
-      console.log('103')
-  
-    } else {
-      // İçerik sona gelmediğinde, sayfa gövdesinin kaydırılmasına izin ver
+    const scrollableDiv = document.getElementById('scrollableDiv');
 
-      console.log('303')
-    }
-  });
+// Scroll event listener
+scrollableDiv.addEventListener('scroll', function () {
+  const scrollTop = scrollableDiv.scrollTop;
+  const scrollHeight = scrollableDiv.scrollHeight;
+  const clientHeight = scrollableDiv.clientHeight;
+
+  // Kontrol: Div'in en altına gelindi mi?
+  const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight;
+
+  // Eğer en altındaysa, body'nin scroll özelliğini etkinleştir
+  if (isScrolledToBottom) {
+    document.body.style.overflowY = 'scroll';
+  } else {
+    document.body.style.overflowY = 'hidden';
+  }
+});
+
+// Body'nin scroll eventini dinle
+document.body.addEventListener('scroll', function () {
+  // Eğer div'in en başına dönüldüyse ve div bitmişse body'nin scroll özelliğini devre dışı bırak
+  if (document.body.style.overflowY === 'scroll') {
+    document.body.style.overflowY = 'hidden';
+  }
+});
 </script>
 </script>
 <style>
