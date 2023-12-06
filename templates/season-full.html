@@ -1013,7 +1013,7 @@
 
 
     <!--photo galery-->
-    <div id="loadmorediv" style="    height: 800px; overflow-y: hidden; overflow-x: hidden; margin-bottom:3%;">
+    <div id="loadmorediv" style="    height: 800px; overflow-y: hidden; overflow-x: hidden;">
     <div class="grid-containerr" id="loadmorechild">
 
         {% for image in photos %}
@@ -1041,8 +1041,15 @@
 
 
 </div>
-<div style="width: 100%;display: flex;align-items: center;justify-content: center;"><i onclick="changeHeight(this)" style="color: white;font-size: 30px;" class="fa-solid fa-angle-down"></i></div>
- <div id="loadmorediv2" style="display: none;">
+<div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+    <div style="height: 40px;
+    background: linear-gradient(180deg, rgba(15,15,15,1) 0%, rgba(177,12,12,0.938813025210084) 50%, rgba(0,0,0,1) 100%);
+    "></div>
+    <i onclick="changeHeight(this)" style="color: white;font-size: 30px;" class="fa-solid fa-angle-down"></i>
+</div>
+ 
+
+<div id="loadmorediv2" style="display: none;">
     <div style="margin-top:1%;" class="slide-wrapper brand-carousell">
         <div class="container-fluid">
             <div class="row">
@@ -2996,10 +3003,5 @@ cardElements.forEach(function (cardElement) {
       }
     }
   </script>
-  <style>
-    #loadmorediv{
-        background: linear-gradient(to bottom, rgba(15, 15, 15, 1) 0%, rgba(173, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  box-shadow: 0 10px 20px rgba(15, 15, 15, 1);
-    }
-  </style>
+
 </html>
