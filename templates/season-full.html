@@ -1013,7 +1013,7 @@
 
 
     <!--photo galery-->
-    <div id="loadmorediv" style="    height: 800px; overflow-y: hidden; overflow-x: hidden; margin-bottom:3%;box-shadow: rgba(255, 69, 0, 0.34) 0px 0px 100px;">
+    <div id="loadmorediv" style="    height: 800px; overflow-y: hidden; overflow-x: hidden; margin-bottom:3%;">
     <div class="grid-containerr" id="loadmorechild">
 
         {% for image in photos %}
@@ -2996,4 +2996,10 @@ cardElements.forEach(function (cardElement) {
       }
     }
   </script>
+  <style>
+    #loadmorediv::before{
+        background: linear-gradient(to bottom, rgba(15, 15, 15, 1) 0%, rgba(173, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  box-shadow: 0 10px 20px rgba(15, 15, 15, 1);
+    }
+  </style>
 </html>
