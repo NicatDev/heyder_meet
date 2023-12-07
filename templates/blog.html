@@ -563,13 +563,13 @@
                   </a>
                </li>
                {% if not pagcheck %}
-               <li  {% if forloop.counter == blogs.number %} class="current" {% endif %}>
+               <li  {% if forloop.counter == blog_list.number %} class="current" {% endif %}>
                   <a href="?page=1">1</a>
                </li>
                {% endif %}
                {% for page_num in iterator %}
                   
-               <li {% if forloop.counter == blogs.number %} class="current" {% endif %}>
+               <li {% if forloop.counter == blog_list.number %} class="current" {% endif %}>
                   <a href="?page={{ page_num }}">{{page_num}}</a>
                </li>
 
