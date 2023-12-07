@@ -1377,6 +1377,19 @@ a {
            margin-top:10px;
        }
    </style>
+   <style>
+    @media only screen and (max-width: 576px){
+.slide-wrapper .slide-one .slide-content {
+    padding: 0px !important;
+    position: relative !important;
+    bottom: 0;
+
+    width: 100%;
+}
+.slide-content {
+    display: block !important;
+}}
+</style>
    <style>.containerr {
     height: 100%;
     display: flex;
@@ -1451,19 +1464,7 @@ a {
 
     }}
     </style>
-<style>
-    @media only screen and (max-width: 576px){
-.slide-wrapper .slide-one .slide-content {
-    padding: 0px !important;
-    position: relative !important;
-    bottom: 0;
 
-    width: 100%;
-}
-.slide-content {
-    display: block !important;
-}}
-</style>
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
