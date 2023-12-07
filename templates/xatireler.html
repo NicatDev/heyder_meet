@@ -668,7 +668,8 @@
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content" style="">
                              
-                       
+                                       {{video.content|slice:70|safe}}...
+                                 
                                         <!-- <span class="tag">{{video.created_at}}</span> -->
                                
                                     </div>
