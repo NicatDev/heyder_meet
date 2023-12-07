@@ -693,10 +693,10 @@
                                  </a>
                               </li>
                              
-                              {% for page_num in count %}
+                              {% for page_num in counts %}
                                  
                               <li {% if forloop.counter == invideomemories.number %} class="current" {% endif %}> 
-                                 <a href="?page={{forloop.counter}}">{{forloop.counter}}</a>
+                                 <a href="?pages={{forloop.counter}}">{{forloop.counter}}</a>
                               </li>
 
                               {% endfor %}
@@ -741,7 +741,15 @@
                               </div>
                            </div>
                         </article>
-                        {% endfor %}</div>
+                        {% endfor %}
+                        {% for page_num in count %}
+                                 
+                        <li {% if forloop.counter == inmemories.number %} class="current" {% endif %}> 
+                           <a href="?page={{forloop.counter}}">{{forloop.counter}}</a>
+                        </li>
+
+                        {% endfor %}
+                    </div>
                     <div class="col-xxl-4 col-xl-5 col-lg-5">
                         <div class="sidebar__wrapper">
                            <div class="sidebar__widget ">

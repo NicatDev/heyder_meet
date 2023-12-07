@@ -139,6 +139,8 @@ def article3(request):
     sourcearticles = AnotherSourceArticles.objects.all()
     page_count = paginator.num_pages
     count = [count+1 for count in range(page_count)]
+    page_counts = paginatorr.num_pages
+    counts = [count+1 for count in range(page_counts)]
     if allheader.exists():
         allheader = allheader.first()
     sourcememories = AnotherSourceMemories.objects.all()
@@ -161,6 +163,7 @@ def article3(request):
         'books':books,
         'sourcememories':sourcememories,
         'count':count,
+        'counts':counts,
         'pagecount':pagecount
 
         
