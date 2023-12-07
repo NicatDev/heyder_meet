@@ -2918,10 +2918,11 @@ div{
             let currentlyContent2 = document.getElementById(next_id)
         
             currentlyContent2.classList.add('active')
-        
+        console.log('++++++++++++++')
         } else {
-            intervalId = setInterval(myFunction, 6000);
-        scrollid = setInterval(scrollElement, 6000);
+            
+            cardElements[0].classList.add('active');
+            console.log(cardElements[0],'-------------------')
         }
 
 
