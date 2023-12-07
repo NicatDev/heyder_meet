@@ -3011,7 +3011,9 @@ cardElements.forEach(function (cardElement) {
     $(".popup").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-
+        if (!e.target.classList.contains('slide-content')) {
+            return;
+    }
         $(".page").removeClass("show-popup");
         var iframe = $("#myiframe");
 var newVideoId = "NEW_VIDEO_ID";
