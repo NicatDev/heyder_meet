@@ -652,7 +652,7 @@
                              {% for page_num in count2 %}
                                 
                              <li>
-                                <a href="?pages={{ page_num }}#musahibe">{{page_num}}</a>
+                                <a {% if forloop.counter == invideomemories.number %} class="current" {% endif %} href="?pages={{ page_num }}#musahibe">{{page_num}}</a>
                              </li>
                  
                              {% endfor %}
