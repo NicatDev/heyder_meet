@@ -494,7 +494,7 @@
                              
                                  {% for page_num in count %}
                                     
-                                 <li>
+                                 <li {% if forloop.counter == articles.number %} class="current" {% endif %}>
                                     <a href="?page={{ page_num }}">{{page_num}}</a>
                                  </li>
                      
@@ -651,8 +651,8 @@
                          
                              {% for page_num in count2 %}
                                 
-                             <li>
-                                <a {% if forloop.counter == invideomemories.number %} class="current" {% endif %} href="?pages={{ page_num }}#musahibe">{{page_num}}</a>
+                             <li {% if forloop.counter == interviews.number %} class="current" {% endif %}>
+                                <a  href="?pages={{ page_num }}#musahibe">{{page_num}}</a>
                              </li>
                  
                              {% endfor %}
