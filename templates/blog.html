@@ -563,7 +563,7 @@
                   </a>
                </li>
                {% if not pagcheck %}
-               <li>
+               <li  {% if forloop.counter == blogs.number %} class="current" {% endif %}>
                   <a href="?page=1">1</a>
                </li>
                {% endif %}
