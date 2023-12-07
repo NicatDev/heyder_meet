@@ -2990,10 +2990,12 @@ cardElements.forEach(function (cardElement) {
         
     $("[data-media]").on("click", function (e) {
         e.preventDefault();
+        console.log('1')
         if (!e.target.classList.contains('slide-content')) {
+            console.log('2')
             return;
     }
-       
+    console.log('3')
         var $this = $(this);
 
         var videoUrl = $this.attr("data-media");
