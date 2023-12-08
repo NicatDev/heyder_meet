@@ -53,7 +53,7 @@
    <!-- header wrapper -->
    <header id="header-sticky" class="fm-header-area header-border transparent-header bg-common-black">
       <div class="container">
-          <div class="row align-items-center justify-content-lg-between pr-5 pl-5">
+          <div class=" align-items-center justify-content-lg-between pr-5 pl-5">
               <div class="header-wrapper">
                   <div class="fm-header-logo-wrapper">
                       <a href="{% url 'home' %}" class="fm-header-logo">
@@ -417,7 +417,7 @@
                            <span><a href="#">{{blog.tag.first.name}}</a></span>
      
                         </div>
-                        <div style="height: 690px;" class="fm__postbox-thumb mb-30">
+                        <div  class="fm__postbox-thumb mb-30">
                           
                            <img {% if blog.id == 4 or blog.id == 6 %}  style="object-position: center;" {% else %} style="object-position: bottom;" {% endif %} src="{{blog.coverimage.url}}" data-speed="auto" alt="{{blog.alt}}">
 
