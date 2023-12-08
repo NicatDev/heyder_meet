@@ -2757,12 +2757,19 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
     #loadmorediv2{
         display: block !important;
     }}</style>
+    <style>
+          @media (max-width: 467px) {
+            #loadmorediv{
+                display: none !important;
+            }
+          }
+    </style>
 <style>
     @media (max-width: 467px) {
         #loadmorechild{
             display: none !important
         };
-    #loadmorediv{
+        #loadmorediv{
     display: none !important;
     height: 0px !important
 };
