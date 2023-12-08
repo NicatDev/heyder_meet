@@ -1041,7 +1041,7 @@
 
 
 </div>
-<div style="width: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+<div id="loadmorechild" style="width: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;">
     <div style="padding-left:5px;height: 50px;width: 90%;"></div>
     <div style="width: 100%;display: flex;align-items: center;justify-content: center;"><i onclick="changeHeight(this)" style="color: white;font-size: 30px;" class="fa-solid fa-angle-down"></i></div>
 </div>
@@ -2759,9 +2759,15 @@ const scrollInterval = setInterval(scrollContent, animationDuration / element.cl
     }}</style>
 <style>
     @media (max-width: 467px) {
+        #loadmorechild{
+            display: none !important
+        };
     #loadmorediv{
-    display: none !important;};
+    display: none !important;
+    height: 0px !important
+};
 #loadmorediv2{
+    
     display: block !important
 }};
 *{
