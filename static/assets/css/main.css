@@ -11355,10 +11355,9 @@ blockquote > p {
 .fm__postbox-thumb img {
   width: 100%;
   object-fit: cover;
-  position: absolute;
-  bottom: 0;
+
   -o-object-fit: cover;
-  height: 120%;
+
   margin-left: auto;
   margin-right: auto;
 }

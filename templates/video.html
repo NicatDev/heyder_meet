@@ -76,48 +76,7 @@
             transform: translate(-50%, -50%);
         }
     </style>
-    <script>
-        $(document).ready(function() {
-            
-        $("[data-media]").on("click", function (e) {
-            e.preventDefault();
-            
-           
-            var $this = $(this);
-    
-            var videoUrl = $this.attr("data-media");
-     
-            var popup = $this.attr("href");
-     
-            var $popupIframe = $(popup).find("iframe");
-    
-            $popupIframe.attr("src", videoUrl);
-            
-    
-            $("#pagepage").addClass("show-popup");
-            $('body').css('overflow', 'hidden');
-    
-        });
-    });
-        $(".popup").on("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-    
-            $(".page").removeClass("show-popup");
-            var iframe = $("#myiframe");
-    var newVideoId = "NEW_VIDEO_ID";
-    var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
 
-    iframe.attr("src", newSrc);
-
-            $('body').css('overflow', 'auto');
-        });
-    
-        $(".popup > iframe").on("click", function (e) {
-            e.stopPropagation();
-            $('body').css('overflow', 'auto');
-        });
-    </script>
     <div class="preloader"></div>
 
     <div class="backdrop"></div>
@@ -628,11 +587,19 @@
                                 <a class="slide-one"  href="#media-popup" data-media="{{video.embed_full}}">
                                     <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 300px;" {% if video.coverimage %} src="{{video.coverimage.url}}" {% endif %} alt="image" ></div>
                                     <div class="slide-content" style="">
-                                        
-                                        <p class="metn" style="height: 4rem;display:block !important;">{{video.content|slice:70}}...</p>
-                                 
-                                        <!-- <span class="tag">{{video.created_at}}</span> -->
-                               
+
+                                        <p class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px">
+                                            {{video.content|slice:28}}...
+                                            {% if video.content|length > 28 %}
+                                            <span class="video-span" style="color: orangered;" onclick="toggleContent(this, 'video-metn', 'video-metn2')">daha çox</span>
+                                            {% endif %}
+                                        </p>
+                                    
+                                        <p class="video-metn2" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px;display: none;">
+                                            {{video.content}}
+                                            <span class="video-span2" style="color: orangered;" onclick="toggleContent(this, 'video-metn2', 'video-metn')">daha az</span>
+                                        </p>
+                                    
                                     </div>
                                 </a>
                                 <h2 class="basliq" style="    width: 70%;left:15%;
@@ -1308,6 +1275,94 @@ a {
             color: black;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            
+        $("[data-media]").on("click", function (e) {
+            e.preventDefault();
+            console.log('1')
+            if (e.target.classList.contains('slide-content')) {
+                console.log('2')
+                return;
+        }
+        if (e.target.classList.contains('video-span')) {
+                console.log('3')
+                return;
+        }
+        if (e.target.classList.contains('video-span2')) {
+                console.log('4')
+                return;
+        }
+        if (e.target.classList.contains('video-metn2')) {
+                console.log('4')
+                return;
+        }
+        if (e.target.classList.contains('video-metn')) {
+                console.log('4')
+                return;
+        }
+        console.log(e.target.classList)
+    
+        console.log('5')
+            var $this = $(this);
+    
+            var videoUrl = $this.attr("data-media");
+     
+            var popup = $this.attr("href");
+     
+            var $popupIframe = $(popup).find("iframe");
+    
+            $popupIframe.attr("src", videoUrl);
+            
+    
+            $("#pagepage").addClass("show-popup");
+            $('body').css('overflow', 'hidden');
+    
+        });
+    });
+        $(".popup").on("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+    
+            $(".page").removeClass("show-popup");
+            var iframe = $("#myiframe");
+    var newVideoId = "NEW_VIDEO_ID";
+    var newSrc = "https://www.youtube.com/embed/" + newVideoId + "?autoplay=1";
+    
+    iframe.attr("src", newSrc);
+    
+            $('body').css('overflow', 'auto');
+        });
+    
+        $(".popup > iframe").on("click", function (e) {
+            e.stopPropagation();
+            $('body').css('overflow', 'auto');
+        });
+    </script>
+    <script>
+        function toggleContent(element, showClass, hideClass) {
+            var parentContainer = element.closest('.slide-content');
+            if (parentContainer) {
+            console.log('1')
+                var showElement = parentContainer.querySelector('.' + showClass);
+                var hideElement = parentContainer.querySelector('.' + hideClass);
+                if(showElement.classList.contains('video-metn2')){
+                    parentContainer.style.height = hideElement.height
+                    console.log('1212')
+                }
+                else{
+                    parentContainer.style.height = showElement.style.height
+                    console.log('2323')
+                }
+                console.log(showElement,hideElement,'-----')
+                if (showElement && hideElement) {
+                    console.log('i am in')
+                    showElement.style.display = 'none';
+                    hideElement.style.display = 'block';
+                }
+            }
+        }
+    </script>
     <script src="{% static 'templatestyles/js/plugin.js' %}"></script>
     <script src="{% static 'templatestyles/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'templatestyles/js/scripts.js' %}"></script>
