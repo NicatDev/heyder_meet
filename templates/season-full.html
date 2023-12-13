@@ -974,8 +974,8 @@
                                 <div class="slide-content" style="">
 
                                     <p class="video-metn" style="text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);font-size:18px">
-                                        {{video.content|slice:28}}...
-                                        {% if video.content|length > 28 %}
+                                        {{video.content|slice:24}}...
+                                        {% if video.content|length > 24 %}
                                         <span class="video-span" style="color: orangered;" onclick="toggleContent(this, 'video-metn', 'video-metn2')">daha çox</span>
                                         {% endif %}
                                     </p>
@@ -2506,7 +2506,7 @@ font-size:100px !important
         margin-top: 1% !important;
     }
     .myplaybtn{
-       opacity: 0.6 ;
+       opacity: 0.4 ;
        cursor: pointer !important;
     }
 
@@ -2640,11 +2640,14 @@ function scrollElement() {
   if (element.scrollHeight - element.scrollTop !== element.clientHeight) {
     scrollingDown = true;
     console.log('true')
+    element.classList.add('active');
   }
   
   if (scrollingDown) {
     element.scrollBy(0, height);
+    scroll.classList.add('active');
     console.log('down')
+ 
   } else {
     element.scrollBy(0, -1000); 
     console.log('up')

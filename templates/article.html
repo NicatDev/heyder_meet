@@ -569,7 +569,8 @@
                         {% for blog in invideomemories %}
                         <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6 md-mb25 " style="max-height:400px;min-height: 400px;margin-bottom: 15px;">
                             <a class="slide-one" href={{video.embed.url}} target="_blank">
-                                <div class="slide-image"><img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if blog.coverimage %} src="{{blog.coverimage.url}}" {% endif %} alt="image" ></div>
+                                <div class="slide-image">
+                                <img style="object-fit: cover;max-height: 250px;min-height: 250px;" {% if blog.coverimage %} src="{{blog.coverimage.url}}" {% endif %} alt="image" ></div>
                                 <div class="slide-content" >
                                     <h2 style="height:6rem">{{blog.name}} </h2>
                                     <p style="height: 4rem;">{{blog.content|slice:70}}...</p>
